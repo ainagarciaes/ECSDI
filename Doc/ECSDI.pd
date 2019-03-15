@@ -11,45 +11,625 @@
 	    <field name="applicationVersion">3.3b_internal</field>
 	</object>
     </field>
+    <field name="diagramSettings"><list>
+	<object type="DiagramSettings" id="2">
+	    <field name="diagramId">
+		<object type="DiagramId" id="3">
+		    <field name="stringId">Goal Overview</field>
+		</object>
+	    </field>
+	    <field name="entitySettings"><list>
+		<object type="DiagramEntitySetting" id="4">
+		    <field name="entity">
+			<object type="Goal" id="5">
+			    <base type="Entity">
+				<field name="name">Organitzar viatge</field>
+				<field name="description">L'objectiu principal del sistema és conseguir donar al usuari un viatge organitzat, amb tots els elements que el conformen.</field>
+				<field name="uniqueId">1</field>
+			    </base>
+
+			    <field name="subGoals"><list>
+				<object type="Goal" id="6">
+				    <base type="Entity">
+					<field name="name">Escollir allotjament i transport</field>
+					<field name="description">El primer objectiu per tal de organitzar un viatge és tenir fixat un lloc d'allotjament adaptat a les preferencies del usuari i mitjans de transport per anar/tornar entre els dies escollits.</field>
+					<field name="uniqueId">2</field>
+				    </base>
+
+				    <field name="subGoals"><list>
+					<object type="Goal" id="7">
+					    <base type="Entity">
+						<field name="name">Obtenir restriccions</field>
+						<field name="description">El sistema ha de ser capaç d'obtenir les restriccions de l'usuari per tal d'ajustar el viatge a les seves necessitats. En aquest punt, les restriccions necessaries serien les dates, el lloc on vol anar, ci vol un apartament cèntric i el pressupost.</field>
+						<field name="uniqueId">3</field>
+					    </base>
+
+					    <field name="subGoals"><list>
+						<object type="Goal" id="8">
+						    <base type="Entity">
+							<field name="name">Obtenir dates</field>
+							<field name="description">Cal preguntar al usuari quines dates orientatives vol per dur a terme el viatge + lloc.</field>
+							<field name="uniqueId">4</field>
+						    </base>
+
+						</object>
+
+						<object type="Goal" id="9">
+						    <base type="Entity">
+							<field name="name">Obtenir pressupost</field>
+							<field name="description">Cal preguntar al usuari quin es el pressupost que està disponible per el transport i l'allotjament.</field>
+							<field name="uniqueId">5</field>
+						    </base>
+
+						</object>
+
+						<object type="Goal" id="10">
+						    <base type="Entity">
+							<field name="name">Obtenir localitzacio</field>
+							<field name="description">Cal preguntar a l'usuari la ubicacio de l'allotjament (centric, no centric)</field>
+							<field name="uniqueId">6</field>
+						    </base>
+
+						</object>
+						</list>
+					    </field>
+					</object>
+
+					<object type="Goal" id="11">
+					    <base type="Entity">
+						<field name="name">Buscar proveïdors d'informació</field>
+						<field name="description">S'ha de poder accedir a serveis externs per tal de buscar informació sobre possibilitats d'allotjament i transport segons les restriccions de l'usuari.</field>
+						<field name="uniqueId">7</field>
+					    </base>
+
+					    <field name="subGoals"><list>
+						<object type="Goal" id="12">
+						    <base type="Entity">
+							<field name="name">Enviar restriccions</field>
+							<field name="description">Enviar les restriccions de l'usuari per tal d'obtenir resultats ajustats a les restriccions donades.</field>
+							<field name="uniqueId">8</field>
+						    </base>
+
+						</object>
+
+						<object type="Goal" id="13">
+						    <base type="Entity">
+							<field name="name">Enviar preferencies</field>
+							<field name="description">Enviar les preferencies per tal d'obtenir resultats mes personalitzats.</field>
+							<field name="uniqueId">13</field>
+						    </base>
+
+						</object>
+
+						<object type="Goal" id="14">
+						    <base type="Entity">
+							<field name="name">Obtenir possibilitats</field>
+							<field name="description">Obtenir les possibilitats d'allotjaments i mitjans de transport per tal de processar-les i pendre una decisió posteriorment.</field>
+							<field name="uniqueId">14</field>
+						    </base>
+
+						</object>
+						</list>
+					    </field>
+					</object>
+
+					<object type="Goal" id="15">
+					    <base type="Entity">
+						<field name="name">Obtenir preferencies</field>
+						<field name="description">Obtenir preferencies del usuari per tal de poder obtenir resultats mes personalitzats segons els gustos i historial del usuari.</field>
+						<field name="uniqueId">9</field>
+					    </base>
+
+					    <field name="subGoals"><list>
+						<object type="Goal" id="16">
+						    <base type="Entity">
+							<field name="name">Obtenir historial usuari</field>
+							<field name="description">Preferencies obtingudes basant-se en experiencies passades de l'usuari amb el sistema.</field>
+							<field name="uniqueId">10</field>
+						    </base>
+
+						</object>
+
+						<object type="Goal" id="17">
+						    <base type="Entity">
+							<field name="name">Obtenir valoracions</field>
+							<field name="description">Obtenir preferencies del usuari basant-se en les millors valoracions que ha donat l'usuari al sistema.</field>
+							<field name="uniqueId">11</field>
+						    </base>
+
+						</object>
+
+						<object type="Goal" id="18">
+						    <base type="Entity">
+							<field name="name">Obtenir informació d'usuaris similars</field>
+							<field name="uniqueId">12</field>
+						    </base>
+
+						</object>
+						</list>
+					    </field>
+					</object>
+
+					<object type="Goal" id="19">
+					    <base type="Entity">
+						<field name="name">Triar alternativa</field>
+						<field name="description">Un cop tenim totes les possiblitats, cal que el sistema les analitzi i esculli la millor opció per l'usuari concret.</field>
+						<field name="uniqueId">15</field>
+					    </base>
+
+					    <field name="subGoals"><list>
+						<object type="Goal" id="20">
+						    <base type="Entity">
+							<field name="name">Analitzar possibilitats</field>
+							<field name="description">El sistema ha de ser capaç d'analitzar un conjunt d'alternatives i escollir la que millor s'adapti al profiling del usuari.</field>
+							<field name="uniqueId">16</field>
+						    </base>
+
+						</object>
+
+						<object type="Goal" id="21">
+						    <base type="Entity">
+							<field name="name">Decidir transport</field>
+							<field name="description">El sistema ha de ser capaç d'escollir un mitja de transport amb les dades analitzades.</field>
+							<field name="uniqueId">17</field>
+						    </base>
+
+						</object>
+
+						<object type="Goal" id="22">
+						    <base type="Entity">
+							<field name="name">Decidir allotjament</field>
+							<field name="description">El sistema ha de ser capaç d'escollir un allotjament amb les dades analitzades.</field>
+							<field name="uniqueId">18</field>
+						    </base>
+
+						</object>
+						</list>
+					    </field>
+					</object>
+					</list>
+				    </field>
+				</object>
+
+				<object type="Goal" id="23">
+				    <base type="Entity">
+					<field name="name">Escollir visites</field>
+					<field name="description">El sistema s'ha d'encarregar de organitzar un horari amb llocs a visitar escollits segons les preferencies de l'usuari.</field>
+					<field name="uniqueId">19</field>
+				    </base>
+
+				    <field name="subGoals"><list>
+					<object type="Goal" id="24">
+					    <base type="Entity">
+						<field name="name">Obtenir prioritats</field>
+						<field name="description">S'ha de saber quin tipus de viatge vol l'usuari i els gustos i preferencies que aquest té.</field>
+						<field name="uniqueId">22</field>
+					    </base>
+
+					    <field name="subGoals"><list>
+						<object ref="15"/>
+
+						<object type="Goal" id="25">
+						    <base type="Entity">
+							<field name="name">Obtenir dies</field>
+							<field name="description">El sistema ha de saber amb exactitud quines son les dates i hores escollides finalment per dur a terme el viatge. (no dels requeriments de l'usuari sino del allotjament i transport escollits)</field>
+							<field name="uniqueId">23</field>
+						    </base>
+
+						</object>
+
+						<object type="Goal" id="26">
+						    <base type="Entity">
+							<field name="name">Obtenir preferencies tipu viatge</field>
+							<field name="description">Cal obtenir de l'usuari les ponderacions del tipus de viatge que vol (si el vol ludic, cultural, etc.)</field>
+							<field name="uniqueId">24</field>
+						    </base>
+
+						</object>
+						</list>
+					    </field>
+					</object>
+					</list>
+				    </field>
+				</object>
+
+				<object type="Goal" id="27">
+				    <base type="Entity">
+					<field name="name">Confirmar viatge</field>
+					<field name="description">El sistema ha de ser capaç d'informar a l'usuari de les decisions preses i donar-li la possibilitat de confirmar-lo si el vol realitzar abans de procedir a les reserves i pagament d'aquest.</field>
+					<field name="uniqueId">20</field>
+				    </base>
+
+				</object>
+
+				<object type="Goal" id="28">
+				    <base type="Entity">
+					<field name="name">Gestionar pagaments</field>
+					<field name="description">El sistema ha de ser capaç de gestionar pagaments, ja sigui per transferencia com de forma automàtica online.</field>
+					<field name="uniqueId">21</field>
+				    </base>
+
+				</object>
+				</list>
+			    </field>
+			</object>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="29">
+			    <field name="x">681</field>
+			    <field name="y">18</field>
+			</object>
+		    </field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="30">
+		    <field name="entity">
+			<object ref="6"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="31">
+			    <field name="x">190</field>
+			    <field name="y">100</field>
+			</object>
+		    </field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="32">
+		    <field name="entity">
+			<object ref="7"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="33">
+			    <field name="x">63</field>
+			    <field name="y">191</field>
+			</object>
+		    </field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="34">
+		    <field name="entity">
+			<object ref="8"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="35">
+			    <field name="y">244</field>
+			</object>
+		    </field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="36">
+		    <field name="entity">
+			<object ref="9"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="37">
+			    <field name="x">39</field>
+			    <field name="y">288</field>
+			</object>
+		    </field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="38">
+		    <field name="entity">
+			<object ref="10"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="39">
+			    <field name="x">122</field>
+			    <field name="y">249</field>
+			</object>
+		    </field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="40">
+		    <field name="entity">
+			<object ref="11"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="41">
+			    <field name="x">296</field>
+			    <field name="y">192</field>
+			</object>
+		    </field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="42">
+		    <field name="entity">
+			<object ref="12"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="43">
+			    <field name="x">291</field>
+			    <field name="y">234</field>
+			</object>
+		    </field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="44">
+		    <field name="entity">
+			<object ref="15"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="45">
+			    <field name="x">214</field>
+			    <field name="y">354</field>
+			</object>
+		    </field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="46">
+		    <field name="entity">
+			<object ref="16"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="47">
+			    <field name="x">107</field>
+			    <field name="y">411</field>
+			</object>
+		    </field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="48">
+		    <field name="entity">
+			<object ref="17"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="49">
+			    <field name="x">218</field>
+			    <field name="y">446</field>
+			</object>
+		    </field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="50">
+		    <field name="entity">
+			<object ref="18"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="51">
+			    <field name="x">302</field>
+			    <field name="y">408</field>
+			</object>
+		    </field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="52">
+		    <field name="entity">
+			<object ref="13"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="53">
+			    <field name="x">336</field>
+			    <field name="y">275</field>
+			</object>
+		    </field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="54">
+		    <field name="entity">
+			<object ref="14"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="55">
+			    <field name="x">401</field>
+			    <field name="y">312</field>
+			</object>
+		    </field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="56">
+		    <field name="entity">
+			<object ref="19"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="57">
+			    <field name="x">524</field>
+			    <field name="y">182</field>
+			</object>
+		    </field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="58">
+		    <field name="entity">
+			<object ref="20"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="59">
+			    <field name="x">439</field>
+			    <field name="y">225</field>
+			</object>
+		    </field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="60">
+		    <field name="entity">
+			<object ref="21"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="61">
+			    <field name="x">522</field>
+			    <field name="y">263</field>
+			</object>
+		    </field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="62">
+		    <field name="entity">
+			<object ref="22"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="63">
+			    <field name="x">589</field>
+			    <field name="y">226</field>
+			</object>
+		    </field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="64">
+		    <field name="entity">
+			<object ref="23"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="65">
+			    <field name="x">690</field>
+			    <field name="y">262</field>
+			</object>
+		    </field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="66">
+		    <field name="entity">
+			<object ref="27"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="67">
+			    <field name="x">860</field>
+			    <field name="y">208</field>
+			</object>
+		    </field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="68">
+		    <field name="entity">
+			<object ref="28"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="69">
+			    <field name="x">1005</field>
+			    <field name="y">132</field>
+			</object>
+		    </field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="70">
+		    <field name="entity">
+			<object ref="24"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="71">
+			    <field name="x">585</field>
+			    <field name="y">359</field>
+			</object>
+		    </field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="72">
+		    <field name="entity">
+			<object ref="25"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="73">
+			    <field name="x">517</field>
+			    <field name="y">434</field>
+			</object>
+		    </field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="74">
+		    <field name="entity">
+			<object ref="26"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="75">
+			    <field name="x">549</field>
+			    <field name="y">463</field>
+			</object>
+		    </field>
+		</object>
+		</list>
+	    </field>
+	</object>
+	</list>
+    </field>
     <field name="model">
-	<object type="PrometheusModelData" id="2">
+	<object type="PrometheusModelData" id="76">
 	    <field name="projectData">
 		<object ref="1"/>
 	    </field>
+	    <field name="goals"><list>
+		<object ref="5"/>
+
+		<object ref="6"/>
+
+		<object ref="7"/>
+
+		<object ref="8"/>
+
+		<object ref="9"/>
+
+		<object ref="10"/>
+
+		<object ref="11"/>
+
+		<object ref="12"/>
+
+		<object ref="15"/>
+
+		<object ref="16"/>
+
+		<object ref="17"/>
+
+		<object ref="18"/>
+
+		<object ref="13"/>
+
+		<object ref="14"/>
+
+		<object ref="19"/>
+
+		<object ref="20"/>
+
+		<object ref="21"/>
+
+		<object ref="22"/>
+
+		<object ref="23"/>
+
+		<object ref="27"/>
+
+		<object ref="28"/>
+
+		<object ref="24"/>
+
+		<object ref="25"/>
+
+		<object ref="26"/>
+		</list>
+	    </field>
 	    <field name="systemOverviewDiagramData">
-		<object type="SystemOverviewDiagramData" id="3">
+		<object type="SystemOverviewDiagramData" id="77">
 		</object>
 	    </field>
 	    <field name="rolesDiagramData">
-		<object type="RolesDiagramData" id="4">
+		<object type="RolesDiagramData" id="78">
 		</object>
 	    </field>
 	    <field name="analysisOverviewDiagramData">
-		<object type="AnalysisOverviewDiagramData" id="5">
+		<object type="AnalysisOverviewDiagramData" id="79">
 		</object>
 	    </field>
 	    <field name="scenariosDiagramData">
-		<object type="ScenariosDiagramData" id="6">
+		<object type="ScenariosDiagramData" id="80">
 		</object>
 	    </field>
 	    <field name="goalOverviewDiagramData">
-		<object type="GoalOverviewDiagramData" id="7">
+		<object type="GoalOverviewDiagramData" id="81">
 		</object>
 	    </field>
 	    <field name="dataCouplingDiagramData">
-		<object type="DataCouplingDiagramData" id="8">
+		<object type="DataCouplingDiagramData" id="82">
 		</object>
 	    </field>
 	    <field name="agentRoleCouplingDiagramData">
-		<object type="AgentRoleCouplingDiagramData" id="9">
+		<object type="AgentRoleCouplingDiagramData" id="83">
 		</object>
 	    </field>
 	    <field name="agentOverviewDiagramData">
-		<object type="AgentOverviewDiagramData" id="10">
+		<object type="AgentOverviewDiagramData" id="84">
 		</object>
 	    </field>
 	    <field name="capabilityOverviewDiagramData">
-		<object type="CapabilityOverviewDiagramData" id="11">
+		<object type="CapabilityOverviewDiagramData" id="85">
 		</object>
 	    </field>
 	</object>
