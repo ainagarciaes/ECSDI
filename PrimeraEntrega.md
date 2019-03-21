@@ -1,8 +1,8 @@
-+ **Entrega: ** 25/3 a las 23:59 via Racó
++ **Entrega:** 25/3 a las 23:59 via Racó
 
-+ **Must have: ** Dos primeras fases de la metodologia Prometeus.
++ **Must have:** Dos primeras fases de la metodologia Prometeus.
 
-+ **Docs: ** 
++ **Docs:** 
   + Explicación del diseño del sistema (especificacion y diseño arquitectonico). PDF
   Explicaciones sobre el proceso que habeis seguido, las decisiones que habeis tomado y su justificacion. 7
   + Fichero Prometheus
