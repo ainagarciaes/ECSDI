@@ -2116,24 +2116,24 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 
 		<object type="DiagramEntitySetting" id="138">
 		    <field name="entity">
-			<object ref="75"/>
+			<object ref="103"/>
 		    </field>
 		    <field name="location">
 			<object type="Coordinate" id="139">
-			    <field name="x">194</field>
-			    <field name="y">56</field>
+			    <field name="x">737</field>
+			    <field name="y">31</field>
 			</object>
 		    </field>
 		</object>
 
 		<object type="DiagramEntitySetting" id="140">
 		    <field name="entity">
-			<object ref="103"/>
+			<object ref="75"/>
 		    </field>
 		    <field name="location">
 			<object type="Coordinate" id="141">
-			    <field name="x">737</field>
-			    <field name="y">31</field>
+			    <field name="x">194</field>
+			    <field name="y">56</field>
 			</object>
 		    </field>
 		</object>
@@ -3482,24 +3482,24 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 
 		<object type="DiagramEntitySetting" id="359">
 		    <field name="entity">
-			<object ref="39"/>
+			<object ref="78"/>
 		    </field>
 		    <field name="location">
 			<object type="Coordinate" id="360">
-			    <field name="x">559</field>
-			    <field name="y">261</field>
+			    <field name="x">319</field>
+			    <field name="y">88</field>
 			</object>
 		    </field>
 		</object>
 
 		<object type="DiagramEntitySetting" id="361">
 		    <field name="entity">
-			<object ref="78"/>
+			<object ref="39"/>
 		    </field>
 		    <field name="location">
 			<object type="Coordinate" id="362">
-			    <field name="x">319</field>
-			    <field name="y">88</field>
+			    <field name="x">559</field>
+			    <field name="y">261</field>
 			</object>
 		    </field>
 		</object>
@@ -3841,48 +3841,48 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 
 		<object type="DiagramEntitySetting" id="419">
 		    <field name="entity">
-			<object ref="102"/>
-		    </field>
-		    <field name="location">
-			<object type="Coordinate" id="420">
-			    <field name="x">118</field>
-			    <field name="y">301</field>
-			</object>
-		    </field>
-		</object>
-
-		<object type="DiagramEntitySetting" id="421">
-		    <field name="entity">
 			<object ref="68"/>
 		    </field>
 		    <field name="location">
-			<object type="Coordinate" id="422">
+			<object type="Coordinate" id="420">
 			    <field name="x">778</field>
 			    <field name="y">700</field>
 			</object>
 		    </field>
 		</object>
 
+		<object type="DiagramEntitySetting" id="421">
+		    <field name="entity">
+			<object ref="102"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="422">
+			    <field name="x">118</field>
+			    <field name="y">301</field>
+			</object>
+		    </field>
+		</object>
+
 		<object type="DiagramEntitySetting" id="423">
 		    <field name="entity">
-			<object ref="119"/>
+			<object ref="10"/>
 		    </field>
 		    <field name="location">
 			<object type="Coordinate" id="424">
-			    <field name="x">717</field>
-			    <field name="y">505</field>
+			    <field name="x">27</field>
+			    <field name="y">718</field>
 			</object>
 		    </field>
 		</object>
 
 		<object type="DiagramEntitySetting" id="425">
 		    <field name="entity">
-			<object ref="10"/>
+			<object ref="119"/>
 		    </field>
 		    <field name="location">
 			<object type="Coordinate" id="426">
-			    <field name="x">27</field>
-			    <field name="y">718</field>
+			    <field name="x">717</field>
+			    <field name="y">505</field>
 			</object>
 		    </field>
 		</object>
@@ -4309,13 +4309,304 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 	<object type="DiagramSettings" id="497">
 	    <field name="diagramId">
 		<object type="DiagramId" id="498">
-		    <field name="stringId">Scenarios</field>
+		    <field name="stringId">au.edu.rmit.cs.prometheus.gui.diagram.agentoverview.AgentOverviewDiagramModel(id#112)</field>
 		</object>
 	    </field>
 	    <field name="entitySettings"><list>
 		<object type="DiagramEntitySetting" id="499">
 		    <field name="entity">
-			<object type="Scenario" id="500">
+			<object ref="5"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="500">
+			    <field name="x">197</field>
+			    <field name="y">25</field>
+			</object>
+		    </field>
+		    <field name="userApproved">:false</field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="501">
+		    <field name="entity">
+			<object ref="39"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="502">
+			    <field name="x">189</field>
+			    <field name="y">103</field>
+			</object>
+		    </field>
+		    <field name="userApproved">:false</field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="503">
+		    <field name="entity">
+			<object ref="110"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="504">
+			    <field name="x">437</field>
+			    <field name="y">25</field>
+			</object>
+		    </field>
+		    <field name="userApproved">:false</field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="505">
+		    <field name="entity">
+			<object ref="103"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="506">
+			    <field name="x">517</field>
+			    <field name="y">25</field>
+			</object>
+		    </field>
+		    <field name="userApproved">:false</field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="507">
+		    <field name="entity">
+			<object ref="105"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="508">
+			    <field name="x">37</field>
+			    <field name="y">25</field>
+			</object>
+		    </field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="509">
+		    <field name="entity">
+			<object ref="109"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="510">
+			    <field name="x">357</field>
+			    <field name="y">25</field>
+			</object>
+		    </field>
+		    <field name="userApproved">:false</field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="511">
+		    <field name="entity">
+			<object ref="108"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="512">
+			    <field name="x">74</field>
+			    <field name="y">211</field>
+			</object>
+		    </field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="513">
+		    <field name="entity">
+			<object ref="107"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="514">
+			    <field name="x">117</field>
+			    <field name="y">25</field>
+			</object>
+		    </field>
+		    <field name="userApproved">:false</field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="515">
+		    <field name="entity">
+			<object ref="106"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="516">
+			    <field name="x">277</field>
+			    <field name="y">25</field>
+			</object>
+		    </field>
+		    <field name="userApproved">:false</field>
+		</object>
+		</list>
+	    </field>
+	</object>
+
+	<object type="DiagramSettings" id="517">
+	    <field name="diagramId">
+		<object type="DiagramId" id="518">
+		    <field name="stringId">Agent-Role Coupling</field>
+		</object>
+	    </field>
+	    <field name="entitySettings"><list>
+		<object type="DiagramEntitySetting" id="519">
+		    <field name="entity">
+			<object ref="114"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="520">
+			    <field name="x">1013</field>
+			    <field name="y">190</field>
+			</object>
+		    </field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="521">
+		    <field name="entity">
+			<object ref="111"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="522">
+			    <field name="x">663</field>
+			    <field name="y">64</field>
+			</object>
+		    </field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="523">
+		    <field name="entity">
+			<object ref="45"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="524">
+			    <field name="x">606</field>
+			    <field name="y">367</field>
+			</object>
+		    </field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="525">
+		    <field name="entity">
+			<object ref="22"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="526">
+			    <field name="x">433</field>
+			    <field name="y">319</field>
+			</object>
+		    </field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="527">
+		    <field name="entity">
+			<object ref="12"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="528">
+			    <field name="x">283</field>
+			    <field name="y">157</field>
+			</object>
+		    </field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="529">
+		    <field name="entity">
+			<object ref="44"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="530">
+			    <field name="x">294</field>
+			    <field name="y">422</field>
+			</object>
+		    </field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="531">
+		    <field name="entity">
+			<object ref="42"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="532">
+			    <field name="x">314</field>
+			    <field name="y">341</field>
+			</object>
+		    </field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="533">
+		    <field name="entity">
+			<object ref="132"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="534">
+			    <field name="x">130</field>
+			    <field name="y">222</field>
+			</object>
+		    </field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="535">
+		    <field name="entity">
+			<object ref="69"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="536">
+			    <field name="x">812</field>
+			    <field name="y">460</field>
+			</object>
+		    </field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="537">
+		    <field name="entity">
+			<object ref="113"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="538">
+			    <field name="x">707</field>
+			    <field name="y">172</field>
+			</object>
+		    </field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="539">
+		    <field name="entity">
+			<object ref="55"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="540">
+			    <field name="x">896</field>
+			    <field name="y">391</field>
+			</object>
+		    </field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="541">
+		    <field name="entity">
+			<object ref="17"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="542">
+			    <field name="x">948</field>
+			    <field name="y">128</field>
+			</object>
+		    </field>
+		</object>
+
+		<object type="DiagramEntitySetting" id="543">
+		    <field name="entity">
+			<object ref="131"/>
+		    </field>
+		    <field name="location">
+			<object type="Coordinate" id="544">
+			    <field name="x">117</field>
+			    <field name="y">133</field>
+			</object>
+		    </field>
+		</object>
+		</list>
+	    </field>
+	</object>
+
+	<object type="DiagramSettings" id="545">
+	    <field name="diagramId">
+		<object type="DiagramId" id="546">
+		    <field name="stringId">Scenarios</field>
+		</object>
+	    </field>
+	    <field name="entitySettings"><list>
+		<object type="DiagramEntitySetting" id="547">
+		    <field name="entity">
+			<object type="Scenario" id="548">
 			    <base type="Entity">
 				<field name="name">Escollir visites scenario</field>
 				<field name="description">L'usuari vol escollir les visites que realitzarÃ  durant el viatge</field>
@@ -4325,7 +4616,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 			    <field name="scope">:optional</field>
 			    <field name="context"></field>
 			    <field name="steps"><list>
-				<object type="Step" id="501">
+				<object type="Step" id="549">
 				    <base type="Entity">
 					<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=146&gt;</field>
 					<field name="description">Obté les prioritats de l'usuari segons el tipus de viatge que vol, els dies que hi va i les seves preferències</field>
@@ -4341,7 +4632,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 				    </field>
 				</object>
 
-				<object type="Step" id="502">
+				<object type="Step" id="550">
 				    <base type="Entity">
 					<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=147&gt;</field>
 					<field name="description">Obté una sèrie de visites que s'adeqüen a les restriccions i preferències de l'usuari</field>
@@ -4357,7 +4648,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 				    </field>
 				</object>
 
-				<object type="Step" id="503">
+				<object type="Step" id="551">
 				    <base type="Entity">
 					<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=148&gt;</field>
 					<field name="description">Genera la planificació completa de l'horari</field>
@@ -4365,7 +4656,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 				    </base>
 
 				    <field name="step">
-					<object type="Scenario" id="504">
+					<object type="Scenario" id="552">
 					    <base type="Entity">
 						<field name="name">Organitzar horari scenario</field>
 						<field name="description">S'organitza tota la planificació de les activitats</field>
@@ -4374,7 +4665,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 
 					    <field name="context"></field>
 					    <field name="steps"><list>
-						<object type="Step" id="505">
+						<object type="Step" id="553">
 						    <base type="Entity">
 							<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=169&gt;</field>
 							<field name="description">Es fa una llista ordenada segons les preferències de l'usuari de les activitats pre-seleccinonades</field>
@@ -4392,7 +4683,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 						    </field>
 						</object>
 
-						<object type="Step" id="506">
+						<object type="Step" id="554">
 						    <base type="Entity">
 							<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=170&gt;</field>
 							<field name="description">Es generen una sèrie d'horaris possibles amb les activitats escollides</field>
@@ -4404,7 +4695,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 						    </field>
 						</object>
 
-						<object type="Step" id="507">
+						<object type="Step" id="555">
 						    <base type="Entity">
 							<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=171&gt;</field>
 							<field name="description">S'escull el millor dels possibles horaris</field>
@@ -4423,7 +4714,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 					    </field>
 					    <field name="variation"></field>
 					    <field name="linkedGoals"><list>
-						<object type="Goal" id="508">
+						<object type="Goal" id="556">
 						    <base type="Entity">
 							<field name="name">Organitzar horari</field>
 						    </base>
@@ -4448,7 +4739,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 			    </field>
 			    <field name="variation"></field>
 			    <field name="linkedGoals"><list>
-				<object type="Goal" id="509">
+				<object type="Goal" id="557">
 				    <base type="Entity">
 					<field name="name">Escollir visites</field>
 				    </base>
@@ -4459,16 +4750,16 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 			</object>
 		    </field>
 		    <field name="location">
-			<object type="Coordinate" id="510">
+			<object type="Coordinate" id="558">
 			    <field name="x">556</field>
 			    <field name="y">115</field>
 			</object>
 		    </field>
 		</object>
 
-		<object type="DiagramEntitySetting" id="511">
+		<object type="DiagramEntitySetting" id="559">
 		    <field name="entity">
-			<object type="Scenario" id="512">
+			<object type="Scenario" id="560">
 			    <base type="Entity">
 				<field name="name">Fer profiling dels usuaris scenario</field>
 				<field name="description">Es guarda el perfil dels usuaris, amb els gustos, l'historial i les valoracions.</field>
@@ -4478,7 +4769,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 			    <field name="scope">:optional</field>
 			    <field name="context"></field>
 			    <field name="steps"><list>
-				<object type="Step" id="513">
+				<object type="Step" id="561">
 				    <base type="Entity">
 					<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=126&gt;</field>
 					<field name="description">Es guarda l'historial dels usuaris</field>
@@ -4486,7 +4777,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 				    </base>
 
 				    <field name="step">
-					<object type="Scenario" id="514">
+					<object type="Scenario" id="562">
 					    <base type="Entity">
 						<field name="name">Guardar historial scenario</field>
 						<field name="description">Es guarda l'historial dels usuaris</field>
@@ -4495,7 +4786,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 
 					    <field name="context"></field>
 					    <field name="steps"><list>
-						<object type="Step" id="515">
+						<object type="Step" id="563">
 						    <base type="Entity">
 							<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=165&gt;</field>
 							<field name="description">S'actualitza les estadístiques de l'usuari amb l'historial d'activitats i viatges realitzats</field>
@@ -4514,7 +4805,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 					    </field>
 					    <field name="variation"></field>
 					    <field name="linkedGoals"><list>
-						<object type="Goal" id="516">
+						<object type="Goal" id="564">
 						    <base type="Entity">
 							<field name="name">Guardar historial</field>
 						    </base>
@@ -4530,7 +4821,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 				    </field>
 				</object>
 
-				<object type="Step" id="517">
+				<object type="Step" id="565">
 				    <base type="Entity">
 					<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=127&gt;</field>
 					<field name="description">Es relaciona l'usuari amb altres amb gustos similars</field>
@@ -4538,16 +4829,16 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 				    </base>
 
 				    <field name="step">
-					<object type="Scenario" id="518">
+					<object type="Scenario" id="566">
 					    <base type="Entity">
 						<field name="name">Relacionar usuaris scenario</field>
-						<field name="description">Es relaciona l'usuari amb altres amb gustos similars</field>
+						<field name="description">Es relaciona l'usuari amb altres amb gustos similars, de forma que si una activtat ha agradat a un, el sistema podrà suposar que agradarà a l'altre.</field>
 						<field name="uniqueId">123</field>
 					    </base>
 
 					    <field name="context"></field>
 					    <field name="steps"><list>
-						<object type="Step" id="519">
+						<object type="Step" id="567">
 						    <base type="Entity">
 							<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=163&gt;</field>
 							<field name="description">S'analitzen els altres perfils</field>
@@ -4559,7 +4850,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 						    </field>
 						</object>
 
-						<object type="Step" id="520">
+						<object type="Step" id="568">
 						    <base type="Entity">
 							<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=164&gt;</field>
 							<field name="description">Es relaciona l'usuari amb els perfils amb gustos semblants</field>
@@ -4574,7 +4865,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 					    </field>
 					    <field name="variation"></field>
 					    <field name="linkedGoals"><list>
-						<object type="Goal" id="521">
+						<object type="Goal" id="569">
 						    <base type="Entity">
 							<field name="name">Relacionar usuaris</field>
 						    </base>
@@ -4586,7 +4877,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 				    </field>
 				</object>
 
-				<object type="Step" id="522">
+				<object type="Step" id="570">
 				    <base type="Entity">
 					<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=129&gt;</field>
 					<field name="description">S'obté les valoriacions de les activitats realitzades </field>
@@ -4594,7 +4885,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 				    </base>
 
 				    <field name="step">
-					<object type="Scenario" id="523">
+					<object type="Scenario" id="571">
 					    <base type="Entity">
 						<field name="name">Obtenir valoracions scenario</field>
 						<field name="description">S'obté les valoriacions de les activitats realitzades </field>
@@ -4603,7 +4894,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 
 					    <field name="context"></field>
 					    <field name="steps"><list>
-						<object type="Step" id="524">
+						<object type="Step" id="572">
 						    <base type="Entity">
 							<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=167&gt;</field>
 							<field name="description">Es pregunta la valoració a un usuari d'una activitat realitzada, o d'un allotjament o transport.</field>
@@ -4619,7 +4910,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 						    </field>
 						</object>
 
-						<object type="Step" id="525">
+						<object type="Step" id="573">
 						    <base type="Entity">
 							<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=168&gt;</field>
 							<field name="description">S'actualitzen les estadístiques de l'usuari amb les noves valoracions </field>
@@ -4638,7 +4929,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 					    </field>
 					    <field name="variation"></field>
 					    <field name="linkedGoals"><list>
-						<object type="Goal" id="526">
+						<object type="Goal" id="574">
 						    <base type="Entity">
 							<field name="name">Obtenir valoracions</field>
 						    </base>
@@ -4661,7 +4952,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 			    </field>
 			    <field name="variation"></field>
 			    <field name="linkedGoals"><list>
-				<object type="Goal" id="527">
+				<object type="Goal" id="575">
 				    <base type="Entity">
 					<field name="name">Fer profiling dels usuaris</field>
 				    </base>
@@ -4672,16 +4963,16 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 			</object>
 		    </field>
 		    <field name="location">
-			<object type="Coordinate" id="528">
+			<object type="Coordinate" id="576">
 			    <field name="x">110</field>
 			    <field name="y">556</field>
 			</object>
 		    </field>
 		</object>
 
-		<object type="DiagramEntitySetting" id="529">
+		<object type="DiagramEntitySetting" id="577">
 		    <field name="entity">
-			<object type="Scenario" id="530">
+			<object type="Scenario" id="578">
 			    <base type="Entity">
 				<field name="name">Recomanar llocs scenario</field>
 				<field name="description">Es recomanen possibles viatges o activitats a l'usuari segons el seu perfil</field>
@@ -4690,7 +4981,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 
 			    <field name="context"></field>
 			    <field name="steps"><list>
-				<object type="Step" id="531">
+				<object type="Step" id="579">
 				    <base type="Entity">
 					<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=142&gt;</field>
 					<field name="description">S'obté preferències de l'usuari per tal de poder obtenir resultats més personalitzats segons els gustos i historial de l'usuari.</field>
@@ -4698,7 +4989,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 				    </base>
 
 				    <field name="step">
-					<object type="Scenario" id="532">
+					<object type="Scenario" id="580">
 					    <base type="Entity">
 						<field name="name">Obtenir preferencies scenario</field>
 						<field name="description">S'obté preferències de l'usuari per tal de poder obtenir resultats més personalitzats segons els gustos i historial de l'usuari.</field>
@@ -4707,7 +4998,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 
 					    <field name="context"></field>
 					    <field name="steps"><list>
-						<object type="Step" id="533">
+						<object type="Step" id="581">
 						    <base type="Entity">
 							<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=161&gt;</field>
 							<field name="description">Es consulta l'historial de l'usuari, on surt tots els viatges, activitats realitzades, allotjaments i transports.</field>
@@ -4723,7 +5014,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 						    </field>
 						</object>
 
-						<object type="Step" id="534">
+						<object type="Step" id="582">
 						    <base type="Entity">
 							<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=162&gt;</field>
 							<field name="description">Es consulta les valoracions de l'usuari per totes les activitats realitzades, pels i allotjaments i transports utiltizats.</field>
@@ -4739,7 +5030,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 						    </field>
 						</object>
 
-						<object type="Step" id="535">
+						<object type="Step" id="583">
 						    <base type="Entity">
 							<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=160&gt;</field>
 							<field name="description">Es consulta els viatges d'usuaris que tinguin gustos similars</field>
@@ -4758,7 +5049,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 					    </field>
 					    <field name="variation"></field>
 					    <field name="linkedGoals"><list>
-						<object type="Goal" id="536">
+						<object type="Goal" id="584">
 						    <base type="Entity">
 							<field name="name">Obtenir preferencies</field>
 						    </base>
@@ -4774,7 +5065,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 				    </field>
 				</object>
 
-				<object type="Step" id="537">
+				<object type="Step" id="585">
 				    <base type="Entity">
 					<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=143&gt;</field>
 					<field name="description">Es consulta informació de tots els llocs o activitats que es poden realitzar, per posteriorment comprovar si encaixen amb els gustos de l'usuari</field>
@@ -4786,7 +5077,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 				    </field>
 				</object>
 
-				<object type="Step" id="538">
+				<object type="Step" id="586">
 				    <base type="Entity">
 					<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=144&gt;</field>
 					<field name="description">S'envia la recomanació personalitzada a l'usuari</field>
@@ -4801,7 +5092,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 			    </field>
 			    <field name="variation"></field>
 			    <field name="linkedGoals"><list>
-				<object type="Goal" id="539">
+				<object type="Goal" id="587">
 				    <base type="Entity">
 					<field name="name">Recomanar llocs</field>
 				    </base>
@@ -4812,16 +5103,16 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 			</object>
 		    </field>
 		    <field name="location">
-			<object type="Coordinate" id="540">
+			<object type="Coordinate" id="588">
 			    <field name="x">595</field>
 			    <field name="y">345</field>
 			</object>
 		    </field>
 		</object>
 
-		<object type="DiagramEntitySetting" id="541">
+		<object type="DiagramEntitySetting" id="589">
 		    <field name="entity">
-			<object type="Scenario" id="542">
+			<object type="Scenario" id="590">
 			    <base type="Entity">
 				<field name="name">Efectuar pagament scenario</field>
 				<field name="description"></field>
@@ -4831,7 +5122,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 			    <field name="scope">:optional</field>
 			    <field name="context"></field>
 			    <field name="steps"><list>
-				<object type="Step" id="543">
+				<object type="Step" id="591">
 				    <base type="Entity">
 					<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=178&gt;</field>
 					<field name="description">Accedir al mètode de pagament de l'usuari</field>
@@ -4847,7 +5138,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 				    </field>
 				</object>
 
-				<object type="Step" id="544">
+				<object type="Step" id="592">
 				    <base type="Entity">
 					<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=180&gt;</field>
 					<field name="description">Acceptar la compra a les entitats responsables</field>
@@ -4859,7 +5150,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 				    </field>
 				</object>
 
-				<object type="Step" id="545">
+				<object type="Step" id="593">
 				    <base type="Entity">
 					<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=181&gt;</field>
 					<field name="description">Enviar justificant de compra a l'usuari</field>
@@ -4874,7 +5165,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 			    </field>
 			    <field name="variation"></field>
 			    <field name="linkedGoals"><list>
-				<object type="Goal" id="546">
+				<object type="Goal" id="594">
 				    <base type="Entity">
 					<field name="name">Efectuar pagament</field>
 				    </base>
@@ -4885,28 +5176,28 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 			</object>
 		    </field>
 		    <field name="location">
-			<object type="Coordinate" id="547">
+			<object type="Coordinate" id="595">
 			    <field name="x">565</field>
 			    <field name="y">285</field>
 			</object>
 		    </field>
 		</object>
 
-		<object type="DiagramEntitySetting" id="548">
+		<object type="DiagramEntitySetting" id="596">
 		    <field name="entity">
-			<object ref="532"/>
+			<object ref="580"/>
 		    </field>
 		    <field name="location">
-			<object type="Coordinate" id="549">
+			<object type="Coordinate" id="597">
 			    <field name="x">985</field>
 			    <field name="y">74</field>
 			</object>
 		    </field>
 		</object>
 
-		<object type="DiagramEntitySetting" id="550">
+		<object type="DiagramEntitySetting" id="598">
 		    <field name="entity">
-			<object type="Scenario" id="551">
+			<object type="Scenario" id="599">
 			    <base type="Entity">
 				<field name="name">Gestionar pagaments scenario</field>
 				<field name="description">Procés de gestió de pagaments</field>
@@ -4916,7 +5207,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 			    <field name="scope">:optional</field>
 			    <field name="context"></field>
 			    <field name="steps"><list>
-				<object type="Step" id="552">
+				<object type="Step" id="600">
 				    <base type="Entity">
 					<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=173&gt;</field>
 					<field name="description">S'enviarà una única factura desglossada amb tots els costos del viatge</field>
@@ -4924,7 +5215,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 				    </base>
 
 				    <field name="step">
-					<object type="Scenario" id="553">
+					<object type="Scenario" id="601">
 					    <base type="Entity">
 						<field name="name">Enviar factura (llista costos) scenario</field>
 						<field name="description"></field>
@@ -4933,7 +5224,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 
 					    <field name="context"></field>
 					    <field name="steps"><list>
-						<object type="Step" id="554">
+						<object type="Step" id="602">
 						    <base type="Entity">
 							<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=174&gt;</field>
 							<field name="description">Obtenir les factures de cadascuna de les activitats del viatge i de l'allotjament i del transport</field>
@@ -4945,7 +5236,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 						    </field>
 						</object>
 
-						<object type="Step" id="555">
+						<object type="Step" id="603">
 						    <base type="Entity">
 							<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=175&gt;</field>
 							<field name="description">Enviar una factura amb els costos desglossats de tot el viatge</field>
@@ -4957,7 +5248,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 						    </field>
 						</object>
 
-						<object type="Step" id="556">
+						<object type="Step" id="604">
 						    <base type="Entity">
 							<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=176&gt;</field>
 							<field name="description">Indicar mètode de pagament de l'usuari (manual o automàtic)</field>
@@ -4973,7 +5264,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 						    </field>
 						</object>
 
-						<object type="Step" id="557">
+						<object type="Step" id="605">
 						    <base type="Entity">
 							<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=179&gt;</field>
 							<field name="description">Enviar les dades perquè el client efectui el pagament manualment</field>
@@ -4985,7 +5276,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 						    </field>
 						</object>
 
-						<object type="Step" id="558">
+						<object type="Step" id="606">
 						    <base type="Entity">
 							<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=177&gt;</field>
 							<field name="description">Esperar l'ingrés per part de l'usuari</field>
@@ -5000,7 +5291,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 					    </field>
 					    <field name="variation"></field>
 					    <field name="linkedGoals"><list>
-						<object type="Goal" id="559">
+						<object type="Goal" id="607">
 						    <base type="Entity">
 							<field name="name">Enviar factura (llista costos)</field>
 						    </base>
@@ -5010,9 +5301,13 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 					    </field>
 					</object>
 				    </field>
+				    <field name="dataRead"><list>
+					<object ref="43"/>
+					</list>
+				    </field>
 				</object>
 
-				<object type="Step" id="560">
+				<object type="Step" id="608">
 				    <base type="Entity">
 					<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=109&gt;</field>
 					<field name="description"></field>
@@ -5020,14 +5315,18 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 				    </base>
 
 				    <field name="step">
-					<object ref="542"/>
+					<object ref="590"/>
+				    </field>
+				    <field name="dataRead"><list>
+					<object ref="43"/>
+					</list>
 				    </field>
 				</object>
 				</list>
 			    </field>
 			    <field name="variation"></field>
 			    <field name="linkedGoals"><list>
-				<object type="Goal" id="561">
+				<object type="Goal" id="609">
 				    <base type="Entity">
 					<field name="name">Gestionar pagaments</field>
 				    </base>
@@ -5038,16 +5337,16 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 			</object>
 		    </field>
 		    <field name="location">
-			<object type="Coordinate" id="562">
+			<object type="Coordinate" id="610">
 			    <field name="x">316</field>
 			    <field name="y">251</field>
 			</object>
 		    </field>
 		</object>
 
-		<object type="DiagramEntitySetting" id="563">
+		<object type="DiagramEntitySetting" id="611">
 		    <field name="entity">
-			<object type="Scenario" id="564">
+			<object type="Scenario" id="612">
 			    <base type="Entity">
 				<field name="name">Escollir allotjament i transport scenario</field>
 				<field name="description">L'usuari vol escollir un allotjament i un mÃ¨tode de transport</field>
@@ -5057,7 +5356,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 			    <field name="scope">:optional</field>
 			    <field name="context"></field>
 			    <field name="steps"><list>
-				<object type="Step" id="565">
+				<object type="Step" id="613">
 				    <base type="Entity">
 					<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=149&gt;</field>
 					<field name="description">Es demana les restriccions del viatge a l'usuari (dates, pressupost, localització)</field>
@@ -5069,7 +5368,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 				    </field>
 				</object>
 
-				<object type="Step" id="566">
+				<object type="Step" id="614">
 				    <base type="Entity">
 					<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=150&gt;</field>
 					<field name="description">S'obté preferències de l'usuari per tal de poder obtenir resultats més personalitzats segons els gustos i historial de l'usuari.</field>
@@ -5077,7 +5376,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 				    </base>
 
 				    <field name="step">
-					<object ref="532"/>
+					<object ref="580"/>
 				    </field>
 				    <field name="dataWritten"><list>
 					<object ref="112"/>
@@ -5085,7 +5384,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 				    </field>
 				</object>
 
-				<object type="Step" id="567">
+				<object type="Step" id="615">
 				    <base type="Entity">
 					<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=151&gt;</field>
 					<field name="description">Es consulten tots els allotjaments disponibles que compleixin les restriccions de l'usuari</field>
@@ -5097,7 +5396,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 				    </field>
 				</object>
 
-				<object type="Step" id="568">
+				<object type="Step" id="616">
 				    <base type="Entity">
 					<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=152&gt;</field>
 					<field name="description">Es consulten tots els tipus de transport possibles que compleixin les restriccions de l'usuari</field>
@@ -5109,7 +5408,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 				    </field>
 				</object>
 
-				<object type="Step" id="569">
+				<object type="Step" id="617">
 				    <base type="Entity">
 					<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=153&gt;</field>
 					<field name="description">Es genera una tria d'entre tots els allotjaments i transports possibles, tenint en compte les preferències de l'usuari</field>
@@ -5125,7 +5424,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 				    </field>
 				</object>
 
-				<object type="Step" id="570">
+				<object type="Step" id="618">
 				    <base type="Entity">
 					<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=154&gt;</field>
 					<field name="description">S'informa a l'usuari de la tria</field>
@@ -5140,7 +5439,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 			    </field>
 			    <field name="variation"></field>
 			    <field name="linkedGoals"><list>
-				<object type="Goal" id="571">
+				<object type="Goal" id="619">
 				    <base type="Entity">
 					<field name="name">Escollir allotjament i transport</field>
 				    </base>
@@ -5151,28 +5450,28 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 			</object>
 		    </field>
 		    <field name="location">
-			<object type="Coordinate" id="572">
+			<object type="Coordinate" id="620">
 			    <field name="x">563</field>
 			    <field name="y">55</field>
 			</object>
 		    </field>
 		</object>
 
-		<object type="DiagramEntitySetting" id="573">
+		<object type="DiagramEntitySetting" id="621">
 		    <field name="entity">
-			<object ref="553"/>
+			<object ref="601"/>
 		    </field>
 		    <field name="location">
-			<object type="Coordinate" id="574">
+			<object type="Coordinate" id="622">
 			    <field name="x">556</field>
 			    <field name="y">221</field>
 			</object>
 		    </field>
 		</object>
 
-		<object type="DiagramEntitySetting" id="575">
+		<object type="DiagramEntitySetting" id="623">
 		    <field name="entity">
-			<object type="Scenario" id="576">
+			<object type="Scenario" id="624">
 			    <base type="Entity">
 				<field name="name">Confirmar viatge scenario</field>
 				<field name="description">Confirmació de la planificació</field>
@@ -5182,7 +5481,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 			    <field name="scope">:optional</field>
 			    <field name="context"></field>
 			    <field name="steps"><list>
-				<object type="Step" id="577">
+				<object type="Step" id="625">
 				    <base type="Entity">
 					<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=145&gt;</field>
 					<field name="description">S'envia la planificació detallada generada a l'usuari</field>
@@ -5201,7 +5500,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 			    </field>
 			    <field name="variation"></field>
 			    <field name="linkedGoals"><list>
-				<object type="Goal" id="578">
+				<object type="Goal" id="626">
 				    <base type="Entity">
 					<field name="name">Confirmar viatge</field>
 				    </base>
@@ -5212,28 +5511,28 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 			</object>
 		    </field>
 		    <field name="location">
-			<object type="Coordinate" id="579">
+			<object type="Coordinate" id="627">
 			    <field name="x">554</field>
 			    <field name="y">173</field>
 			</object>
 		    </field>
 		</object>
 
-		<object type="DiagramEntitySetting" id="580">
+		<object type="DiagramEntitySetting" id="628">
 		    <field name="entity">
-			<object ref="504"/>
+			<object ref="552"/>
 		    </field>
 		    <field name="location">
-			<object type="Coordinate" id="581">
+			<object type="Coordinate" id="629">
 			    <field name="x">1043</field>
 			    <field name="y">230</field>
 			</object>
 		    </field>
 		</object>
 
-		<object type="DiagramEntitySetting" id="582">
+		<object type="DiagramEntitySetting" id="630">
 		    <field name="entity">
-			<object type="Scenario" id="583">
+			<object type="Scenario" id="631">
 			    <base type="Entity">
 				<field name="name">Modificar visites scenario</field>
 				<field name="description">Es modificia la planificació quan hi ha hagut algun canvi (activitat modificada o anul·lada</field>
@@ -5243,7 +5542,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 			    <field name="scope">:optional</field>
 			    <field name="context">Canvi en una activitat programada</field>
 			    <field name="steps"><list>
-				<object type="Step" id="584">
+				<object type="Step" id="632">
 				    <base type="Entity">
 					<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=137&gt;</field>
 					<field name="description">Es consulta la planificació abans del canvi per comprovar la validesa</field>
@@ -5259,7 +5558,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 				    </field>
 				</object>
 
-				<object type="Step" id="585">
+				<object type="Step" id="633">
 				    <base type="Entity">
 					<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=134&gt;</field>
 					<field name="description">Es reorganitza la planificació amb els canvis adients</field>
@@ -5267,7 +5566,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 				    </base>
 
 				    <field name="step">
-					<object ref="504"/>
+					<object ref="552"/>
 				    </field>
 				    <field name="dataRead"><list>
 					<object ref="112"/>
@@ -5281,7 +5580,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 				    </field>
 				</object>
 
-				<object type="Step" id="586">
+				<object type="Step" id="634">
 				    <base type="Entity">
 					<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=139&gt;</field>
 					<field name="description">S'informa el canvi a l'usuari</field>
@@ -5296,7 +5595,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 			    </field>
 			    <field name="variation"></field>
 			    <field name="linkedGoals"><list>
-				<object type="Goal" id="587">
+				<object type="Goal" id="635">
 				    <base type="Entity">
 					<field name="name">Modificar visites</field>
 				    </base>
@@ -5307,25 +5606,25 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 			</object>
 		    </field>
 		    <field name="location">
-			<object type="Coordinate" id="588">
+			<object type="Coordinate" id="636">
 			    <field name="x">590</field>
 			    <field name="y">402</field>
 			</object>
 		    </field>
 		</object>
 
-		<object type="DiagramEntitySetting" id="589">
+		<object type="DiagramEntitySetting" id="637">
 		    <field name="entity">
-			<object type="Scenario" id="590">
+			<object type="Scenario" id="638">
 			    <base type="Entity">
 				<field name="name">Organitzar viatge scenario</field>
-				<field name="description">Es planifiquen tots els espectes del viatge (allotjament, transport, activitats, pagaments)</field>
+				<field name="description">Es planifiquen tots els aspectes del viatge (allotjament, transport, activitats, pagaments)</field>
 				<field name="uniqueId">118</field>
 			    </base>
 
 			    <field name="context"></field>
 			    <field name="steps"><list>
-				<object type="Step" id="591">
+				<object type="Step" id="639">
 				    <base type="Entity">
 					<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=120&gt;</field>
 					<field name="description">L'usuari vol escollir un allotjament i un mètode de transport</field>
@@ -5333,11 +5632,19 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 				    </base>
 
 				    <field name="step">
-					<object ref="564"/>
+					<object ref="612"/>
+				    </field>
+				    <field name="dataRead"><list>
+					<object ref="112"/>
+					</list>
+				    </field>
+				    <field name="dataWritten"><list>
+					<object ref="46"/>
+					</list>
 				    </field>
 				</object>
 
-				<object type="Step" id="592">
+				<object type="Step" id="640">
 				    <base type="Entity">
 					<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=121&gt;</field>
 					<field name="description">L'usuari vol escollir les visites que realitzarà  durant el viatge</field>
@@ -5345,11 +5652,23 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 				    </base>
 
 				    <field name="step">
-					<object ref="500"/>
+					<object ref="548"/>
+				    </field>
+				    <field name="dataRead"><list>
+					<object ref="112"/>
+
+					<object ref="70"/>
+					</list>
+				    </field>
+				    <field name="dataWritten"><list>
+					<object ref="70"/>
+
+					<object ref="46"/>
+					</list>
 				    </field>
 				</object>
 
-				<object type="Step" id="593">
+				<object type="Step" id="641">
 				    <base type="Entity">
 					<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=119&gt;</field>
 					<field name="description">Confirmació de la planificació</field>
@@ -5357,11 +5676,15 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 				    </base>
 
 				    <field name="step">
-					<object ref="576"/>
+					<object ref="624"/>
+				    </field>
+				    <field name="dataRead"><list>
+					<object ref="46"/>
+					</list>
 				    </field>
 				</object>
 
-				<object type="Step" id="594">
+				<object type="Step" id="642">
 				    <base type="Entity">
 					<field name="name">&lt;Prometheus unique entity name au.edu.rmit.cs.prometheus.datamodel.jacob.Step ID=122&gt;</field>
 					<field name="description">Procés de gestió de pagaments</field>
@@ -5369,14 +5692,18 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 				    </base>
 
 				    <field name="step">
-					<object ref="551"/>
+					<object ref="599"/>
+				    </field>
+				    <field name="dataRead"><list>
+					<object ref="43"/>
+					</list>
 				    </field>
 				</object>
 				</list>
 			    </field>
 			    <field name="variation"></field>
 			    <field name="linkedGoals"><list>
-				<object type="Goal" id="595">
+				<object type="Goal" id="643">
 				    <base type="Entity">
 					<field name="name">Organitzar viatge</field>
 				    </base>
@@ -5387,338 +5714,47 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 			</object>
 		    </field>
 		    <field name="location">
-			<object type="Coordinate" id="596">
+			<object type="Coordinate" id="644">
 			    <field name="x">113</field>
 			    <field name="y">57</field>
 			</object>
 		    </field>
 		</object>
 
-		<object type="DiagramEntitySetting" id="597">
+		<object type="DiagramEntitySetting" id="645">
 		    <field name="entity">
-			<object ref="514"/>
+			<object ref="562"/>
 		    </field>
 		    <field name="location">
-			<object type="Coordinate" id="598">
+			<object type="Coordinate" id="646">
 			    <field name="x">431</field>
 			    <field name="y">513</field>
 			</object>
 		    </field>
 		</object>
 
-		<object type="DiagramEntitySetting" id="599">
+		<object type="DiagramEntitySetting" id="647">
 		    <field name="entity">
-			<object ref="523"/>
+			<object ref="571"/>
 		    </field>
 		    <field name="location">
-			<object type="Coordinate" id="600">
+			<object type="Coordinate" id="648">
 			    <field name="x">422</field>
 			    <field name="y">592</field>
 			</object>
 		    </field>
 		</object>
 
-		<object type="DiagramEntitySetting" id="601">
+		<object type="DiagramEntitySetting" id="649">
 		    <field name="entity">
-			<object ref="518"/>
+			<object ref="566"/>
 		    </field>
 		    <field name="location">
-			<object type="Coordinate" id="602">
+			<object type="Coordinate" id="650">
 			    <field name="x">422</field>
 			    <field name="y">547</field>
 			</object>
 		    </field>
-		</object>
-		</list>
-	    </field>
-	</object>
-
-	<object type="DiagramSettings" id="603">
-	    <field name="diagramId">
-		<object type="DiagramId" id="604">
-		    <field name="stringId">Agent-Role Coupling</field>
-		</object>
-	    </field>
-	    <field name="entitySettings"><list>
-		<object type="DiagramEntitySetting" id="605">
-		    <field name="entity">
-			<object ref="114"/>
-		    </field>
-		    <field name="location">
-			<object type="Coordinate" id="606">
-			    <field name="x">1013</field>
-			    <field name="y">190</field>
-			</object>
-		    </field>
-		</object>
-
-		<object type="DiagramEntitySetting" id="607">
-		    <field name="entity">
-			<object ref="111"/>
-		    </field>
-		    <field name="location">
-			<object type="Coordinate" id="608">
-			    <field name="x">663</field>
-			    <field name="y">64</field>
-			</object>
-		    </field>
-		</object>
-
-		<object type="DiagramEntitySetting" id="609">
-		    <field name="entity">
-			<object ref="45"/>
-		    </field>
-		    <field name="location">
-			<object type="Coordinate" id="610">
-			    <field name="x">606</field>
-			    <field name="y">367</field>
-			</object>
-		    </field>
-		</object>
-
-		<object type="DiagramEntitySetting" id="611">
-		    <field name="entity">
-			<object ref="22"/>
-		    </field>
-		    <field name="location">
-			<object type="Coordinate" id="612">
-			    <field name="x">433</field>
-			    <field name="y">319</field>
-			</object>
-		    </field>
-		</object>
-
-		<object type="DiagramEntitySetting" id="613">
-		    <field name="entity">
-			<object ref="12"/>
-		    </field>
-		    <field name="location">
-			<object type="Coordinate" id="614">
-			    <field name="x">283</field>
-			    <field name="y">157</field>
-			</object>
-		    </field>
-		</object>
-
-		<object type="DiagramEntitySetting" id="615">
-		    <field name="entity">
-			<object ref="44"/>
-		    </field>
-		    <field name="location">
-			<object type="Coordinate" id="616">
-			    <field name="x">294</field>
-			    <field name="y">422</field>
-			</object>
-		    </field>
-		</object>
-
-		<object type="DiagramEntitySetting" id="617">
-		    <field name="entity">
-			<object ref="42"/>
-		    </field>
-		    <field name="location">
-			<object type="Coordinate" id="618">
-			    <field name="x">314</field>
-			    <field name="y">341</field>
-			</object>
-		    </field>
-		</object>
-
-		<object type="DiagramEntitySetting" id="619">
-		    <field name="entity">
-			<object ref="132"/>
-		    </field>
-		    <field name="location">
-			<object type="Coordinate" id="620">
-			    <field name="x">130</field>
-			    <field name="y">222</field>
-			</object>
-		    </field>
-		</object>
-
-		<object type="DiagramEntitySetting" id="621">
-		    <field name="entity">
-			<object ref="69"/>
-		    </field>
-		    <field name="location">
-			<object type="Coordinate" id="622">
-			    <field name="x">812</field>
-			    <field name="y">460</field>
-			</object>
-		    </field>
-		</object>
-
-		<object type="DiagramEntitySetting" id="623">
-		    <field name="entity">
-			<object ref="113"/>
-		    </field>
-		    <field name="location">
-			<object type="Coordinate" id="624">
-			    <field name="x">707</field>
-			    <field name="y">172</field>
-			</object>
-		    </field>
-		</object>
-
-		<object type="DiagramEntitySetting" id="625">
-		    <field name="entity">
-			<object ref="55"/>
-		    </field>
-		    <field name="location">
-			<object type="Coordinate" id="626">
-			    <field name="x">896</field>
-			    <field name="y">391</field>
-			</object>
-		    </field>
-		</object>
-
-		<object type="DiagramEntitySetting" id="627">
-		    <field name="entity">
-			<object ref="17"/>
-		    </field>
-		    <field name="location">
-			<object type="Coordinate" id="628">
-			    <field name="x">948</field>
-			    <field name="y">128</field>
-			</object>
-		    </field>
-		</object>
-
-		<object type="DiagramEntitySetting" id="629">
-		    <field name="entity">
-			<object ref="131"/>
-		    </field>
-		    <field name="location">
-			<object type="Coordinate" id="630">
-			    <field name="x">117</field>
-			    <field name="y">133</field>
-			</object>
-		    </field>
-		</object>
-		</list>
-	    </field>
-	</object>
-
-	<object type="DiagramSettings" id="631">
-	    <field name="diagramId">
-		<object type="DiagramId" id="632">
-		    <field name="stringId">au.edu.rmit.cs.prometheus.gui.diagram.agentoverview.AgentOverviewDiagramModel(id#112)</field>
-		</object>
-	    </field>
-	    <field name="entitySettings"><list>
-		<object type="DiagramEntitySetting" id="633">
-		    <field name="entity">
-			<object ref="5"/>
-		    </field>
-		    <field name="location">
-			<object type="Coordinate" id="634">
-			    <field name="x">197</field>
-			    <field name="y">25</field>
-			</object>
-		    </field>
-		    <field name="userApproved">:false</field>
-		</object>
-
-		<object type="DiagramEntitySetting" id="635">
-		    <field name="entity">
-			<object ref="39"/>
-		    </field>
-		    <field name="location">
-			<object type="Coordinate" id="636">
-			    <field name="x">189</field>
-			    <field name="y">103</field>
-			</object>
-		    </field>
-		    <field name="userApproved">:false</field>
-		</object>
-
-		<object type="DiagramEntitySetting" id="637">
-		    <field name="entity">
-			<object ref="110"/>
-		    </field>
-		    <field name="location">
-			<object type="Coordinate" id="638">
-			    <field name="x">437</field>
-			    <field name="y">25</field>
-			</object>
-		    </field>
-		    <field name="userApproved">:false</field>
-		</object>
-
-		<object type="DiagramEntitySetting" id="639">
-		    <field name="entity">
-			<object ref="103"/>
-		    </field>
-		    <field name="location">
-			<object type="Coordinate" id="640">
-			    <field name="x">517</field>
-			    <field name="y">25</field>
-			</object>
-		    </field>
-		    <field name="userApproved">:false</field>
-		</object>
-
-		<object type="DiagramEntitySetting" id="641">
-		    <field name="entity">
-			<object ref="109"/>
-		    </field>
-		    <field name="location">
-			<object type="Coordinate" id="642">
-			    <field name="x">357</field>
-			    <field name="y">25</field>
-			</object>
-		    </field>
-		    <field name="userApproved">:false</field>
-		</object>
-
-		<object type="DiagramEntitySetting" id="643">
-		    <field name="entity">
-			<object ref="105"/>
-		    </field>
-		    <field name="location">
-			<object type="Coordinate" id="644">
-			    <field name="x">37</field>
-			    <field name="y">25</field>
-			</object>
-		    </field>
-		</object>
-
-		<object type="DiagramEntitySetting" id="645">
-		    <field name="entity">
-			<object ref="107"/>
-		    </field>
-		    <field name="location">
-			<object type="Coordinate" id="646">
-			    <field name="x">117</field>
-			    <field name="y">25</field>
-			</object>
-		    </field>
-		    <field name="userApproved">:false</field>
-		</object>
-
-		<object type="DiagramEntitySetting" id="647">
-		    <field name="entity">
-			<object ref="108"/>
-		    </field>
-		    <field name="location">
-			<object type="Coordinate" id="648">
-			    <field name="x">74</field>
-			    <field name="y">211</field>
-			</object>
-		    </field>
-		</object>
-
-		<object type="DiagramEntitySetting" id="649">
-		    <field name="entity">
-			<object ref="106"/>
-		    </field>
-		    <field name="location">
-			<object type="Coordinate" id="650">
-			    <field name="x">277</field>
-			    <field name="y">25</field>
-			</object>
-		    </field>
-		    <field name="userApproved">:false</field>
 		</object>
 		</list>
 	    </field>
@@ -5737,8 +5773,8 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 		    </field>
 		    <field name="location">
 			<object type="Coordinate" id="654">
-			    <field name="x">440</field>
-			    <field name="y">44</field>
+			    <field name="x">452</field>
+			    <field name="y">35</field>
 			</object>
 		    </field>
 		</object>
@@ -5765,7 +5801,6 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 			    <field name="y">25</field>
 			</object>
 		    </field>
-		    <field name="userApproved">:false</field>
 		</object>
 
 		<object type="DiagramEntitySetting" id="659">
@@ -6153,35 +6188,35 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 		</list>
 	    </field>
 	    <field name="scenarios"><list>
-		<object ref="564"/>
+		<object ref="612"/>
 
-		<object ref="576"/>
+		<object ref="624"/>
 
-		<object ref="551"/>
-
-		<object ref="542"/>
-
-		<object ref="500"/>
-
-		<object ref="512"/>
-
-		<object ref="583"/>
+		<object ref="599"/>
 
 		<object ref="590"/>
 
-		<object ref="518"/>
+		<object ref="548"/>
 
-		<object ref="523"/>
+		<object ref="560"/>
 
-		<object ref="514"/>
+		<object ref="631"/>
 
-		<object ref="504"/>
+		<object ref="638"/>
 
-		<object ref="530"/>
+		<object ref="566"/>
 
-		<object ref="532"/>
+		<object ref="571"/>
 
-		<object ref="553"/>
+		<object ref="562"/>
+
+		<object ref="552"/>
+
+		<object ref="578"/>
+
+		<object ref="580"/>
+
+		<object ref="601"/>
 		</list>
 	    </field>
 	    <field name="actors"><list>
@@ -6205,7 +6240,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 		    </base>
 
 		    <field name="step">
-			<object ref="551"/>
+			<object ref="599"/>
 		    </field>
 		</object>
 
@@ -6227,19 +6262,19 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 
 		</object>
 
-		<object ref="560"/>
+		<object ref="608"/>
 
-		<object ref="593"/>
+		<object ref="641"/>
 
-		<object ref="591"/>
+		<object ref="639"/>
 
-		<object ref="592"/>
+		<object ref="640"/>
 
-		<object ref="594"/>
+		<object ref="642"/>
 
-		<object ref="513"/>
+		<object ref="561"/>
 
-		<object ref="517"/>
+		<object ref="565"/>
 
 		<object type="Step" id="681">
 		    <base type="Entity">
@@ -6249,11 +6284,11 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 		    </base>
 
 		    <field name="step">
-			<object ref="514"/>
+			<object ref="562"/>
 		    </field>
 		</object>
 
-		<object ref="522"/>
+		<object ref="570"/>
 
 		<object type="Step" id="682">
 		    <base type="Entity">
@@ -6264,7 +6299,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 
 		</object>
 
-		<object ref="585"/>
+		<object ref="633"/>
 
 		<object type="Step" id="683">
 		    <base type="Entity">
@@ -6275,7 +6310,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 
 		</object>
 
-		<object ref="584"/>
+		<object ref="632"/>
 
 		<object type="Step" id="684">
 		    <base type="Entity">
@@ -6289,7 +6324,7 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 		    </field>
 		</object>
 
-		<object ref="586"/>
+		<object ref="634"/>
 
 		<object type="Step" id="685">
 		    <base type="Entity">
@@ -6303,43 +6338,43 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 		    </field>
 		</object>
 
-		<object ref="531"/>
+		<object ref="579"/>
 
-		<object ref="537"/>
+		<object ref="585"/>
 
-		<object ref="538"/>
+		<object ref="586"/>
 
-		<object ref="577"/>
+		<object ref="625"/>
 
-		<object ref="501"/>
+		<object ref="549"/>
 
-		<object ref="502"/>
+		<object ref="550"/>
 
-		<object ref="503"/>
+		<object ref="551"/>
 
-		<object ref="565"/>
+		<object ref="613"/>
 
-		<object ref="566"/>
+		<object ref="614"/>
+
+		<object ref="615"/>
+
+		<object ref="616"/>
+
+		<object ref="617"/>
+
+		<object ref="618"/>
+
+		<object ref="583"/>
+
+		<object ref="581"/>
+
+		<object ref="582"/>
 
 		<object ref="567"/>
 
 		<object ref="568"/>
 
-		<object ref="569"/>
-
-		<object ref="570"/>
-
-		<object ref="535"/>
-
-		<object ref="533"/>
-
-		<object ref="534"/>
-
-		<object ref="519"/>
-
-		<object ref="520"/>
-
-		<object ref="515"/>
+		<object ref="563"/>
 
 		<object type="Step" id="686">
 		    <base type="Entity">
@@ -6352,33 +6387,33 @@ Un cop ha trobat llocs i els ha filtrat segons les preferencies de cada usuari, 
 		    </field>
 		</object>
 
-		<object ref="524"/>
+		<object ref="572"/>
 
-		<object ref="525"/>
+		<object ref="573"/>
 
-		<object ref="505"/>
-
-		<object ref="506"/>
-
-		<object ref="507"/>
-
-		<object ref="552"/>
+		<object ref="553"/>
 
 		<object ref="554"/>
 
 		<object ref="555"/>
 
-		<object ref="556"/>
+		<object ref="600"/>
 
-		<object ref="558"/>
+		<object ref="602"/>
 
-		<object ref="543"/>
+		<object ref="603"/>
 
-		<object ref="557"/>
+		<object ref="604"/>
 
-		<object ref="544"/>
+		<object ref="606"/>
 
-		<object ref="545"/>
+		<object ref="591"/>
+
+		<object ref="605"/>
+
+		<object ref="592"/>
+
+		<object ref="593"/>
 		</list>
 	    </field>
 	    <field name="protocolDistributionPairs"><list>
