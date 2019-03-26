@@ -1,0 +1,88 @@
+
+Aina Garcia
+Martı́ Ramon
+Guillermo Ezcurra
+
+
+
+Correcciones a la primera entrega
+---------------------------------
+
+ANALISIS:
+********
+
+En vuestro analysis overview teneis un actor que llamais perfilador,
+la funcionalidad de crear el perfil del usuario forma parte del sistema,
+no es un actor externo.
+
+En los escenarios, quizas habeis exagerado un poco dividendolos en
+subescenarios y deberiais documentarlos mejor, no tiene sentido tener
+escenarios donde solo hay objetivos y no hay alguna percepcion y/o accion.
+Eso os permitira tambien entender mejor como colabora el sistema con los
+actores externos y que roles forman parte de un escenario.
+
+El diagrama de objetivos me parece bien, pero os falta tener en cuenta que
+las actividades tambien se pueden tener que cambiar por cambios meteorologicos.
+
+Los roles tambien me parecen bien, pero no habeis entendido el papel que tienen
+las percepciones y acciones en el analisis. Las acciones son comunicaciones del
+sistema hacia actores externos y las percepciones son comunicaciones de
+actores externos con el sistema.
+
+ En el rol "gestor d'allotjament i transport", si hay acciones para pedir
+la informacion a actores externos deberia haber una percepcion con la que el
+sistema reciba su respuesta. Tambien tendria mas sentido tener dos roles
+separados ya que son dos tareas bastante independiendes.
+
+Tampoco tendreis percepciones que os indiquen cuando un rol ha acabado su
+trabajo, eso es comportamiento interno del sistema. Esa comunicacion aparece
+o en el diseño arquitectonico si corresponde a comunicacion entre agentes
+o en el diseño detallado si es comunicacion entre planes del agente.
+
+Tambien teneis percepciones que asumo que provienen del agente perfilador que
+deberia ser un rol del sistema.
+
+Tampoco obtendreis una percepcion cuando el usuario acabe su viaje, podeis
+por ejemplo asumir que hay una percepcion periodica que permite poner en marcha
+el rol para que compruebe que viajes se han realizado ya para que pida
+la valoracion y obviamente obtendreis una percepcion del usuario con la
+valoracion.
+
+Igual para con las cancelaciones de eventos (o la parte meteorologica),
+no habra una percepcion asociada y habra que poner en marcha la tarea
+periodicamente para comprobarlo. Una cosa que si podeis hacer es implementar
+los agentes que proveen la informacion para que os permitan suscribiros a
+cambios en los eventos que os dan, pero simplemente estariamos pasando esa
+comprobacion periodica a los agentes externos.
+
+En los roles de pago tambien os faltarian percepciones confirmando los pagos o
+el recibo.
+
+ El rol de planificador de visitas pensad que hace dos cosas distintas, hacer
+una planificacion desde cero y corregir una ya hecha. Podeis tener un rol
+asi, pero luego tened en cuenta en el diseño detallado que tendreis dos
+comportamientos que trabajaran con entradas/percepciones/comunicaciones
+diferentes.
+
+DISEÑO ARQUITECTONICO:
+****************
+
+El diagrama de datos me parece bien, pero seguramente necesitareis detallar un
+poco mas de cara al diseño detallado para saber que guardais en cada fuente
+de datos y si realmente son varias fuentes en lugar de una sola.
+
+El diagrama de agrupacion de roles a agentes, me parece adecuado
+
+El system overview lo debereis retocar para incluir las percepciones de los
+actores externos que os he comentado que os faltan y cambiar las percepciones
+que teneis que realmente corresponde a comunicacion entre agentes si es que
+corresponde a roles que estan en agentes distinto. Si son comunicaciones de
+roles dentro de un agente deberian aparecer en el diseño detallado.
+
+-------------------
+
+
+Vuestro diseño esta bastante bien, corregid lo que os comento y
+podeis seguir trabajando en la siguiente fase.
+
+Si teneis alguna duda preguntadme.
