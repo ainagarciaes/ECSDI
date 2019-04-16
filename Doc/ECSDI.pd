@@ -186,8 +186,8 @@
 															<field name="uniqueId">115</field>
 														    </base>
 
-														    <field name="dataType">schedule viatges</field>
-														    <field name="includedFields"></field>
+														    <field name="dataType">Horari	</field>
+														    <field name="includedFields">Transport, origen final, allotjament, la seva direccio, dates i hores de les activitats, llista d'activitats, data i hora dels vols, direccions de les activitats, etc.</field>
 														    <field name="writtenBy"><list>
 															<object type="Capability" id="19">
 															    <base type="Entity">
@@ -988,9 +988,9 @@ finish</field>
 																																		</base>
 
 																																		<field name="dataType">Dades personals usuaris</field>
-																																		<field name="includedFields"></field>
-																																		<field name="initialisation"></field>
-																																		<field name="writtenWhen"></field>
+																																		<field name="includedFields">nom d'usuari, direcció de mail, metode de pagament (les dades de pagament no es guarden)</field>
+																																		<field name="initialisation">quan l'usuari confirma un viatge indica el nom, mail i metode de pagament per avisar-lo si hi ha contratemps, canvis de planificació i com realitzar els pagaments</field>
+																																		<field name="writtenWhen">usuari nou confirma un nou viatge.</field>
 																																		<field name="externalPath"></field>
 																																	    </object>
 																																	    </list>
@@ -1760,16 +1760,16 @@ finish</field>
 																																				    <field name="uniqueId">117</field>
 																																				</base>
 
-																																				<field name="dataType">visites</field>
-																																				<field name="includedFields"></field>
+																																				<field name="dataType">Informació rellevant sobre les visites.</field>
+																																				<field name="includedFields">Horari d'apertura, localitzacio, preu entrada, tipus d'activitat, descripcio, idioma...</field>
 																																				<field name="readBy"><list>
 																																				    <object ref="32"/>
 
 																																				    <object ref="74"/>
 																																				    </list>
 																																				</field>
-																																				<field name="initialisation"></field>
-																																				<field name="writtenWhen"></field>
+																																				<field name="initialisation">quan s'organitza un viatge, les activitats que no es fan servir finalment es guarden en activitats candidates en cas que necessitem activitats de backup per suplir contratemps.</field>
+																																				<field name="writtenWhen">Quan s'organitza un viatge i es busquen activitats a realitzar.</field>
 																																				<field name="connections"><list>
 																																				    <object type="DataConnection" id="115">
 																																					<base type="Entity">
@@ -2180,8 +2180,8 @@ finish</field>
 																													    <field name="uniqueId">295</field>
 																													</base>
 
-																													<field name="dataType">user data</field>
-																													<field name="includedFields"></field>
+																													<field name="dataType">informacio sobre l'us de l'aplicacio per part del usuari i dels seus gustos		</field>
+																													<field name="includedFields">Historial d'us, llocs visitats, valoracions, comentaris, gustos, preferencies, links a perfils d'usuaris similars.</field>
 																													<field name="writtenBy"><list>
 																													    <object ref="11"/>
 																													    </list>
@@ -2375,8 +2375,8 @@ finish</field>
 																													    <object ref="125"/>
 																													    </list>
 																													</field>
-																													<field name="initialisation"></field>
-																													<field name="writtenWhen"></field>
+																													<field name="initialisation">buida</field>
+																													<field name="writtenWhen">L'usuari valora una recomanacio, valora un lloc visitat, un viatge fet, etc.</field>
 																													<field name="connections"><list>
 																													    <object ref="145"/>
 
@@ -2813,8 +2813,8 @@ finish</field>
 															<object ref="38"/>
 															</list>
 														    </field>
-														    <field name="initialisation"></field>
-														    <field name="writtenWhen"></field>
+														    <field name="initialisation">s¡inicialitza cada fila quan s'organitza un viatge per una persona. Inicialment aquesta esta buida.</field>
+														    <field name="writtenWhen">organitzacio o modificacio d'un viatge.</field>
 														    <field name="connections"><list>
 															<object type="DataConnection" id="159">
 															    <base type="Entity">
@@ -5672,8 +5672,8 @@ finish</field>
 		    </field>
 		    <field name="location">
 			<object type="Coordinate" id="582">
-			    <field name="x">204</field>
-			    <field name="y">265</field>
+			    <field name="x">232</field>
+			    <field name="y">263</field>
 			</object>
 		    </field>
 		</object>
@@ -5720,8 +5720,8 @@ finish</field>
 		    </field>
 		    <field name="location">
 			<object type="Coordinate" id="590">
-			    <field name="x">225</field>
-			    <field name="y">175</field>
+			    <field name="x">258</field>
+			    <field name="y">181</field>
 			</object>
 		    </field>
 		</object>
@@ -5732,8 +5732,8 @@ finish</field>
 		    </field>
 		    <field name="location">
 			<object type="Coordinate" id="592">
-			    <field name="x">225</field>
-			    <field name="y">125</field>
+			    <field name="x">220</field>
+			    <field name="y">133</field>
 			</object>
 		    </field>
 		</object>
