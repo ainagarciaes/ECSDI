@@ -63,10 +63,79 @@ def comunicacion():
     """
     Entrypoint de comunicacion
     """
+
+    def prepare_trip():         
+        # Aqui realizariamos lo que pide la accion
+        # Por ahora simplemente retornamos un Inform
+        t = obtain_transport()
+        h = obtain_hotel()
+        
+        # posar el t i h al graf de resultats com toqui
+        gr = build_message(Graph(),
+            ACL['inform'],
+            sender=InfoAgent.uri,
+            msgcnt=mss_cnt,
+            receiver=msgdic['sender'], )
+        return gr
+
+    def obtain_transport():
+        # ... 
+        # 1. build message
+        m = build_message(Graph(), ACL['request']) #posar params que faltin
+        # 2. send message to the external agent
+        send_message(m, )
+        # 3. get response 
+        # 4. parse response and choose one
+        # 5. return chosen transport
+        return 
+    
+    def obtain_hotel():
+        # ...
+        # 1. build message
+        # 2. send message to the external agent
+        # 3. get response 
+        # 4. parse response and choose one
+        # 5. return chosen transport
+        return
+
     global dsgraph
     global mss_cnt
-    pass
 
+    # crear graf amb el missatge que rebem
+    message = request.args['content']
+    gm = Graph()
+    gm.parse(data=message)
+    
+    msgdic = get_message_properties(gm)
+    
+    # FIPA ACL message?
+    if msgdic is None:      # NO: responem "not understood"
+        gr = build_message(Graph(), ACL['not-understood'], sender=InfoAgent.uri, msgcnt=mss_cnt)
+    else:                   # SI: mirem que demana
+        # Performativa
+        perf = msgdic['performative']
+
+        if perf != ACL.request:
+            # Si no es un request, respondemos que no hemos entendido el mensaje
+            gr = build_message(Graph(), ACL['not-understood'], sender=InfoAgent.uri, msgcnt=mss_cnt)
+        else:
+            # Extraemos el objeto del contenido que ha de ser una accion de la ontologia de acciones del agente
+            # de registro
+
+            # Averiguamos el tipo de la accion
+            if 'content' in msgdic:
+                content = msgdic['content']
+                accion = gm.value(subject=content, predicate=RDF.type)
+
+                if action: #comparar que sigui del tipus d'accio que volem
+                    gr = prepare_trip()
+
+                else:
+                    gr = build_message(Graph(), ACL['not-understood'], sender=InfoAgent.uri, msgcnt=mss_cnt)
+
+    mss_cnt += 1
+
+    return gr.serialize(format='xml')
 
 @app.route("/Stop")
 def stop():
