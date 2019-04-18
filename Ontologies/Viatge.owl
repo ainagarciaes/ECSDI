@@ -15,13 +15,82 @@
         <Class IRI="#Activitat"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Alberg"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Allotjament"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Autobus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Autocar"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Avió"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Casa_rural"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Concert"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cultural"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Dates_obertura"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Edifici_interessant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Esdeveniment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Exposició"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Festa"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Festiva"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Horari_obertura"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hostal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hotel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Lloc_pintoresc"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Localització"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Lúdica"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Metro"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pensió"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Recinte"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Refugi"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Taxi"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Teatre"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Temps"/>
@@ -29,6 +98,131 @@
     <Declaration>
         <Class IRI="#Transport"/>
     </Declaration>
+    <Declaration>
+        <Class IRI="#Vaixell"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Visita_museu"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Àpat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Òpera"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Alberg"/>
+        <Class IRI="#Allotjament"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Autobus"/>
+        <Class IRI="#Transport"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Autocar"/>
+        <Class IRI="#Transport"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Avió"/>
+        <Class IRI="#Transport"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Casa_rural"/>
+        <Class IRI="#Allotjament"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Concert"/>
+        <Class IRI="#Lúdica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cultural"/>
+        <Class IRI="#Activitat"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dates_obertura"/>
+        <Class IRI="#Temps"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Edifici_interessant"/>
+        <Class IRI="#Cultural"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Esdeveniment"/>
+        <Class IRI="#Festiva"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Exposició"/>
+        <Class IRI="#Cultural"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Festa"/>
+        <Class IRI="#Lúdica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Festiva"/>
+        <Class IRI="#Activitat"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Horari_obertura"/>
+        <Class IRI="#Temps"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hostal"/>
+        <Class IRI="#Allotjament"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hotel"/>
+        <Class IRI="#Allotjament"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Lloc_pintoresc"/>
+        <Class IRI="#Festiva"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Lúdica"/>
+        <Class IRI="#Activitat"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Metro"/>
+        <Class IRI="#Transport"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pensió"/>
+        <Class IRI="#Allotjament"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Refugi"/>
+        <Class IRI="#Allotjament"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Taxi"/>
+        <Class IRI="#Transport"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Teatre"/>
+        <Class IRI="#Lúdica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Vaixell"/>
+        <Class IRI="#Transport"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Visita_museu"/>
+        <Class IRI="#Cultural"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Àpat"/>
+        <Class IRI="#Lúdica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Òpera"/>
+        <Class IRI="#Lúdica"/>
+    </SubClassOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Àpat</IRI>
+        <Literal>Fa referència al fet de tenir un sopar o un dinar.</Literal>
+    </AnnotationAssertion>
 </Ontology>
 
 
