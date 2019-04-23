@@ -37,7 +37,7 @@ mss_cnt = 0
 
 # Datos del Agente
 
-AgentePersonal = Agent('AgenteSimple',
+AgenteExternoAlojamiento = Agent('AgenteExternoalojamiento',
                        agn.AgenteSimple,
                        'http://%s:%d/comm' % (hostname, port),
                        'http://%s:%d/Stop' % (hostname, port))
@@ -52,7 +52,7 @@ DirectoryAgent = Agent('DirectoryAgent',
 # Global triplestore graph
 dsgraph = Graph()
 
-cola1 = Queue()
+cola1 = Queue() # crec que aixo no ens cal per ara pero ho deixo por si acaso
 
 # Flask stuff
 app = Flask(__name__)
@@ -69,11 +69,11 @@ def comunicacion():
 
         #posar al content la busqueda del que ens demanen
 
-        gr = build_message(content,
+        gr = build_message(Graph(),
             ACL['inform'],
             sender=InfoAgent.uri,
             msgcnt=mss_cnt,
-            receiver=msgdic['sender'], )
+            receiver=msgdic['sender'], content = content)
         return gr
 
     global dsgraph
@@ -87,7 +87,7 @@ def comunicacion():
     msgdic = get_message_properties(gm)
     
     # FIPA ACL message?
-    if msgdic is None:      # NO: responem "not understood"
+    if msgdic is None:      # NO: responem "not understood" i un graph de contingut buit
         gr = build_message(Graph(), ACL['not-understood'], sender=InfoAgent.uri, msgcnt=mss_cnt)
     else:                   # SI: mirem que demana
         # Performativa
@@ -146,6 +146,7 @@ def agentbehavior1(cola):
 
 if __name__ == '__main__':
     # Ponemos en marcha los behaviors
+    # no se de que serveix pero suposo que anira sol i ya
     ab1 = Process(target=agentbehavior1, args=(cola1,))
     ab1.start()
 
