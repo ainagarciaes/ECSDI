@@ -65,14 +65,14 @@ def comunicacion():
     """
 
     def find_available_options():         
-        content = Graph()
+        content = Graph() # TODO crec que el content es un graph tambe de rdf, preguntar si eso
 
         #posar al content la busqueda del que ens demanen
-        gr = build_message(content,
+        gr = build_message(Graph(),
             ACL['inform'],
             sender=InfoAgent.uri,
             msgcnt=mss_cnt,
-            receiver=msgdic['sender'], )
+            receiver=msgdic['sender'], content = content)
         return gr
 
     global dsgraph
@@ -102,7 +102,7 @@ def comunicacion():
             # Averiguamos el tipo de la accion
             if 'content' in msgdic:
                 content = msgdic['content']
-                accion = gm.value(subject=content, predicate=RDF.type)
+                accion = gm.value(subject=content, predicate=RDF.type) # TODO preguntar com va aixo
 
                 if action: #comparar que sigui del tipus d'accio que volem
                     gr = find_available_options()

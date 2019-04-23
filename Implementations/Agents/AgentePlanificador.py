@@ -70,13 +70,9 @@ def comunicacion():
         t = obtain_transport()
         h = obtain_hotel()
         
-        # posar el t i h al graf de resultats com toqui
-        gr = build_message(Graph(),
-            ACL['inform'],
-            sender=InfoAgent.uri,
-            msgcnt=mss_cnt,
-            receiver=msgdic['sender'], )
-        return gr
+        content = Graph() # posar el t i h al graf de resultats com toqui
+
+        return content
 
     def obtain_transport():
         # ... 
@@ -92,7 +88,9 @@ def comunicacion():
     def obtain_hotel():
         # ...
         # 1. build message
+        m = build_message(Graph(), ACL['request']) #posar params que faltin
         # 2. send message to the external agent
+        send_message(m, )
         # 3. get response 
         # 4. parse response and choose one
         # 5. return chosen transport
@@ -128,7 +126,7 @@ def comunicacion():
                 accion = gm.value(subject=content, predicate=RDF.type)
 
                 if action: #comparar que sigui del tipus d'accio que volem
-                    gr = prepare_trip()
+                    graph_content = prepare_trip()
 
                 else:
                     gr = build_message(Graph(), ACL['not-understood'], sender=InfoAgent.uri, msgcnt=mss_cnt)
