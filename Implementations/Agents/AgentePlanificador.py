@@ -36,7 +36,6 @@ agn = Namespace("http://www.agentes.org#")
 mss_cnt = 0
 
 # Datos del Agente
-
 AgentePersonal = Agent('AgenteSimple',
                        agn.AgenteSimple,
                        'http://%s:%d/comm' % (hostname, port),
@@ -127,6 +126,7 @@ def comunicacion():
 
                 if action: #comparar que sigui del tipus d'accio que volem
                     graph_content = prepare_trip()
+                    gr = build_message(Graph(), ACL['inform'], sender=InfoAgent.uri, msgcnt=mss_cnt, content = graph_content)
 
                 else:
                     gr = build_message(Graph(), ACL['not-understood'], sender=InfoAgent.uri, msgcnt=mss_cnt)
