@@ -6,7 +6,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge">
-    <Prefix name="" IRI="http://www.semanticweb.org/guille/ontologies/2019/3/untitled-ontology-5"/>
+    <Prefix name="" IRI="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
@@ -25,13 +25,16 @@
         <Class IRI="#Allotjament"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Apat"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Autobus"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Autocar"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Avió"/>
+        <Class IRI="#Avio"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Casa_rural"/>
@@ -52,7 +55,7 @@
         <Class IRI="#Esdeveniment"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Exposició"/>
+        <Class IRI="#Exposicio"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Festa"/>
@@ -73,10 +76,10 @@
         <Class IRI="#Lloc_pintoresc"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Localització"/>
+        <Class IRI="#Localitzacio"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Lúdica"/>
+        <Class IRI="#Ludica"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Metro"/>
@@ -85,7 +88,10 @@
         <Class IRI="#Municipi"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Pensió"/>
+        <Class IRI="#Opera"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pensio"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Recinte"/>
@@ -110,12 +116,6 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Visita_museu"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Àpat"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Òpera"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#es_troba_a"/>
@@ -138,13 +138,20 @@
     <Declaration>
         <DataProperty IRI="#Nom"/>
     </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Disco"/>
+    </Declaration>
     <SubClassOf>
         <Class IRI="#Adreça"/>
-        <Class IRI="#Localització"/>
+        <Class IRI="#Localitzacio"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Alberg"/>
         <Class IRI="#Allotjament"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Apat"/>
+        <Class IRI="#Ludica"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Autobus"/>
@@ -155,7 +162,7 @@
         <Class IRI="#Transport"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Avió"/>
+        <Class IRI="#Avio"/>
         <Class IRI="#Transport"/>
     </SubClassOf>
     <SubClassOf>
@@ -164,7 +171,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Concert"/>
-        <Class IRI="#Lúdica"/>
+        <Class IRI="#Ludica"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Cultural"/>
@@ -183,12 +190,12 @@
         <Class IRI="#Festiva"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Exposició"/>
+        <Class IRI="#Exposicio"/>
         <Class IRI="#Cultural"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Festa"/>
-        <Class IRI="#Lúdica"/>
+        <Class IRI="#Ludica"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Festiva"/>
@@ -211,7 +218,7 @@
         <Class IRI="#Festiva"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Lúdica"/>
+        <Class IRI="#Ludica"/>
         <Class IRI="#Activitat"/>
     </SubClassOf>
     <SubClassOf>
@@ -220,10 +227,14 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Municipi"/>
-        <Class IRI="#Localització"/>
+        <Class IRI="#Localitzacio"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Pensió"/>
+        <Class IRI="#Opera"/>
+        <Class IRI="#Ludica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pensio"/>
         <Class IRI="#Allotjament"/>
     </SubClassOf>
     <SubClassOf>
@@ -236,7 +247,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Teatre"/>
-        <Class IRI="#Lúdica"/>
+        <Class IRI="#Ludica"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Vaixell"/>
@@ -246,14 +257,10 @@
         <Class IRI="#Visita_museu"/>
         <Class IRI="#Cultural"/>
     </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Àpat"/>
-        <Class IRI="#Lúdica"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Òpera"/>
-        <Class IRI="#Lúdica"/>
-    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Recinte"/>
+        <NamedIndividual IRI="#Disco"/>
+    </ClassAssertion>
     <InverseObjectProperties>
         <ObjectProperty IRI="#es_troba_a"/>
         <ObjectProperty IRI="#hi_trobem"/>
@@ -268,7 +275,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hi_trobem"/>
-        <Class IRI="#Localització"/>
+        <Class IRI="#Localitzacio"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#obre_els_dies"/>
@@ -288,7 +295,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#es_troba_a"/>
-        <Class IRI="#Localització"/>
+        <Class IRI="#Localitzacio"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hi_trobem"/>
@@ -338,13 +345,13 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Localització</IRI>
-        <Literal>Fa referència a un lloc.</Literal>
+        <IRI>#Apat</IRI>
+        <Literal>Fa referència al fet de tenir un sopar o un dinar.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Àpat</IRI>
-        <Literal>Fa referència al fet de tenir un sopar o un dinar.</Literal>
+        <IRI>#Localitzacio</IRI>
+        <Literal>Fa referència a un lloc.</Literal>
     </AnnotationAssertion>
 </Ontology>
 
