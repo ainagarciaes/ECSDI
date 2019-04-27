@@ -65,7 +65,7 @@ def comunicacion():
     """
 
     def find_available_options():         
-        content = Graph() # TODO crec que el content es un graph tambe de rdf, preguntar si eso
+        content = Graph() 
 
         #posar al content la busqueda del que ens demanen
         gr = build_message(Graph(),

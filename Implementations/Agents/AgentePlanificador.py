@@ -78,7 +78,7 @@ def comunicacion():
         # 1. build message
         m = build_message(Graph(), ACL['request']) #posar params que faltin
         # 2. send message to the external agent
-        send_message(m, )
+        gr = send_message(m, )
         # 3. get response 
         # 4. parse response and choose one
         # 5. return chosen transport
