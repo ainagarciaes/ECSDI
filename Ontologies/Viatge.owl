@@ -1,11 +1,12 @@
 <?xml version="1.0"?>
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
-     xml:base="http://www.semanticweb.org/guille/ontologies/2019/3/untitled-ontology-5"
+     xml:base="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="http://www.semanticweb.org/guille/ontologies/2019/3/untitled-ontology-5">
+     ontologyIRI="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge">
+    <Prefix name="" IRI="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
@@ -15,10 +16,16 @@
         <Class IRI="#Activitat"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Adreça"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Alberg"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Allotjament"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Apat"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Autobus"/>
@@ -27,7 +34,7 @@
         <Class IRI="#Autocar"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Avió"/>
+        <Class IRI="#Avio"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Casa_rural"/>
@@ -48,7 +55,7 @@
         <Class IRI="#Esdeveniment"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Exposició"/>
+        <Class IRI="#Exposicio"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Festa"/>
@@ -69,16 +76,22 @@
         <Class IRI="#Lloc_pintoresc"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Localització"/>
+        <Class IRI="#Localitzacio"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Lúdica"/>
+        <Class IRI="#Ludica"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Metro"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Pensió"/>
+        <Class IRI="#Municipi"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Opera"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pensio"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Recinte"/>
@@ -105,14 +118,40 @@
         <Class IRI="#Visita_museu"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Àpat"/>
+        <ObjectProperty IRI="#es_troba_a"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Òpera"/>
+        <ObjectProperty IRI="#hi_trobem"/>
     </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#obre_els_dies"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#obre_les_hores"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#se_celebra_a"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#s&apos;hi_celebra"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Nom"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Disco"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Adreça"/>
+        <Class IRI="#Localitzacio"/>
+    </SubClassOf>
     <SubClassOf>
         <Class IRI="#Alberg"/>
         <Class IRI="#Allotjament"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Apat"/>
+        <Class IRI="#Ludica"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Autobus"/>
@@ -123,7 +162,7 @@
         <Class IRI="#Transport"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Avió"/>
+        <Class IRI="#Avio"/>
         <Class IRI="#Transport"/>
     </SubClassOf>
     <SubClassOf>
@@ -132,7 +171,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Concert"/>
-        <Class IRI="#Lúdica"/>
+        <Class IRI="#Ludica"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Cultural"/>
@@ -151,12 +190,12 @@
         <Class IRI="#Festiva"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Exposició"/>
+        <Class IRI="#Exposicio"/>
         <Class IRI="#Cultural"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Festa"/>
-        <Class IRI="#Lúdica"/>
+        <Class IRI="#Ludica"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Festiva"/>
@@ -179,7 +218,7 @@
         <Class IRI="#Festiva"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Lúdica"/>
+        <Class IRI="#Ludica"/>
         <Class IRI="#Activitat"/>
     </SubClassOf>
     <SubClassOf>
@@ -187,7 +226,15 @@
         <Class IRI="#Transport"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Pensió"/>
+        <Class IRI="#Municipi"/>
+        <Class IRI="#Localitzacio"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Opera"/>
+        <Class IRI="#Ludica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pensio"/>
         <Class IRI="#Allotjament"/>
     </SubClassOf>
     <SubClassOf>
@@ -200,7 +247,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Teatre"/>
-        <Class IRI="#Lúdica"/>
+        <Class IRI="#Ludica"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Vaixell"/>
@@ -210,18 +257,101 @@
         <Class IRI="#Visita_museu"/>
         <Class IRI="#Cultural"/>
     </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Àpat"/>
-        <Class IRI="#Lúdica"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Òpera"/>
-        <Class IRI="#Lúdica"/>
-    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Recinte"/>
+        <NamedIndividual IRI="#Disco"/>
+    </ClassAssertion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#es_troba_a"/>
+        <ObjectProperty IRI="#hi_trobem"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#s&apos;hi_celebra"/>
+        <ObjectProperty IRI="#s&apos;hi_celebra"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#es_troba_a"/>
+        <Class IRI="#Allotjament"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hi_trobem"/>
+        <Class IRI="#Localitzacio"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#obre_els_dies"/>
+        <Class IRI="#Allotjament"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#obre_les_hores"/>
+        <Class IRI="#Allotjament"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#se_celebra_a"/>
+        <Class IRI="#Activitat"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#s&apos;hi_celebra"/>
+        <Class IRI="#Recinte"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#es_troba_a"/>
+        <Class IRI="#Localitzacio"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hi_trobem"/>
+        <Class IRI="#Allotjament"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#obre_els_dies"/>
+        <Class IRI="#Dates_obertura"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#obre_les_hores"/>
+        <Class IRI="#Horari_obertura"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#se_celebra_a"/>
+        <Class IRI="#Recinte"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#s&apos;hi_celebra"/>
+        <Class IRI="#Activitat"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Nom"/>
+        <Class IRI="#Allotjament"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Nom"/>
+        <Class IRI="#Municipi"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Nom"/>
+        <Class IRI="#Recinte"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#Nom"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Àpat</IRI>
+        <IRI>#Activitat</IRI>
+        <Literal>Aquesta classe inclou el concepte d&apos;activitat dividit per tipus d&apos;activitat que en són subclasses.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Allotjament</IRI>
+        <Literal>Aquesta classe defineix la mena de llocs on es pot allotjar un usuari en la seva estància.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Apat</IRI>
         <Literal>Fa referència al fet de tenir un sopar o un dinar.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Localitzacio</IRI>
+        <Literal>Fa referència a un lloc.</Literal>
     </AnnotationAssertion>
 </Ontology>
 
