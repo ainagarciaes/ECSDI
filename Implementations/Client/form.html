@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<body>
+    <h1>Trip organizer</h1>
+    <form action="http://localhost/cgi-bin/client.py">
+        <h3>Trip data</h3>
+        <b>Departure city:<br></b>
+        <select name="departurecity" size="4">
+            <option value="bcn">Barcelona</option>
+            <option value="budapest">Budapest</option>
+            <option value="miami">Miami</option>
+            <option value="tokyo">Tokyo</option>
+        </select><br><br>
+        <b>Arrival city:<br></b>
+        <select name="arrivalcity" size="4">
+            <option value="bcn">Barcelona</option>
+            <option value="budapest">Budapest</option>
+            <option value="miami">Miami</option>
+            <option value="tokyo">Tokyo</option>
+        </select><br><br>
+        <b>Departure date: <br></b>
+        <input name="departuredate" type="date"><br><br>
+        <b>Return date: <br></b>
+        <input name="returndate" type="date"><br><br>
+        <b>Number of travelers:<br></b>
+        <input name="numtrav" type="number" min="1" max="10"><br><br>
+        <b>Total budget: <br></b>
+        <input name="budget" type="number" min="0"><br><br>
+
+        <h3>Preferences</h3>
+        <b>Accomodation: <br></b>
+        Hotel - Apartment <br>
+        <input name="hotelapartm" type="range" min="1" max="10"><br><br>
+        Centric - Outskirts<br>
+        <input name="centric" type="range" min="1" max="10"><br><br>
+
+        <b>Transport: <br></b>
+        Bus/car - Plane<br>
+        <input name="busplane" type="range" min="1" max="10"><br><br>
+
+        <b>Tipus de viatge: <br></b>
+        Poc festiu - Molt festiu<br>
+        <input name="festiu" type="range" min="1" max="10"><br><br>
+        Molt ludic - Poc lúdic<br>
+        <input name="ludic" type="range" min="1" max="10"><br><br>
+        Molt cultural - Poc cultural<br>
+        <input name="cultural" type="range" min="1" max="10"><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>
