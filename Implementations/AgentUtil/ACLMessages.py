@@ -14,7 +14,8 @@ from rdflib import Graph
 import requests
 from rdflib.namespace import RDF
 
-from AgentUtil.OntoNamespaces import ACL
+#from AgentUtil.OntoNamespaces import ACL
+from OntoNamespaces import ACL
 
 
 def build_message(gmess, perf, sender=None, receiver=None,  content=None, msgcnt= 0):

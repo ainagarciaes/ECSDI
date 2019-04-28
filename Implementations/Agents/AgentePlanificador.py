@@ -16,12 +16,18 @@ Asume que el agente de registro esta en el puerto 9000
 
 from multiprocessing import Process, Queue
 import socket
+import sys
+import os
+
+sys.path.append(os.path.relpath("../AgentUtil"))
 
 from rdflib import Namespace, Graph
 from flask import Flask
 
-from AgentUtil.FlaskServer import shutdown_server
-from AgentUtil.Agent import Agent
+from FlaskServer import shutdown_server
+from Agent import Agent
+from ACLMessages import build_message, send_message
+from OntoNamespaces import ACL, DSO
 
 __author__ = 'javier'
 
@@ -36,8 +42,8 @@ agn = Namespace("http://www.agentes.org#")
 mss_cnt = 0
 
 # Datos del Agente
-AgentePersonal = Agent('AgenteSimple',
-                       agn.AgenteSimple,
+AgentePlanificador = Agent('AgentePlanificador',
+                       agn.AgentePlanificador,
                        'http://%s:%d/comm' % (hostname, port),
                        'http://%s:%d/Stop' % (hostname, port))
 
@@ -63,6 +69,7 @@ def comunicacion():
     Entrypoint de comunicacion
     """
 
+    print("I ENTER HERE")
     def prepare_trip():         
         # Aqui realizariamos lo que pide la accion
         # Por ahora simplemente retornamos un Inform
