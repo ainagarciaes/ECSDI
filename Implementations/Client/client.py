@@ -21,6 +21,7 @@ from OntoNamespaces import ACL, DSO
 
 print("Content-Type: text/html")     # HTML is following
 print()                               # blank line, end of headers
+
 import cgitb
 cgitb.enable()
 
@@ -35,59 +36,7 @@ AgentePlanificador = Agent('AgentePlanificador',
                        'http://%s:%d/comm' % (hostname, port),
                        'http://%s:%d/Stop' % (hostname, port))
 
-# llegim el formulari
-form = cgi.FieldStorage()
-
-# Restriccions
-dep_city = form.getfirst("departurecity", "").upper()
-arr_city = form.getfirst("arrivalcity", "").upper()
-
-dep_date = form.getfirst("departuredate", "")
-ret_date = form.getfirst("returndate", "")
-
-num_trav = form.getfirst("numtrav", "")
-
-total_budget = form.getfirst("budget", "")
-
-# this is a relative split, to calculate total budget for each part do: 
-# totalbudget * ponderation / sum of all ponderations 
-transport_budget = form.getfirst("transportbudget", "")
-accomodation_budget = form.getfirst("accomodationbudget", "")
-activities_budget = form.getfirst("activitiesbudget", "")
-
-# Preferencies
-hotel_vs_apartament = form.getfirst("hotelapartm", "")
-centric_vs_outskirts = form.getfirst("centric", "")
-
-bus_vs_plane = form.getfirst("busplane", "")
-
-festiu = form.getfirst("festiu", "")
-ludic = form.getfirst("ludic", "")
-cultural = form.getfirst("cultural", "")
-
-# create graph according to the ontology
-content_graph = Graph()
-
-# building an ACL message
-gr = build_message(Graph(), ACL['request'], AgentePlanificador.uri, AgentePlanificador.uri, content_graph, 0)
-
-# sending the message to the agent 
-res = send_message(gr, AgentePlanificador.address)
-
-# decoding the ACL return message
-
-# printing the output
-print (dep_city, arr_city, dep_date, ret_date, num_trav, total_budget, transport_budget, accomodation_budget, activities_budget,hotel_vs_apartament, bus_vs_plane, festiu, ludic, cultural)
-
-
-hostname = "localhost"
-port = "8000"
-
-# dades del agent
-AgentePlanificador = Agent('AgentePlanificador',
-                       agn.AgentePlanificador,
-                       'http://%s:%d/comm' % (hostname, port),
-                       'http://%s:%d/Stop' % (hostname, port))
+Client = Agent('Client', agn.Client, '', '')
 
 # llegim el formulari
 form = cgi.FieldStorage()
@@ -123,7 +72,7 @@ cultural = form.getfirst("cultural", "")
 content_graph = Graph()
 
 # building an ACL message
-gr = build_message(Graph(), ACL['request'], "", AgentePlanificador.uri, content_graph, 0)
+gr = build_message(Graph(), perf=ACL.request, sender=Client.uri, msgcnt=0)
 
 # sending the message to the agent 
 res = send_message(gr, AgentePlanificador.address)
@@ -132,3 +81,4 @@ res = send_message(gr, AgentePlanificador.address)
 
 # printing the output
 print (dep_city, arr_city, dep_date, ret_date, num_trav, total_budget, transport_budget, accomodation_budget, activities_budget,hotel_vs_apartament, bus_vs_plane, festiu, ludic, cultural)
+

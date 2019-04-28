@@ -52,11 +52,13 @@ def send_message(gmess, address):
     un grafo RDF
     """
     msg = gmess.serialize(format='xml')
-    r = requests.get(address, params={'content': msg})
-
-    # Procesa la respuesta y la retorna como resultado como grafo
     gr = Graph()
-    gr.parse(data=r.text)
+    try:
+        r = requests.get(address, params={'content': msg})
+        # Procesa la respuesta y la retorna como resultado como grafo
+        gr.parse(data=r.text)
+    except requests.exceptions.ConnectionError:
+        print( "Connection refused" )
 
     return gr
 

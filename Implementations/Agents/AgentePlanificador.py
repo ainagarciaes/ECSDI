@@ -22,18 +22,19 @@ import os
 sys.path.append(os.path.relpath("../AgentUtil"))
 
 from rdflib import Namespace, Graph
-from flask import Flask
+from flask import Flask, request
 
 from FlaskServer import shutdown_server
 from Agent import Agent
-from ACLMessages import build_message, send_message
+from ACLMessages import build_message, send_message, get_message_properties
 from OntoNamespaces import ACL, DSO
 
 __author__ = 'javier'
 
 
 # Configuration stuff
-hostname = socket.gethostname()
+#hostname = socket.gethostname()
+hostname = "localhost"
 port = 8000
 
 agn = Namespace("http://www.agentes.org#")
@@ -61,6 +62,10 @@ cola1 = Queue()
 
 # Flask stuff
 app = Flask(__name__)
+
+@app.route("/")
+def testing():
+    return "testing connection"
 
 
 @app.route("/comm")
@@ -112,16 +117,18 @@ def comunicacion():
     
     msgdic = get_message_properties(gm)
     
+    gr = Graph()
+
     # FIPA ACL message?
     if msgdic is None:      # NO: responem "not understood"
-        gr = build_message(Graph(), ACL['not-understood'], sender=InfoAgent.uri, msgcnt=mss_cnt)
+        gr = build_message(Graph(), ACL['not-understood'], sender=AgentePlanificador.uri, msgcnt=mss_cnt)
     else:                   # SI: mirem que demana
         # Performativa
         perf = msgdic['performative']
 
         if perf != ACL.request:
             # Si no es un request, respondemos que no hemos entendido el mensaje
-            gr = build_message(Graph(), ACL['not-understood'], sender=InfoAgent.uri, msgcnt=mss_cnt)
+            gr = build_message(Graph(), ACL['not-understood'], sender=AgentePlanificador.uri, msgcnt=mss_cnt)
         else:
             # Extraemos el objeto del contenido que ha de ser una accion de la ontologia de acciones del agente
             # de registro
@@ -130,13 +137,13 @@ def comunicacion():
             if 'content' in msgdic:
                 content = msgdic['content']
                 accion = gm.value(subject=content, predicate=RDF.type)
-
+                print("JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ")
                 if action: #comparar que sigui del tipus d'accio que volem
                     graph_content = prepare_trip()
-                    gr = build_message(Graph(), ACL['inform'], sender=InfoAgent.uri, msgcnt=mss_cnt, content = graph_content)
+                    gr = build_message(Graph(), ACL['inform'], sender=AgentePlanificador.uri, msgcnt=mss_cnt, content = graph_content)
 
                 else:
-                    gr = build_message(Graph(), ACL['not-understood'], sender=InfoAgent.uri, msgcnt=mss_cnt)
+                    gr = build_message(Graph(), ACL['not-understood'], sender=AgentePlanificador.uri, msgcnt=mss_cnt)
 
     mss_cnt += 1
 
@@ -177,7 +184,7 @@ if __name__ == '__main__':
     ab1.start()
 
     # Ponemos en marcha el servidor
-    app.run(host=hostname, port=port)
+    app.run(host="localhost", port=8000)
 
     # Esperamos a que acaben los behaviors
     ab1.join()
