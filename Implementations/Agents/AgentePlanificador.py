@@ -82,7 +82,7 @@ def comunicacion():
         h = obtain_hotel()
         
         content = Graph() # posar el t i h al graf de resultats com toqui
-
+        content = t + h #TODO preguntar
         return content
 
     def obtain_transport():
@@ -137,7 +137,7 @@ def comunicacion():
             if 'content' in msgdic:
                 content = msgdic['content']
                 accion = gm.value(subject=content, predicate=RDF.type)
-                print("JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ")
+                print(action)
                 if action: #comparar que sigui del tipus d'accio que volem
                     graph_content = prepare_trip()
                     gr = build_message(Graph(), ACL['inform'], sender=AgentePlanificador.uri, msgcnt=mss_cnt, content = graph_content)

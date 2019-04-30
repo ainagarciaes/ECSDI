@@ -17,7 +17,7 @@ from flask import Flask
 from FlaskServer import shutdown_server
 from Agent import Agent
 from ACLMessages import build_message, send_message
-from OntoNamespaces import ACL, DSO
+from OntoNamespaces import ACL, DSO, RDF
 
 print("Content-Type: text/html")     # HTML is following
 print()                               # blank line, end of headers
@@ -68,11 +68,17 @@ festiu = form.getfirst("festiu", "")
 ludic = form.getfirst("ludic", "")
 cultural = form.getfirst("cultural", "")
 
-# create graph according to the ontology
+# create graph
 content_graph = Graph()
 
+# bind the ontology used (onto1 for the request)
+content_graph.Bind('nomonto', "nom ontologia")
+
+content_graph.add((AgentePlanificador.uri, RDF.type, "nom ontologia.'Organize-trip'"))
+# add all parameters according to the ontology
+
 # building an ACL message
-gr = build_message(Graph(), perf=ACL.request, sender=Client.uri, msgcnt=0)
+gr = build_message(Graph(), perf=ACL.request, sender=Client.uri, msgcnt=0, content=content_graph)
 
 # sending the message to the agent 
 res = send_message(gr, AgentePlanificador.address)
