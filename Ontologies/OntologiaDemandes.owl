@@ -6,7 +6,213 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12"/>
+    <owl:Ontology rdf:about="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12">
+        <rdfs:comment xml:lang="ca">En aquesta ontologia hi haurà representats els conceptes que definiran les diferents coses que demanarà el sistema.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Ciutat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Ciutat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Restriccions"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Restriccions_hotels"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Consultar_hotels -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Consultar_hotels"/>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Consultar_transports -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Consultar_transports"/>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Data_final -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Data_final">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Restriccions"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Restriccions_hotels"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Restriccions_transports"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Data_inici -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Data_inici">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Restriccions"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Restriccions_hotels"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Restriccions_transports"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Destí -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Destí">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Restriccions"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Restriccions_transports"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Localitzacio -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Localitzacio">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Preferencies"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Preferencies_hotels"/>
+        <rdfs:comment>Preferència que ens indica on volem que estigui situat el notre hotel, al centre, rodalies, un barri concret, etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#NumPersones -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#NumPersones">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Restriccions"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Restriccions_hotels"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Restriccions_transports"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Origen -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Origen">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Restriccions"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Restriccions_transports"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Planificar_viatge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Planificar_viatge"/>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Popularitat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Popularitat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Preferencies"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Preferencies_hotels"/>
+        <rdfs:comment>Preferència que serveix per a indicar si volem que el nostre allotjament sigui molt conegut o poc conegut.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Preferencies -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Preferencies">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Planificar_viatge"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Preferencies_hotels -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Preferencies_hotels">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Consultar_hotels"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Preferencies_transports -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Preferencies_transports">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Consultar_transports"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Preu -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Preu">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Restriccions"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Restriccions_hotels"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Restriccions_transports"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Restriccions -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Restriccions">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Planificar_viatge"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Restriccions_hotels -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Restriccions_hotels">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Consultar_hotels"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Restriccions_transports -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Restriccions_transports">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Consultar_transports"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Tipus_habitacio -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Tipus_habitacio">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Preferencies"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Preferencies_hotels"/>
+        <rdfs:comment>Preferència que indica si volem una habitacio d&apos;un tipus determinat. (Suite, individual, doble, adaptada)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Tipus_seient -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Tipus_seient">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Preferencies"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Preferencies_transports"/>
+        <rdfs:comment>Preferència que indica quina mena de seient volem en cas de triar un transport amb diversos tipus de seients. (Primera classe, baix cost, etc.)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Tipus_transport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Tipus_transport">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Preferencies"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Preferencies_transports"/>
+        <rdfs:comment>Indicar el transport preferible per al viatge.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Tipus_d&apos;estada -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Tipus_d&apos;estada">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Preferencies"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/untitled-ontology-12#Preferencies_hotels"/>
+        <rdfs:comment>Preferència per a indicar quina mena d&apos;estada volem en un hotel. (Pensió completa, mitja pensió, només pernoctació, etc.)</rdfs:comment>
+    </owl:Class>
 </rdf:RDF>
 
 
