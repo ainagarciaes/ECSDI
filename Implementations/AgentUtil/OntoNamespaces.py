@@ -41,3 +41,6 @@ DSO = Namespace('http://www.semanticweb.org/directory-service-ontology#')
 # Ontologia de viatges
 VIA = Namespace('http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#')
 
+#Ontologia comunicacio entre agents
+DEM = Namespace('http://www.semanticweb.org/guille/ontologies/2019/4/OntologiaDemandes#')
+
