@@ -27,7 +27,7 @@ from flask import Flask, request
 from FlaskServer import shutdown_server
 from Agent import Agent
 from ACLMessages import build_message, send_message, get_message_properties
-from OntoNamespaces import ACL, DSO
+from OntoNamespaces import ACL, DSO, RDF, DEM, VIA
 
 __author__ = 'javier'
 
@@ -73,8 +73,6 @@ def comunicacion():
     """
     Entrypoint de comunicacion
     """
-
-    print("I ENTER HERE")
     def prepare_trip():         
         # Aqui realizariamos lo que pide la accion
         # Por ahora simplemente retornamos un Inform
@@ -137,12 +135,14 @@ def comunicacion():
             if 'content' in msgdic:
                 content = msgdic['content']
                 accion = gm.value(subject=content, predicate=RDF.type)
-                print(action)
-                if action: #comparar que sigui del tipus d'accio que volem
+                
+                if accion == DEM.Planificar_viatge : #comparar que sigui del tipus d'accio que volem
+                    print("\n" + accion + "\n")
+                    """
                     graph_content = prepare_trip()
-                    gr = build_message(Graph(), ACL['inform'], sender=AgentePlanificador.uri, msgcnt=mss_cnt, content = graph_content)
-
+                    gr = build_message(graph_content, ACL['inform'], sender=AgentePlanificador.uri, msgcnt=mss_cnt, content = VIA.Viatge)
                 else:
+                    """
                     gr = build_message(Graph(), ACL['not-understood'], sender=AgentePlanificador.uri, msgcnt=mss_cnt)
 
     mss_cnt += 1

@@ -12,12 +12,13 @@ import os
 sys.path.append(os.path.relpath("/home/auri/Documents/UNI/ECSDI/Implementations/AgentUtil"))
 
 from rdflib import Namespace, Graph
+from rdflib.namespace import FOAF, RDF
 from flask import Flask
 
 from FlaskServer import shutdown_server
 from Agent import Agent
 from ACLMessages import build_message, send_message
-from OntoNamespaces import ACL, DSO, RDF
+from OntoNamespaces import ACL, DSO, RDF, DEM, VIA
 
 print("Content-Type: text/html")     # HTML is following
 print()                               # blank line, end of headers
@@ -72,14 +73,17 @@ cultural = form.getfirst("cultural", "")
 content_graph = Graph()
 
 # bind the ontology used (onto1 for the request)
-content_graph.Bind('nomonto', "nom ontologia")
+content_graph.bind('dem', DEM)
 
-content_graph.add((AgentePlanificador.uri, RDF.type, "nom ontologia.'Organize-trip'"))
+viatge_obj = agn['viatge']
+
+content_graph.add((viatge_obj, RDF.type, DEM.Planificar_viatge))
+
 # add all parameters according to the ontology
 
+gr = Graph()
 # building an ACL message
-gr = build_message(Graph(), perf=ACL.request, sender=Client.uri, msgcnt=0, content=content_graph)
-
+gr = build_message(content_graph, perf=ACL.request, sender=Client.uri, msgcnt=0, receiver=AgentePlanificador.uri, content=viatge_obj)
 # sending the message to the agent 
 res = send_message(gr, AgentePlanificador.address)
 
