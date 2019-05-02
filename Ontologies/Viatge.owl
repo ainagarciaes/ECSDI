@@ -127,6 +127,9 @@
         <Class IRI="#Vaixell"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Viatge"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Visisbilitat"/>
     </Declaration>
     <Declaration>
@@ -160,12 +163,20 @@
         <NamedIndividual IRI="#Disco"/>
     </Declaration>
     <SubClassOf>
+        <Class IRI="#Activitat"/>
+        <Class IRI="#Viatge"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Adreça"/>
         <Class IRI="#Localitzacio"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Alberg"/>
         <Class IRI="#Allotjament"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Allotjament"/>
+        <Class IRI="#Viatge"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Apat"/>
@@ -244,8 +255,16 @@
         <Class IRI="#Festiva"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Localitzacio"/>
+        <Class IRI="#Viatge"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Ludica"/>
         <Class IRI="#Activitat"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Meteorologia"/>
+        <Class IRI="#Viatge"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Metro"/>
@@ -264,6 +283,10 @@
         <Class IRI="#Allotjament"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Recinte"/>
+        <Class IRI="#Viatge"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Refugi"/>
         <Class IRI="#Allotjament"/>
     </SubClassOf>
@@ -278,6 +301,14 @@
     <SubClassOf>
         <Class IRI="#Temperatura"/>
         <Class IRI="#Meteorologia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Temps"/>
+        <Class IRI="#Viatge"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Transport"/>
+        <Class IRI="#Viatge"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Vaixell"/>
