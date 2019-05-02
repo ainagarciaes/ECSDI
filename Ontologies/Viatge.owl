@@ -55,6 +55,9 @@
         <Class IRI="#Esdeveniment"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Estat_del_cel"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Exposicio"/>
     </Declaration>
     <Declaration>
@@ -73,6 +76,9 @@
         <Class IRI="#Hotel"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Humitat"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Lloc_pintoresc"/>
     </Declaration>
     <Declaration>
@@ -80,6 +86,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Ludica"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Meteorologia"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Metro"/>
@@ -106,6 +115,9 @@
         <Class IRI="#Teatre"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Temperatura"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Temps"/>
     </Declaration>
     <Declaration>
@@ -115,7 +127,13 @@
         <Class IRI="#Vaixell"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Visisbilitat"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Visita_museu"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#dades_meteorologiques_de"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#es_troba_a"/>
@@ -190,6 +208,10 @@
         <Class IRI="#Festiva"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Estat_del_cel"/>
+        <Class IRI="#Meteorologia"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Exposicio"/>
         <Class IRI="#Cultural"/>
     </SubClassOf>
@@ -212,6 +234,10 @@
     <SubClassOf>
         <Class IRI="#Hotel"/>
         <Class IRI="#Allotjament"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Humitat"/>
+        <Class IRI="#Meteorologia"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Lloc_pintoresc"/>
@@ -250,8 +276,16 @@
         <Class IRI="#Ludica"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Temperatura"/>
+        <Class IRI="#Meteorologia"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Vaixell"/>
         <Class IRI="#Transport"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Visisbilitat"/>
+        <Class IRI="#Meteorologia"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Visita_museu"/>
@@ -269,6 +303,10 @@
         <ObjectProperty IRI="#s&apos;hi_celebra"/>
         <ObjectProperty IRI="#s&apos;hi_celebra"/>
     </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#dades_meteorologiques_de"/>
+        <Class IRI="#Meteorologia"/>
+    </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#es_troba_a"/>
         <Class IRI="#Allotjament"/>
@@ -293,6 +331,10 @@
         <ObjectProperty IRI="#s&apos;hi_celebra"/>
         <Class IRI="#Recinte"/>
     </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#dades_meteorologiques_de"/>
+        <Class IRI="#Municipi"/>
+    </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#es_troba_a"/>
         <Class IRI="#Localitzacio"/>
