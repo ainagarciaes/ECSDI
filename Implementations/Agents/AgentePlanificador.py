@@ -54,6 +54,15 @@ DirectoryAgent = Agent('DirectoryAgent',
                        'http://%s:9000/Register' % hostname,
                        'http://%s:9000/Stop' % hostname)
 
+AgenteTransporte = Agent('AgenteTransporte',
+                       agn.AgenteTransporte,
+                       'http://%s:%d/comm' % ("localhost", 8081),
+                       'http://%s:%d/Stop' % ("localhost", 8081))
+
+AgenteAlojamiento = Agent('AgenteAlojamiento',
+                       agn.AgenteAlojamiento,
+                       'http://%s:%d/comm' % ("localhost", 8080),
+                       'http://%s:%d/Stop' % ("localhost", 8080))
 
 # Global triplestore graph
 dsgraph = Graph()
@@ -116,13 +125,14 @@ def comunicacion():
         content_transport.add((restr_transport_obj, DEM.Data_final, Literal(data_final)))
         content_transport.add((restr_transport_obj, DEM.Origen, Literal(origen)))
         content_transport.add((restr_transport_obj, DEM.Desti, Literal(desti)))
-        #data1
-        #data2
+        content_transport.add((restr_transport_obj, DEM.NumPersones, Literal(n_pers)))
 
         # 2. build && send message to the external agent
-        # m = build_message(content_transport, ACL['request']) #posar params que faltin
-        # gr = send_message(m, )
-        # 3. get response 
+        mss_cnt += 1
+        gr = build_message(content_transport, perf=ACL.request, sender=AgentePlanificador.uri, msgcnt=mss_cnt, receiver=AgenteTransporte.uri, content=consultar_transport_obj)
+        res = send_message(gr, AgenteTransporte.address)
+
+        # 3. get response
         # 4. parse response and choose one
         # 5. return chosen transport
         return 
@@ -131,12 +141,29 @@ def comunicacion():
         # 0. extract parameters from the initial request
         obj_restriccions_allotjament = gm.value(subject=obj_restriccions, predicate=DEM.Restriccions_hotels)
         preu_allotjament = gm.value(subject=obj_restriccions_allotjament, predicate=DEM.Preu)
+        
+        # 1. build graph
+        content_allotjament = Graph()
+        content_allotjament.bind('dem', DEM)
 
-        print(preu_allotjament)
-        # 1. build message
-        #m = build_message(Graph(), ACL['request']) #posar params que faltin
-        # 2. send message to the external agent
-        #send_message(m, )
+        consultar_allotjament_obj = DEM.Consultar_hotels + '_cons_hotels'
+        restr_allotjament_obj = DEM.Restriccions_hotels
+        pref_allotjament_obj = DEM.Preferencies_hotels
+
+        content_allotjament.add((consultar_allotjament_obj, RDF.type, DEM.Consultar_hotels))
+        content_allotjament.add((consultar_allotjament_obj, DEM.Restriccions_hotels, restr_allotjament_obj))
+        content_allotjament.add((consultar_allotjament_obj, DEM.Preferencies_hotels, pref_allotjament_obj))
+
+        content_allotjament.add((restr_allotjament_obj, DEM.Preu, Literal(preu_allotjament)))
+        content_allotjament.add((restr_allotjament_obj, DEM.Data_inici, Literal(data_inici)))
+        content_allotjament.add((restr_allotjament_obj, DEM.Data_final, Literal(data_final)))
+        content_allotjament.add((restr_allotjament_obj, DEM.Ciutat, Literal(origen)))
+        content_allotjament.add((restr_allotjament_obj, DEM.NumPersones, Literal(n_pers)))
+
+        # 2. build && send message to the external agent
+        mss_cnt += 1
+        gr = build_message(content_allotjament, perf=ACL.request, sender=AgentePlanificador.uri, msgcnt=mss_cnt, receiver=AgenteAlojamiento.uri, content=consultar_allotjament_obj)
+        res = send_message(gr, AgenteAlojamiento.address)
         # 3. get response 
         # 4. parse response and choose one
         # 5. return chosen transport
