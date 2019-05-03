@@ -1,10 +1,3 @@
----
-title: Primera fase d'implementació
-tags: [ECSDI]
-created: '2019-05-02T16:26:09.255Z'
-modified: '2019-05-03T14:19:38.833Z'
----
-
 # Primera fase d'implementació
 
 L'objectiu d'aquesta primera fase d'implementació és programar el software que farà de client del nostre sistema, l'agent planificador que busca un hotel i un mitjà de transport i els agents externs de búsqueda de transport i hotel. També tenim com objectiu fer la interface del client i jocs de prova pels agents externs. Actualment s'executa tot des d'una mateixa màquina però més endavant posarem opcions de configuració per tal de poder canviar les ips i ports de les ocnfiguracions dels servidors dels agents.
