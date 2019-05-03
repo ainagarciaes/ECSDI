@@ -164,6 +164,7 @@ def comunicacion():
         mss_cnt += 1
         gr = build_message(content_allotjament, perf=ACL.request, sender=AgentePlanificador.uri, msgcnt=mss_cnt, receiver=AgenteAlojamiento.uri, content=consultar_allotjament_obj)
         res = send_message(gr, AgenteAlojamiento.address)
+        
         # 3. get response 
         # 4. parse response and choose one
         # 5. return chosen transport
