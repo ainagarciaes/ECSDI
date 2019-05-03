@@ -21,7 +21,7 @@ import os
 
 sys.path.append(os.path.relpath("../AgentUtil"))
 
-from rdflib import Namespace, Graph
+from rdflib import Namespace, Graph, Literal
 from flask import Flask, request
 
 from FlaskServer import shutdown_server
@@ -73,33 +73,70 @@ def comunicacion():
     """
     Entrypoint de comunicacion
     """
-    def prepare_trip():         
+    def prepare_trip():        
+        obj_restriccions = gm.value(subject=content, predicate=DEM.Restriccions)
+        data_inici = gm.value(subject=obj_restriccions, predicate=DEM.Data_inici)
+        data_final = gm.value(subject=obj_restriccions, predicate=DEM.Data_final)
+        n_pers = gm.value(subject=obj_restriccions, predicate=DEM.NumPersones)
+        origen = gm.values(subject=obj_restriccions, predicate=DEM.Origen)
+        desti = gm.values(subject=obj_restriccions, predicate=DEM.Desti)
+
+        obj_preferencies = gm.value(subject=content, predicate=DEM.Restriccions)
+ 
         # Aqui realizariamos lo que pide la accion
         # Por ahora simplemente retornamos un Inform
-        t = obtain_transport()
-        h = obtain_hotel()
-        
+        #t = obtain_transport()
+        #h = obtain_hotel() -> ha de retornar el graph pero per testejar de moment no retorno res
+        obtain_transport()
+        obtain_hotel()
         content = Graph() # posar el t i h al graf de resultats com toqui
-        content = t + h #TODO preguntar
+        #content.bind('via', VIA)
+
         return content
 
     def obtain_transport():
-        # ... 
-        # 1. build message
-        m = build_message(Graph(), ACL['request']) #posar params que faltin
-        # 2. send message to the external agent
-        gr = send_message(m, )
+        # 0. extract parameters from the initial request
+        obj_restriccions_transport = gm.value(subject=obj_restriccions, predicate=DEM.Restriccions_transports)
+        preu_transport = gm.value(subject=obj_restriccions_transport, predicate=DEM.Preu)
+
+        # 1. build graph
+        content_transport = Graph()
+        content_transport.bind('dem', DEM)
+
+        consultar_transport_obj = DEM.Consultar_transports + '_cons_transp'
+        restr_transport_obj = DEM.Restriccions_transports
+        pref_transport_obj = DEM.Preferencies_transports
+
+        content_transport.add((consultar_transport_obj, RDF.type, DEM.Consultar_transports))
+        content_transport.add((consultar_transport_obj, DEM.Restriccions_transports, restr_transport_obj))
+        content_transport.add((consultar_transport_obj, DEM.Preferencies_transports, pref_transport_obj))
+
+        content_transport.add((restr_transport_obj, DEM.Preu, Literal(preu_transport)))
+        content_transport.add((restr_transport_obj, DEM.Data_inici, Literal(data_inici)))
+        content_transport.add((restr_transport_obj, DEM.Data_final, Literal(data_final)))
+        content_transport.add((restr_transport_obj, DEM.Origen, Literal(origen)))
+        content_transport.add((restr_transport_obj, DEM.Desti, Literal(desti)))
+        #data1
+        #data2
+
+        # 2. build && send message to the external agent
+        # m = build_message(content_transport, ACL['request']) #posar params que faltin
+        # gr = send_message(m, )
         # 3. get response 
         # 4. parse response and choose one
         # 5. return chosen transport
         return 
     
     def obtain_hotel():
-        # ...
+        # 0. extract parameters from the initial request
+        obj_restriccions_allotjament = gm.value(subject=obj_restriccions, predicate=DEM.Restriccions_hotels)
+        preu_allotjament = gm.value(subject=obj_restriccions_allotjament, predicate=DEM.Preu)
+
+        print(preu_allotjament)
         # 1. build message
-        m = build_message(Graph(), ACL['request']) #posar params que faltin
+        #m = build_message(Graph(), ACL['request']) #posar params que faltin
         # 2. send message to the external agent
-        send_message(m, )
+        #send_message(m, )
         # 3. get response 
         # 4. parse response and choose one
         # 5. return chosen transport
@@ -136,10 +173,10 @@ def comunicacion():
                 content = msgdic['content']
                 accion = gm.value(subject=content, predicate=RDF.type)
                 
+
                 if accion == DEM.Planificar_viatge : #comparar que sigui del tipus d'accio que volem
-                    print("\n" + accion + "\n")
-                    """
                     graph_content = prepare_trip()
+                    """
                     gr = build_message(graph_content, ACL['inform'], sender=AgentePlanificador.uri, msgcnt=mss_cnt, content = VIA.Viatge)
                 else:
                     """

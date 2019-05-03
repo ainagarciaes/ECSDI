@@ -11,7 +11,7 @@ import os
 
 sys.path.append(os.path.relpath("/home/auri/Documents/UNI/ECSDI/Implementations/AgentUtil"))
 
-from rdflib import Namespace, Graph
+from rdflib import Namespace, Graph, Literal
 from rdflib.namespace import FOAF, RDF
 from flask import Flask
 
@@ -21,7 +21,7 @@ from ACLMessages import build_message, send_message
 from OntoNamespaces import ACL, DSO, RDF, DEM, VIA
 
 print("Content-Type: text/html")     # HTML is following
-print()                               # blank line, end of headers
+print()                              # blank line, end of headers
 
 import cgitb
 cgitb.enable()
@@ -51,13 +51,20 @@ ret_date = form.getfirst("returndate", "")
 
 num_trav = form.getfirst("numtrav", "")
 
-total_budget = form.getfirst("budget", "")
+total_budget = int(form.getfirst("budget", ""))
 
 # this is a relative split, to calculate total budget for each part do: 
 # totalbudget * ponderation / sum of all ponderations 
-transport_budget = form.getfirst("transportbudget", "")
-accomodation_budget = form.getfirst("accomodationbudget", "")
-activities_budget = form.getfirst("activitiesbudget", "")
+transport_budget = int(form.getfirst("transportbudget", ""))
+accomodation_budget = int(form.getfirst("accomodationbudget", ""))
+activities_budget = int(form.getfirst("activitiesbudget", ""))
+
+total_reparticio = transport_budget + accomodation_budget + activities_budget
+
+# total budget calculation
+transport_budget = int(total_budget * transport_budget / total_reparticio)
+accomodation_budget = int(total_budget * accomodation_budget / total_reparticio)
+activities_budget = int(total_budget * activities_budget / total_reparticio)
 
 # Preferencies
 hotel_vs_apartament = form.getfirst("hotelapartm", "")
@@ -76,14 +83,38 @@ content_graph = Graph()
 content_graph.bind('dem', DEM)
 
 viatge_obj = agn['viatge']
+restr_obj = DEM.Restriccions + '_restriccions'   #URI a la classe restriccions, dins tindrà els parametres definits a la ontologia
+pref_obj = DEM.Preferencies + '_preferencies'    #Same per preferencies
 
+# creem base del graph, tipus viatge obj amb restriccions i preferencies
 content_graph.add((viatge_obj, RDF.type, DEM.Planificar_viatge))
+content_graph.add((viatge_obj, DEM.Restriccions, restr_obj))
+content_graph.add((viatge_obj, DEM.Preferencies, pref_obj))
 
-# add all parameters according to the ontology
+# passem les restriccions al graph
+content_graph.add((restr_obj, DEM.Preu, Literal(total_budget)))
+content_graph.add((restr_obj, DEM.Origen, Literal(dep_city)))
+content_graph.add((restr_obj, DEM.Desti, Literal(arr_city)))
+content_graph.add((restr_obj, DEM.NumPersones, Literal(num_trav)))
+content_graph.add((restr_obj, DEM.Data_final, Literal(ret_date)))
+content_graph.add((restr_obj, DEM.Data_inici, Literal(dep_date)))
+
+# passem les preferencies al graph
+restr_allotjament_obj = DEM.Restriccions_hotels + '_restriccions_hotels'        # URIS
+restr_transport_obj = DEM.Restriccions_transports + '_restriccions_transports'  # URIS
+
+# fix this, not in the ontology
+content_graph.add((restr_obj, DEM.Restriccions_hotels, restr_allotjament_obj))
+content_graph.add((restr_obj, DEM.Restriccions_transports, restr_transport_obj))
+
+content_graph.add((restr_allotjament_obj, DEM.Preu, Literal(accomodation_budget)))
+content_graph.add((restr_transport_obj, DEM.Preu, Literal(transport_budget)))
+#TODO finish this with the rest of the restrictions
 
 gr = Graph()
 # building an ACL message
 gr = build_message(content_graph, perf=ACL.request, sender=Client.uri, msgcnt=0, receiver=AgentePlanificador.uri, content=viatge_obj)
+
 # sending the message to the agent 
 res = send_message(gr, AgentePlanificador.address)
 
