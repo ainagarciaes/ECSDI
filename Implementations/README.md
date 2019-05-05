@@ -68,4 +68,5 @@ $ python3 AgenteExternoAlojamiento[Stub].py
 ```
 Obrir _form.html_ al navegador habitual, omplir el formulari i apretar el botó de _Submit_.
 ## Repartició del treball
-//TODO
+* Client & AgentePlanificador - Aina
+* Agentes Externos & Stubs - Guille, Marti
