@@ -17,10 +17,12 @@ Asume que el agente de registro esta en el puerto 9000
 from multiprocessing import Process, Queue
 import socket
 
-from rdflib import Namespace, Graph
+from rdflib import Namespace, Graph, Literal
 from flask import Flask
 
 from AgentUtil.FlaskServer import shutdown_server
+from ACLMessages import build_message, send_message, get_message_properties
+from OntoNamespaces import ACL, DSO, RDF, DEM, VIA
 from AgentUtil.Agent import Agent
 
 __author__ = 'javier'
@@ -28,7 +30,7 @@ __author__ = 'javier'
 
 # Configuration stuff
 hostname = socket.gethostname()
-port = 8080
+port = 8081
 
 agn = Namespace("http://www.agentes.org#")
 
@@ -37,8 +39,8 @@ mss_cnt = 0
 
 # Datos del Agente
 
-AgenteExternoAlojamiento = Agent('AgenteExternoalojamiento',
-                       agn.AgenteSimple,
+AgentTransport = Agent('AgenteTransport',
+                       agn.AgentTransport,
                        'http://%s:%d/comm' % (hostname, port),
                        'http://%s:%d/Stop' % (hostname, port))
 
@@ -48,11 +50,16 @@ DirectoryAgent = Agent('DirectoryAgent',
                        'http://%s:9000/Register' % hostname,
                        'http://%s:9000/Stop' % hostname)
 
+AgentePlanificador = Agent('AgentePlanificador',
+                       agn.AgentePlanificador,
+                       'http://%s:%d/comm' % ("localhost", 8000),
+                       'http://%s:%d/Stop' % ("localhost", 8000))
+
 
 # Global triplestore graph
 dsgraph = Graph()
 
-cola1 = Queue() # crec que aixo no ens cal per ara pero ho deixo por si acaso
+cola1 = Queue()
 
 # Flask stuff
 app = Flask(__name__)
@@ -64,16 +71,15 @@ def comunicacion():
     Entrypoint de comunicacion
     """
 
-    def find_available_options():         
+    def find_available_options():
         content = Graph()
-
+        content.add
         #posar al content la busqueda del que ens demanen
-
-        gr = build_message(Graph(),
+        gr = build_message(content,
             ACL['inform'],
-            sender=InfoAgent.uri,
+            sender=AgentTransport.uri,
             msgcnt=mss_cnt,
-            receiver=msgdic['sender'], content = content)
+            receiver=msgdic['sender'], content = VIA)
         return gr
 
     global dsgraph
@@ -83,11 +89,11 @@ def comunicacion():
     message = request.args['content']
     gm = Graph()
     gm.parse(data=message)
-    
+
     msgdic = get_message_properties(gm)
-    
+
     # FIPA ACL message?
-    if msgdic is None:      # NO: responem "not understood" i un graph de contingut buit
+    if msgdic is None:      # NO: responem "not understood"
         gr = build_message(Graph(), ACL['not-understood'], sender=InfoAgent.uri, msgcnt=mss_cnt)
     else:                   # SI: mirem que demana
         # Performativa
@@ -103,7 +109,7 @@ def comunicacion():
             # Averiguamos el tipo de la accion
             if 'content' in msgdic:
                 content = msgdic['content']
-                accion = gm.value(subject=content, predicate=RDF.type)
+                accion = gm.value(subject=content, predicate=RDF.type) # TODO preguntar com va aixo
 
                 if action: #comparar que sigui del tipus d'accio que volem
                     gr = find_available_options()
@@ -114,6 +120,7 @@ def comunicacion():
     mss_cnt += 1
 
     return gr.serialize(format='xml')
+
 
 @app.route("/Stop")
 def stop():
@@ -146,7 +153,6 @@ def agentbehavior1(cola):
 
 if __name__ == '__main__':
     # Ponemos en marcha los behaviors
-    # no se de que serveix pero suposo que anira sol i ya
     ab1 = Process(target=agentbehavior1, args=(cola1,))
     ab1.start()
 
@@ -156,5 +162,3 @@ if __name__ == '__main__':
     # Esperamos a que acaben los behaviors
     ab1.join()
     print('The End')
-
-

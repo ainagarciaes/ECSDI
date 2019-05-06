@@ -20,7 +20,7 @@ L'objectiu d'aquesta primera fase d'implementació és programar el software que
   ```
 
 
-## Estat actual del software 
+## Estat actual del software
 + **form.html** acabat i testejat
 + **client.py** envia correctament al agent planificador, de moment no fa res amb la resposta
 + **AgentPlanificador.py** envia correctament al agent de transport i allotjament, pendent de que estiguin fets per poder treballar amb la resposta i l'algoritme decisor
@@ -34,12 +34,12 @@ Primer de tot cal tenir instal·lat apache2 al ordinador.
 ```
 $ sudo apt-get update
 $ sudo apt-get install apache2
-``` 
+```
 Es possible que no tinguis instal·lada la llibreria `cgi` per python3, que és la que fem servir pel client. Si no està instal·lada cal fer.
 ```
 $ pip3 install cgi
 ```
-Baixar-se el repositori del github. 
+Baixar-se el repositori del github.
 ```
 $ git clone https://github.com/ainagarciaes/ECSDI.git
 ```
@@ -49,21 +49,21 @@ $ unzip -v ECSDI.zip
 ```
 Crear un softlink de cgi.load desde `/etc/apache2/mods-available` a `/etc/apache2/mods-enabled`
 ```
-$ ln -s /etc/apache2/mods-available/cgi.load /etc/apache2/mods-enabled/cgi.load 
-``` 
+$ ln -s /etc/apache2/mods-available/cgi.load /etc/apache2/mods-enabled/cgi.load
+```
 Crear un hardlink de `client.py` fins a `/usr/lib/cgi-bin/`
 ```
 $ ln client.py /usr/lib/cgi-bin/client.py
 ```
 
-Reiniciar el servidor apache 
+Reiniciar el servidor apache
 ```
 $ sudo service apache2 restart
 ```
 Executar els agents en terminals separats des de `/ECSDI/Implementacions/Agents`.
 ```
 $ python3 AgentePlanificador.py
-$ python3 AgenteExternoTransporte[Stub].py 
+$ python3 AgenteExternoTransporte[Stub].py
 $ python3 AgenteExternoAlojamiento[Stub].py
 ```
 Obrir _form.html_ al navegador habitual, omplir el formulari i apretar el botó de _Submit_.
