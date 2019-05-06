@@ -1,10 +1,20 @@
 <?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
      xml:base="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge">
     <Prefix name="" IRI="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
@@ -151,13 +161,10 @@
         <ObjectProperty IRI="#obre_les_hores"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#se_celebra_a"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#s&apos;hi_celebra"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#Nom"/>
+        <ObjectProperty IRI="#se_celebra_a"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Disco"/>
@@ -327,12 +334,12 @@
         <NamedIndividual IRI="#Disco"/>
     </ClassAssertion>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#es_troba_a"/>
         <ObjectProperty IRI="#hi_trobem"/>
+        <ObjectProperty IRI="#es_troba_a"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#s&apos;hi_celebra"/>
-        <ObjectProperty IRI="#s&apos;hi_celebra"/>
+        <ObjectProperty IRI="#se_celebra_a"/>
     </InverseObjectProperties>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#dades_meteorologiques_de"/>
@@ -355,12 +362,12 @@
         <Class IRI="#Allotjament"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#se_celebra_a"/>
-        <Class IRI="#Activitat"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#s&apos;hi_celebra"/>
         <Class IRI="#Recinte"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#se_celebra_a"/>
+        <Class IRI="#Activitat"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#dades_meteorologiques_de"/>
@@ -383,52 +390,36 @@
         <Class IRI="#Horari_obertura"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#se_celebra_a"/>
-        <Class IRI="#Recinte"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty IRI="#s&apos;hi_celebra"/>
         <Class IRI="#Activitat"/>
     </ObjectPropertyRange>
-    <DataPropertyDomain>
-        <DataProperty IRI="#Nom"/>
-        <Class IRI="#Allotjament"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#Nom"/>
-        <Class IRI="#Municipi"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#Nom"/>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#se_celebra_a"/>
         <Class IRI="#Recinte"/>
-    </DataPropertyDomain>
-    <DataPropertyRange>
-        <DataProperty IRI="#Nom"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
+    </ObjectPropertyRange>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Activitat</IRI>
-        <Literal>Aquesta classe inclou el concepte d&apos;activitat dividit per tipus d&apos;activitat que en són subclasses.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Aquesta classe inclou el concepte d&apos;activitat dividit per tipus d&apos;activitat que en són subclasses.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Allotjament</IRI>
-        <Literal>Aquesta classe defineix la mena de llocs on es pot allotjar un usuari en la seva estància.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Aquesta classe defineix la mena de llocs on es pot allotjar un usuari en la seva estància.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Apat</IRI>
-        <Literal>Fa referència al fet de tenir un sopar o un dinar.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Fa referència al fet de tenir un sopar o un dinar.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Localitzacio</IRI>
-        <Literal>Fa referència a un lloc.</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Fa referència a un lloc.</Literal>
     </AnnotationAssertion>
 </Ontology>
 
 
 
-<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
 
