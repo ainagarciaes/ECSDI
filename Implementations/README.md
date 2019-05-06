@@ -21,13 +21,13 @@ L'objectiu d'aquesta primera fase d'implementació és programar el software que
 
 
 ## Estat actual del software 
-+ **form.html** acabat i testejat (son exemples, actualitzar abans d'entregar)
-+ **client.py** acabat i testejat
-+ **AgentPlanificador.py** acabat però no testejat
-+ **AgentTransport.py** per acabar
-+ **AgentAllotjament.py** per acabar
-+ **AgentTransportStub.py** per acabar
-+ **AgentAllotjament.py** per acabar
++ **form.html** acabat i testejat
++ **client.py** envia correctament al agent planificador, de moment no fa res amb la resposta
++ **AgentPlanificador.py** envia correctament al agent de transport i allotjament, pendent de que estiguin fets per poder treballar amb la resposta i l'algoritme decisor
++ **AgentTransport.py** per començar
++ **AgentAllotjament.py** per començar
++ **AgentTransportStub.py** per començar
++ **AgentAllotjament.py** per començar
 
 ## Com instal·lar i executar
 Primer de tot cal tenir instal·lat apache2 al ordinador.
