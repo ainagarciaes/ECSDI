@@ -75,7 +75,7 @@ def comunicacion():
 
         gr = build_message(Graph(),
             ACL['inform'],
-            sender=InfoAgent.uri,
+            sender=AgentAllotjament.uri,
             msgcnt=mss_cnt,
             receiver=msgdic['sender'], content = content)
         return gr
@@ -92,14 +92,14 @@ def comunicacion():
 
     # FIPA ACL message?
     if msgdic is None:      # NO: responem "not understood" i un graph de contingut buit
-        gr = build_message(Graph(), ACL['not-understood'], sender=InfoAgent.uri, msgcnt=mss_cnt)
+        gr = build_message(Graph(), ACL['not-understood'], sender=AgentAllotjament.uri, msgcnt=mss_cnt)
     else:                   # SI: mirem que demana
         # Performativa
         perf = msgdic['performative']
 
         if perf != ACL.request:
             # Si no es un request, respondemos que no hemos entendido el mensaje
-            gr = build_message(Graph(), ACL['not-understood'], sender=InfoAgent.uri, msgcnt=mss_cnt)
+            gr = build_message(Graph(), ACL['not-understood'], sender=AgentAllotjament.uri, msgcnt=mss_cnt)
         else:
             # Extraemos el objeto del contenido que ha de ser una accion de la ontologia de acciones del agente
             # de registro
@@ -113,7 +113,7 @@ def comunicacion():
                     gr = find_available_options()
 
                 else:
-                    gr = build_message(Graph(), ACL['not-understood'], sender=InfoAgent.uri, msgcnt=mss_cnt)
+                    gr = build_message(Graph(), ACL['not-understood'], sender=AgentAllotjament.uri, msgcnt=mss_cnt)
 
     mss_cnt += 1
 
