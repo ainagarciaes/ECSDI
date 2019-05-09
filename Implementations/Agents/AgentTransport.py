@@ -16,14 +16,19 @@ Asume que el agente de registro esta en el puerto 9000
 
 from multiprocessing import Process, Queue
 import socket
+import sys
+import os
+
+sys.path.append(os.path.relpath("../AgentUtil"))
 
 from rdflib import Namespace, Graph, Literal
 from flask import Flask
 
-from AgentUtil.FlaskServer import shutdown_server
+
+from FlaskServer import shutdown_server
 from ACLMessages import build_message, send_message, get_message_properties
 from OntoNamespaces import ACL, DSO, RDF, DEM, VIA
-from AgentUtil.Agent import Agent
+from Agent import Agent
 
 __author__ = 'javier'
 
