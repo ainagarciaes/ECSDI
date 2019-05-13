@@ -16,14 +16,19 @@ Asume que el agente de registro esta en el puerto 9000
 
 from multiprocessing import Process, Queue
 import socket
+import sys
+import os
+
+sys.path.append(os.path.relpath("../AgentUtil"))
 
 from rdflib import Namespace, Graph, Literal
 from flask import Flask
 
-from AgentUtil.FlaskServer import shutdown_server
+
+from FlaskServer import shutdown_server
 from ACLMessages import build_message, send_message, get_message_properties
 from OntoNamespaces import ACL, DSO, RDF, DEM, VIA
-from AgentUtil.Agent import Agent
+from Agent import Agent
 
 __author__ = 'javier'
 
@@ -94,14 +99,14 @@ def comunicacion():
 
     # FIPA ACL message?
     if msgdic is None:      # NO: responem "not understood"
-        gr = build_message(Graph(), ACL['not-understood'], sender=InfoAgent.uri, msgcnt=mss_cnt)
+        gr = build_message(Graph(), ACL['not-understood'], sender=AgentTransport.uri, msgcnt=mss_cnt)
     else:                   # SI: mirem que demana
         # Performativa
         perf = msgdic['performative']
 
         if perf != ACL.request:
             # Si no es un request, respondemos que no hemos entendido el mensaje
-            gr = build_message(Graph(), ACL['not-understood'], sender=InfoAgent.uri, msgcnt=mss_cnt)
+            gr = build_message(Graph(), ACL['not-understood'], sender=AgentTransport.uri, msgcnt=mss_cnt)
         else:
             # Extraemos el objeto del contenido que ha de ser una accion de la ontologia de acciones del agente
             # de registro
@@ -115,7 +120,7 @@ def comunicacion():
                     gr = find_available_options()
 
                 else:
-                    gr = build_message(Graph(), ACL['not-understood'], sender=InfoAgent.uri, msgcnt=mss_cnt)
+                    gr = build_message(Graph(), ACL['not-understood'], sender=AgentTransport.uri, msgcnt=mss_cnt)
 
     mss_cnt += 1
 
