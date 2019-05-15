@@ -82,7 +82,97 @@ def comunicacion():
     """
     Entrypoint de comunicacion
     """
-    def prepare_trip():        
+    global dsgraph
+    global mss_cnt
+
+    #mss_cnt = 0
+
+    def prepare_trip():
+        def obtain_transport():
+            global mss_cnt
+            # 0. extract parameters from the initial request
+            obj_restriccions_transport = gm.value(subject=obj_restriccions, predicate=DEM.Restriccions_transports)
+            preu_transport = gm.value(subject=obj_restriccions_transport, predicate=DEM.Preu)
+
+            # 1. build graph
+            content_transport = Graph()
+            content_transport.bind('dem', DEM)  
+
+            consultar_transport_obj = DEM.Consultar_transports + '_cons_transp'
+            restr_transport_obj = DEM.Restriccions_transports
+
+            content_transport.add((consultar_transport_obj, RDF.type, DEM.Consultar_transports))
+            content_transport.add((consultar_transport_obj, DEM.Restriccions_transports, restr_transport_obj))
+
+            content_transport.add((restr_transport_obj, DEM.Preu, Literal(preu_transport)))
+            content_transport.add((restr_transport_obj, DEM.Data_inici, Literal(data_inici)))
+            content_transport.add((restr_transport_obj, DEM.Data_final, Literal(data_final)))
+            content_transport.add((restr_transport_obj, DEM.Origen, Literal(origen)))
+            content_transport.add((restr_transport_obj, DEM.Desti, Literal(desti)))
+            content_transport.add((restr_transport_obj, DEM.NumPersones, Literal(n_pers)))
+
+            # 2. build && send message to the external agent
+            mss_cnt += 1
+            gr = build_message(content_transport, perf=ACL.request, sender=AgentePlanificador.uri, msgcnt=mss_cnt, receiver=AgenteTransporte.uri, content=consultar_transport_obj)
+            
+            # 3. get response
+            res = send_message(gr, AgenteTransporte.address)
+
+            # 4. parse response and choose one
+            '''
+            t = Graph() #choosen graph
+            t.bind('via', VIA)
+            transport_obj = VIA.Transport + '_transport'
+            t.add((transport_obj, RDF.type, VIA.Transport))
+                # TODO decisor algorithm goes here
+            '''
+            # 5. return chosen transport
+            return #t
+        
+        def obtain_hotel():
+            global mss_cnt
+            # 0. extract parameters from the initial request
+            obj_restriccions_allotjament = gm.value(subject=obj_restriccions, predicate=DEM.Restriccions_hotels)
+            preu_allotjament = gm.value(subject=obj_restriccions_allotjament, predicate=DEM.Preu)
+            
+            # 1. build graph
+            content_allotjament = Graph()
+            content_allotjament.bind('dem', DEM)
+
+            consultar_allotjament_obj = DEM.Consultar_hotels + '_cons_hotels'
+            restr_allotjament_obj = DEM.Restriccions_hotels
+
+            content_allotjament.add((consultar_allotjament_obj, RDF.type, DEM.Consultar_hotels))
+            content_allotjament.add((consultar_allotjament_obj, DEM.Restriccions_hotels, restr_allotjament_obj))
+
+            content_allotjament.add((restr_allotjament_obj, DEM.Preu, Literal(preu_allotjament)))
+            content_allotjament.add((restr_allotjament_obj, DEM.Data_inici, Literal(data_inici)))
+            content_allotjament.add((restr_allotjament_obj, DEM.Data_final, Literal(data_final)))
+            content_allotjament.add((restr_allotjament_obj, DEM.Ciutat, Literal(origen)))
+            content_allotjament.add((restr_allotjament_obj, DEM.NumPersones, Literal(n_pers)))
+
+            # 2. build && send message to the external agent
+            mss_cnt += 1
+            gr = build_message(content_allotjament, perf=ACL.request, sender=AgentePlanificador.uri, msgcnt=mss_cnt, receiver=AgenteAlojamiento.uri, content=consultar_allotjament_obj)
+            res = send_message(gr, AgenteAlojamiento.address)
+            
+            # 3. get response
+            res = send_message(gr, AgenteAlojamiento.address)
+
+            # 4. parse response and choose one
+            '''
+            h = Graph() #choosen graph
+            h.bind('via', VIA)
+            allotjament_obj = VIA.Allotjament + '_allotjament'
+            h.add((allotjament_obj, RDF.type, VIA.Allotjament))
+            '''
+                # TODO decisor algorithm goes here
+
+            # 5. return chosen transport
+            return #h
+
+        content = msgdic['content']
+
         obj_restriccions = gm.value(subject=content, predicate=DEM.Restriccions)
         data_inici = gm.value(subject=obj_restriccions, predicate=DEM.Data_inici)
         data_final = gm.value(subject=obj_restriccions, predicate=DEM.Data_final)
@@ -92,91 +182,26 @@ def comunicacion():
 
         obj_preferencies = gm.value(subject=content, predicate=DEM.Restriccions)
  
+        
         # Obtenim transport i hotel
-        t = obtain_transport()
-        h = obtain_hotel()
+        '''t = '''
+        obtain_transport()
+        '''h = '''
+        obtain_hotel()
 
         content = Graph() # posar el t i h al graf de resultats com toqui
         content.bind('via', VIA)
 
         viatge_obj = VIA.Viatge + '_viatge'
         
-        content.add(viatge_obj, RDF.type, VIA.Viatge)
-        content.add(viatge_obj, VIA.Allotjament, h)
-        content.add(viatge_obj, VIA.transport, t)
+        content.add((viatge_obj, RDF.type, VIA.Viatge))
 
+        '''
+        content.add((viatge_obj, VIA.Allotjament, h))
+        content.add((viatge_obj, VIA.transport, t))
+        '''
         return content
 
-    def obtain_transport():
-        # 0. extract parameters from the initial request
-        obj_restriccions_transport = gm.value(subject=obj_restriccions, predicate=DEM.Restriccions_transports)
-        preu_transport = gm.value(subject=obj_restriccions_transport, predicate=DEM.Preu)
-
-        # 1. build graph
-        content_transport = Graph()
-        content_transport.bind('dem', DEM)  
-
-        consultar_transport_obj = DEM.Consultar_transports + '_cons_transp'
-        restr_transport_obj = DEM.Restriccions_transports
-        pref_transport_obj = DEM.Preferencies_transports
-
-        content_transport.add((consultar_transport_obj, RDF.type, DEM.Consultar_transports))
-        content_transport.add((consultar_transport_obj, DEM.Restriccions_transports, restr_transport_obj))
-        content_transport.add((consultar_transport_obj, DEM.Preferencies_transports, pref_transport_obj))
-
-        content_transport.add((restr_transport_obj, DEM.Preu, Literal(preu_transport)))
-        content_transport.add((restr_transport_obj, DEM.Data_inici, Literal(data_inici)))
-        content_transport.add((restr_transport_obj, DEM.Data_final, Literal(data_final)))
-        content_transport.add((restr_transport_obj, DEM.Origen, Literal(origen)))
-        content_transport.add((restr_transport_obj, DEM.Desti, Literal(desti)))
-        content_transport.add((restr_transport_obj, DEM.NumPersones, Literal(n_pers)))
-
-        # 2. build && send message to the external agent
-        mss_cnt += 1
-        gr = build_message(content_transport, perf=ACL.request, sender=AgentePlanificador.uri, msgcnt=mss_cnt, receiver=AgenteTransporte.uri, content=consultar_transport_obj)
-        
-        # 3. get response
-        res = send_message(gr, AgenteTransporte.address)
-
-        # 4. parse response and choose one
-        # 5. return chosen transport
-        return 
-    
-    def obtain_hotel():
-        # 0. extract parameters from the initial request
-        obj_restriccions_allotjament = gm.value(subject=obj_restriccions, predicate=DEM.Restriccions_hotels)
-        preu_allotjament = gm.value(subject=obj_restriccions_allotjament, predicate=DEM.Preu)
-        
-        # 1. build graph
-        content_allotjament = Graph()
-        content_allotjament.bind('dem', DEM)
-
-        consultar_allotjament_obj = DEM.Consultar_hotels + '_cons_hotels'
-        restr_allotjament_obj = DEM.Restriccions_hotels
-        pref_allotjament_obj = DEM.Preferencies_hotels
-
-        content_allotjament.add((consultar_allotjament_obj, RDF.type, DEM.Consultar_hotels))
-        content_allotjament.add((consultar_allotjament_obj, DEM.Restriccions_hotels, restr_allotjament_obj))
-        content_allotjament.add((consultar_allotjament_obj, DEM.Preferencies_hotels, pref_allotjament_obj))
-
-        content_allotjament.add((restr_allotjament_obj, DEM.Preu, Literal(preu_allotjament)))
-        content_allotjament.add((restr_allotjament_obj, DEM.Data_inici, Literal(data_inici)))
-        content_allotjament.add((restr_allotjament_obj, DEM.Data_final, Literal(data_final)))
-        content_allotjament.add((restr_allotjament_obj, DEM.Ciutat, Literal(origen)))
-        content_allotjament.add((restr_allotjament_obj, DEM.NumPersones, Literal(n_pers)))
-
-        # 2. build && send message to the external agent
-        mss_cnt += 1
-        gr = build_message(content_allotjament, perf=ACL.request, sender=AgentePlanificador.uri, msgcnt=mss_cnt, receiver=AgenteAlojamiento.uri, content=consultar_allotjament_obj)
-        res = send_message(gr, AgenteAlojamiento.address)
-        
-        # 3. get response 
-        # 4. parse response and choose one
-        # 5. return chosen transport
-        return
-
-    global dsgraph
-    global mss_cnt
 
     # crear graf amb el missatge que rebem
     message = request.args['content']
@@ -205,14 +230,11 @@ def comunicacion():
             if 'content' in msgdic:
                 content = msgdic['content']
                 accion = gm.value(subject=content, predicate=RDF.type)
-                
 
                 if accion == DEM.Planificar_viatge : #comparar que sigui del tipus d'accio que volem
                     graph_content = prepare_trip()
-                    """
                     gr = build_message(graph_content, ACL['inform'], sender=AgentePlanificador.uri, msgcnt=mss_cnt, content = VIA.Viatge)
                 else:
-                    """
                     gr = build_message(Graph(), ACL['not-understood'], sender=AgentePlanificador.uri, msgcnt=mss_cnt)
 
     mss_cnt += 1

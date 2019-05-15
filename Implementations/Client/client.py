@@ -92,14 +92,13 @@ content_graph.add((viatge_obj, DEM.Restriccions, restr_obj))
 content_graph.add((viatge_obj, DEM.Preferencies, pref_obj))
 
 # passem les restriccions al graph
-content_graph.add((restr_obj, DEM.Preu, Literal(total_budget)))
+#content_graph.add((restr_obj, DEM.Preu, Literal(total_budget))) -> not needed
 content_graph.add((restr_obj, DEM.Origen, Literal(dep_city)))
 content_graph.add((restr_obj, DEM.Desti, Literal(arr_city)))
 content_graph.add((restr_obj, DEM.NumPersones, Literal(num_trav)))
 content_graph.add((restr_obj, DEM.Data_final, Literal(ret_date)))
 content_graph.add((restr_obj, DEM.Data_inici, Literal(dep_date)))
 
-# passem les preferencies al graph
 restr_allotjament_obj = DEM.Restriccions_hotels + '_restriccions_hotels'        # URIS
 restr_transport_obj = DEM.Restriccions_transports + '_restriccions_transports'  # URIS
 
@@ -109,7 +108,9 @@ content_graph.add((restr_obj, DEM.Restriccions_transports, restr_transport_obj))
 
 content_graph.add((restr_allotjament_obj, DEM.Preu, Literal(accomodation_budget)))
 content_graph.add((restr_transport_obj, DEM.Preu, Literal(transport_budget)))
-#TODO finish this with the rest of the restrictions
+
+# passem les preferencies al graph
+# TODO
 
 gr = Graph()
 # building an ACL message
