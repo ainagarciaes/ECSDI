@@ -19,25 +19,10 @@
         <Class IRI="#Adreça"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Alberg"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Allotjament"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Apat"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Autobus"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Autocar"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Avio"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Casa_rural"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Concert"/>
@@ -76,12 +61,6 @@
         <Class IRI="#Horari"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Hostal"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Hotel"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Humitat"/>
     </Declaration>
     <Declaration>
@@ -97,16 +76,10 @@
         <Class IRI="#Meteorologia"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Metro"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Municipi"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Opera"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Pensio"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Periode_dates"/>
@@ -121,13 +94,7 @@
         <Class IRI="#Recinte"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Refugi"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Situacio"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Taxi"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Teatre"/>
@@ -149,9 +116,6 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Transport"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Vaixell"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Viatge"/>
@@ -217,13 +181,10 @@
         <DataProperty IRI="#Capacitat"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Alsina-Graells"/>
+        <DataProperty IRI="#MitjaTransport"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#CanComes"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#RefugiPedraforca"/>
+        <DataProperty IRI="#TipusAllotjament"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="#Activitat"/>
@@ -232,10 +193,6 @@
     <SubClassOf>
         <Class IRI="#Adreça"/>
         <Class IRI="#Localitzacio"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Alberg"/>
-        <Class IRI="#Allotjament"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Allotjament"/>
@@ -249,24 +206,15 @@
         </DataSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Allotjament"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#TipusAllotjament"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Apat"/>
         <Class IRI="#Ludica"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Autobus"/>
-        <Class IRI="#Transport"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Autocar"/>
-        <Class IRI="#Transport"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Avio"/>
-        <Class IRI="#Transport"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Casa_rural"/>
-        <Class IRI="#Allotjament"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Concert"/>
@@ -317,14 +265,6 @@
         <Class IRI="#Temps"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Hostal"/>
-        <Class IRI="#Allotjament"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Hotel"/>
-        <Class IRI="#Allotjament"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#Humitat"/>
         <Class IRI="#Meteorologia"/>
     </SubClassOf>
@@ -345,20 +285,12 @@
         <Class IRI="#Viatge"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Metro"/>
-        <Class IRI="#Transport"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#Municipi"/>
         <Class IRI="#Localitzacio"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Opera"/>
         <Class IRI="#Ludica"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Pensio"/>
-        <Class IRI="#Allotjament"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Periode_dates"/>
@@ -377,16 +309,8 @@
         <Class IRI="#Viatge"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Refugi"/>
-        <Class IRI="#Allotjament"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#Situacio"/>
         <Class IRI="#Viatge"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Taxi"/>
-        <Class IRI="#Transport"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Teatre"/>
@@ -424,8 +348,11 @@
         </DataSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Vaixell"/>
         <Class IRI="#Transport"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#MitjaTransport"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Visisbilitat"/>
@@ -435,33 +362,6 @@
         <Class IRI="#Visita_museu"/>
         <Class IRI="#Cultural"/>
     </SubClassOf>
-    <ClassAssertion>
-        <Class IRI="#Autocar"/>
-        <NamedIndividual IRI="#Alsina-Graells"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Casa_rural"/>
-        <NamedIndividual IRI="#CanComes"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Alberg"/>
-        <NamedIndividual IRI="#RefugiPedraforca"/>
-    </ClassAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#Capacitat"/>
-        <NamedIndividual IRI="#Alsina-Graells"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">64</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#Capacitat"/>
-        <NamedIndividual IRI="#CanComes"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">30</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#Capacitat"/>
-        <NamedIndividual IRI="#RefugiPedraforca"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">20</Literal>
-    </DataPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#obre_el_dia"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
@@ -672,6 +572,11 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TipusAllotjament</IRI>
+        <Literal>Serà un atribut que definirà el tipus d&apos;allotjament que és l&apos;allotjament en qüestió.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Tipus_estada</IRI>
         <Literal>Tipus d&apos;estada que pot oferir un allotjament(Pensió completa, mitja pensió, només pernoctació...)</Literal>
     </AnnotationAssertion>
@@ -684,6 +589,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Tipus_seient</IRI>
         <Literal>Tipus de seient que ofereix un transport(Primera classe, convencional).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Transport</IRI>
+        <Literal>Nom de l&apos;empresa o servei determinat que s&apos;utilitza per a viatjar..</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
