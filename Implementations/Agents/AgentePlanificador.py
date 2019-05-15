@@ -87,19 +87,23 @@ def comunicacion():
         data_inici = gm.value(subject=obj_restriccions, predicate=DEM.Data_inici)
         data_final = gm.value(subject=obj_restriccions, predicate=DEM.Data_final)
         n_pers = gm.value(subject=obj_restriccions, predicate=DEM.NumPersones)
-        origen = gm.values(subject=obj_restriccions, predicate=DEM.Origen)
-        desti = gm.values(subject=obj_restriccions, predicate=DEM.Desti)
+        origen = gm.value(subject=obj_restriccions, predicate=DEM.Origen)
+        desti = gm.value(subject=obj_restriccions, predicate=DEM.Desti)
 
         obj_preferencies = gm.value(subject=content, predicate=DEM.Restriccions)
  
-        # Aqui realizariamos lo que pide la accion
-        # Por ahora simplemente retornamos un Inform
-        #t = obtain_transport()
-        #h = obtain_hotel() -> ha de retornar el graph pero per testejar de moment no retorno res
-        obtain_transport()
-        obtain_hotel()
+        # Obtenim transport i hotel
+        t = obtain_transport()
+        h = obtain_hotel()
+
         content = Graph() # posar el t i h al graf de resultats com toqui
-        #content.bind('via', VIA)
+        content.bind('via', VIA)
+
+        viatge_obj = VIA.Viatge + '_viatge'
+        
+        content.add(viatge_obj, RDF.type, VIA.Viatge)
+        content.add(viatge_obj, VIA.Allotjament, h)
+        content.add(viatge_obj, VIA.transport, t)
 
         return content
 
@@ -110,7 +114,7 @@ def comunicacion():
 
         # 1. build graph
         content_transport = Graph()
-        content_transport.bind('dem', DEM)
+        content_transport.bind('dem', DEM)  
 
         consultar_transport_obj = DEM.Consultar_transports + '_cons_transp'
         restr_transport_obj = DEM.Restriccions_transports
