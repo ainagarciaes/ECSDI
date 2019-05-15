@@ -130,9 +130,10 @@ def comunicacion():
         # 2. build && send message to the external agent
         mss_cnt += 1
         gr = build_message(content_transport, perf=ACL.request, sender=AgentePlanificador.uri, msgcnt=mss_cnt, receiver=AgenteTransporte.uri, content=consultar_transport_obj)
+        
+        # 3. get response
         res = send_message(gr, AgenteTransporte.address)
 
-        # 3. get response
         # 4. parse response and choose one
         # 5. return chosen transport
         return 
