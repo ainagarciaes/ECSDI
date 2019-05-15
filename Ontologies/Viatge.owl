@@ -1,20 +1,10 @@
 <?xml version="1.0"?>
-
-
-<!DOCTYPE Ontology [
-    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
-    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-]>
-
-
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
      xml:base="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge">
     <Prefix name="" IRI="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
@@ -56,7 +46,13 @@
         <Class IRI="#Cultural"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Data_unica"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Dates_obertura"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Dies_setmana"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Edifici_interessant"/>
@@ -77,7 +73,7 @@
         <Class IRI="#Festiva"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Horari_obertura"/>
+        <Class IRI="#Horari"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Hostal"/>
@@ -113,10 +109,22 @@
         <Class IRI="#Pensio"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Periode_dates"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Popularitat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Preu"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Recinte"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Refugi"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Situacio"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Taxi"/>
@@ -129,6 +137,15 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Temps"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tipus_estada"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tipus_habitacio"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tipus_seient"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Transport"/>
@@ -149,25 +166,64 @@
         <ObjectProperty IRI="#dades_meteorologiques_de"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#es_oferta_per"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#es_popular"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#es_troba_a"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hi_trobem"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#obre_els_dies"/>
+        <ObjectProperty IRI="#nivell_popularitat_de"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#obre_el_dia"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#obre_les_dates"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#obre_les_hores"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#s&apos;hi_celebra"/>
+        <ObjectProperty IRI="#ofereix"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ofereix_seients"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#se_celebra_a"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Disco"/>
+        <ObjectProperty IRI="#se_celebra_de"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#se_celebra_el"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#te_habitacions"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#val"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#s&apos;hi_celebra"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Capacitat"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Alsina-Graells"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CanComes"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RefugiPedraforca"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="#Activitat"/>
@@ -184,6 +240,13 @@
     <SubClassOf>
         <Class IRI="#Allotjament"/>
         <Class IRI="#Viatge"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Allotjament"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Capacitat"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Apat"/>
@@ -214,8 +277,16 @@
         <Class IRI="#Activitat"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Data_unica"/>
+        <Class IRI="#Dates_obertura"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Dates_obertura"/>
         <Class IRI="#Temps"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dies_setmana"/>
+        <Class IRI="#Dates_obertura"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Edifici_interessant"/>
@@ -242,7 +313,7 @@
         <Class IRI="#Activitat"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Horari_obertura"/>
+        <Class IRI="#Horari"/>
         <Class IRI="#Temps"/>
     </SubClassOf>
     <SubClassOf>
@@ -290,12 +361,28 @@
         <Class IRI="#Allotjament"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Periode_dates"/>
+        <Class IRI="#Dates_obertura"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Popularitat"/>
+        <Class IRI="#Viatge"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Preu"/>
+        <Class IRI="#Viatge"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Recinte"/>
         <Class IRI="#Viatge"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Refugi"/>
         <Class IRI="#Allotjament"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Situacio"/>
+        <Class IRI="#Viatge"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Taxi"/>
@@ -314,8 +401,27 @@
         <Class IRI="#Viatge"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Tipus_estada"/>
+        <Class IRI="#Viatge"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tipus_habitacio"/>
+        <Class IRI="#Viatge"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tipus_seient"/>
+        <Class IRI="#Viatge"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Transport"/>
         <Class IRI="#Viatge"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Transport"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Capacitat"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Vaixell"/>
@@ -330,22 +436,65 @@
         <Class IRI="#Cultural"/>
     </SubClassOf>
     <ClassAssertion>
-        <Class IRI="#Recinte"/>
-        <NamedIndividual IRI="#Disco"/>
+        <Class IRI="#Autocar"/>
+        <NamedIndividual IRI="#Alsina-Graells"/>
     </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Casa_rural"/>
+        <NamedIndividual IRI="#CanComes"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Alberg"/>
+        <NamedIndividual IRI="#RefugiPedraforca"/>
+    </ClassAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Capacitat"/>
+        <NamedIndividual IRI="#Alsina-Graells"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">64</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Capacitat"/>
+        <NamedIndividual IRI="#CanComes"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">30</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Capacitat"/>
+        <NamedIndividual IRI="#RefugiPedraforca"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">20</Literal>
+    </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#obre_el_dia"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#hi_trobem"/>
-        <ObjectProperty IRI="#es_troba_a"/>
+        <ObjectProperty IRI="#es_oferta_per"/>
+        <ObjectProperty IRI="#ofereix"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#s&apos;hi_celebra"/>
+        <ObjectProperty IRI="#es_popular"/>
+        <ObjectProperty IRI="#nivell_popularitat_de"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#es_troba_a"/>
+        <ObjectProperty IRI="#hi_trobem"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#se_celebra_a"/>
+        <ObjectProperty IRI="#s&apos;hi_celebra"/>
     </InverseObjectProperties>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#dades_meteorologiques_de"/>
         <Class IRI="#Meteorologia"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#es_oferta_per"/>
+        <Class IRI="#Tipus_estada"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#es_popular"/>
+        <Class IRI="#Allotjament"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#es_troba_a"/>
         <Class IRI="#Allotjament"/>
     </ObjectPropertyDomain>
@@ -354,7 +503,15 @@
         <Class IRI="#Localitzacio"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#obre_els_dies"/>
+        <ObjectProperty IRI="#nivell_popularitat_de"/>
+        <Class IRI="#Popularitat"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#obre_el_dia"/>
+        <Class IRI="#Recinte"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#obre_les_dates"/>
         <Class IRI="#Allotjament"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -362,64 +519,195 @@
         <Class IRI="#Allotjament"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#s&apos;hi_celebra"/>
+        <ObjectProperty IRI="#obre_les_hores"/>
         <Class IRI="#Recinte"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#ofereix"/>
+        <Class IRI="#Allotjament"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#ofereix_seients"/>
+        <Class IRI="#Transport"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#se_celebra_a"/>
         <Class IRI="#Activitat"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#se_celebra_de"/>
+        <Class IRI="#Activitat"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#se_celebra_el"/>
+        <Class IRI="#Activitat"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#te_habitacions"/>
+        <Class IRI="#Allotjament"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#val"/>
+        <Class IRI="#Allotjament"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#val"/>
+        <Class IRI="#Transport"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#s&apos;hi_celebra"/>
+        <Class IRI="#Recinte"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#dades_meteorologiques_de"/>
         <Class IRI="#Municipi"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#es_oferta_per"/>
+        <Class IRI="#Allotjament"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#es_popular"/>
+        <Class IRI="#Popularitat"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#es_troba_a"/>
         <Class IRI="#Localitzacio"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#es_troba_a"/>
+        <Class IRI="#Situacio"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hi_trobem"/>
         <Class IRI="#Allotjament"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#obre_els_dies"/>
-        <Class IRI="#Dates_obertura"/>
+        <ObjectProperty IRI="#nivell_popularitat_de"/>
+        <Class IRI="#Allotjament"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#obre_el_dia"/>
+        <Class IRI="#Dies_setmana"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#obre_les_dates"/>
+        <Class IRI="#Periode_dates"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#obre_les_hores"/>
-        <Class IRI="#Horari_obertura"/>
+        <Class IRI="#Horari"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#s&apos;hi_celebra"/>
-        <Class IRI="#Activitat"/>
+        <ObjectProperty IRI="#ofereix"/>
+        <Class IRI="#Tipus_estada"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#ofereix_seients"/>
+        <Class IRI="#Tipus_seient"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#se_celebra_a"/>
         <Class IRI="#Recinte"/>
     </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#se_celebra_de"/>
+        <Class IRI="#Horari"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#se_celebra_el"/>
+        <Class IRI="#Data_unica"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#te_habitacions"/>
+        <Class IRI="#Tipus_habitacio"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#val"/>
+        <Class IRI="#Preu"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#s&apos;hi_celebra"/>
+        <Class IRI="#Activitat"/>
+    </ObjectPropertyRange>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Activitat</IRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">Aquesta classe inclou el concepte d&apos;activitat dividit per tipus d&apos;activitat que en són subclasses.</Literal>
+        <Literal>Aquesta classe inclou el concepte d&apos;activitat dividit per tipus d&apos;activitat que en són subclasses.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Allotjament</IRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">Aquesta classe defineix la mena de llocs on es pot allotjar un usuari en la seva estància.</Literal>
+        <Literal>Aquesta classe defineix la mena de llocs on es pot allotjar un usuari en la seva estància.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Apat</IRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">Fa referència al fet de tenir un sopar o un dinar.</Literal>
+        <Literal>Fa referència al fet de tenir un sopar o un dinar.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Dies_setmana</IRI>
+        <Literal>Dies de la setmana en què es pugui obrir un recinte, un refugi, etc...</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Horari</IRI>
+        <Literal>Moment del dia en el qual un recinte obre.(Matí, tarda, vespre, nit) o en el qual se celebra una activitat</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Localitzacio</IRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">Fa referència a un lloc.</Literal>
+        <Literal>Fa referència a un lloc.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Municipi</IRI>
+        <Literal>Ciutat, poble, allà on fem el viatge o l&apos;activitat.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Preu</IRI>
+        <Literal>Es pot considerar el preu per dia d&apos;un allotjament o el preu total d&apos;un trajecte d&apos;un transport determinat</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Tipus_estada</IRI>
+        <Literal>Tipus d&apos;estada que pot oferir un allotjament(Pensió completa, mitja pensió, només pernoctació...)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Tipus_habitacio</IRI>
+        <Literal>Tipus d&apos;habitació que ofereix(suite, individual, doble, adaptada).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Tipus_seient</IRI>
+        <Literal>Tipus de seient que ofereix un transport(Primera classe, convencional).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#es_popular</IRI>
+        <Literal>Un allotjament ÉS del nivell de popularitat...</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#se_celebra_de</IRI>
+        <Literal>Una activitat se celebra de matí, tarda, vespre, nit.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#se_celebra_el</IRI>
+        <Literal>Data en què se celebra una activitat</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#te_habitacions</IRI>
+        <Literal>Tipus de habitacions ofertes per un allotjament.</Literal>
     </AnnotationAssertion>
 </Ontology>
 
 
 
-<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
 
