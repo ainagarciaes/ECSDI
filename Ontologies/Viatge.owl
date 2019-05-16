@@ -172,6 +172,9 @@
         <DataProperty IRI="#Capacitat"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#IDAct"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#MitjaTransport"/>
     </Declaration>
     <Declaration>
@@ -180,6 +183,13 @@
     <SubClassOf>
         <Class IRI="#Activitat"/>
         <Class IRI="#Viatge"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Activitat"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#IDAct"/>
+            <Datatype abbreviatedIRI="xsd:int"/>
+        </DataExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Adreça"/>
@@ -438,10 +448,6 @@
         <Class IRI="#Recinte"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#dades_meteorologiques_de"/>
-        <Class IRI="#Municipi"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty IRI="#es_oferta_per"/>
         <Class IRI="#Allotjament"/>
     </ObjectPropertyRange>
@@ -509,6 +515,10 @@
         <ObjectProperty IRI="#s&apos;hi_celebra"/>
         <Class IRI="#Activitat"/>
     </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#IDAct"/>
+        <Class IRI="#Activitat"/>
+    </DataPropertyDomain>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Activitat</IRI>
@@ -531,13 +541,13 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Localitzacio</IRI>
-        <Literal>Fa referència a un lloc.</Literal>
+        <IRI>#IDAct</IRI>
+        <Literal>Identifica una activitat</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Municipi</IRI>
-        <Literal>Ciutat, poble, allà on fem el viatge o l&apos;activitat.</Literal>
+        <IRI>#Localitzacio</IRI>
+        <Literal>Fa referència a un lloc.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
