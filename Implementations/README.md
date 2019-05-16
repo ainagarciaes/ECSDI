@@ -55,6 +55,16 @@ Crear un hardlink de `client.py` fins a `/usr/lib/cgi-bin/`
 ```
 $ ln client.py /usr/lib/cgi-bin/client.py
 ```
+Modificar l'arxiu `/etc/apache2/envvars`
+```
+$ sudo gedit /etc/apache2/envvars
+```
+_Modificar les linies:_
+`export APACHE_RUN_USER=www-data`
+`export APACHE_RUN_GROUP=www-data`
+_Canviar-les per:_
+`export APACHE_RUN_USER={nom usuari}`
+`export APACHE_RUN_GROUP={nom usuari}`
 
 Reiniciar el servidor apache
 ```
