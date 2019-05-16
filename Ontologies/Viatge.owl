@@ -31,13 +31,7 @@
         <Class IRI="#Cultural"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Data_unica"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Dates_obertura"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Dies_setmana"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Edifici_interessant"/>
@@ -80,9 +74,6 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Opera"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Periode_dates"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Popularitat"/>
@@ -225,16 +216,8 @@
         <Class IRI="#Activitat"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Data_unica"/>
-        <Class IRI="#Dates_obertura"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#Dates_obertura"/>
         <Class IRI="#Temps"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Dies_setmana"/>
-        <Class IRI="#Dates_obertura"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Edifici_interessant"/>
@@ -291,10 +274,6 @@
     <SubClassOf>
         <Class IRI="#Opera"/>
         <Class IRI="#Ludica"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Periode_dates"/>
-        <Class IRI="#Dates_obertura"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Popularitat"/>
@@ -488,11 +467,11 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#obre_el_dia"/>
-        <Class IRI="#Dies_setmana"/>
+        <Class IRI="#Dates_obertura"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#obre_les_dates"/>
-        <Class IRI="#Periode_dates"/>
+        <Class IRI="#Dates_obertura"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#obre_les_hores"/>
@@ -516,7 +495,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#se_celebra_el"/>
-        <Class IRI="#Data_unica"/>
+        <Class IRI="#Dates_obertura"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#te_habitacions"/>
@@ -544,11 +523,6 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Apat</IRI>
         <Literal>Fa referència al fet de tenir un sopar o un dinar.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Dies_setmana</IRI>
-        <Literal>Dies de la setmana en què es pugui obrir un recinte, un refugi, etc...</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
