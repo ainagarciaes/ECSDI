@@ -69,8 +69,8 @@ export APACHE_RUN_GROUP=www-data
 _Canviar-les per:_
 
 ```
-export APACHE_RUN_USER={nom usuari}`
-export APACHE_RUN_GROUP={nom usuari}`
+export APACHE_RUN_USER={nom usuari}
+export APACHE_RUN_GROUP={nom usuari}
 ```
 
 Reiniciar el servidor apache
