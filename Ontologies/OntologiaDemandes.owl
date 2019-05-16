@@ -26,6 +26,7 @@
     <!-- http://www.semanticweb.org/guille/ontologies/2019/4/OntologiaDemandes#Ciutat -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/4/OntologiaDemandes#Ciutat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/OntologiaDemandes#Demanar_activitat"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/OntologiaDemandes#Restriccions"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/OntologiaDemandes#Restriccions_hotels"/>
     </owl:Class>
@@ -41,6 +42,23 @@
     <!-- http://www.semanticweb.org/guille/ontologies/2019/4/OntologiaDemandes#Consultar_transports -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/4/OntologiaDemandes#Consultar_transports"/>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/4/OntologiaDemandes#Cost -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/4/OntologiaDemandes#Cost">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/OntologiaDemandes#Demanar_activitat"/>
+        <rdfs:comment>Cost màxim que pot tenir una activitat demanada</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/4/OntologiaDemandes#Data_activitat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/4/OntologiaDemandes#Data_activitat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/OntologiaDemandes#Demanar_activitat"/>
+    </owl:Class>
     
 
 
@@ -64,11 +82,26 @@
     
 
 
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/4/OntologiaDemandes#Demanar_activitat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/4/OntologiaDemandes#Demanar_activitat"/>
+    
+
+
     <!-- http://www.semanticweb.org/guille/ontologies/2019/4/OntologiaDemandes#Destí -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/4/OntologiaDemandes#Destí">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/OntologiaDemandes#Restriccions"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/OntologiaDemandes#Restriccions_transports"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/4/OntologiaDemandes#Horari -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/4/OntologiaDemandes#Horari">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/OntologiaDemandes#Demanar_activitat"/>
+        <rdfs:comment>Moment del dia en què es fa l&apos;activitat.(Matí, tarda, vespre, nit)</rdfs:comment>
     </owl:Class>
     
 
@@ -172,6 +205,15 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/4/OntologiaDemandes#Restriccions_transports">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/OntologiaDemandes#Consultar_transports"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/4/OntologiaDemandes#Tipus_activitat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/4/OntologiaDemandes#Tipus_activitat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/OntologiaDemandes#Demanar_activitat"/>
+        <rdfs:comment>El tipus d&apos;activitat que desitgem(Cultural, lúdica o festiva)</rdfs:comment>
     </owl:Class>
     
 
