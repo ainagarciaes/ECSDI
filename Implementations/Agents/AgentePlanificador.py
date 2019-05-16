@@ -184,9 +184,9 @@ def comunicacion():
  
         
         # Obtenim transport i hotel
-        '''t = '''
+        #t = 
         obtain_transport()
-        '''h = '''
+        #h =
         obtain_hotel()
 
         content = Graph() # posar el t i h al graf de resultats com toqui
