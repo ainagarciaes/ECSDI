@@ -172,14 +172,16 @@ def comunicacion():
             # 4. parse response and choose one
          
             h = res.query("""
-                SELECT ?a ?preu ?ciutat ?dinici ?dfi ?tipusallotj ?dir
+                SELECT ?a ?preu ?ciutat ?capacitat ?dinici ?dfi ?tipusallotj ?dir
                 WHERE {
                     ?a RDF.type via.Allotjament .
-                    ?a via.preu ?preu .
+                    ?a via.Preu ?preu .
                     ?a via.DataInici ?dinici .
                     ?a via.DataFi ?dfi .
                     ?a via.TipusAllotjament ?tipusallotj .
-                    ?a via.Direccio ?dir .
+                    ?a via.Adreça ?dir .
+                    ?a via.Municipi ?ciutat .
+                    ?a via.Capacitat ?capacitat .
                     FILTER {?tipusallotj = "hotel"}
                 }
                 LIMIT 1
