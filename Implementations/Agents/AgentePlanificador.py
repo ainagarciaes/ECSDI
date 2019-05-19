@@ -119,15 +119,25 @@ def comunicacion():
             res = send_message(gr, AgenteTransporte.address)
 
             # 4. parse response and choose one
-            '''
-            t = Graph() #choosen graph
-            t.bind('via', VIA)
-            transport_obj = VIA.Transport + '_transport'
-            t.add((transport_obj, RDF.type, VIA.Transport))
-                # TODO decisor algorithm goes here
-            '''
+            t = res.query("""   
+                SELECT ?transport ?preu ?origen ?desti ?danada ?dtornada ?tipustansport ?tipusseient
+                WHERE {
+                    ?transport RDF.type via.Transport .
+                    ?transport via.Preu ?preu .
+                    ?transport via.Origen ?origen .
+                    ?transport via.Desti ?desti .
+                    ?transport via.DataAnada ?danada .
+                    ?transport via.DataTornada ?dtornada .
+                    ?transport via.TipusTransport ?tipustransport .
+                    ?transport via.TipusSeient ?tipusseient .
+                    FILTER {?tipustransport = "avio", ?tipusseient = loquesea }
+                }
+                LIMIT 1 
+                """, initNs = {'via', VIA})
+            #TODO mirar be els noms de la ontologia i buscar com passar parametres a la busqueda
+
             # 5. return chosen transport
-            return #t
+            return t
         
         def obtain_hotel():
             global mss_cnt
@@ -160,16 +170,26 @@ def comunicacion():
             res = send_message(gr, AgenteAlojamiento.address)
 
             # 4. parse response and choose one
-            '''
-            h = Graph() #choosen graph
-            h.bind('via', VIA)
-            allotjament_obj = VIA.Allotjament + '_allotjament'
-            h.add((allotjament_obj, RDF.type, VIA.Allotjament))
-            '''
-                # TODO decisor algorithm goes here
-
+         
+            h = res.query("""
+                SELECT ?a ?preu ?ciutat ?capacitat ?dinici ?dfi ?tipusallotj ?dir
+                WHERE {
+                    ?a RDF.type via.Allotjament .
+                    ?a via.Preu ?preu .
+                    ?a via.DataInici ?dinici .
+                    ?a via.DataFi ?dfi .
+                    ?a via.TipusAllotjament ?tipusallotj .
+                    ?a via.Adreça ?dir .
+                    ?a via.Municipi ?ciutat .
+                    ?a via.Capacitat ?capacitat .
+                    FILTER {?tipusallotj = "hotel"}
+                }
+                LIMIT 1
+                """, initNs = {'via', VIA})
+                
+            #TODO mirar be els noms de la ontologia i buscar com passar parametres a la busqueda
             # 5. return chosen transport
-            return #h
+            return h
 
         content = msgdic['content']
 

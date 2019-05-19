@@ -122,5 +122,6 @@ res = send_message(gr, AgentePlanificador.address)
 # decoding the ACL return message
 
 # printing the output
+# print (res) uncomment this when everything works as expected
 print (dep_city, arr_city, dep_date, ret_date, num_trav, total_budget, transport_budget, accomodation_budget, activities_budget,hotel_vs_apartament, bus_vs_plane, festiu, ludic, cultural)
 
