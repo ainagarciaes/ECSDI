@@ -27,7 +27,7 @@ from flask import Flask, request
 from FlaskServer import shutdown_server
 from Agent import Agent
 from ACLMessages import build_message, send_message, get_message_properties
-from OntoNamespaces import ACL, DSO, RDF, DEM, VIA
+from OntoNamespaces import ACL, DSO, RDF, DEM, VIA, FOAF
 
 __author__ = 'javier'
 
@@ -63,6 +63,12 @@ AgenteAlojamiento = Agent('AgenteAlojamiento',
                        agn.AgenteAlojamiento,
                        'http://%s:%d/comm' % ("localhost", 8080),
                        'http://%s:%d/Stop' % ("localhost", 8080))
+
+AgentActivitats = Agent('AgentActivitats',
+                       agn.AgentActivitats,
+                       'http://%s:%d/comm' % ("localhost", 8082),
+                       'http://%s:%d/Stop' % ("localhost", 8082))
+
 
 # Global triplestore graph
 dsgraph = Graph()
@@ -191,6 +197,23 @@ def comunicacion():
             # 5. return chosen transport
             return h
 
+        def obtain_activities():
+            global mss_cnt
+            demana_a = Graph()
+            demana_a.bind('dem', DEM)
+            activitat = agn['activitat']
+            demana_a.add((activitat, RDF.type, DEM.Demanar_activitat))
+
+            # 2. build && send message to the external agent
+            mss_cnt += 1
+            gr = build_message(demana_a, perf=ACL.request, sender=AgentePlanificador.uri, msgcnt=mss_cnt, receiver=AgentActivitats.uri, content=activitat)
+            
+            # 3. get response
+            a = send_message(gr, AgentActivitats.address)
+
+            # TODO
+            return a
+
         content = msgdic['content']
 
         obj_restriccions = gm.value(subject=content, predicate=DEM.Restriccions)
@@ -202,12 +225,16 @@ def comunicacion():
 
         obj_preferencies = gm.value(subject=content, predicate=DEM.Restriccions)
  
-        
         # Obtenim transport i hotel
         #t = 
-        obtain_transport()
+        #obtain_transport()
         #h =
-        obtain_hotel()
+        #obtain_hotel()
+        a = obtain_activities()
+        print("NOW IM PRINTING THE ACTIVITY INFO")
+        for s, p, o in a:
+            print(s,p,o)
+        print('END')
 
         content = Graph() # posar el t i h al graf de resultats com toqui
         content.bind('via', VIA)
@@ -218,7 +245,8 @@ def comunicacion():
 
         '''
         content.add((viatge_obj, VIA.Allotjament, h))
-        content.add((viatge_obj, VIA.transport, t))
+        content.add((viatge_obj, VIA.Transport, t))
+        content.add((viatge_obj, VIA.Activitats, a))
         '''
         return content
 
@@ -250,7 +278,7 @@ def comunicacion():
             if 'content' in msgdic:
                 content = msgdic['content']
                 accion = gm.value(subject=content, predicate=RDF.type)
-
+                print(accion)
                 if accion == DEM.Planificar_viatge : #comparar que sigui del tipus d'accio que volem
                     graph_content = prepare_trip()
                     gr = build_message(graph_content, ACL['inform'], sender=AgentePlanificador.uri, msgcnt=mss_cnt, content = VIA.Viatge)
