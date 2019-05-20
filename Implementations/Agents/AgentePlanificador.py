@@ -209,20 +209,39 @@ def comunicacion():
             total_activitats.bind('via', VIA)
             total_activitats.bind('foaf', FOAF)
 
+            current_date = data_inici
             for i in range(0, n):
-                demana_a = Graph()
-                demana_a.bind('dem', DEM)
-                activitat = agn['activitat']
-                demana_a.add((activitat, RDF.type, DEM.Demanar_activitat))
+                # posar dia, franja horaria
+                for i in range(0, 3):
+                    franja = ''
+                    if i == 0:
+                        franja = 'mati'
+                    elif i == 2:
+                        franja = 'tarda'
+                    else:
+                        franja = 'nit'
 
-                # 2. build && send message to the external agent
-                mss_cnt += 1
-                gr = build_message(demana_a, perf=ACL.request, sender=AgentePlanificador.uri, msgcnt=mss_cnt, receiver=AgentActivitats.uri, content=activitat)
-                
-                # 3. get response
-                a = send_message(gr, AgentActivitats.address)
-                total_activitats += a
-                print('i value: ', i)
+                    demana_a = Graph()
+                    demana_a.bind('dem', DEM)
+                    activitat = agn['activitat']
+                    demana_a.add((activitat, RDF.type, DEM.Demanar_activitat))
+
+                    # 2. build && send message to the external agent
+                    mss_cnt += 1
+                    gr = build_message(demana_a, perf=ACL.request, sender=AgentePlanificador.uri, msgcnt=mss_cnt, receiver=AgentActivitats.uri, content=activitat)
+                    
+                    # 3. get response
+                    a = send_message(gr, AgentActivitats.address)
+
+                    # 4. triar una activitat
+                    # descripcio del algoritme pensat:
+                    # buscar les ids de totes les activitats, mantenir fora una llista de ids, mirar si esta o no esta, i posarla
+                    escollida = a
+                    total_activitats += escollida
+
+                    # calculate next date and continue iterating
+                    print('i value: ', i)
+                    current_date += timedelta(days=1)
             # TODO
             return total_activitats
 

@@ -44,3 +44,5 @@ VIA = Namespace('http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#')
 #Ontologia comunicacio entre agents
 DEM = Namespace('http://www.semanticweb.org/guille/ontologies/2019/4/OntologiaDemandes#')
 
+FOAF = Namespace('http://xmls.com/foaf/0.1/')
+
