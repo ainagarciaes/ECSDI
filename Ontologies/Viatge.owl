@@ -121,6 +121,9 @@
         <ObjectProperty IRI="#dades_meteorologiques_de"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#destí"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#es_oferta_per"/>
     </Declaration>
     <Declaration>
@@ -149,6 +152,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#ofereix_seients"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#origen"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#se_celebra_a"/>
@@ -376,6 +382,10 @@
         <Class IRI="#Meteorologia"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#destí"/>
+        <Class IRI="#Transport"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#es_oferta_per"/>
         <Class IRI="#Tipus_estada"/>
     </ObjectPropertyDomain>
@@ -420,6 +430,10 @@
         <Class IRI="#Transport"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#origen"/>
+        <Class IRI="#Transport"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#se_celebra_a"/>
         <Class IRI="#Activitat"/>
     </ObjectPropertyDomain>
@@ -447,6 +461,10 @@
         <ObjectProperty IRI="#s&apos;hi_celebra"/>
         <Class IRI="#Recinte"/>
     </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#destí"/>
+        <Class IRI="#Municipi"/>
+    </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#es_oferta_per"/>
         <Class IRI="#Allotjament"/>
@@ -490,6 +508,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#ofereix_seients"/>
         <Class IRI="#Tipus_seient"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#origen"/>
+        <Class IRI="#Municipi"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#se_celebra_a"/>
