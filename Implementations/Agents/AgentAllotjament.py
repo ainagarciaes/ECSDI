@@ -16,12 +16,18 @@ Asume que el agente de registro esta en el puerto 9000
 
 from multiprocessing import Process, Queue
 import socket
+import sys
+import os
 
-from rdflib import Namespace, Graph
+sys.path.append(os.path.relpath("../AgentUtil"))
+
+from rdflib import Namespace, Graph, Literal
 from flask import Flask
 
-from AgentUtil.FlaskServer import shutdown_server
-from AgentUtil.Agent import Agent
+from FlaskServer import shutdown_server
+from ACLMessages import build_message, send_message, get_message_properties
+from OntoNamespaces import ACL, DSO, RDF, DEM, VIA
+from Agent import Agent
 
 __author__ = 'javier'
 
@@ -98,11 +104,10 @@ def comunicacion():
         perf = msgdic['performative']
 
         if perf != ACL.request:
-            # Si no es un request, respondemos que no hemos entendido el mensaje
+            # SI NO ENS FAN UN REQUEST
             gr = build_message(Graph(), ACL['not-understood'], sender=AgentAllotjament.uri, msgcnt=mss_cnt)
         else:
-            # Extraemos el objeto del contenido que ha de ser una accion de la ontologia de acciones del agente
-            # de registro
+            # AQUI HI ARRIBEM QUAN HEM ENTES EL MISSATGE I ES DEL TIPUS QUE VOLIEM
 
             # Averiguamos el tipo de la accion
             if 'content' in msgdic:
