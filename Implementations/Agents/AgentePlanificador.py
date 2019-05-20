@@ -20,6 +20,7 @@ import sys
 import os
 
 sys.path.append(os.path.relpath("../AgentUtil"))
+sys.path.append(os.path.relpath("../Utils"))
 
 from rdflib import Namespace, Graph, Literal
 from flask import Flask, request
@@ -28,6 +29,7 @@ from FlaskServer import shutdown_server
 from Agent import Agent
 from ACLMessages import build_message, send_message, get_message_properties
 from OntoNamespaces import ACL, DSO, RDF, DEM, VIA, FOAF
+from StringDateConversions import stringToDate
 
 __author__ = 'javier'
 
@@ -199,20 +201,30 @@ def comunicacion():
 
         def obtain_activities():
             global mss_cnt
-            demana_a = Graph()
-            demana_a.bind('dem', DEM)
-            activitat = agn['activitat']
-            demana_a.add((activitat, RDF.type, DEM.Demanar_activitat))
 
-            # 2. build && send message to the external agent
-            mss_cnt += 1
-            gr = build_message(demana_a, perf=ACL.request, sender=AgentePlanificador.uri, msgcnt=mss_cnt, receiver=AgentActivitats.uri, content=activitat)
-            
-            # 3. get response
-            a = send_message(gr, AgentActivitats.address)
+            diff = stringToDate(data_final) - stringToDate(data_inici)
+            n = diff.days
 
+            total_activitats = Graph()
+            total_activitats.bind('via', VIA)
+            total_activitats.bind('foaf', FOAF)
+
+            for i in range(0, n):
+                demana_a = Graph()
+                demana_a.bind('dem', DEM)
+                activitat = agn['activitat']
+                demana_a.add((activitat, RDF.type, DEM.Demanar_activitat))
+
+                # 2. build && send message to the external agent
+                mss_cnt += 1
+                gr = build_message(demana_a, perf=ACL.request, sender=AgentePlanificador.uri, msgcnt=mss_cnt, receiver=AgentActivitats.uri, content=activitat)
+                
+                # 3. get response
+                a = send_message(gr, AgentActivitats.address)
+                total_activitats += a
+                print('i value: ', i)
             # TODO
-            return a
+            return total_activitats
 
         content = msgdic['content']
 
@@ -233,7 +245,8 @@ def comunicacion():
         a = obtain_activities()
         print("NOW IM PRINTING THE ACTIVITY INFO")
         for s, p, o in a:
-            print(s,p,o)
+            if p == FOAF.name:
+                print(o)
         print('END')
 
         content = Graph() # posar el t i h al graf de resultats com toqui

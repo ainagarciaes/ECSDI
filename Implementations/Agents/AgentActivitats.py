@@ -92,21 +92,21 @@ def comunicacion():
         activitats.bind('foaf', FOAF)
         activitats.bind('via', VIA)
 
-        activitat = VIA.Activitat + '_activitat'
+        activitat = VIA.Activitat + '_activitat' + str(mss_cnt)
         activitats.add((activitat, RDF.type, VIA.Activitat))
 
         # recinte on es fa l'activitat
-        recinte = VIA.Recinte + '_recinte'                              # id del objecte recinte
-        activitats.add((recinte, RDF.type, VIA.Recinte))                # assigno el tipus
-        activitats.add((recinte, FOAF.name, Literal('NOM RECINTE')))    # informacio literal sobre recinte
-        activitats.add((activitat, VIA.se_celebra_a, recinte))          # relacio del recinte creat amb l'activitat
+        recinte = VIA.Recinte + '_recinte' + str(mss_cnt)                               # id del objecte recinte
+        activitats.add((recinte, RDF.type, VIA.Recinte))                                # assigno el tipus
+        activitats.add((recinte, FOAF.name, Literal('NOM RECINTE ' + str(mss_cnt))))     # informacio literal sobre recinte
+        activitats.add((activitat, VIA.se_celebra_a, recinte))                          # relacio del recinte creat amb l'activitat
         
         # activitat dummy de tipus ludica, concert
-        ludica = VIA.Ludica + 'ludica'
-        concert = VIA.Concert + 'concert'
+        ludica = VIA.Ludica + 'ludica' + str(mss_cnt)
+        concert = VIA.Concert + 'concert' + str(mss_cnt)
         activitats.add((activitat, VIA.Ludica, ludica))
         activitats.add((ludica, VIA.Concert, concert))
-        activitats.add((concert, FOAF.name, Literal("NOM CONCERT")))
+        activitats.add((concert, FOAF.name, Literal("NOM CONCERT " + str(mss_cnt))))
         # TODO posar aqui les dates d'obertura?
         return activitats
 
