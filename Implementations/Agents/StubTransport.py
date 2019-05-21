@@ -22,7 +22,7 @@ import os
 sys.path.append(os.path.relpath("../AgentUtil"))
 
 from rdflib import Namespace, Graph, Literal
-from flask import Flask
+from flask import Flask, request
 
 
 from FlaskServer import shutdown_server
@@ -34,7 +34,7 @@ __author__ = 'javier'
 
 
 # Configuration stuff
-hostname = socket.gethostname()
+hostname = 'localhost'
 port = 8081
 
 agn = Namespace("http://www.agentes.org#")
@@ -69,12 +69,16 @@ cola1 = Queue()
 # Flask stuff
 app = Flask(__name__)
 
+@app.route("/")
+def testing():
+    return "testing connection"
 
 @app.route("/comm")
 def comunicacion():
     """
     Entrypoint de comunicacion
     """
+    print('entrypoint comunicacion')
     global dsgraph
     global mss_cnt
 
@@ -85,7 +89,7 @@ def comunicacion():
         #transports.bind('foaf', FOAF)
         transports.bind('via', VIA)
 
-        transort= VIA.transport + '_transport' + str(mss_cnt)
+        transport= VIA.transport + '_transport' + str(mss_cnt)
         transports.add((transport, RDF.type, VIA.Transport))
 
         # Municipi origen i desti del transport
@@ -115,8 +119,8 @@ def comunicacion():
         # tipus de seient del transport
         seient = VIA.Tipus_seient + '_seient' + str(mss_cnt)                              
         transports.add((seient, RDF.type, VIA.Tipus_seient))                                
-        allotjaments.add((seient, VIA.Nom, Literal('NOM TIPUS SEIENT ' + str(mss_cnt))))     
-        allotjaments.add((transport, VIA.ofereix_seients, seient)) 
+        transports.add((seient, VIA.Nom, Literal('NOM TIPUS SEIENT ' + str(mss_cnt))))     
+        transports.add((transport, VIA.ofereix_seients, seient)) 
 
         # transport dummy de capacitat 10
         transport1 = VIA.Transport + 'transport' + str(mss_cnt)
@@ -141,12 +145,14 @@ def comunicacion():
 
     # FIPA ACL message?
     if msgdic is None:      # NO: responem "not understood"
+        print('you did not send anything')
         gr = build_message(Graph(), ACL['not-understood'], sender=AgentTransport.uri, msgcnt=mss_cnt)
     else:                   # SI: mirem que demana
         # Performativa
         perf = msgdic['performative']
 
         if perf != ACL.request:
+            print('did not receive an acl request')
             # Si no es un request, respondemos que no hemos entendido el mensaje
             gr = build_message(Graph(), ACL['not-understood'], sender=AgentTransport.uri, msgcnt=mss_cnt)
         else:
@@ -158,11 +164,13 @@ def comunicacion():
                 content = msgdic['content']
                 accion = gm.value(subject=content, predicate=RDF.type) # TODO preguntar com va aixo
 
-                if action == DEM.Consultar_transports: #comparar que sigui del tipus d'accio que volem
-                    graph_content = getTransports()
+                if accion == DEM.Consultar_transports: #comparar que sigui del tipus d'accio que volem
+                    print('getting transports')
+                    graph_content = GetTransports()
                     gr = build_message(graph_content, ACL['inform'], sender=AgentTransport.uri, msgcnt=mss_cnt, content = VIA.Transport)
 
                 else:
+                    print('wrong action')
                     gr = build_message(Graph(), ACL['not-understood'], sender=AgentTransport.uri, msgcnt=mss_cnt)
 
     mss_cnt += 1

@@ -123,10 +123,10 @@ def comunicacion():
             # 2. build && send message to the external agent
             mss_cnt += 1
             gr = build_message(content_transport, perf=ACL.request, sender=AgentePlanificador.uri, msgcnt=mss_cnt, receiver=AgenteTransporte.uri, content=consultar_transport_obj)
-            
             # 3. get response
             res = send_message(gr, AgenteTransporte.address)
 
+            '''
             # 4. parse response and choose one
             t = res.query("""   
                 SELECT ?transport ?import ?nomorigen ?nomdesti ?danada ?dtornada ?tipustansport ?tipusseient
@@ -146,11 +146,12 @@ def comunicacion():
                 }
                 LIMIT 1 
                 """, initNs = {'via', VIA})
-
+            '''
             #TODO mirar be els noms de la ontologia i buscar com passar parametres a la busqueda
 
             # 5. return chosen transport
-            return t
+            #return t
+            return res
         
         def obtain_hotel():
             global mss_cnt
@@ -177,13 +178,12 @@ def comunicacion():
             # 2. build && send message to the external agent
             mss_cnt += 1
             gr = build_message(content_allotjament, perf=ACL.request, sender=AgentePlanificador.uri, msgcnt=mss_cnt, receiver=AgenteAlojamiento.uri, content=consultar_allotjament_obj)
-            res = send_message(gr, AgenteAlojamiento.address)
             
             # 3. get response
             res = send_message(gr, AgenteAlojamiento.address)
-
+            
             # 4. parse response and choose one
-         
+            '''
             h = res.query("""
                 SELECT ?a ?import ?ciutat ?capacitat ?dinici ?dfi ?tipusallotj
                 WHERE {
@@ -200,10 +200,11 @@ def comunicacion():
                 }
                 LIMIT 1
                 """, initNs = {'via', VIA})
-                
+            '''
             #TODO mirar be els noms de la ontologia i buscar com passar parametres a la busqueda
             # 5. return chosen transport
-            return h
+            return res
+            #return h
 
         def obtain_activities():
             print('entering obtain activitites')
@@ -248,7 +249,6 @@ def comunicacion():
                     gr = build_message(demana_a, perf=ACL.request, sender=AgentePlanificador.uri, msgcnt=mss_cnt, receiver=AgentActivitats.uri, content=activitat)
                     
                     # 3. get response
-                    print('sending message to agent activitats')
                     a = send_message(gr, AgentActivitats.address)
 
                     # 4. triar una activitat
@@ -258,7 +258,6 @@ def comunicacion():
 
                     # calculate next date and continue iterating
                     current_date += datetime.timedelta(days=1)
-            # TODO
             return total_activitats
 
         content = msgdic['content']
@@ -273,16 +272,18 @@ def comunicacion():
         obj_preferencies = gm.value(subject=content, predicate=DEM.Restriccions)
  
         # Obtenim transport i hotel
-        #t = 
-        #obtain_transport()
-        #h =
-        #obtain_hotel()
+        t = obtain_transport()
+        h = obtain_hotel()
+        for a, b, c in h:
+            print(c)
         a = obtain_activities()
+        '''
         print("NOW IM PRINTING THE ACTIVITY INFO")
         for s, p, o in a:
             if p == FOAF.name:
                 print(o)
         print('END')
+        '''
 
         content = Graph() # posar el t i h al graf de resultats com toqui
         content.bind('via', VIA)

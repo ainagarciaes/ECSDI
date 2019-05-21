@@ -19,12 +19,12 @@ import socket
 import sys
 import os
 
-from rdflib import Namespace, Graph
+from rdflib import Namespace, Graph, Literal
 from flask import Flask
 
 sys.path.append(os.path.relpath("../AgentUtil"))
 
-from FlaskServer import shutdown_server
+from FlaskServer import shutdown_server, request
 from Agent import Agent
 from ACLMessages import build_message, send_message, get_message_properties
 from OntoNamespaces import ACL, DSO, RDF, DEM, VIA, FOAF
@@ -33,7 +33,7 @@ __author__ = 'javier'
 
 
 # Configuration stuff
-hostname = socket.gethostname()
+hostname = 'localhost'
 port = 8080
 
 agn = Namespace("http://www.agentes.org#")
@@ -67,6 +67,9 @@ cola1 = Queue() # crec que aixo no ens cal per ara pero ho deixo por si acaso
 # Flask stuff
 app = Flask(__name__)
 
+@app.route("/")
+def testing():
+    return "testing connection"
 
 @app.route("/comm")
 def comunicacion():
@@ -164,7 +167,7 @@ def comunicacion():
                 content = msgdic['content']
                 accion = gm.value(subject=content, predicate=RDF.type)
 
-                if action == DEM.Consultar_hotels: #comparar que sigui del tipus d'accio que volem
+                if accion == DEM.Consultar_hotels: #comparar que sigui del tipus d'accio que volem
                     graph_content = getAllotjaments()
                     gr = build_message(graph_content, ACL['inform'], sender=AgentAllotjament.uri, msgcnt=mss_cnt, content = VIA.Allotjament)
 
@@ -211,7 +214,7 @@ if __name__ == '__main__':
     ab1.start()
 
     # Ponemos en marcha el servidor
-    app.run(host=hostname, port=port)
+    app.run(host=hostname, port=8080)
 
     # Esperamos a que acaben los behaviors
     ab1.join()
