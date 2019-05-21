@@ -128,8 +128,8 @@ def comunicacion():
                 action = gm.value(subject=content, predicate=RDF.type)
 
                 if action == DEM.Consultar_hotels: #comparar que sigui del tipus d'accio que volem
-                    gr = cercaHotels()
-
+                    graf_resposta = cercaHotels()
+                    gr = build_message(graf_resposta, ACL['inform'], sender=AgentAllotjament.uri, msgcnt=mss_cnt, content = VIA.Viatge)
                 else:
                     gr = build_message(Graph(), ACL['not-understood'], sender=AgentAllotjament.uri, msgcnt=mss_cnt)
 
