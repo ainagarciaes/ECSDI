@@ -110,7 +110,18 @@ content_graph.add((restr_allotjament_obj, DEM.Preu, Literal(accomodation_budget)
 content_graph.add((restr_transport_obj, DEM.Preu, Literal(transport_budget)))
 
 # passem les preferencies al graph
-# TODO
+tipus = max([ludic, festiu])
+tipus = max([tipus, cultural])
+
+t = ''
+if tipus == ludic:
+    t = 'ludic'
+elif tipus == festiu:
+    t = 'festiu'
+else:
+    t = 'cultural'
+
+content_graph.add((pref_obj, DEM.Tipus_estada, Literal(t)))
 
 gr = Graph()
 # building an ACL message
