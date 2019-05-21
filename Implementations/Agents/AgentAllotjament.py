@@ -74,7 +74,7 @@ def comunicacion():
     Entrypoint de comunicacion
     """
 
-    def find_available_options():
+    def cercaHotels():
         content = Graph()
 
         #posar al content la busqueda del que ens demanen
@@ -112,10 +112,10 @@ def comunicacion():
             # Averiguamos el tipo de la accion
             if 'content' in msgdic:
                 content = msgdic['content']
-                accion = gm.value(subject=content, predicate=RDF.type)
+                action = gm.value(subject=content, predicate=RDF.type)
 
-                if action: #comparar que sigui del tipus d'accio que volem
-                    gr = find_available_options()
+                if action == DEM.Consultar_hotels: #comparar que sigui del tipus d'accio que volem
+                    gr = cercaHotels()
 
                 else:
                     gr = build_message(Graph(), ACL['not-understood'], sender=AgentAllotjament.uri, msgcnt=mss_cnt)
