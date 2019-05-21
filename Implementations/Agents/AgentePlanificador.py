@@ -18,6 +18,7 @@ from multiprocessing import Process, Queue
 import socket
 import sys
 import os
+import datetime
 
 sys.path.append(os.path.relpath("../AgentUtil"))
 sys.path.append(os.path.relpath("../Utils"))
@@ -205,6 +206,7 @@ def comunicacion():
             return h
 
         def obtain_activities():
+            print('entering obtain activitites')
             global mss_cnt
 
             diff = stringToDate(data_final) - stringToDate(data_inici)
@@ -219,7 +221,7 @@ def comunicacion():
             total_activitats.bind('via', VIA)
             total_activitats.bind('foaf', FOAF)
 
-            current_date = data_inici
+            current_date = stringToDate(data_inici)
             for i in range(0, n):
                 # posar dia, franja horaria
                 for i in range(0, 3):
@@ -237,7 +239,7 @@ def comunicacion():
                     demana_a.add((activitat, RDF.type, DEM.Demanar_activitat))
                     demana_a.add((activitat, DEM.Ciutat, Literal(desti)))
                     demana_a.add((activitat, DEM.Cost, Literal(budget_activitat)))
-                    demana_a.add((activitat, DEM.Data_activitat, Literal(stringToDate(current_date))))
+                    demana_a.add((activitat, DEM.Data_activitat, Literal(data_inici)))
                     demana_a.add((activitat, DEM.Horari, Literal(franja)))
                     demana_a.add((activitat, DEM.Tipus_activitat, Literal(tipusViatge)))
 
@@ -246,17 +248,16 @@ def comunicacion():
                     gr = build_message(demana_a, perf=ACL.request, sender=AgentePlanificador.uri, msgcnt=mss_cnt, receiver=AgentActivitats.uri, content=activitat)
                     
                     # 3. get response
+                    print('sending message to agent activitats')
                     a = send_message(gr, AgentActivitats.address)
 
                     # 4. triar una activitat
                     # descripcio del algoritme pensat:
                     # buscar les ids de totes les activitats, mantenir fora una llista de ids, mirar si esta o no esta, i posarla
-                    escollida = a
-                    total_activitats += escollida
+                    total_activitats += a
 
                     # calculate next date and continue iterating
-                    print('i value: ', i)
-                    current_date += timedelta(days=1)
+                    current_date += datetime.timedelta(days=1)
             # TODO
             return total_activitats
 

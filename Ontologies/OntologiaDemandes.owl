@@ -248,9 +248,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/guille/ontologies/2019/4/OntologiaDemandes#Tipus_d&apos;estada -->
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/4/OntologiaDemandes#Tipus_estada -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/4/OntologiaDemandes#Tipus_d&apos;estada">
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/4/OntologiaDemandes#Tipus_estada">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/OntologiaDemandes#Preferencies"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/4/OntologiaDemandes#Preferencies_hotels"/>
         <rdfs:comment>Preferència per a indicar quina mena d&apos;estada volem en un hotel. (Pensió completa, mitja pensió, només pernoctació, etc.)</rdfs:comment>
