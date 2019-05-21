@@ -128,20 +128,24 @@ def comunicacion():
 
             # 4. parse response and choose one
             t = res.query("""   
-                SELECT ?transport ?preu ?origen ?desti ?danada ?dtornada ?tipustansport ?tipusseient
+                SELECT ?transport ?import ?nomorigen ?nomdesti ?danada ?dtornada ?tipustansport ?tipusseient
                 WHERE {
                     ?transport RDF.type via.Transport .
-                    ?transport via.Preu ?preu .
-                    ?transport via.Origen ?origen .
-                    ?transport via.Desti ?desti .
+                    ?transport via.val ?preu .
+                    ?preu via.Import ?import .
+                    ?transport via.origen ?origen .
+                    ?transport via.desti ?desti .
+                    ?desti via.Nom ?nomdesti .
+                    ?origen via.Nom ?nomorigen .
                     ?transport via.DataAnada ?danada .
                     ?transport via.DataTornada ?dtornada .
-                    ?transport via.TipusTransport ?tipustransport .
+                    ?transport via.MitjaTransport ?tipustransport .
                     ?transport via.TipusSeient ?tipusseient .
                     FILTER {?tipustransport = "avio", ?tipusseient = loquesea }
                 }
                 LIMIT 1 
                 """, initNs = {'via', VIA})
+
             #TODO mirar be els noms de la ontologia i buscar com passar parametres a la busqueda
 
             # 5. return chosen transport
@@ -180,15 +184,16 @@ def comunicacion():
             # 4. parse response and choose one
          
             h = res.query("""
-                SELECT ?a ?preu ?ciutat ?capacitat ?dinici ?dfi ?tipusallotj ?dir
+                SELECT ?a ?import ?ciutat ?capacitat ?dinici ?dfi ?tipusallotj
                 WHERE {
                     ?a RDF.type via.Allotjament .
-                    ?a via.Preu ?preu .
+                    ?a via.val ?preu .
+                    ?preu via.Import ?import .
                     ?a via.DataInici ?dinici .
                     ?a via.DataFi ?dfi .
                     ?a via.TipusAllotjament ?tipusallotj .
-                    ?a via.Adreça ?dir .
-                    ?a via.Municipi ?ciutat .
+                    ?a via.es_troba_a ?muni .
+                    ?muni via.Nom ?ciutat .
                     ?a via.Capacitat ?capacitat .
                     FILTER {?tipusallotj = "hotel"}
                 }
@@ -204,6 +209,11 @@ def comunicacion():
 
             diff = stringToDate(data_final) - stringToDate(data_inici)
             n = diff.days
+
+            # agafar d'aqui el preu de les activitats
+            obj_pref = gm.value(subject=content, predicate = DEM.Preferencies)
+            tipusViatge = gm.value(subject=obj_pref, predicate=DEM.Tipus_estada)            
+            budget_activitat = 0
 
             total_activitats = Graph()
             total_activitats.bind('via', VIA)
@@ -225,6 +235,11 @@ def comunicacion():
                     demana_a.bind('dem', DEM)
                     activitat = agn['activitat']
                     demana_a.add((activitat, RDF.type, DEM.Demanar_activitat))
+                    demana_a.add((activitat, DEM.Ciutat, Literal(desti)))
+                    demana_a.add((activitat, DEM.Cost, Literal(budget_activitat)))
+                    demana_a.add((activitat, DEM.Data_activitat, Literal(stringToDate(current_date))))
+                    demana_a.add((activitat, DEM.Horari, Literal(franja)))
+                    demana_a.add((activitat, DEM.Tipus_activitat, Literal(tipusViatge)))
 
                     # 2. build && send message to the external agent
                     mss_cnt += 1
