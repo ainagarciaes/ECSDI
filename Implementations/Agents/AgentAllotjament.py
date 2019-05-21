@@ -22,7 +22,7 @@ import os
 sys.path.append(os.path.relpath("../AgentUtil"))
 
 from rdflib import Namespace, Graph, Literal
-from flask import Flask
+from flask import Flask, request
 
 from FlaskServer import shutdown_server
 from ACLMessages import build_message, send_message, get_message_properties
@@ -33,7 +33,8 @@ __author__ = 'javier'
 
 
 # Configuration stuff
-hostname = socket.gethostname()
+#hostname = socket.gethostname()
+hostname = "localhost"
 port = 8080
 
 agn = Namespace("http://www.agentes.org#")
@@ -91,7 +92,7 @@ def comunicacion():
         dataF = gm.value(subject=obj_restriccions, predicate=DEM.Data_final)
         NumPer = gm.value(subject=obj_restriccions, predicate=DEM.NumPersones)
         preuAllot = gm.value(subject=obj_restriccions, predicate=DEM.Preu)
-
+        print(Ciutat)
         gr = build_message(Graph(),
             ACL['inform'],
             sender=AgentAllotjament.uri,
@@ -173,7 +174,7 @@ if __name__ == '__main__':
     ab1.start()
 
     # Ponemos en marcha el servidor
-    app.run(host=hostname, port=port)
+    app.run(host=hostname, port=8080)
 
     # Esperamos a que acaben los behaviors
     ab1.join()
