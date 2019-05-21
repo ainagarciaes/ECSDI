@@ -22,7 +22,7 @@ import os
 sys.path.append(os.path.relpath("../AgentUtil"))
 
 from rdflib import Namespace, Graph, Literal
-from flask import Flask
+from flask import Flask, request
 
 
 from FlaskServer import shutdown_server
@@ -34,7 +34,8 @@ __author__ = 'javier'
 
 
 # Configuration stuff
-hostname = socket.gethostname()
+#hostname = socket.gethostname()
+hostname = "localhost"
 port = 8081
 
 agn = Namespace("http://www.agentes.org#")
@@ -76,9 +77,19 @@ def comunicacion():
     Entrypoint de comunicacion
     """
 
-    def find_available_options():
-        content = Graph()
-        content.add
+    def cercaTransports():
+        contingut = Graph()
+        global ciutat_origen
+        restriccions_transport = gm.value(subject=content, predicate=DEM.Restriccions_transports)
+        DataF = gm.value(subject=restriccions_transport, predicate=DEM.Data_final)
+        DataIni = gm.value(subject=restriccions_transport, predicate=DEM.Data_inici)
+        ciutat_desti = gm.value(subject=restriccions_transport, predicate=DEM.Desti)
+        NPers = gm.value(subject=restriccions_transport, predicate=DEM.NumPersones)
+        ciutat_origen = gm.value(subject=restriccions_transport, predicate=DEM.Origen)
+        Preu = gm.value(subject=restriccions_transport, predicate=DEM.Preu)
+        print(ciutat_desti)
+
+        Preu = gm.value(subject=restriccions_transport, predicate=DEM.Preu)
         #posar al content la busqueda del que ens demanen
         gr = build_message(content,
             ACL['inform'],
@@ -114,11 +125,11 @@ def comunicacion():
             # Averiguamos el tipo de la accion
             if 'content' in msgdic:
                 content = msgdic['content']
-                accion = gm.value(subject=content, predicate=RDF.type) # TODO preguntar com va aixo
+                action = gm.value(subject=content, predicate=RDF.type) # TODO preguntar com va aixo
 
-                if action: #comparar que sigui del tipus d'accio que volem
-                    gr = find_available_options()
-
+                if action == DEM.Consultar_transports: #comparar que sigui del tipus d'accio que volem
+                    graf_resposta = cercaTransports()
+                    gr = build_message(graf_resposta, ACL['inform'], sender=AgentAllotjament.uri, msgcnt=mss_cnt, content = VIA.Viatge)
                 else:
                     gr = build_message(Graph(), ACL['not-understood'], sender=AgentTransport.uri, msgcnt=mss_cnt)
 
@@ -162,7 +173,7 @@ if __name__ == '__main__':
     ab1.start()
 
     # Ponemos en marcha el servidor
-    app.run(host=hostname, port=port)
+    app.run(host=hostname, port=8081)
 
     # Esperamos a que acaben los behaviors
     ab1.join()

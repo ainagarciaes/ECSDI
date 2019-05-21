@@ -77,12 +77,7 @@ def comunicacion():
 
     def cercaHotels():
 
-        global obj_restriccions
-        global ciutat
-        global dataI
-        global dataF
-        global NumPer
-        global preuAllot
+        
 
         contingut = Graph()
         obj_restriccions = gm.value(subject=content, predicate=DEM.Restriccions_hotels)
@@ -92,7 +87,13 @@ def comunicacion():
         NumPer = gm.value(subject=obj_restriccions, predicate=DEM.NumPersones)
         preuAllot = gm.value(subject=obj_restriccions, predicate=DEM.Preu)
         print(ciutat)
+        print(dataI)
+        print(dataF)
+        print(NumPer)
+        print(preuAllot)
         print("HE ARRIBAT FINS AQUÍ")
+
+
         gr = build_message(Graph(),
             ACL['inform'],
             sender=AgentAllotjament.uri,
