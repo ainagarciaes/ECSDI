@@ -158,7 +158,7 @@ def comunicacion():
                 content = msgdic['content']
                 accion = gm.value(subject=content, predicate=RDF.type) # TODO preguntar com va aixo
 
-                if action: #comparar que sigui del tipus d'accio que volem
+                if action == DEM.Consultar_transports: #comparar que sigui del tipus d'accio que volem
                     graph_content = getTransports()
                     gr = build_message(graph_content, ACL['inform'], sender=AgentTransport.uri, msgcnt=mss_cnt, content = VIA.Transport)
 

@@ -164,7 +164,7 @@ def comunicacion():
                 content = msgdic['content']
                 accion = gm.value(subject=content, predicate=RDF.type)
 
-                if action == DEM.Demanar.Consultar_hotels: #comparar que sigui del tipus d'accio que volem
+                if action == DEM.Consultar_hotels: #comparar que sigui del tipus d'accio que volem
                     graph_content = getAllotjaments()
                     gr = build_message(graph_content, ACL['inform'], sender=AgentAllotjament.uri, msgcnt=mss_cnt, content = VIA.Allotjament)
 
