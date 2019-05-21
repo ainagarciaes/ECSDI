@@ -31,7 +31,7 @@
         <Class IRI="#Cultural"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Dates_obertura"/>
+        <Class IRI="#Data"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Edifici_interessant"/>
@@ -119,6 +119,12 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#dades_meteorologiques_de"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#data_anada"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#data_tornada"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#destí"/>
@@ -254,11 +260,11 @@
         <Class IRI="#Activitat"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Dates_obertura"/>
+        <Class IRI="#Data"/>
         <Class IRI="#Temps"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Dates_obertura"/>
+        <Class IRI="#Data"/>
         <DataSomeValuesFrom>
             <DataProperty IRI="#Data"/>
             <Datatype abbreviatedIRI="xsd:string"/>
@@ -509,6 +515,14 @@
         <Class IRI="#Meteorologia"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#data_anada"/>
+        <Class IRI="#Transport"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#data_tornada"/>
+        <Class IRI="#Transport"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#destí"/>
         <Class IRI="#Transport"/>
     </ObjectPropertyDomain>
@@ -589,6 +603,14 @@
         <Class IRI="#Recinte"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#data_anada"/>
+        <Class IRI="#Data"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#data_tornada"/>
+        <Class IRI="#Data"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#destí"/>
         <Class IRI="#Municipi"/>
     </ObjectPropertyRange>
@@ -618,11 +640,11 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#obre_el_dia"/>
-        <Class IRI="#Dates_obertura"/>
+        <Class IRI="#Data"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#obre_les_dates"/>
-        <Class IRI="#Dates_obertura"/>
+        <Class IRI="#Data"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#obre_les_hores"/>
@@ -650,7 +672,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#se_celebra_el"/>
-        <Class IRI="#Dates_obertura"/>
+        <Class IRI="#Data"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#te_habitacions"/>
