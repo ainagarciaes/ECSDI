@@ -178,10 +178,25 @@
         <DataProperty IRI="#Capacitat"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#Data"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Graus"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#IDAct"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#Import"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#MitjaTransport"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Nom"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Percentatge"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#TipusAllotjament"/>
@@ -215,6 +230,13 @@
     <SubClassOf>
         <Class IRI="#Allotjament"/>
         <DataSomeValuesFrom>
+            <DataProperty IRI="#Nom"/>
+            <Datatype abbreviatedIRI="xsd:Name"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Allotjament"/>
+        <DataSomeValuesFrom>
             <DataProperty IRI="#TipusAllotjament"/>
             <Datatype abbreviatedIRI="xsd:string"/>
         </DataSomeValuesFrom>
@@ -236,6 +258,13 @@
         <Class IRI="#Temps"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Dates_obertura"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Data"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Edifici_interessant"/>
         <Class IRI="#Cultural"/>
     </SubClassOf>
@@ -246,6 +275,13 @@
     <SubClassOf>
         <Class IRI="#Estat_del_cel"/>
         <Class IRI="#Meteorologia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Estat_del_cel"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Nom"/>
+            <Datatype abbreviatedIRI="xsd:Name"/>
+        </DataSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Exposicio"/>
@@ -264,8 +300,22 @@
         <Class IRI="#Temps"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Horari"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Nom"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Humitat"/>
         <Class IRI="#Meteorologia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Humitat"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Percentatge"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Lloc_pintoresc"/>
@@ -274,6 +324,13 @@
     <SubClassOf>
         <Class IRI="#Localitzacio"/>
         <Class IRI="#Viatge"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Localitzacio"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Nom"/>
+            <Datatype abbreviatedIRI="xsd:Name"/>
+        </DataSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Ludica"/>
@@ -296,16 +353,44 @@
         <Class IRI="#Viatge"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Popularitat"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Nom"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Preu"/>
         <Class IRI="#Viatge"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Preu"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Import"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Recinte"/>
         <Class IRI="#Viatge"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Recinte"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Nom"/>
+            <Datatype abbreviatedIRI="xsd:Name"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Situacio"/>
         <Class IRI="#Viatge"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Situacio"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Nom"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Teatre"/>
@@ -316,6 +401,13 @@
         <Class IRI="#Meteorologia"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Temperatura"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Graus"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Temps"/>
         <Class IRI="#Viatge"/>
     </SubClassOf>
@@ -324,12 +416,33 @@
         <Class IRI="#Viatge"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Tipus_estada"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Nom"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Tipus_habitacio"/>
         <Class IRI="#Viatge"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Tipus_habitacio"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Nom"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Tipus_seient"/>
         <Class IRI="#Viatge"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tipus_seient"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Nom"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Transport"/>
@@ -350,8 +463,22 @@
         </DataSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Transport"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Nom"/>
+            <Datatype abbreviatedIRI="xsd:Name"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Visisbilitat"/>
         <Class IRI="#Meteorologia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Visisbilitat"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#Percentatge"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Visita_museu"/>
@@ -575,6 +702,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Preu</IRI>
         <Literal>Es pot considerar el preu per dia d&apos;un allotjament o el preu total d&apos;un trajecte d&apos;un transport determinat</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Situacio</IRI>
+        <Literal>Lloc del municipi on es troba un allotjament.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
