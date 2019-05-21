@@ -105,7 +105,7 @@ def comunicacion():
 
             # 1. build graph
             content_transport = Graph()
-            content_transport.bind('dem', DEM)  
+            content_transport.bind('dem', DEM)
 
             consultar_transport_obj = DEM.Consultar_transports + '_cons_transp'
             restr_transport_obj = DEM.Restriccions_transports
@@ -128,7 +128,7 @@ def comunicacion():
 
             '''
             # 4. parse response and choose one
-            t = res.query("""   
+            t = res.query("""
                 SELECT ?transport ?import ?nomorigen ?nomdesti ?danada ?dtornada ?tipustansport ?tipusseient
                 WHERE {
                     ?transport RDF.type via.Transport .
@@ -144,7 +144,7 @@ def comunicacion():
                     ?transport via.TipusSeient ?tipusseient .
                     FILTER {?tipustransport = "avio", ?tipusseient = loquesea }
                 }
-                LIMIT 1 
+                LIMIT 1
                 """, initNs = {'via', VIA})
             '''
             #TODO mirar be els noms de la ontologia i buscar com passar parametres a la busqueda
@@ -152,13 +152,13 @@ def comunicacion():
             # 5. return chosen transport
             #return t
             return res
-        
+
         def obtain_hotel():
             global mss_cnt
             # 0. extract parameters from the initial request
             obj_restriccions_allotjament = gm.value(subject=obj_restriccions, predicate=DEM.Restriccions_hotels)
             preu_allotjament = gm.value(subject=obj_restriccions_allotjament, predicate=DEM.Preu)
-            
+
             # 1. build graph
             content_allotjament = Graph()
             content_allotjament.bind('dem', DEM)
@@ -172,16 +172,16 @@ def comunicacion():
             content_allotjament.add((restr_allotjament_obj, DEM.Preu, Literal(preu_allotjament)))
             content_allotjament.add((restr_allotjament_obj, DEM.Data_inici, Literal(data_inici)))
             content_allotjament.add((restr_allotjament_obj, DEM.Data_final, Literal(data_final)))
-            content_allotjament.add((restr_allotjament_obj, DEM.Ciutat, Literal(origen)))
+            content_allotjament.add((restr_allotjament_obj, DEM.Ciutat, Literal(desti)))
             content_allotjament.add((restr_allotjament_obj, DEM.NumPersones, Literal(n_pers)))
 
             # 2. build && send message to the external agent
             mss_cnt += 1
             gr = build_message(content_allotjament, perf=ACL.request, sender=AgentePlanificador.uri, msgcnt=mss_cnt, receiver=AgenteAlojamiento.uri, content=consultar_allotjament_obj)
-            
+
             # 3. get response
             res = send_message(gr, AgenteAlojamiento.address)
-            
+
             # 4. parse response and choose one
             '''
             h = res.query("""
@@ -215,7 +215,7 @@ def comunicacion():
 
             # agafar d'aqui el preu de les activitats
             obj_pref = gm.value(subject=content, predicate = DEM.Preferencies)
-            tipusViatge = gm.value(subject=obj_pref, predicate=DEM.Tipus_estada)            
+            tipusViatge = gm.value(subject=obj_pref, predicate=DEM.Tipus_estada)
             budget_activitat = 0
 
             total_activitats = Graph()
@@ -247,7 +247,7 @@ def comunicacion():
                     # 2. build && send message to the external agent
                     mss_cnt += 1
                     gr = build_message(demana_a, perf=ACL.request, sender=AgentePlanificador.uri, msgcnt=mss_cnt, receiver=AgentActivitats.uri, content=activitat)
-                    
+
                     # 3. get response
                     a = send_message(gr, AgentActivitats.address)
 
@@ -270,7 +270,7 @@ def comunicacion():
         desti = gm.value(subject=obj_restriccions, predicate=DEM.Desti)
 
         obj_preferencies = gm.value(subject=content, predicate=DEM.Restriccions)
- 
+
         # Obtenim transport i hotel
         t = obtain_transport()
         h = obtain_hotel()
@@ -289,7 +289,7 @@ def comunicacion():
         content.bind('via', VIA)
 
         viatge_obj = VIA.Viatge + '_viatge'
-        
+
         content.add((viatge_obj, RDF.type, VIA.Viatge))
 
         '''
@@ -304,9 +304,9 @@ def comunicacion():
     message = request.args['content']
     gm = Graph()
     gm.parse(data=message)
-    
+
     msgdic = get_message_properties(gm)
-    
+
     gr = Graph()
 
     # FIPA ACL message?
@@ -378,5 +378,3 @@ if __name__ == '__main__':
     # Esperamos a que acaben los behaviors
     ab1.join()
     print('The End')
-
-
