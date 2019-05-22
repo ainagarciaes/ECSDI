@@ -99,14 +99,15 @@ def comunicacion():
         transports.add((localitzacio, VIA.Municipi, municipi))                                
         transports.add((municipi, VIA.Nom, Literal('NOM MUNICIPI ' + str(mss_cnt))))     
         transports.add((transport, VIA.origen, municipi))
-        transports.add((transport, VIA.desti, municipi))                          
+        transports.add((transport, VIA.desti, municipi))
+        transports.add((transport, VIA.MitjaTransport, Literal('avio')))                          
         
         # Data anada i tornada del transport
         temps = VIA.Temps + '_temps' + str(mss_cnt)
         data = VIA.Data + '_data' + str(mss_cnt)                              
         transports.add((temps, RDF.type, VIA.Temps))
         transports.add((temps, VIA.Data, data))                                  
-        transports.add((data, VIA.DAta, Literal('DATA ' + str(mss_cnt))))     
+        transports.add((data, VIA.Data, Literal('DATA ' + str(mss_cnt))))     
         transports.add((transport, VIA.data_anada, data))
         transports.add((transport, VIA.data_tornada, data)) 
 
