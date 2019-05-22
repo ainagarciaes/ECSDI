@@ -67,14 +67,11 @@ accomodation_budget = int(total_budget * accomodation_budget / total_reparticio)
 activities_budget = int(total_budget * activities_budget / total_reparticio)
 
 # Preferencies
-hotel_vs_apartament = form.getfirst("hotelapartm", "")
-centric_vs_outskirts = form.getfirst("centric", "")
-
-bus_vs_plane = form.getfirst("busplane", "")
-
-festiu = form.getfirst("festiu", "")
-ludic = form.getfirst("ludic", "")
-cultural = form.getfirst("cultural", "")
+localitzacio = form.getfirst("localitzacio", "")
+tipus_estada = form.getfirst("tipus_estada", "")
+tipus_seient = form.getfirst("tipus_seient", "")
+tipus_transport = form.getfirst("tipus_transport", "")
+tipus_activitats = form.getfirst("tipus_activitats", "")
 
 # create graph
 content_graph = Graph()
@@ -115,22 +112,15 @@ pref_allotjament_obj = DEM.Preferencies_hotels + '_prefhotels'
 content_graph.add((pref_obj, DEM.Preferencies_hotels, pref_allotjament_obj))
 content_graph.add((pref_obj, DEM.Preferencies_transports, pref_transport_obj))
 
-# TODO, fix this in the interface to select one transport method
-content_grapg.add((pref_transport_obj, DEM.Tipus_transport, Literal('avio')))
+content_graph.add((pref_transport_obj, DEM.Tipus_transport, Literal(tipus_transport)))
+content_graph.add((pref_transport_obj, DEM.Tipus_seient, Literal(tipus_seient)))
 
+content_graph.add((pref_allotjament_obj, DEM.Localitzacio, Literal(localitzacio)))
+content_graph.add((pref_allotjament_obj, DEM.Tipus_estada, Literal(tipus_estada)))
 
-tipus = max([ludic, festiu])
-tipus = max([tipus, cultural])
+content_graph.add((pref_obj, DEM.Tipus_activitat, Literal(tipus_activitats)))
 
-t = ''
-if tipus == ludic:
-    t = 'ludic'
-elif tipus == festiu:
-    t = 'festiu'
-else:
-    t = 'cultural'
-
-content_graph.add((pref_obj, DEM.Tipus_estada, Literal(t)))
+# TODO no posades: popularitat i tipus habitacio
 
 gr = Graph()
 # building an ACL message
