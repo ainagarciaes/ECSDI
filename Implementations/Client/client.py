@@ -102,7 +102,6 @@ content_graph.add((restr_obj, DEM.Data_inici, Literal(dep_date)))
 restr_allotjament_obj = DEM.Restriccions_hotels + '_restriccions_hotels'        # URIS
 restr_transport_obj = DEM.Restriccions_transports + '_restriccions_transports'  # URIS
 
-# fix this, not in the ontology
 content_graph.add((restr_obj, DEM.Restriccions_hotels, restr_allotjament_obj))
 content_graph.add((restr_obj, DEM.Restriccions_transports, restr_transport_obj))
 
@@ -110,6 +109,16 @@ content_graph.add((restr_allotjament_obj, DEM.Preu, Literal(accomodation_budget)
 content_graph.add((restr_transport_obj, DEM.Preu, Literal(transport_budget)))
 
 # passem les preferencies al graph
+pref_transport_obj = DEM.Preferencies_transports + '_preftransport'
+pref_allotjament_obj = DEM.Preferencies_hotels + '_prefhotels'
+
+content_graph.add((pref_obj, DEM.Preferencies_hotels, pref_allotjament_obj))
+content_graph.add((pref_obj, DEM.Preferencies_transports, pref_transport_obj))
+
+# TODO, fix this in the interface to select one transport method
+content_grapg.add((pref_transport_obj, DEM.Tipus_transport, Literal('avio')))
+
+
 tipus = max([ludic, festiu])
 tipus = max([tipus, cultural])
 

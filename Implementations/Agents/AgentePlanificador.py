@@ -101,7 +101,10 @@ def comunicacion():
             global mss_cnt
             # 0. extract parameters from the initial request
             obj_restriccions_transport = gm.value(subject=obj_restriccions, predicate=DEM.Restriccions_transports)
+            obj_preferencies_transport = gm.value(subject=obj_preferencies, preficate=DEM.Preferencies_transports)
+
             preu_transport = gm.value(subject=obj_restriccions_transport, predicate=DEM.Preu)
+            mitja_transport = gm.value(subject=obj_preferencies_transport, predicate=DEM.)
 
             # 1. build graph
             content_transport = Graph()
@@ -125,33 +128,29 @@ def comunicacion():
             gr = build_message(content_transport, perf=ACL.request, sender=AgentePlanificador.uri, msgcnt=mss_cnt, receiver=AgenteTransporte.uri, content=consultar_transport_obj)
             # 3. get response
             res = send_message(gr, AgenteTransporte.address)
-
-            '''
+            
             # 4. parse response and choose one
-            t = res.query("""
-                SELECT ?transport ?import ?nomorigen ?nomdesti ?danada ?dtornada ?tipustansport ?tipusseient
-                WHERE {
-                    ?transport RDF.type via.Transport .
-                    ?transport via.val ?preu .
-                    ?preu via.Import ?import .
-                    ?transport via.origen ?origen .
-                    ?transport via.desti ?desti .
-                    ?desti via.Nom ?nomdesti .
-                    ?origen via.Nom ?nomorigen .
-                    ?transport via.DataAnada ?danada .
-                    ?transport via.DataTornada ?dtornada .
-                    ?transport via.MitjaTransport ?tipustransport .
-                    ?transport via.TipusSeient ?tipusseient .
-                    FILTER {?tipustransport = "avio", ?tipusseient = loquesea }
-                }
-                LIMIT 1
-                """, initNs = {'via', VIA})
-            '''
-            #TODO mirar be els noms de la ontologia i buscar com passar parametres a la busqueda
+        
+            possibles = Graph()
+            transport = Graph()
+
+            # Agafo com a possibles els que tenen com a preferencia el tipus de transport indicat
+            possibles += res.triples((None, VIA.MitjaTransport, Literal('avio')))
+
+            # agafo la primera de les opcions que cumpleixi els filtres de ^
+            for s, p, o in possibles:
+                transport += res.triples((s, None, None))
+                break
+
+            # el graph te dos nivells, per tant dos loops
+            for s, p, o in transport:
+                aux = Graph()
+                aux += res.triples((o, None, None))
+                for s1, p1, o1 in aux:
+                    transport.add((o, p1, o1))            
 
             # 5. return chosen transport
-            #return t
-            return res
+            return transport
 
         def obtain_hotel():
             global mss_cnt
@@ -273,9 +272,11 @@ def comunicacion():
 
         # Obtenim transport i hotel
         t = obtain_transport()
+        for s, p, o in t:
+            print('s', s)
+            print('p', p)
+            print('o', o)
         h = obtain_hotel()
-        for a, b, c in h:
-            print(c)
         a = obtain_activities()
         '''
         print("NOW IM PRINTING THE ACTIVITY INFO")
@@ -327,7 +328,6 @@ def comunicacion():
             if 'content' in msgdic:
                 content = msgdic['content']
                 accion = gm.value(subject=content, predicate=RDF.type)
-                print(accion)
                 if accion == DEM.Planificar_viatge : #comparar que sigui del tipus d'accio que volem
                     graph_content = prepare_trip()
                     gr = build_message(graph_content, ACL['inform'], sender=AgentePlanificador.uri, msgcnt=mss_cnt, content = VIA.Viatge)
