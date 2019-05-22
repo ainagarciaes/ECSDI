@@ -120,7 +120,7 @@ def comunicacion():
         # tipus de seient del transport
         seient = VIA.Tipus_seient + '_seient' + str(mss_cnt)                              
         transports.add((seient, RDF.type, VIA.Tipus_seient))                                
-        transports.add((seient, VIA.Nom, Literal('NOM TIPUS SEIENT ' + str(mss_cnt))))     
+        transports.add((seient, VIA.Nom, Literal('convencional')))     
         transports.add((transport, VIA.ofereix_seients, seient)) 
 
         # transport dummy de capacitat 10

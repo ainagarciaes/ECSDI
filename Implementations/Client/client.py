@@ -68,10 +68,10 @@ activities_budget = int(total_budget * activities_budget / total_reparticio)
 
 # Preferencies
 localitzacio = form.getfirst("localitzacio", "")
-tipus_estada = form.getfirst("tipus_estada", "")
-tipus_seient = form.getfirst("tipus_seient", "")
-tipus_transport = form.getfirst("tipus_transport", "")
-tipus_activitats = form.getfirst("tipus_activitats", "")
+tipus_estada = form.getfirst("tipusestada", "")
+tipus_seient = form.getfirst("tipusseient", "")
+tipus_transport = form.getfirst("tipustransport", "")
+tipus_activitats = form.getfirst("tipusactivitats", "")
 
 # create graph
 content_graph = Graph()
@@ -133,5 +133,5 @@ res = send_message(gr, AgentePlanificador.address)
 
 # printing the output
 # print (res) uncomment this when everything works as expected
-print (dep_city, arr_city, dep_date, ret_date, num_trav, total_budget, transport_budget, accomodation_budget, activities_budget,hotel_vs_apartament, bus_vs_plane, festiu, ludic, cultural)
-
+print ('R:', dep_city, arr_city, dep_date, ret_date, num_trav, total_budget, transport_budget, accomodation_budget, activities_budget)
+print ('\nP:', tipus_estada, tipus_seient, tipus_activitats, tipus_transport, localitzacio)

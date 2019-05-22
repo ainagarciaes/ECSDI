@@ -93,7 +93,7 @@ def comunicacion():
         localitzacio = VIA.Localitzacio + '_localitzacio' + str(mss_cnt)                               
         allotjaments.add((localitzacio, RDF.type, VIA.Localitzacio))                                
         allotjaments.add((localitzacio, VIA.Nom, Literal('NOM LOCALITZACIO ' + str(mss_cnt))))     
-        allotjaments.add((allotjament, VIA.es_troba_a, localitzacio))                          
+        allotjaments.add((allotjament, VIA.es_troba_a, localitzacio))                       
         
         # popularitat de l'allotjament
         popularitat = VIA.Popularitat + '_popularitat' + str(mss_cnt)                              

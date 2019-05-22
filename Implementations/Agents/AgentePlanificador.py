@@ -101,10 +101,12 @@ def comunicacion():
             global mss_cnt
             # 0. extract parameters from the initial request
             obj_restriccions_transport = gm.value(subject=obj_restriccions, predicate=DEM.Restriccions_transports)
-            obj_preferencies_transport = gm.value(subject=obj_preferencies, preficate=DEM.Preferencies_transports)
-
+            obj_preferencies_transport = gm.value(subject=obj_preferencies, predicate=DEM.Preferencies_transports)
             preu_transport = gm.value(subject=obj_restriccions_transport, predicate=DEM.Preu)
-            mitja_transport = gm.value(subject=obj_preferencies_transport, predicate=DEM.)
+
+            # preferencies
+            mitja_transport = gm.value(subject=obj_preferencies_transport, predicate=DEM.Tipus_transport)
+            tipus_seient = gm.value(subject=obj_preferencies_transport, predicate=DEM.Tipus_seient)
 
             # 1. build graph
             content_transport = Graph()
@@ -126,16 +128,19 @@ def comunicacion():
             # 2. build && send message to the external agent
             mss_cnt += 1
             gr = build_message(content_transport, perf=ACL.request, sender=AgentePlanificador.uri, msgcnt=mss_cnt, receiver=AgenteTransporte.uri, content=consultar_transport_obj)
+            
             # 3. get response
             res = send_message(gr, AgenteTransporte.address)
             
             # 4. parse response and choose one
-        
             possibles = Graph()
             transport = Graph()
 
             # Agafo com a possibles els que tenen com a preferencia el tipus de transport indicat
-            possibles += res.triples((None, VIA.MitjaTransport, Literal('avio')))
+            possibles += res.triples((None, VIA.MitjaTransport, Literal(mitja_transport)))
+
+            if not possibles: 
+                possibles = res
 
             # agafo la primera de les opcions que cumpleixi els filtres de ^
             for s, p, o in possibles:
@@ -182,25 +187,8 @@ def comunicacion():
             res = send_message(gr, AgenteAlojamiento.address)
 
             # 4. parse response and choose one
-            '''
-            h = res.query("""
-                SELECT ?a ?import ?ciutat ?capacitat ?dinici ?dfi ?tipusallotj
-                WHERE {
-                    ?a RDF.type via.Allotjament .
-                    ?a via.val ?preu .
-                    ?preu via.Import ?import .
-                    ?a via.DataInici ?dinici .
-                    ?a via.DataFi ?dfi .
-                    ?a via.TipusAllotjament ?tipusallotj .
-                    ?a via.es_troba_a ?muni .
-                    ?muni via.Nom ?ciutat .
-                    ?a via.Capacitat ?capacitat .
-                    FILTER {?tipusallotj = "hotel"}
-                }
-                LIMIT 1
-                """, initNs = {'via', VIA})
-            '''
-            #TODO mirar be els noms de la ontologia i buscar com passar parametres a la busqueda
+            
+
             # 5. return chosen transport
             return res
             #return h
@@ -268,7 +256,7 @@ def comunicacion():
         origen = gm.value(subject=obj_restriccions, predicate=DEM.Origen)
         desti = gm.value(subject=obj_restriccions, predicate=DEM.Desti)
 
-        obj_preferencies = gm.value(subject=content, predicate=DEM.Restriccions)
+        obj_preferencies = gm.value(subject=content, predicate=DEM.Preferencies)
 
         # Obtenim transport i hotel
         t = obtain_transport()
