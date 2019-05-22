@@ -207,6 +207,132 @@
     <Declaration>
         <DataProperty IRI="#TipusAllotjament"/>
     </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ADAPTADA"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AFORES"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ALTA"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AUDITORI_BUDAPEST"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BAIXA"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BARCELONA"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BARRI"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BUDA"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BUDAPEST"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CAFE_CENTRE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CENTRE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CONVENCIONAL"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DOBLE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ESTADI_BLAU"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EUROMED"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HAMBURGUESES_JOHN"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HOTEL_LLUNA"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HOTEL_SOL"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#IBERIA"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#INDIVIDUAL"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MATI"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MITJANA"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MITJA_PENSIO"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NIT"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PENSIO_COMPLETA"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PERNOCTACIO"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PIZZERIA_ITALIA"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PRIMERA_CLASSE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RESTAURANT_TOSCANA"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RODALIES"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SUITE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TARDA"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TEATRE_ROIG"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#2019-12-05"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#2019-12-06"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#2019-12-07"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#2019-12-08"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#2019-12-09"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#2019-12-10"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#360"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#400"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#500"/>
+    </Declaration>
     <SubClassOf>
         <Class IRI="#Activitat"/>
         <Class IRI="#Viatge"/>
@@ -237,7 +363,7 @@
         <Class IRI="#Allotjament"/>
         <DataSomeValuesFrom>
             <DataProperty IRI="#Nom"/>
-            <Datatype abbreviatedIRI="xsd:Name"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
         </DataSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -335,7 +461,7 @@
         <Class IRI="#Localitzacio"/>
         <DataSomeValuesFrom>
             <DataProperty IRI="#Nom"/>
-            <Datatype abbreviatedIRI="xsd:Name"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
         </DataSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -384,7 +510,7 @@
         <Class IRI="#Recinte"/>
         <DataSomeValuesFrom>
             <DataProperty IRI="#Nom"/>
-            <Datatype abbreviatedIRI="xsd:Name"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
         </DataSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -490,6 +616,444 @@
         <Class IRI="#Visita_museu"/>
         <Class IRI="#Cultural"/>
     </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Tipus_habitacio"/>
+        <NamedIndividual IRI="#ADAPTADA"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Situacio"/>
+        <NamedIndividual IRI="#AFORES"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Popularitat"/>
+        <NamedIndividual IRI="#ALTA"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Recinte"/>
+        <NamedIndividual IRI="#AUDITORI_BUDAPEST"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Popularitat"/>
+        <NamedIndividual IRI="#BAIXA"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Localitzacio"/>
+        <NamedIndividual IRI="#BARCELONA"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Situacio"/>
+        <NamedIndividual IRI="#BARRI"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Recinte"/>
+        <NamedIndividual IRI="#BUDA"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Localitzacio"/>
+        <NamedIndividual IRI="#BUDAPEST"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Recinte"/>
+        <NamedIndividual IRI="#CAFE_CENTRE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Situacio"/>
+        <NamedIndividual IRI="#CENTRE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Tipus_seient"/>
+        <NamedIndividual IRI="#CONVENCIONAL"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Tipus_habitacio"/>
+        <NamedIndividual IRI="#DOBLE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Recinte"/>
+        <NamedIndividual IRI="#ESTADI_BLAU"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Transport"/>
+        <NamedIndividual IRI="#EUROMED"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Recinte"/>
+        <NamedIndividual IRI="#HAMBURGUESES_JOHN"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Allotjament"/>
+        <NamedIndividual IRI="#HOTEL_LLUNA"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Allotjament"/>
+        <NamedIndividual IRI="#HOTEL_SOL"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Transport"/>
+        <NamedIndividual IRI="#IBERIA"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Tipus_habitacio"/>
+        <NamedIndividual IRI="#INDIVIDUAL"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Horari"/>
+        <NamedIndividual IRI="#MATI"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Popularitat"/>
+        <NamedIndividual IRI="#MITJANA"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Tipus_estada"/>
+        <NamedIndividual IRI="#MITJA_PENSIO"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Horari"/>
+        <NamedIndividual IRI="#NIT"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Tipus_estada"/>
+        <NamedIndividual IRI="#PENSIO_COMPLETA"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Tipus_estada"/>
+        <NamedIndividual IRI="#PERNOCTACIO"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Recinte"/>
+        <NamedIndividual IRI="#PIZZERIA_ITALIA"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Tipus_seient"/>
+        <NamedIndividual IRI="#PRIMERA_CLASSE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Recinte"/>
+        <NamedIndividual IRI="#RESTAURANT_TOSCANA"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Situacio"/>
+        <NamedIndividual IRI="#RODALIES"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Tipus_habitacio"/>
+        <NamedIndividual IRI="#SUITE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Horari"/>
+        <NamedIndividual IRI="#TARDA"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Recinte"/>
+        <NamedIndividual IRI="#TEATRE_ROIG"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Data"/>
+        <NamedIndividual IRI="#2019-12-05"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Data"/>
+        <NamedIndividual IRI="#2019-12-06"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Data"/>
+        <NamedIndividual IRI="#2019-12-07"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Data"/>
+        <NamedIndividual IRI="#2019-12-08"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Data"/>
+        <NamedIndividual IRI="#2019-12-09"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Data"/>
+        <NamedIndividual IRI="#2019-12-10"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Preu"/>
+        <NamedIndividual IRI="#360"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Preu"/>
+        <NamedIndividual IRI="#400"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Preu"/>
+        <NamedIndividual IRI="#500"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#nivell_popularitat_de"/>
+        <NamedIndividual IRI="#ALTA"/>
+        <NamedIndividual IRI="#HOTEL_SOL"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#es_popular"/>
+        <NamedIndividual IRI="#HOTEL_LLUNA"/>
+        <NamedIndividual IRI="#MITJANA"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#es_popular"/>
+        <NamedIndividual IRI="#HOTEL_SOL"/>
+        <NamedIndividual IRI="#ALTA"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#nivell_popularitat_de"/>
+        <NamedIndividual IRI="#MITJANA"/>
+        <NamedIndividual IRI="#HOTEL_LLUNA"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nom"/>
+        <NamedIndividual IRI="#ADAPTADA"/>
+        <Literal>ADAPTADA</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nom"/>
+        <NamedIndividual IRI="#AFORES"/>
+        <Literal>AFORES</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nom"/>
+        <NamedIndividual IRI="#ALTA"/>
+        <Literal>ALTA</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nom"/>
+        <NamedIndividual IRI="#AUDITORI_BUDAPEST"/>
+        <Literal>AUDITORI_BUDAPEST</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nom"/>
+        <NamedIndividual IRI="#BAIXA"/>
+        <Literal>BAIXA</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nom"/>
+        <NamedIndividual IRI="#BARCELONA"/>
+        <Literal>BARCELONA</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nom"/>
+        <NamedIndividual IRI="#BARRI"/>
+        <Literal>BARRI</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nom"/>
+        <NamedIndividual IRI="#BUDA"/>
+        <Literal>BUDA</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nom"/>
+        <NamedIndividual IRI="#BUDAPEST"/>
+        <Literal>BUDAPEST</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nom"/>
+        <NamedIndividual IRI="#CAFE_CENTRE"/>
+        <Literal>CAFE_CENTRE</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nom"/>
+        <NamedIndividual IRI="#CENTRE"/>
+        <Literal>CENTRE</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nom"/>
+        <NamedIndividual IRI="#CONVENCIONAL"/>
+        <Literal>CONVENCIONAL</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nom"/>
+        <NamedIndividual IRI="#DOBLE"/>
+        <Literal>DOBLE</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nom"/>
+        <NamedIndividual IRI="#ESTADI_BLAU"/>
+        <Literal>ESTADI_BLAU</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Capacitat"/>
+        <NamedIndividual IRI="#EUROMED"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">100</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#MitjaTransport"/>
+        <NamedIndividual IRI="#EUROMED"/>
+        <Literal>TREN</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nom"/>
+        <NamedIndividual IRI="#EUROMED"/>
+        <Literal>EUROMED</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nom"/>
+        <NamedIndividual IRI="#HAMBURGUESES_JOHN"/>
+        <Literal>HAMBURGUESES_JOHN</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Capacitat"/>
+        <NamedIndividual IRI="#HOTEL_LLUNA"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">10</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nom"/>
+        <NamedIndividual IRI="#HOTEL_LLUNA"/>
+        <Literal>HOTEL_LLUNA</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#TipusAllotjament"/>
+        <NamedIndividual IRI="#HOTEL_LLUNA"/>
+        <Literal>HOTEL</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Capacitat"/>
+        <NamedIndividual IRI="#HOTEL_SOL"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">20</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nom"/>
+        <NamedIndividual IRI="#HOTEL_SOL"/>
+        <Literal>HOTEL_SOL</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#TipusAllotjament"/>
+        <NamedIndividual IRI="#HOTEL_SOL"/>
+        <Literal>HOTEL</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Capacitat"/>
+        <NamedIndividual IRI="#IBERIA"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">20</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#MitjaTransport"/>
+        <NamedIndividual IRI="#IBERIA"/>
+        <Literal>AVIO</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nom"/>
+        <NamedIndividual IRI="#IBERIA"/>
+        <Literal>IBERIA</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nom"/>
+        <NamedIndividual IRI="#INDIVIDUAL"/>
+        <Literal>INDIVIDUAL</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nom"/>
+        <NamedIndividual IRI="#MATI"/>
+        <Literal>MATI</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nom"/>
+        <NamedIndividual IRI="#MITJANA"/>
+        <Literal>MITJANA</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nom"/>
+        <NamedIndividual IRI="#MITJA_PENSIO"/>
+        <Literal>MITJA_PENSIO</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nom"/>
+        <NamedIndividual IRI="#NIT"/>
+        <Literal>NIT</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nom"/>
+        <NamedIndividual IRI="#PENSIO_COMPLETA"/>
+        <Literal>PENSIO_COMPLETA</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nom"/>
+        <NamedIndividual IRI="#PERNOCTACIO"/>
+        <Literal>PERNOCTACIO</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nom"/>
+        <NamedIndividual IRI="#PIZZERIA_ITALIA"/>
+        <Literal>PIZZERIA_ITALIA</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nom"/>
+        <NamedIndividual IRI="#PRIMERA_CLASSE"/>
+        <Literal>PRIMERA_CLASSE</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nom"/>
+        <NamedIndividual IRI="#RESTAURANT_TOSCANA"/>
+        <Literal>RESTAURANT_TOSCANA</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nom"/>
+        <NamedIndividual IRI="#RODALIES"/>
+        <Literal>RODALIES</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nom"/>
+        <NamedIndividual IRI="#SUITE"/>
+        <Literal>SUITE</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nom"/>
+        <NamedIndividual IRI="#TARDA"/>
+        <Literal>TARDA</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Nom"/>
+        <NamedIndividual IRI="#TEATRE_ROIG"/>
+        <Literal>TEATRE_ROIG</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Data"/>
+        <NamedIndividual IRI="#2019-12-05"/>
+        <Literal>2019-12-05</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Data"/>
+        <NamedIndividual IRI="#2019-12-06"/>
+        <Literal>2019-12-06</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Data"/>
+        <NamedIndividual IRI="#2019-12-07"/>
+        <Literal>2019-12-07</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Data"/>
+        <NamedIndividual IRI="#2019-12-08"/>
+        <Literal>2019-12-08</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Data"/>
+        <NamedIndividual IRI="#2019-12-09"/>
+        <Literal>2019-12-09</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Data"/>
+        <NamedIndividual IRI="#2019-12-10"/>
+        <Literal>2019-12-10</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Import"/>
+        <NamedIndividual IRI="#360"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">360</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Import"/>
+        <NamedIndividual IRI="#400"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">400</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Import"/>
+        <NamedIndividual IRI="#500"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">500</Literal>
+    </DataPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#obre_el_dia"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
@@ -612,6 +1176,10 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#destí"/>
+        <Class IRI="#Localitzacio"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#destí"/>
         <Class IRI="#Municipi"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -660,6 +1228,10 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#origen"/>
+        <Class IRI="#Localitzacio"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#origen"/>
         <Class IRI="#Municipi"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -689,6 +1261,10 @@
     <DataPropertyDomain>
         <DataProperty IRI="#IDAct"/>
         <Class IRI="#Activitat"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#TipusAllotjament"/>
+        <Class IRI="#Allotjament"/>
     </DataPropertyDomain>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
