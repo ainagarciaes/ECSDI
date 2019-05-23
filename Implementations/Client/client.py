@@ -53,8 +53,8 @@ num_trav = form.getfirst("numtrav", "")
 
 total_budget = int(form.getfirst("budget", ""))
 
-# this is a relative split, to calculate total budget for each part do: 
-# totalbudget * ponderation / sum of all ponderations 
+# this is a relative split, to calculate total budget for each part do:
+# totalbudget * ponderation / sum of all ponderations
 transport_budget = int(form.getfirst("transportbudget", ""))
 accomodation_budget = int(form.getfirst("accomodationbudget", ""))
 activities_budget = int(form.getfirst("activitiesbudget", ""))
@@ -67,11 +67,11 @@ accomodation_budget = int(total_budget * accomodation_budget / total_reparticio)
 activities_budget = int(total_budget * activities_budget / total_reparticio)
 
 # Preferencies
-localitzacio = form.getfirst("localitzacio", "")
-tipus_estada = form.getfirst("tipusestada", "")
-tipus_seient = form.getfirst("tipusseient", "")
-tipus_transport = form.getfirst("tipustransport", "")
-tipus_activitats = form.getfirst("tipusactivitats", "")
+localitzacio = form.getfirst("localitzacio", "").upper()
+tipus_estada = form.getfirst("tipusestada", "").upper()
+tipus_seient = form.getfirst("tipusseient", "").upper()
+tipus_transport = form.getfirst("tipustransport", "").upper()
+tipus_activitats = form.getfirst("tipusactivitats", "").upper()
 
 # create graph
 content_graph = Graph()
@@ -126,7 +126,7 @@ gr = Graph()
 # building an ACL message
 gr = build_message(content_graph, perf=ACL.request, sender=Client.uri, msgcnt=0, receiver=AgentePlanificador.uri, content=viatge_obj)
 
-# sending the message to the agent 
+# sending the message to the agent
 res = send_message(gr, AgentePlanificador.address)
 
 # decoding the ACL return message
