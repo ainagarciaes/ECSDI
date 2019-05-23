@@ -100,7 +100,6 @@ def comunicacion():
         transports.add((municipi, VIA.Nom, Literal('NOM MUNICIPI ' + str(mss_cnt))))     
         transports.add((transport, VIA.origen, municipi))
         transports.add((transport, VIA.desti, municipi))
-        transports.add((transport, VIA.MitjaTransport, Literal('avio')))                          
         
         # Data anada i tornada del transport
         temps = VIA.Temps + '_temps' + str(mss_cnt)
@@ -128,12 +127,14 @@ def comunicacion():
         transports.add((transport, VIA.Transport, transport1))
         transports.add((transport1, VIA.Nom, Literal("Transport 1 " + str(mss_cnt))))
         transports.add((transport1, VIA.Capacitat, Literal("10 " + str(mss_cnt))))
+        transports.add((transport1, VIA.MitjaTransport, Literal('avio')))                          
 
         # transport dummy de capacitat 20
         transport2 = VIA.Transport + 'transport' + str(mss_cnt)
         transports.add((transport, VIA.Transport, transport2))
         transports.add((transport2, VIA.Nom, Literal("Transport 2 " + str(mss_cnt))))
         transports.add((transport2, VIA.Capacitat, Literal("20 " + str(mss_cnt))))
+        transports.add((transport2, VIA.MitjaTransport, Literal('avio')))                          
 
         return transports      
 

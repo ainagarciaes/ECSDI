@@ -37,7 +37,7 @@ __author__ = 'javier'
 
 # Configuration stuff
 #hostname = socket.gethostname()
-hostname = "localhost"
+hostname = "192.168.43.70"
 port = 8000
 
 agn = Namespace("http://www.agentes.org#")
@@ -51,26 +51,22 @@ AgentePlanificador = Agent('AgentePlanificador',
                        'http://%s:%d/comm' % (hostname, port),
                        'http://%s:%d/Stop' % (hostname, port))
 
-# Directory agent address
-DirectoryAgent = Agent('DirectoryAgent',
-                       agn.Directory,
-                       'http://%s:9000/Register' % hostname,
-                       'http://%s:9000/Stop' % hostname)
-
+#ip = 'localhost'
+ip = '192.168.43.172'
 AgenteTransporte = Agent('AgenteTransporte',
                        agn.AgenteTransporte,
-                       'http://%s:%d/comm' % ("localhost", 8081),
-                       'http://%s:%d/Stop' % ("localhost", 8081))
+                       'http://%s:%d/comm' % (ip, 8081),
+                       'http://%s:%d/Stop' % (ip, 8081))
 
 AgenteAlojamiento = Agent('AgenteAlojamiento',
                        agn.AgenteAlojamiento,
-                       'http://%s:%d/comm' % ("localhost", 8080),
-                       'http://%s:%d/Stop' % ("localhost", 8080))
+                       'http://%s:%d/comm' % (ip, 8080),
+                       'http://%s:%d/Stop' % (ip, 8080))
 
 AgentActivitats = Agent('AgentActivitats',
                        agn.AgentActivitats,
-                       'http://%s:%d/comm' % ("localhost", 8082),
-                       'http://%s:%d/Stop' % ("localhost", 8082))
+                       'http://%s:%d/comm' % (ip, 8082),
+                       'http://%s:%d/Stop' % (ip, 8082))
 
 
 # Global triplestore graph
@@ -361,7 +357,7 @@ if __name__ == '__main__':
     ab1.start()
 
     # Ponemos en marcha el servidor
-    app.run(host="localhost", port=8000)
+    app.run(host='0.0.0.0', port=8000)
 
     # Esperamos a que acaben los behaviors
     ab1.join()
