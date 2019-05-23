@@ -101,11 +101,7 @@ def comunicacion():
         transports.add((municipi, VIA.Nom, Literal('NOM MUNICIPI ' + str(mss_cnt))))
         transports.add((transport, VIA.origen, municipi))
         transports.add((transport, VIA.desti, municipi))
-<<<<<<< HEAD
-        
-=======
 
->>>>>>> 96ced2beb216df9fff66b5be20aa92759c0e96c8
         # Data anada i tornada del transport
         temps = VIA.Temps + '_temps' + str(mss_cnt)
         data = VIA.Data + '_data' + str(mss_cnt)
@@ -132,25 +128,14 @@ def comunicacion():
         transports.add((transport, VIA.Transport, transport1))
         transports.add((transport1, VIA.Nom, Literal("Transport 1 " + str(mss_cnt))))
         transports.add((transport1, VIA.Capacitat, Literal("10 " + str(mss_cnt))))
-<<<<<<< HEAD
-        transports.add((transport1, VIA.MitjaTransport, Literal('avio')))                          
-
-=======
         transports.add((transport1, VIA.MitjaTransport, Literal('avio')))
->>>>>>> 96ced2beb216df9fff66b5be20aa92759c0e96c8
         # transport dummy de capacitat 20
         transport2 = VIA.Transport + 'transport' + str(mss_cnt)
         transports.add((transport, VIA.Transport, transport2))
         transports.add((transport2, VIA.Nom, Literal("Transport 2 " + str(mss_cnt))))
         transports.add((transport2, VIA.Capacitat, Literal("20 " + str(mss_cnt))))
-<<<<<<< HEAD
-        transports.add((transport2, VIA.MitjaTransport, Literal('avio')))                          
-
-        return transports      
-=======
         transports.add((transport2, VIA.MitjaTransport, Literal('avio')))
         return transports
->>>>>>> 96ced2beb216df9fff66b5be20aa92759c0e96c8
 
     # crear graf amb el missatge que rebem
     message = request.args['content']
