@@ -34,8 +34,8 @@ __author__ = 'javier'
 
 
 # Configuration stuff
-#hostname = socket.gethostname()
-hostname = "localhost"
+hostname = socket.gethostname()
+#hostname = "localhost"
 port = 8081
 
 agn = Namespace("http://www.agentes.org#")

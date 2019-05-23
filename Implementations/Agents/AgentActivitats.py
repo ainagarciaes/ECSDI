@@ -33,8 +33,8 @@ __author__ = 'javier'
 
 
 # Configuration stuff
-#hostname = socket.gethostname()
-hostname = "localhost"
+hostname = socket.gethostname()
+#hostname = "localhost"
 port = 8082
 
 agn = Namespace("http://www.agentes.org#")
@@ -45,8 +45,8 @@ mss_cnt = 0
 # Datos del Agente
 AgentActivitats = Agent('AgentActivitats',
                        agn.AgentActivitats,
-                       'http://%s:%d/comm' % ("localhost", 8082),
-                       'http://%s:%d/Stop' % ("localhost", 8082))
+                       'http://%s:%d/comm' % (hostname, 8082),
+                       'http://%s:%d/Stop' % (hostname, 8082))
 
 # Global triplestore graph
 dsgraph = Graph()
@@ -68,7 +68,7 @@ def comunicacion():
     """
     global dsgraph
     global mss_cnt
-    
+
 
     def buscaActivitats():
         #----------- FILE VERSION -----------#
@@ -76,7 +76,7 @@ def comunicacion():
         '''
         # use sparql to read each param received from the planificador agent
         graph_activitats = Graph()
-        # load file here to graph 
+        # load file here to graph
 
         activitats = graph_activitats.query("""
             SELECT ...
@@ -100,7 +100,7 @@ def comunicacion():
         activitats.add((recinte, RDF.type, VIA.Recinte))                                # assigno el tipus
         activitats.add((recinte, FOAF.name, Literal('NOM RECINTE ' + str(mss_cnt))))     # informacio literal sobre recinte
         activitats.add((activitat, VIA.se_celebra_a, recinte))                          # relacio del recinte creat amb l'activitat
-        
+
         # activitat dummy de tipus ludica, concert
         ludica = VIA.Ludica + 'ludica' + str(mss_cnt)
         concert = VIA.Concert + 'concert' + str(mss_cnt)
@@ -114,9 +114,9 @@ def comunicacion():
     message = request.args['content']
     gm = Graph()
     gm.parse(data=message)
-    
+
     msgdic = get_message_properties(gm)
-    
+
     gr = Graph()
 
     # FIPA ACL message?
@@ -186,10 +186,8 @@ if __name__ == '__main__':
     ab1.start()
 
     # Ponemos en marcha el servidor
-    app.run(host="localhost", port=8082)
+    app.run(host="0.0.0.0", port=8082)
 
     # Esperamos a que acaben los behaviors
     ab1.join()
     print('The End')
-
-

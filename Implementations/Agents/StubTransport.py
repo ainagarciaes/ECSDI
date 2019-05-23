@@ -34,7 +34,8 @@ __author__ = 'javier'
 
 
 # Configuration stuff
-hostname = 'localhost'
+hostname = socket.gethostname()
+#hostname = 'localhost'
 port = 8081
 
 agn = Namespace("http://www.agentes.org#")
@@ -57,8 +58,8 @@ DirectoryAgent = Agent('DirectoryAgent',
 
 AgentePlanificador = Agent('AgentePlanificador',
                        agn.AgentePlanificador,
-                       'http://%s:%d/comm' % ("localhost", 8000),
-                       'http://%s:%d/Stop' % ("localhost", 8000))
+                       'http://%s:%d/comm' % (hostname, 8000),
+                       'http://%s:%d/Stop' % (hostname, 8000))
 
 
 # Global triplestore graph
@@ -94,49 +95,62 @@ def comunicacion():
 
         # Municipi origen i desti del transport
         localitzacio = VIA.Localitzacio + '_localitzacio' + str(mss_cnt)
-        municipi = VIA.Municipi + '_municipi' + str(mss_cnt)                               
+        municipi = VIA.Municipi + '_municipi' + str(mss_cnt)
         transports.add((localitzacio, RDF.type, VIA.Localitzacio))
-        transports.add((localitzacio, VIA.Municipi, municipi))                                
-        transports.add((municipi, VIA.Nom, Literal('NOM MUNICIPI ' + str(mss_cnt))))     
+        transports.add((localitzacio, VIA.Municipi, municipi))
+        transports.add((municipi, VIA.Nom, Literal('NOM MUNICIPI ' + str(mss_cnt))))
         transports.add((transport, VIA.origen, municipi))
         transports.add((transport, VIA.desti, municipi))
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> 96ced2beb216df9fff66b5be20aa92759c0e96c8
         # Data anada i tornada del transport
         temps = VIA.Temps + '_temps' + str(mss_cnt)
-        data = VIA.Data + '_data' + str(mss_cnt)                              
+        data = VIA.Data + '_data' + str(mss_cnt)
         transports.add((temps, RDF.type, VIA.Temps))
-        transports.add((temps, VIA.Data, data))                                  
-        transports.add((data, VIA.Data, Literal('DATA ' + str(mss_cnt))))     
+        transports.add((temps, VIA.Data, data))
+        transports.add((data, VIA.Data, Literal('DATA ' + str(mss_cnt))))
         transports.add((transport, VIA.data_anada, data))
-        transports.add((transport, VIA.data_tornada, data)) 
+        transports.add((transport, VIA.data_tornada, data))
 
         # preu del transport
-        preu = VIA.Preu + '_preu' + str(mss_cnt)                              
-        transports.add((preu, RDF.type, VIA.Preu))                                
-        transports.add((preu, VIA.Import, Literal('IMPORT PREU ' + str(mss_cnt))))     
+        preu = VIA.Preu + '_preu' + str(mss_cnt)
+        transports.add((preu, RDF.type, VIA.Preu))
+        transports.add((preu, VIA.Import, Literal('IMPORT PREU ' + str(mss_cnt))))
         transports.add((transport, VIA.val, preu))
 
         # tipus de seient del transport
-        seient = VIA.Tipus_seient + '_seient' + str(mss_cnt)                              
-        transports.add((seient, RDF.type, VIA.Tipus_seient))                                
-        transports.add((seient, VIA.Nom, Literal('convencional')))     
-        transports.add((transport, VIA.ofereix_seients, seient)) 
+        seient = VIA.Tipus_seient + '_seient' + str(mss_cnt)
+        transports.add((seient, RDF.type, VIA.Tipus_seient))
+        transports.add((seient, VIA.Nom, Literal('convencional')))
+        transports.add((transport, VIA.ofereix_seients, seient))
 
         # transport dummy de capacitat 10
         transport1 = VIA.Transport + 'transport' + str(mss_cnt)
         transports.add((transport, VIA.Transport, transport1))
         transports.add((transport1, VIA.Nom, Literal("Transport 1 " + str(mss_cnt))))
         transports.add((transport1, VIA.Capacitat, Literal("10 " + str(mss_cnt))))
+<<<<<<< HEAD
         transports.add((transport1, VIA.MitjaTransport, Literal('avio')))                          
 
+=======
+        transports.add((transport1, VIA.MitjaTransport, Literal('avio')))
+>>>>>>> 96ced2beb216df9fff66b5be20aa92759c0e96c8
         # transport dummy de capacitat 20
         transport2 = VIA.Transport + 'transport' + str(mss_cnt)
         transports.add((transport, VIA.Transport, transport2))
         transports.add((transport2, VIA.Nom, Literal("Transport 2 " + str(mss_cnt))))
         transports.add((transport2, VIA.Capacitat, Literal("20 " + str(mss_cnt))))
+<<<<<<< HEAD
         transports.add((transport2, VIA.MitjaTransport, Literal('avio')))                          
 
         return transports      
+=======
+        transports.add((transport2, VIA.MitjaTransport, Literal('avio')))
+        return transports
+>>>>>>> 96ced2beb216df9fff66b5be20aa92759c0e96c8
 
     # crear graf amb el missatge que rebem
     message = request.args['content']
@@ -215,7 +229,7 @@ if __name__ == '__main__':
     ab1.start()
 
     # Ponemos en marcha el servidor
-    app.run(host=hostname, port=port)
+    app.run(host="0.0.0.0", port=8081)
 
     # Esperamos a que acaben los behaviors
     ab1.join()
