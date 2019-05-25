@@ -127,7 +127,7 @@
         <ObjectProperty IRI="#data_tornada"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#destí"/>
+        <ObjectProperty IRI="#desti"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#es_oferta_per"/>
@@ -790,9 +790,99 @@
         <NamedIndividual IRI="#HOTEL_SOL"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#obre_el_dia"/>
+        <NamedIndividual IRI="#AUDITORI_BUDAPEST"/>
+        <NamedIndividual IRI="#2019-12-07"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#obre_les_hores"/>
+        <NamedIndividual IRI="#AUDITORI_BUDAPEST"/>
+        <NamedIndividual IRI="#NIT"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#obre_el_dia"/>
+        <NamedIndividual IRI="#BUDA"/>
+        <NamedIndividual IRI="#2019-12-08"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#obre_les_hores"/>
+        <NamedIndividual IRI="#BUDA"/>
+        <NamedIndividual IRI="#NIT"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hi_trobem"/>
+        <NamedIndividual IRI="#BUDAPEST"/>
+        <NamedIndividual IRI="#HOTEL_LLUNA"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hi_trobem"/>
+        <NamedIndividual IRI="#BUDAPEST"/>
+        <NamedIndividual IRI="#HOTEL_SOL"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#obre_el_dia"/>
+        <NamedIndividual IRI="#CAFE_CENTRE"/>
+        <NamedIndividual IRI="#2019-12-05"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#obre_el_dia"/>
+        <NamedIndividual IRI="#CAFE_CENTRE"/>
+        <NamedIndividual IRI="#2019-12-06"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#obre_el_dia"/>
+        <NamedIndividual IRI="#CAFE_CENTRE"/>
+        <NamedIndividual IRI="#2019-12-07"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#obre_el_dia"/>
+        <NamedIndividual IRI="#CAFE_CENTRE"/>
+        <NamedIndividual IRI="#2019-12-08"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#obre_les_hores"/>
+        <NamedIndividual IRI="#CAFE_CENTRE"/>
+        <NamedIndividual IRI="#MATI"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#obre_les_hores"/>
+        <NamedIndividual IRI="#CAFE_CENTRE"/>
+        <NamedIndividual IRI="#TARDA"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#data_anada"/>
+        <NamedIndividual IRI="#EUROMED"/>
+        <NamedIndividual IRI="#2019-12-05"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#data_tornada"/>
+        <NamedIndividual IRI="#EUROMED"/>
+        <NamedIndividual IRI="#2019-12-10"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#desti"/>
+        <NamedIndividual IRI="#EUROMED"/>
+        <NamedIndividual IRI="#BUDAPEST"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#origen"/>
+        <NamedIndividual IRI="#EUROMED"/>
+        <NamedIndividual IRI="#BARCELONA"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#es_popular"/>
         <NamedIndividual IRI="#HOTEL_LLUNA"/>
         <NamedIndividual IRI="#MITJANA"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#es_troba_a"/>
+        <NamedIndividual IRI="#HOTEL_LLUNA"/>
+        <NamedIndividual IRI="#BUDAPEST"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#es_troba_a"/>
+        <NamedIndividual IRI="#HOTEL_LLUNA"/>
+        <NamedIndividual IRI="#RODALIES"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#es_popular"/>
@@ -800,9 +890,64 @@
         <NamedIndividual IRI="#ALTA"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#es_troba_a"/>
+        <NamedIndividual IRI="#HOTEL_SOL"/>
+        <NamedIndividual IRI="#BUDAPEST"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#es_troba_a"/>
+        <NamedIndividual IRI="#HOTEL_SOL"/>
+        <NamedIndividual IRI="#CENTRE"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#data_anada"/>
+        <NamedIndividual IRI="#IBERIA"/>
+        <NamedIndividual IRI="#2019-12-05"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#data_tornada"/>
+        <NamedIndividual IRI="#IBERIA"/>
+        <NamedIndividual IRI="#2019-12-10"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#desti"/>
+        <NamedIndividual IRI="#IBERIA"/>
+        <NamedIndividual IRI="#BUDAPEST"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#origen"/>
+        <NamedIndividual IRI="#IBERIA"/>
+        <NamedIndividual IRI="#BARCELONA"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#nivell_popularitat_de"/>
         <NamedIndividual IRI="#MITJANA"/>
         <NamedIndividual IRI="#HOTEL_LLUNA"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#es_oferta_per"/>
+        <NamedIndividual IRI="#MITJA_PENSIO"/>
+        <NamedIndividual IRI="#HOTEL_LLUNA"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#es_oferta_per"/>
+        <NamedIndividual IRI="#MITJA_PENSIO"/>
+        <NamedIndividual IRI="#HOTEL_SOL"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#es_oferta_per"/>
+        <NamedIndividual IRI="#PENSIO_COMPLETA"/>
+        <NamedIndividual IRI="#HOTEL_SOL"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#es_oferta_per"/>
+        <NamedIndividual IRI="#PERNOCTACIO"/>
+        <NamedIndividual IRI="#HOTEL_LLUNA"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#es_oferta_per"/>
+        <NamedIndividual IRI="#PERNOCTACIO"/>
+        <NamedIndividual IRI="#HOTEL_SOL"/>
     </ObjectPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#Nom"/>
@@ -1087,7 +1232,7 @@
         <Class IRI="#Transport"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#destí"/>
+        <ObjectProperty IRI="#desti"/>
         <Class IRI="#Transport"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -1175,11 +1320,11 @@
         <Class IRI="#Data"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#destí"/>
+        <ObjectProperty IRI="#desti"/>
         <Class IRI="#Localitzacio"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#destí"/>
+        <ObjectProperty IRI="#desti"/>
         <Class IRI="#Municipi"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
