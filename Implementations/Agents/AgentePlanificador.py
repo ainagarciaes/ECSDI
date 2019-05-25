@@ -37,7 +37,8 @@ __author__ = 'javier'
 
 # Configuration stuff
 #hostname = socket.gethostname()
-hostname = "192.168.43.70"
+hostname = "localhost"
+ip = 'localhost'
 port = 8000
 
 agn = Namespace("http://www.agentes.org#")
@@ -51,8 +52,6 @@ AgentePlanificador = Agent('AgentePlanificador',
                        'http://%s:%d/comm' % (hostname, port),
                        'http://%s:%d/Stop' % (hostname, port))
 
-#ip = 'localhost'
-ip = '192.168.43.172'
 AgenteTransporte = Agent('AgenteTransporte',
                        agn.AgenteTransporte,
                        'http://%s:%d/comm' % (ip, 8081),
@@ -141,6 +140,7 @@ def comunicacion():
             # agafo la primera de les opcions que cumpleixi els filtres de ^
             for s, p, o in possibles:
                 transport += res.triples((s, None, None))
+                nomTransport = s
                 break
 
             # el graph te dos nivells, per tant dos loops
@@ -151,7 +151,7 @@ def comunicacion():
                     transport.add((o, p1, o1))            
 
             # 5. return chosen transport
-            return transport
+            return transport, nomTransport
 
         def obtain_hotel():
             global mss_cnt
@@ -255,7 +255,8 @@ def comunicacion():
         obj_preferencies = gm.value(subject=content, predicate=DEM.Preferencies)
 
         # Obtenim transport i hotel
-        t = obtain_transport()
+        t, t_name = obtain_transport()
+
         for s, p, o in t:
             print('s', s)
             print('p', p)
@@ -277,11 +278,15 @@ def comunicacion():
 
         content.add((viatge_obj, RDF.type, VIA.Viatge))
 
-        '''
-        content.add((viatge_obj, VIA.Allotjament, h))
-        content.add((viatge_obj, VIA.Transport, t))
-        content.add((viatge_obj, VIA.Activitats, a))
-        '''
+        print(t is None)
+        #h_name = h.value(predicate=RDF.type, object=VIA.Allotjament)
+        #content.add((viatge_obj, VIA.Allotjament, h_name))
+        content.add((viatge_obj, VIA.Transport, t_name))
+
+        #content = content + h
+        content = content + t
+        #content.add((viatge_obj, VIA.Activitats, a))
+        
         return content
 
 

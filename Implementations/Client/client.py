@@ -135,3 +135,32 @@ res = send_message(gr, AgentePlanificador.address)
 # print (res) uncomment this when everything works as expected
 print ('R:', dep_city, arr_city, dep_date, ret_date, num_trav, total_budget, transport_budget, accomodation_budget, activities_budget)
 print ('\nP:', tipus_estada, tipus_seient, tipus_activitats, tipus_transport, localitzacio)
+
+viatge = res.value(predicate=RDF.type, object=VIA.Viatge)
+
+# print transport info:
+transport = res.value(subject=viatge, predicate=VIA.Transport)
+anada = res.value(subject=transport, predicate=VIA.Data_inici)
+tornada = res.value(subject=transport, predicate=VIA.Data_final)
+capacitat = res.value(subject=transport, predicate=VIA.Capacitat)
+tipus = res.value(subject=transport, predicate=VIA.MitjaTransport)
+preu = res.value(subject=transport, predicate=VIA.Preu)
+obj_origen = res.value(subject=transport, predicate=VIA.origen)
+origen = res.value(subject=obj_origen, predicate=VIA.Nom)
+obj_desti = res.value(subject=transport, predicate=VIA.desti)
+desti = res.value(subject=obj_desti, predicate=VIA.Nom)
+
+print("\n---- TRANSPORT ----\n")
+print("Origen: ", origen, "\n")
+print("Desti: ", desti, "\n")
+print("Anada: ", anada, "\n")
+print("Tornada: ", tornada, "\n")
+print("Tipus transport: ", tipus, "\n")
+print("Nombre places: ", capacitat, "\n")
+print("Preu total: ", preu, "\n")
+
+# print allotjament info
+print("---- ALLOTJAMENT ----", "\n")
+print("Ciutat: ", desti, "\n")
+print("Rang dates: ", anada, "/", tornada, "\n")
+#TODO
