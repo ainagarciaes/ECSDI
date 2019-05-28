@@ -77,7 +77,7 @@ def comunicacion():
 
     def cercaHotels():
 
-        
+
 
         contingut = Graph()
         obj_restriccions = gm.value(subject=content, predicate=DEM.Restriccions_hotels)
@@ -91,6 +91,8 @@ def comunicacion():
         print(dataF)
         print(NumPer)
         print(preuAllot)
+
+        contingut.parse('../../Ontologies/Viatge-RDF.owl', format='xml')
         print("HE ARRIBAT FINS AQUÍ")
 
 
