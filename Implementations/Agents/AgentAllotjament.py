@@ -96,17 +96,18 @@ def comunicacion():
         contingut.parse('../../Ontologies/Viatge-RDF.owl', format='xml')
         print("HEM FET EL PARSE")
         #via = URIRef("http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Allotjament")
-        res = contingut.query("""
-                        SELECT ?nm
-                        WHERE {
+        res = contingut.query(f"""
+                        SELECT ?nm ?c
+                        WHERE {{
                             ?a rdf:type via:Allotjament .
                             ?a via:Nom ?nm .
+                            ?a via:Capacitat ?c .
                             ?a via:es_troba_a ?ciu .
-                            ?ciu via:Nom "BUDAPEST".
-                        }""", initNs={"via":VIA})
+                            ?ciu via:Nom "{ciutat}" .
+                        }}""", initNs={"via":VIA})
         print("RESULTAT SPARQL")
         for row in res:
-            print("%s" % row)
+            print("%s hi caben %s" % row)
 
         print("HE ARRIBAT FINS AQUÍ")
 
