@@ -21,6 +21,7 @@ import os
 
 
 sys.path.append(os.path.relpath("../AgentUtil"))
+sys.path.append(os.path.relpath("../Utils"))
 
 from rdflib import Namespace, Graph, Literal, URIRef
 from flask import Flask, request
@@ -28,6 +29,8 @@ from flask import Flask, request
 from FlaskServer import shutdown_server
 from ACLMessages import build_message, send_message, get_message_properties
 from OntoNamespaces import ACL, DSO, RDF, DEM, VIA, FOAF
+from StringDateConversions import stringToDate
+from datetime import datetime
 from Agent import Agent
 
 __author__ = 'javier'
@@ -79,7 +82,8 @@ def comunicacion():
     def cercaHotels():
 
 
-
+        resultat =Graph()
+        resultat.bind('via',VIA)
         contingut = Graph()
         obj_restriccions = gm.value(subject=content, predicate=DEM.Restriccions_hotels)
         ciutat = gm.value(subject=obj_restriccions, predicate=DEM.Ciutat)
@@ -90,6 +94,8 @@ def comunicacion():
         print(ciutat)
         print(dataI)
         print(dataF)
+        data_ini = stringToDate(dataI)
+        data_fi = stringToDate(dataF)
         print(NumPer)
         print(preuAllot)
         #q = prepareQuery()
@@ -97,19 +103,33 @@ def comunicacion():
         print("HEM FET EL PARSE")
         #via = URIRef("http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Allotjament")
         res = contingut.query(f"""
-                        SELECT ?nm ?c
+                        SELECT ?nm ?c ?ta ?preu
                         WHERE {{
                             ?a rdf:type via:Allotjament .
                             ?a via:Nom ?nm .
                             ?a via:Capacitat ?c .
+                            ?a via:TipusAllotjament ?ta .
+                            ?a via:val ?p .
+                            ?p via:Import ?preu .
                             ?a via:es_troba_a ?ciu .
                             ?ciu via:Nom "{ciutat}" .
                         }}""", initNs={"via":VIA})
-        print("RESULTAT SPARQL")
-        for row in res:
-            print("%s hi caben %s" % row)
 
-        print("HE ARRIBAT FINS AQUÍ")
+
+        dies = data_fi - data_ini
+        for row in res:
+            if(int(row[1])>=int(NumPer)):
+                print(row[3])
+                preuTotal = int(NumPer)*int(row[3])*(dies.days)
+                print(preuTotal)
+                if (preuTotal<=preuAllot):
+                    Allotjaments = VIA.Allotjament + "_" + row[0]
+                    contingut.add((Allotjaments,RDF.type,VIA.Allotjament))
+                    resultat.add((Allotjaments, VIA.Nom , Literal(row[0])))
+                    resultat.add((Allotjaments, VIA.Capacitat, Literal(NumPer)))
+                    resultat.add((Allotjaments, VIA.TipusAllotjament, Literal(row[2])))
+                    resultat.add((Allotjaments, VIA.Preu, Literal(preuTotal)))
+
 
 
         gr = build_message(Graph(),
@@ -117,7 +137,7 @@ def comunicacion():
             sender=AgentAllotjament.uri,
             msgcnt=mss_cnt,
             receiver=msgdic['sender'], content = content)
-        return gr
+        return resultat
 
     global dsgraph
     global mss_cnt
