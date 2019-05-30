@@ -1066,7 +1066,7 @@
         <Viatge:obre_les_dates rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-10"/>
         <Viatge:ofereix rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MITJA_PENSIO"/>
         <Viatge:ofereix rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#PERNOCTACIO"/>
-        <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#400"/>
+        <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#100"/>
         <Viatge:Capacitat rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</Viatge:Capacitat>
         <Viatge:Nom>HOTEL_LLUNA</Viatge:Nom>
         <Viatge:TipusAllotjament>HOTEL</Viatge:TipusAllotjament>
@@ -1090,7 +1090,7 @@
         <Viatge:ofereix rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MITJA_PENSIO"/>
         <Viatge:ofereix rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#PENSIO_COMPLETA"/>
         <Viatge:ofereix rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#PERNOCTACIO"/>
-        <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#360"/>
+        <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#90"/>
         <Viatge:Capacitat rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</Viatge:Capacitat>
         <Viatge:Nom>HOTEL_SOL</Viatge:Nom>
         <Viatge:TipusAllotjament>HOTEL</Viatge:TipusAllotjament>
@@ -1306,6 +1306,15 @@
     
 
 
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#100 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#100">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Preu"/>
+        <Viatge:Import rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</Viatge:Import>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-05 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-05">
@@ -1360,24 +1369,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#360 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#360">
-        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Preu"/>
-        <Viatge:Import rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">360</Viatge:Import>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#400 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#400">
-        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Preu"/>
-        <Viatge:Import rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</Viatge:Import>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#500 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#500">
@@ -1392,6 +1383,15 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#600">
         <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Preu"/>
         <Viatge:Import rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">600</Viatge:Import>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#90 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#90">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Preu"/>
+        <Viatge:Import rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</Viatge:Import>
     </owl:NamedIndividual>
 </rdf:RDF>
 
