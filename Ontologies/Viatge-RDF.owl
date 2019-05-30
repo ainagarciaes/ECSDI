@@ -1310,7 +1310,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#100">
         <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Preu"/>
-        <Viatge:Import rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</Viatge:Import>
+        <Viatge:Import rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</Viatge:Import>
     </owl:NamedIndividual>
     
 
