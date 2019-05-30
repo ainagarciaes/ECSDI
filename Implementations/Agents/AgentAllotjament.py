@@ -124,19 +124,20 @@ def comunicacion():
                 print(preuTotal)
                 if (preuTotal<=preuAllot):
                     Allotjaments = VIA.Allotjament + "_" + row[0]
-                    contingut.add((Allotjaments,RDF.type,VIA.Allotjament))
+                    resultat.add((Allotjaments,RDF.type,VIA.Allotjament))
                     resultat.add((Allotjaments, VIA.Nom , Literal(row[0])))
-                    resultat.add((Allotjaments, VIA.Capacitat, Literal(NumPer)))
+                    resultat.add((Allotjaments, VIA.Capacitat, Literal(row[1])))
                     resultat.add((Allotjaments, VIA.TipusAllotjament, Literal(row[2])))
                     resultat.add((Allotjaments, VIA.Preu, Literal(preuTotal)))
 
 
-
-        gr = build_message(resultat,
-            ACL['inform'],
-            sender=AgentAllotjament.uri,
-            msgcnt=mss_cnt,
-            receiver=msgdic['sender'], content = content)
+        for s, p, o in resultat:
+            print(s,p,o)
+        #gr = build_message(resultat,
+        #    ACL['inform'],
+        #    sender=AgentAllotjament.uri,
+        #    msgcnt=mss_cnt,
+        #    receiver=msgdic['sender'], content = content)
         return resultat
 
     global dsgraph

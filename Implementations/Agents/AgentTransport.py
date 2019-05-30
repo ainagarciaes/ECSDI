@@ -80,6 +80,9 @@ def comunicacion():
     """
 
     def cercaTransports():
+
+        resultat =Graph()
+        resultat.bind('via',VIA)
         contingut = Graph()
         global ciutat_origen
         restriccions_transport = gm.value(subject=content, predicate=DEM.Restriccions_transports)
@@ -115,16 +118,24 @@ def comunicacion():
                             ?ciu1 via:Nom "{ciutat_desti}" .
                         }}""", initNs={"via":VIA})
         for row in res_Anada:
-            if(int(NPers <= row[2]))
-                preuTotal = int(Npers)*
-
+            if(int(NPers) <= int(row[2])):
+                preuTotal = int(NPers)*int(row[3])*2
+                if (preuTotal <= Preu):
+                    Transports = VIA.Transport + "_" + row[0]
+                    resultat.add((Transports,RDF.type,VIA.Transport))
+                    resultat.add((Transports, VIA.Nom , Literal(row[0])))
+                    resultat.add((Transports, VIA.Capacitat, Literal(row[2])))
+                    resultat.add((Transports, VIA.MitjaTransport, Literal(row[1])))
+                    resultat.add((Transports, VIA.Preu, Literal(preuTotal)))
+        for s, p, o in resultat:
+            print(s,p,o)
         #posar al content la busqueda del que ens demanen
-        gr = build_message(content,
-            ACL['inform'],
-            sender=AgentTransport.uri,
-            msgcnt=mss_cnt,
-            receiver=msgdic['sender'], content = VIA)
-        return gr
+        #gr = build_message(resultat,
+        #    ACL['inform'],
+        #    sender=AgentTransport.uri,
+        #    msgcnt=mss_cnt,
+        #    receiver=msgdic['sender'], content = VIA)
+        return resultat
 
     global dsgraph
     global mss_cnt
@@ -157,7 +168,7 @@ def comunicacion():
 
                 if action == DEM.Consultar_transports: #comparar que sigui del tipus d'accio que volem
                     graf_resposta = cercaTransports()
-                    gr = build_message(graf_resposta, ACL['inform'], sender=AgentAllotjament.uri, msgcnt=mss_cnt, content = VIA.Viatge)
+                    gr = build_message(graf_resposta, ACL['inform'], sender=AgentTransport.uri, msgcnt=mss_cnt, content = VIA.Viatge)
                 else:
                     gr = build_message(Graph(), ACL['not-understood'], sender=AgentTransport.uri, msgcnt=mss_cnt)
 
