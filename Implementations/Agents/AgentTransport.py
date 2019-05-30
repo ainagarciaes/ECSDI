@@ -20,6 +20,7 @@ import sys
 import os
 
 sys.path.append(os.path.relpath("../AgentUtil"))
+sys.path.append(os.path.relpath("../Utils"))
 
 from rdflib import Namespace, Graph, Literal
 from flask import Flask, request
@@ -28,14 +29,15 @@ from flask import Flask, request
 from FlaskServer import shutdown_server
 from ACLMessages import build_message, send_message, get_message_properties
 from OntoNamespaces import ACL, DSO, RDF, DEM, VIA
+from StringDateConversions import stringToDate
 from Agent import Agent
 
 __author__ = 'javier'
 
 
 # Configuration stuff
-hostname = socket.gethostname()
-#hostname = "localhost"
+#hostname = socket.gethostname()
+hostname = "localhost"
 port = 8081
 
 agn = Namespace("http://www.agentes.org#")
@@ -87,9 +89,35 @@ def comunicacion():
         NPers = gm.value(subject=restriccions_transport, predicate=DEM.NumPersones)
         ciutat_origen = gm.value(subject=restriccions_transport, predicate=DEM.Origen)
         Preu = gm.value(subject=restriccions_transport, predicate=DEM.Preu)
+        print(DataF)
+        print(DataIni)
         print(ciutat_desti)
+        print(NPers)
+        print(ciutat_origen)
+        print(Preu)
+        contingut.parse('../../Ontologies/Viatge-RDF.owl', format='xml')
+        res_Anada = contingut.query(f"""
+                        SELECT ?nm ?mitja ?c ?preu
+                        WHERE {{
+                            ?t rdf:type via:Transport .
+                            ?t via:Nom ?nm .
+                            ?t via:MitjaTransport ?mitja .
+                            ?t via:Capacitat ?c .
+                            ?t via:val ?p .
+                            ?t via:data_anada ?da .
+                            ?da via:Data "{DataIni}" .
+                            ?t via:data_tornada ?dt .
+                            ?dt via:Data "{DataF}" .
+                            ?p via:Import ?preu .
+                            ?t via:origen ?ciu .
+                            ?ciu via:Nom "{ciutat_origen}" .
+                            ?t via:desti ?ciu1 .
+                            ?ciu1 via:Nom "{ciutat_desti}" .
+                        }}""", initNs={"via":VIA})
+        for row in res_Anada:
+            if(int(NPers <= row[2]))
+                preuTotal = int(Npers)*
 
-        Preu = gm.value(subject=restriccions_transport, predicate=DEM.Preu)
         #posar al content la busqueda del que ens demanen
         gr = build_message(content,
             ACL['inform'],

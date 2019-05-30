@@ -985,7 +985,7 @@
         <Viatge:desti rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#BUDAPEST"/>
         <Viatge:ofereix_seients rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#CONVENCIONAL"/>
         <Viatge:origen rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#BARCELONA"/>
-        <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#600"/>
+        <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#120"/>
         <Viatge:Capacitat rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</Viatge:Capacitat>
         <Viatge:MitjaTransport>TREN</Viatge:MitjaTransport>
         <Viatge:Nom>EUROMED</Viatge:Nom>
@@ -1108,7 +1108,7 @@
         <Viatge:ofereix_seients rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#CONVENCIONAL"/>
         <Viatge:ofereix_seients rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#PRIMERA_CLASSE"/>
         <Viatge:origen rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#BARCELONA"/>
-        <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#500"/>
+        <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#100"/>
         <Viatge:Capacitat rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</Viatge:Capacitat>
         <Viatge:MitjaTransport>AVIO</Viatge:MitjaTransport>
         <Viatge:Nom>IBERIA</Viatge:Nom>
@@ -1311,6 +1311,15 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#100">
         <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Preu"/>
         <Viatge:Import rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</Viatge:Import>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#120 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#120">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Preu"/>
+        <Viatge:Import rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120</Viatge:Import>
     </owl:NamedIndividual>
     
 

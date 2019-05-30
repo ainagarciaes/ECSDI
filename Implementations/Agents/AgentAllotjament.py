@@ -132,7 +132,7 @@ def comunicacion():
 
 
 
-        gr = build_message(Graph(),
+        gr = build_message(resultat,
             ACL['inform'],
             sender=AgentAllotjament.uri,
             msgcnt=mss_cnt,
