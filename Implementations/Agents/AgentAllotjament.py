@@ -19,14 +19,15 @@ import socket
 import sys
 import os
 
+
 sys.path.append(os.path.relpath("../AgentUtil"))
 
-from rdflib import Namespace, Graph, Literal
+from rdflib import Namespace, Graph, Literal, URIRef
 from flask import Flask, request
 
 from FlaskServer import shutdown_server
 from ACLMessages import build_message, send_message, get_message_properties
-from OntoNamespaces import ACL, DSO, RDF, DEM, VIA
+from OntoNamespaces import ACL, DSO, RDF, DEM, VIA, FOAF
 from Agent import Agent
 
 __author__ = 'javier'
@@ -91,8 +92,22 @@ def comunicacion():
         print(dataF)
         print(NumPer)
         print(preuAllot)
-
+        #q = prepareQuery()
         contingut.parse('../../Ontologies/Viatge-RDF.owl', format='xml')
+        print("HEM FET EL PARSE")
+        #via = URIRef("http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Allotjament")
+        res = contingut.query("""
+                        SELECT ?nm
+                        WHERE {
+                            ?a rdf:type via:Allotjament .
+                            ?a via:Nom ?nm .
+                            ?a via:es_troba_a ?ciu .
+                            ?ciu via:Nom "BUDAPEST".
+                        }""", initNs={"via":VIA})
+        print("RESULTAT SPARQL")
+        for row in res:
+            print("%s" % row)
+
         print("HE ARRIBAT FINS AQUÍ")
 
 
