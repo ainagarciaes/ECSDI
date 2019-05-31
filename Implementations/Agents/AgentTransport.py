@@ -122,7 +122,7 @@ def comunicacion():
                 preuTotal = int(NPers)*int(row[3])*2
                 if (preuTotal <= Preu):
                     Transports = VIA.Transport + "_" + row[0]
-                    resultat.add((Transports,RDF.type,VIA.Transport))
+                    #resultat.add((Transports,RDF.type,VIA.Transport))
                     resultat.add((Transports, VIA.Nom , Literal(row[0])))
                     resultat.add((Transports, VIA.Capacitat, Literal(row[2])))
                     resultat.add((Transports, VIA.MitjaTransport, Literal(row[1])))
