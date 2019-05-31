@@ -1079,6 +1079,8 @@
         <Viatge:obre_les_dates rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-10"/>
         <Viatge:ofereix rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MITJA_PENSIO"/>
         <Viatge:ofereix rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#PERNOCTACIO"/>
+        <Viatge:te_habitacions rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#DOBLE"/>
+        <Viatge:te_habitacions rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#INDIVIDUAL"/>
         <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#100"/>
         <Viatge:Capacitat rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</Viatge:Capacitat>
         <Viatge:Nom>HOTEL_LLUNA</Viatge:Nom>
@@ -1103,6 +1105,9 @@
         <Viatge:ofereix rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MITJA_PENSIO"/>
         <Viatge:ofereix rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#PENSIO_COMPLETA"/>
         <Viatge:ofereix rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#PERNOCTACIO"/>
+        <Viatge:te_habitacions rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#DOBLE"/>
+        <Viatge:te_habitacions rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#INDIVIDUAL"/>
+        <Viatge:te_habitacions rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#SUITE"/>
         <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#90"/>
         <Viatge:Capacitat rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</Viatge:Capacitat>
         <Viatge:Nom>HOTEL_SOL</Viatge:Nom>
