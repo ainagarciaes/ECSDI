@@ -124,7 +124,7 @@ def comunicacion():
                 print(preuTotal)
                 if (preuTotal<=preuAllot):
                     Allotjaments = VIA.Allotjament + "_" + row[0]
-                    #resultat.add((Allotjaments,RDF.type,VIA.Allotjament))
+                    resultat.add((Allotjaments,RDF.type,VIA.Allotjament))
                     resultat.add((Allotjaments, VIA.Nom , Literal(row[0])))
                     resultat.add((Allotjaments, VIA.Capacitat, Literal(row[1])))
                     resultat.add((Allotjaments, VIA.TipusAllotjament, Literal(row[2])))
