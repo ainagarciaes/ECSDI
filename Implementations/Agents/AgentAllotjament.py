@@ -103,7 +103,7 @@ def comunicacion():
         print("HEM FET EL PARSE")
         #via = URIRef("http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Allotjament")
         res = contingut.query(f"""
-                        SELECT ?nm ?c ?ta ?preu
+                        SELECT ?nm ?c ?ta ?preu ?sit ?t ?testn ?ppn
                         WHERE {{
                             ?a rdf:type via:Allotjament .
                             ?a via:Nom ?nm .
@@ -113,6 +113,14 @@ def comunicacion():
                             ?p via:Import ?preu .
                             ?a via:es_troba_a ?ciu .
                             ?ciu via:Nom "{ciutat}" .
+                            ?a via:es_troba_a ?s .
+                            ?s via:Nom ?sit .
+                            ?a via:te_habitacions ?th .
+                            ?th via:Nom ?t .
+                            ?a via:ofereix ?test .
+                            ?test via:Nom ?testn .
+                            ?a via:es_popular ?pp .
+                            ?pp via:Nom ?ppn .
                         }}""", initNs={"via":VIA})
 
 
@@ -129,6 +137,12 @@ def comunicacion():
                     resultat.add((Allotjaments, VIA.Capacitat, Literal(row[1])))
                     resultat.add((Allotjaments, VIA.TipusAllotjament, Literal(row[2])))
                     resultat.add((Allotjaments, VIA.Preu, Literal(preuTotal)))
+                    resultat.add((Allotjaments, VIA.Nom + "_Situacio", Literal(row[4])))
+                    resultat.add((Allotjaments, VIA.Nom + "_TipusHabitacio", Literal(row[5])))
+                    resultat.add((Allotjaments, VIA.Nom + "_TipusEstada", Literal(row[6])))
+                    resultat.add((Allotjaments, VIA.Nom + "_Popularitat", Literal(row[7])))
+                    resultat.add((Allotjaments, VIA.Data + "_anada", Literal(dataI)))
+                    resultat.add((Allotjaments, VIA.Data + "_tornada", Literal(dataF)))
 
 
         for s, p, o in resultat:

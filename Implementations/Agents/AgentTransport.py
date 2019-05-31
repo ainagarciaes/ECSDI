@@ -100,7 +100,7 @@ def comunicacion():
         print(Preu)
         contingut.parse('../../Ontologies/Viatge-RDF.owl', format='xml')
         res_Anada = contingut.query(f"""
-                        SELECT ?nm ?mitja ?c ?preu
+                        SELECT ?nm ?mitja ?c ?preu ?se
                         WHERE {{
                             ?t rdf:type via:Transport .
                             ?t via:Nom ?nm .
@@ -108,6 +108,8 @@ def comunicacion():
                             ?t via:Capacitat ?c .
                             ?t via:val ?p .
                             ?t via:data_anada ?da .
+                            ?t via:ofereix_seients ?s .
+                            ?s via:Nom ?se .
                             ?da via:Data "{DataIni}" .
                             ?t via:data_tornada ?dt .
                             ?dt via:Data "{DataF}" .
@@ -127,6 +129,11 @@ def comunicacion():
                     resultat.add((Transports, VIA.Capacitat, Literal(row[2])))
                     resultat.add((Transports, VIA.MitjaTransport, Literal(row[1])))
                     resultat.add((Transports, VIA.Preu, Literal(preuTotal)))
+                    resultat.add((Transports, VIA.Nom, Literal(row[4])))
+                    resultat.add((Transports, VIA.Data + "_anada", Literal(DataIni)))
+                    resultat.add((Transports, VIA.Data + "_tornada", Literal(DataF)))
+                    resultat.add((Transports, VIA.Nom + "_origen", Literal(ciutat_origen)))
+                    resultat.add((Transports, VIA.Nom + "_desti", Literal(ciutat_desti)))
         for s, p, o in resultat:
             print(s,p,o)
         #posar al content la busqueda del que ens demanen
