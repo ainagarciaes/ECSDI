@@ -139,18 +139,26 @@ print ('\nP:', tipus_estada, tipus_seient, tipus_activitats, tipus_transport, lo
 viatge = res.value(predicate=RDF.type, object=VIA.Viatge)
 
 # print transport info:
-transport = res.value(subject=viatge, predicate=VIA.Transport)
-anada = res.value(subject=transport, predicate=VIA.Data_inici)
-tornada = res.value(subject=transport, predicate=VIA.Data_final)
+transport = res.value(predicate=RDF.type, object=VIA.Transport) # objecte transport
+
+# coses que ja van
+nom_transport = res.value(subject=transport, predicate=VIA.Nom) # nom del transport
 capacitat = res.value(subject=transport, predicate=VIA.Capacitat)
 tipus = res.value(subject=transport, predicate=VIA.MitjaTransport)
 preu = res.value(subject=transport, predicate=VIA.Preu)
+
+# coses que encara no van
+
+# coses que no estan al agent
+anada = res.value(subject=transport, predicate=VIA.Data_inici) # data d'anada
+tornada = res.value(subject=transport, predicate=VIA.Data_final) # data tornada
 obj_origen = res.value(subject=transport, predicate=VIA.origen)
 origen = res.value(subject=obj_origen, predicate=VIA.Nom)
 obj_desti = res.value(subject=transport, predicate=VIA.desti)
 desti = res.value(subject=obj_desti, predicate=VIA.Nom)
 
 print("\n---- TRANSPORT ----\n")
+print("Nom del transport: ", nom_transport, "\n")
 print("Origen: ", origen, "\n")
 print("Desti: ", desti, "\n")
 print("Anada: ", anada, "\n")
@@ -161,6 +169,11 @@ print("Preu total: ", preu, "\n")
 
 # print allotjament info
 print("---- ALLOTJAMENT ----", "\n")
+
+# coses que ja van
+# coses que encara no van
+# coses que no estan al agent
+
 print("Ciutat: ", desti, "\n")
 print("Rang dates: ", anada, "/", tornada, "\n")
 #TODO
