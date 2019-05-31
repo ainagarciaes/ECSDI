@@ -126,18 +126,20 @@ def comunicacion():
             
             # 3. get response
             res = send_message(gr, AgenteTransporte.address)
-            
+
             # 4. parse response and choose one
             possibles = Graph()
             transport = Graph()
 
             # Agafo com a possibles els que tenen com a preferencia el tipus de transport indicat
             possibles += res.triples((None, VIA.MitjaTransport, Literal(mitja_transport)))
-
+            
             if not possibles: 
                 possibles = res
 
+                
             # agafo la primera de les opcions que cumpleixi els filtres de ^
+            # s es l'objecte transport, que pot ser obtingut per triplets o si canvio a sparql enlloc d'iterar, busco un cop les triplets del objecte que m'ha tornat sparql
             for s, p, o in possibles:
                 transport += res.triples((s, None, None))
                 nomTransport = s
@@ -181,13 +183,14 @@ def comunicacion():
 
             # 3. get response
             res = send_message(gr, AgenteAlojamiento.address)
-
-            # 4. parse response and choose one
             
+            hotel_test = res.value(predicate=RDF.type, object=VIA.Allotjament)
+            hotel_name = res.value(subject=hotel_test, predicate=VIA.Nom)
+            # 4. parse response and choose one
+            print(hotel_test)
 
             # 5. return chosen transport
-            return res
-            #return h
+            return res, VIA.Allotjament
 
         def obtain_activities():
             print('entering obtain activitites')
@@ -256,20 +259,8 @@ def comunicacion():
 
         # Obtenim transport i hotel
         t, t_name = obtain_transport()
-
-        for s, p, o in t:
-            print('s', s)
-            print('p', p)
-            print('o', o)
-        h = obtain_hotel()
+        h, h_name = obtain_hotel()
         a = obtain_activities()
-        '''
-        print("NOW IM PRINTING THE ACTIVITY INFO")
-        for s, p, o in a:
-            if p == FOAF.name:
-                print(o)
-        print('END')
-        '''
 
         content = Graph() # posar el t i h al graf de resultats com toqui
         content.bind('via', VIA)
@@ -279,11 +270,10 @@ def comunicacion():
         content.add((viatge_obj, RDF.type, VIA.Viatge))
 
         print(t is None)
-        #h_name = h.value(predicate=RDF.type, object=VIA.Allotjament)
-        #content.add((viatge_obj, VIA.Allotjament, h_name))
+        content.add((viatge_obj, VIA.Allotjament, h_name))
         content.add((viatge_obj, VIA.Transport, t_name))
 
-        #content = content + h
+        content = content + h
         content = content + t
         #content.add((viatge_obj, VIA.Activitats, a))
         

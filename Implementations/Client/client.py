@@ -130,37 +130,56 @@ gr = build_message(content_graph, perf=ACL.request, sender=Client.uri, msgcnt=0,
 res = send_message(gr, AgentePlanificador.address)
 
 # decoding the ACL return message
-
-# printing the output
-# print (res) uncomment this when everything works as expected
-print ('R:', dep_city, arr_city, dep_date, ret_date, num_trav, total_budget, transport_budget, accomodation_budget, activities_budget)
-print ('\nP:', tipus_estada, tipus_seient, tipus_activitats, tipus_transport, localitzacio)
-
 viatge = res.value(predicate=RDF.type, object=VIA.Viatge)
 
 # print transport info:
-transport = res.value(subject=viatge, predicate=VIA.Transport)
-anada = res.value(subject=transport, predicate=VIA.Data_inici)
-tornada = res.value(subject=transport, predicate=VIA.Data_final)
+transport = res.value(predicate=RDF.type, object=VIA.Transport) # objecte transport
+
+nom_transport = res.value(subject=transport, predicate=VIA.Nom) # nom del transport
 capacitat = res.value(subject=transport, predicate=VIA.Capacitat)
 tipus = res.value(subject=transport, predicate=VIA.MitjaTransport)
 preu = res.value(subject=transport, predicate=VIA.Preu)
-obj_origen = res.value(subject=transport, predicate=VIA.origen)
-origen = res.value(subject=obj_origen, predicate=VIA.Nom)
-obj_desti = res.value(subject=transport, predicate=VIA.desti)
-desti = res.value(subject=obj_desti, predicate=VIA.Nom)
+anada = res.value(subject=transport, predicate=VIA.Data_anada) # data d'anada
+tornada = res.value(subject=transport, predicate=VIA.Data_tornada) # data tornada
+origen = res.value(subject=transport, predicate=VIA.Nom_origen)
+desti = res.value(subject=transport, predicate=VIA.Nom_desti)
+tipus_s = res.value(subject=transport, predicate=VIA.Tipus_seient)
 
-print("\n---- TRANSPORT ----\n")
-print("Origen: ", origen, "\n")
-print("Desti: ", desti, "\n")
-print("Anada: ", anada, "\n")
-print("Tornada: ", tornada, "\n")
-print("Tipus transport: ", tipus, "\n")
-print("Nombre places: ", capacitat, "\n")
-print("Preu total: ", preu, "\n")
+print("</br>---- TRANSPORT ----</br>")
+print("Nom del transport: ", nom_transport, "</br>")
+print("Origen: ", origen, "</br>")
+print("Desti: ", desti, "</br>")
+print("Anada: ", anada, "</br>")
+print("Tornada: ", tornada, "</br>")
+print("Tipus transport: ", tipus, "</br>")
+print("Tipus seient: ", tipus_s, "</br>")
+print("Nombre places: ", capacitat, "</br>")
+print("Preu total: ", preu, "</br>")
 
 # print allotjament info
-print("---- ALLOTJAMENT ----", "\n")
-print("Ciutat: ", desti, "\n")
-print("Rang dates: ", anada, "/", tornada, "\n")
-#TODO
+allotjament = res.value(predicate=RDF.type, object=VIA.Allotjament)
+
+nom_allotjament = res.value(subject=allotjament, predicate=VIA.Nom)
+capacitat = res.value(subject=allotjament, predicate=VIA.Capacitat)
+tipus_allotjament = res.value(subject=allotjament, predicate=VIA.TipusAllotjament)
+preu_allotjament = res.value(subject=allotjament, predicate=VIA.Preu)
+situacio = res.value(subject=allotjament, predicate=VIA.Nom_Situacio)
+tipus_habitacio = res.value(subject=allotjament, predicate=VIA.Nom_TipusHabitacio)
+tipus_estada = res.value(subject=allotjament, predicate=VIA.Nom_TipusEstada)
+popularitat = res.value(subject=allotjament, predicate=VIA.Nom_Popularitat)
+inici_allotj = res.value(subject=allotjament, predicate=VIA.Data_anada)
+fi_allotj = res.value(subject=allotjament, predicate=VIA.Data_tornada)
+
+print("</br>", "---- ALLOTJAMENT ----", "</br>")
+print("Ciutat: ", desti, "</br>")
+print("Rang dates: ", inici_allotj, "/", fi_allotj, "</br>")
+print("Nom allotjament: ", nom_allotjament, "</br>")
+print("Capacitat: ", capacitat, "</br>")
+print("Tipus allotjament: ", tipus_allotjament, "</br>")
+print("Preu allotjament: ", preu_allotjament, "</br>")
+print("Situacio: ", situacio, "</br>")
+print("Tipus habitacio: ", tipus_habitacio, "</br>")
+print("Tipus estada: ", tipus_estada, "</br>")
+print("Popularitat allotjament: ", popularitat, "</br>")
+
+# print activitats info
