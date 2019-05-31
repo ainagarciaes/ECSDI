@@ -183,13 +183,14 @@ def comunicacion():
 
             # 3. get response
             res = send_message(gr, AgenteAlojamiento.address)
-
-            # 4. parse response and choose one
             
+            hotel_test = res.value(predicate=RDF.type, object=VIA.Allotjament)
+            hotel_name = res.value(subject=hotel_test, predicate=VIA.Nom)
+            # 4. parse response and choose one
+            print(hotel_test)
 
             # 5. return chosen transport
-            return res
-            #return h
+            return res, VIA.Allotjament
 
         def obtain_activities():
             print('entering obtain activitites')
@@ -269,11 +270,10 @@ def comunicacion():
         content.add((viatge_obj, RDF.type, VIA.Viatge))
 
         print(t is None)
-        #h_name = h.value(predicate=RDF.type, object=VIA.Allotjament)
-        #content.add((viatge_obj, VIA.Allotjament, h_name))
+        content.add((viatge_obj, VIA.Allotjament, h_name))
         content.add((viatge_obj, VIA.Transport, t_name))
 
-        #content = content + h
+        content = content + h
         content = content + t
         #content.add((viatge_obj, VIA.Activitats, a))
         

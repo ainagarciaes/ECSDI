@@ -129,7 +129,7 @@ def comunicacion():
                     resultat.add((Transports, VIA.Capacitat, Literal(row[2])))
                     resultat.add((Transports, VIA.MitjaTransport, Literal(row[1])))
                     resultat.add((Transports, VIA.Preu, Literal(preuTotal)))
-                    resultat.add((Transports, VIA.Nom, Literal(row[4])))
+                    resultat.add((Transports, VIA.Tipus_seient, Literal(row[4])))
                     resultat.add((Transports, VIA.Data + "_anada", Literal(DataIni)))
                     resultat.add((Transports, VIA.Data + "_tornada", Literal(DataF)))
                     resultat.add((Transports, VIA.Nom + "_origen", Literal(ciutat_origen)))
