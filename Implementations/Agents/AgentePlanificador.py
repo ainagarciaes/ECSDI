@@ -259,7 +259,9 @@ def comunicacion():
                     demana_a.add((activitat, RDF.type, DEM.Demanar_activitat))
                     demana_a.add((activitat, DEM.Ciutat, Literal(desti)))
                     demana_a.add((activitat, DEM.Cost, Literal(budget_activitat)))
-                    demana_a.add((activitat, DEM.Data_activitat, Literal(data_inici)))
+                    
+                    dateString = dateToString(current_date)
+                    demana_a.add((activitat, DEM.Data_activitat, Literal(dateString)))
                     demana_a.add((activitat, DEM.Horari, Literal(franja)))
                     demana_a.add((activitat, DEM.Tipus_activitat, Literal(tipusViatge)))
 
