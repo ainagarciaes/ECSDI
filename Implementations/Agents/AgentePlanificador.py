@@ -23,7 +23,7 @@ import datetime
 sys.path.append(os.path.relpath("../AgentUtil"))
 sys.path.append(os.path.relpath("../Utils"))
 
-from rdflib import Namespace, Graph, Literal
+from rdflib import Namespace, Graph, Literal, term
 from flask import Flask, request
 
 from FlaskServer import shutdown_server
@@ -127,33 +127,66 @@ def comunicacion():
             # 3. get response
             res = send_message(gr, AgenteTransporte.address)
 
-            # 4. parse response and choose one
-            possibles = Graph()
+            row_transport = res.query(f"""
+                SELECT ?nt
+                WHERE {{
+                    ?t rdf:type via:Transport .
+                    ?t via:Nom ?nt .
+                    ?t via:MitjaTransport "{mitja_transport}" .
+                    ?t via:Tipus_seient "{tipus_seient}" .
+                }}
+                LIMIT 1
+                """, initNs={"via":VIA})
+
+            if (row_transport is None):
+                row_transport = res.query(f"""
+                    SELECT ?nt
+                    WHERE {{
+                        ?t rdf:type via:Transport .
+                        ?t via:Nom ?nt .
+                        ?t via:MitjaTransport "{mitja_transport}" .
+                    }}
+                    LIMIT 1
+                    """, initNs={"via":VIA})
+
+                if (row_transport is None):
+                    row_transport = res.query(f"""
+                        SELECT ?nt
+                        WHERE {{
+                            ?t rdf:type via:Transport .
+                            ?t via:Nom ?nt .
+                            ?t via:Tipus_seient "{tipus_seient}" .
+                        }}
+                        LIMIT 1
+                        """, initNs={"via":VIA})
+
+                    if (row_transport is None):
+                        row_transport = res.query(f"""
+                            SELECT ?nt
+                            WHERE {{
+                                ?t rdf:type via:Transport .
+                                ?t via:Nom ?nt .
+                            }}
+                            LIMIT 1
+                            """, initNs={"via":VIA})
+
             transport = Graph()
-
-            # Agafo com a possibles els que tenen com a preferencia el tipus de transport indicat
-            possibles += res.triples((None, VIA.MitjaTransport, Literal(mitja_transport)))
-            
-            if not possibles: 
-                possibles = res
-
-                
-            # agafo la primera de les opcions que cumpleixi els filtres de ^
-            # s es l'objecte transport, que pot ser obtingut per triplets o si canvio a sparql enlloc d'iterar, busco un cop les triplets del objecte que m'ha tornat sparql
-            for s, p, o in possibles:
+            s = term.URIRef('')
+            for row in row_transport:
+                nomTransport = row[0]
                 transport += res.triples((s, None, None))
-                nomTransport = s
-                break
+                # el graph te dos nivells, per tant dos loops
+                for s, p, o in transport:
+                    print(s, p, o)
+                    aux = Graph()
+                    aux += res.triples((o, None, None))
+                    for s1, p1, o1 in aux:
+                        transport.add((o, p1, o1))
+                break            
 
-            # el graph te dos nivells, per tant dos loops
-            for s, p, o in transport:
-                aux = Graph()
-                aux += res.triples((o, None, None))
-                for s1, p1, o1 in aux:
-                    transport.add((o, p1, o1))            
-
+            # cast from string to RDF term, wont work otherwise
             # 5. return chosen transport
-            return transport, nomTransport
+            return transport, s
 
         def obtain_hotel():
             global mss_cnt
@@ -259,6 +292,7 @@ def comunicacion():
 
         # Obtenim transport i hotel
         t, t_name = obtain_transport()
+        print(t_name)
         h, h_name = obtain_hotel()
         a = obtain_activities()
 
@@ -269,7 +303,6 @@ def comunicacion():
 
         content.add((viatge_obj, RDF.type, VIA.Viatge))
 
-        print(t is None)
         content.add((viatge_obj, VIA.Allotjament, h_name))
         content.add((viatge_obj, VIA.Transport, t_name))
 
