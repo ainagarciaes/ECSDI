@@ -296,7 +296,7 @@ def comunicacion():
 
             # agafar d'aqui el preu de les activitats
             obj_pref = gm.value(subject=content, predicate = DEM.Preferencies)
-            tipusViatge = gm.value(subject=obj_pref, predicate=DEM.Tipus_estada)
+            tipusViatge = gm.value(subject=obj_pref, predicate=DEM.Tipus_activitat)
             budget_activitat = 0
 
             total_activitats = Graph()
