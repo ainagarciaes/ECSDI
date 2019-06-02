@@ -1,27 +1,17 @@
 <?xml version="1.0"?>
-
-
-<!DOCTYPE rdf:RDF [
-    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
-    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY Viatge "http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#" >
-]>
-
-
 <rdf:RDF xmlns="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge"
      xml:base="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:Viatge="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#">
     <owl:Ontology rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge"/>
+    
 
 
-
-    <!--
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Object Properties
@@ -29,64 +19,64 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#dades_meteorologiques_de -->
 
-    <owl:ObjectProperty rdf:about="&Viatge;dades_meteorologiques_de">
-        <rdfs:domain rdf:resource="&Viatge;Meteorologia"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#dades_meteorologiques_de">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Meteorologia"/>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#data_anada -->
 
-    <owl:ObjectProperty rdf:about="&Viatge;data_anada">
-        <rdfs:range rdf:resource="&Viatge;Data"/>
-        <rdfs:domain rdf:resource="&Viatge;Transport"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#data_anada">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Transport"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Data"/>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#data_tornada -->
 
-    <owl:ObjectProperty rdf:about="&Viatge;data_tornada">
-        <rdfs:range rdf:resource="&Viatge;Data"/>
-        <rdfs:domain rdf:resource="&Viatge;Transport"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#data_tornada">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Transport"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Data"/>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#desti -->
 
-    <owl:ObjectProperty rdf:about="&Viatge;desti">
-        <rdfs:range rdf:resource="&Viatge;Localitzacio"/>
-        <rdfs:range rdf:resource="&Viatge;Municipi"/>
-        <rdfs:domain rdf:resource="&Viatge;Transport"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#desti">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Transport"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Localitzacio"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Municipi"/>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#es_oferta_per -->
 
-    <owl:ObjectProperty rdf:about="&Viatge;es_oferta_per">
-        <rdfs:range rdf:resource="&Viatge;Allotjament"/>
-        <rdfs:domain rdf:resource="&Viatge;Tipus_estada"/>
-        <owl:inverseOf rdf:resource="&Viatge;ofereix"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#es_oferta_per">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#ofereix"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Tipus_estada"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Allotjament"/>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#es_popular -->
 
-    <owl:ObjectProperty rdf:about="&Viatge;es_popular">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#es_popular">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#nivell_popularitat_de"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Allotjament"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Popularitat"/>
         <rdfs:comment>Un allotjament ÉS del nivell de popularitat...</rdfs:comment>
-        <rdfs:domain rdf:resource="&Viatge;Allotjament"/>
-        <rdfs:range rdf:resource="&Viatge;Popularitat"/>
-        <owl:inverseOf rdf:resource="&Viatge;nivell_popularitat_de"/>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#es_troba_a -->
@@ -97,121 +87,112 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Recinte"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Localitzacio"/>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#hi_trobem -->
 
-    <owl:ObjectProperty rdf:about="&Viatge;hi_trobem">
-        <rdfs:range rdf:resource="&Viatge;Allotjament"/>
-        <rdfs:domain rdf:resource="&Viatge;Localitzacio"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#hi_trobem">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Localitzacio"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Allotjament"/>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#nivell_popularitat_de -->
 
-    <owl:ObjectProperty rdf:about="&Viatge;nivell_popularitat_de">
-        <rdfs:range rdf:resource="&Viatge;Allotjament"/>
-        <rdfs:domain rdf:resource="&Viatge;Popularitat"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#nivell_popularitat_de">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Popularitat"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Allotjament"/>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#obre_el_dia -->
 
-    <owl:ObjectProperty rdf:about="&Viatge;obre_el_dia">
-        <rdfs:range rdf:resource="&Viatge;Data"/>
-        <rdfs:domain rdf:resource="&Viatge;Recinte"/>
-        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#obre_el_dia">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Recinte"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Data"/>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#obre_les_dates -->
 
-    <owl:ObjectProperty rdf:about="&Viatge;obre_les_dates">
-        <rdfs:domain rdf:resource="&Viatge;Allotjament"/>
-        <rdfs:range rdf:resource="&Viatge;Data"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#obre_les_dates">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Allotjament"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Data"/>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#obre_les_hores -->
 
-    <owl:ObjectProperty rdf:about="&Viatge;obre_les_hores">
-        <rdfs:domain rdf:resource="&Viatge;Allotjament"/>
-        <rdfs:range rdf:resource="&Viatge;Horari"/>
-        <rdfs:domain rdf:resource="&Viatge;Recinte"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#obre_les_hores">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Allotjament"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Recinte"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Horari"/>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#ofereix -->
 
-    <owl:ObjectProperty rdf:about="&Viatge;ofereix">
-        <rdfs:domain rdf:resource="&Viatge;Allotjament"/>
-        <rdfs:range rdf:resource="&Viatge;Tipus_estada"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#ofereix">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Allotjament"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Tipus_estada"/>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#ofereix_seients -->
 
-    <owl:ObjectProperty rdf:about="&Viatge;ofereix_seients">
-        <rdfs:range rdf:resource="&Viatge;Tipus_seient"/>
-        <rdfs:domain rdf:resource="&Viatge;Transport"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#ofereix_seients">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Transport"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Tipus_seient"/>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#origen -->
 
-    <owl:ObjectProperty rdf:about="&Viatge;origen">
-        <rdfs:range rdf:resource="&Viatge;Localitzacio"/>
-        <rdfs:range rdf:resource="&Viatge;Municipi"/>
-        <rdfs:domain rdf:resource="&Viatge;Transport"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#origen">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Transport"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Localitzacio"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Municipi"/>
     </owl:ObjectProperty>
-
-
-
-    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#s&apos;hi_celebra -->
-
-    <owl:ObjectProperty rdf:about="&Viatge;s&apos;hi_celebra">
-        <rdfs:range rdf:resource="&Viatge;Activitat"/>
-        <rdfs:domain rdf:resource="&Viatge;Recinte"/>
-    </owl:ObjectProperty>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#se_celebra_a -->
 
-    <owl:ObjectProperty rdf:about="&Viatge;se_celebra_a">
-        <rdfs:domain rdf:resource="&Viatge;Activitat"/>
-        <rdfs:range rdf:resource="&Viatge;Recinte"/>
-        <owl:inverseOf rdf:resource="&Viatge;s&apos;hi_celebra"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#se_celebra_a">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#s&apos;hi_celebra"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Activitat"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Recinte"/>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#se_celebra_de -->
 
-    <owl:ObjectProperty rdf:about="&Viatge;se_celebra_de">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#se_celebra_de">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Activitat"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Horari"/>
         <rdfs:comment>Una activitat se celebra de matí, tarda, vespre, nit.</rdfs:comment>
-        <rdfs:domain rdf:resource="&Viatge;Activitat"/>
-        <rdfs:range rdf:resource="&Viatge;Horari"/>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#se_celebra_el -->
 
-    <owl:ObjectProperty rdf:about="&Viatge;se_celebra_el">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#se_celebra_el">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Activitat"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Data"/>
         <rdfs:comment>Data en què se celebra una activitat</rdfs:comment>
-        <rdfs:domain rdf:resource="&Viatge;Activitat"/>
-        <rdfs:range rdf:resource="&Viatge;Data"/>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#se_situa_a -->
@@ -220,31 +201,40 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Allotjament"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Situacio"/>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#te_habitacions -->
 
-    <owl:ObjectProperty rdf:about="&Viatge;te_habitacions">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#te_habitacions">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Allotjament"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Tipus_habitacio"/>
         <rdfs:comment>Tipus de habitacions ofertes per un allotjament.</rdfs:comment>
-        <rdfs:domain rdf:resource="&Viatge;Allotjament"/>
-        <rdfs:range rdf:resource="&Viatge;Tipus_habitacio"/>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#val -->
 
-    <owl:ObjectProperty rdf:about="&Viatge;val">
-        <rdfs:domain rdf:resource="&Viatge;Activitat"/>
-        <rdfs:domain rdf:resource="&Viatge;Allotjament"/>
-        <rdfs:range rdf:resource="&Viatge;Preu"/>
-        <rdfs:domain rdf:resource="&Viatge;Transport"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#val">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Activitat"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Allotjament"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Transport"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Preu"/>
     </owl:ObjectProperty>
+    
 
 
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#s&apos;hi_celebra -->
 
-    <!--
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#s&apos;hi_celebra">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Recinte"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Activitat"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Data properties
@@ -252,70 +242,70 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Capacitat -->
 
-    <owl:DatatypeProperty rdf:about="&Viatge;Capacitat"/>
-
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Capacitat"/>
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Data -->
 
-    <owl:DatatypeProperty rdf:about="&Viatge;Data"/>
-
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Data"/>
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Graus -->
 
-    <owl:DatatypeProperty rdf:about="&Viatge;Graus"/>
-
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Graus"/>
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#IDAct -->
 
-    <owl:DatatypeProperty rdf:about="&Viatge;IDAct">
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#IDAct">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Activitat"/>
         <rdfs:comment>Identifica una activitat</rdfs:comment>
-        <rdfs:domain rdf:resource="&Viatge;Activitat"/>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Import -->
 
-    <owl:DatatypeProperty rdf:about="&Viatge;Import"/>
-
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Import"/>
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MitjaTransport -->
 
-    <owl:DatatypeProperty rdf:about="&Viatge;MitjaTransport"/>
-
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MitjaTransport"/>
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Nom -->
 
-    <owl:DatatypeProperty rdf:about="&Viatge;Nom"/>
-
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Nom"/>
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Percentatge -->
 
-    <owl:DatatypeProperty rdf:about="&Viatge;Percentatge"/>
-
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Percentatge"/>
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#TipusAllotjament -->
 
-    <owl:DatatypeProperty rdf:about="&Viatge;TipusAllotjament">
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#TipusAllotjament">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Allotjament"/>
         <rdfs:comment>Serà un atribut que definirà el tipus d&apos;allotjament que és l&apos;allotjament en qüestió.</rdfs:comment>
-        <rdfs:domain rdf:resource="&Viatge;Allotjament"/>
     </owl:DatatypeProperty>
+    
 
 
-
-    <!--
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Classes
@@ -323,426 +313,426 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Activitat -->
 
-    <owl:Class rdf:about="&Viatge;Activitat">
-        <rdfs:subClassOf rdf:resource="&Viatge;Viatge"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Activitat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Viatge"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&Viatge;IDAct"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;int"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#IDAct"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Aquesta classe inclou el concepte d&apos;activitat dividit per tipus d&apos;activitat que en són subclasses.</rdfs:comment>
     </owl:Class>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Adreça -->
 
-    <owl:Class rdf:about="&Viatge;Adreça">
-        <rdfs:subClassOf rdf:resource="&Viatge;Localitzacio"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Adreça">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Localitzacio"/>
     </owl:Class>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Allotjament -->
 
-    <owl:Class rdf:about="&Viatge;Allotjament">
-        <rdfs:subClassOf rdf:resource="&Viatge;Viatge"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Allotjament">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Viatge"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&Viatge;Capacitat"/>
-                <owl:someValuesFrom rdf:resource="&xsd;integer"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Capacitat"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&Viatge;TipusAllotjament"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Nom"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&Viatge;Nom"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#TipusAllotjament"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Aquesta classe defineix la mena de llocs on es pot allotjar un usuari en la seva estància.</rdfs:comment>
     </owl:Class>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Apat -->
 
-    <owl:Class rdf:about="&Viatge;Apat">
-        <rdfs:subClassOf rdf:resource="&Viatge;Ludica"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Apat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Ludica"/>
         <rdfs:comment>Fa referència al fet de tenir un sopar o un dinar.</rdfs:comment>
     </owl:Class>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Concert -->
 
-    <owl:Class rdf:about="&Viatge;Concert">
-        <rdfs:subClassOf rdf:resource="&Viatge;Ludica"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Concert">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Ludica"/>
     </owl:Class>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Cultural -->
 
-    <owl:Class rdf:about="&Viatge;Cultural">
-        <rdfs:subClassOf rdf:resource="&Viatge;Activitat"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Cultural">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Activitat"/>
     </owl:Class>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Data -->
 
-    <owl:Class rdf:about="&Viatge;Data">
-        <rdfs:subClassOf rdf:resource="&Viatge;Temps"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Data">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Temps"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&Viatge;Data"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Data"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Edifici_interessant -->
 
-    <owl:Class rdf:about="&Viatge;Edifici_interessant">
-        <rdfs:subClassOf rdf:resource="&Viatge;Cultural"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Edifici_interessant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Cultural"/>
     </owl:Class>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Esdeveniment -->
 
-    <owl:Class rdf:about="&Viatge;Esdeveniment">
-        <rdfs:subClassOf rdf:resource="&Viatge;Festiva"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Esdeveniment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Festiva"/>
     </owl:Class>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Estat_del_cel -->
 
-    <owl:Class rdf:about="&Viatge;Estat_del_cel">
-        <rdfs:subClassOf rdf:resource="&Viatge;Meteorologia"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Estat_del_cel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Meteorologia"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&Viatge;Nom"/>
-                <owl:someValuesFrom rdf:resource="&xsd;Name"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Nom"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#Name"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Exposicio -->
 
-    <owl:Class rdf:about="&Viatge;Exposicio">
-        <rdfs:subClassOf rdf:resource="&Viatge;Cultural"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Exposicio">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Cultural"/>
     </owl:Class>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Festa -->
 
-    <owl:Class rdf:about="&Viatge;Festa">
-        <rdfs:subClassOf rdf:resource="&Viatge;Ludica"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Festa">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Ludica"/>
     </owl:Class>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Festiva -->
 
-    <owl:Class rdf:about="&Viatge;Festiva">
-        <rdfs:subClassOf rdf:resource="&Viatge;Activitat"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Festiva">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Activitat"/>
     </owl:Class>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Horari -->
 
-    <owl:Class rdf:about="&Viatge;Horari">
-        <rdfs:subClassOf rdf:resource="&Viatge;Temps"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Horari">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Temps"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&Viatge;Nom"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Nom"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Moment del dia en el qual un recinte obre.(Matí, tarda, vespre, nit) o en el qual se celebra una activitat</rdfs:comment>
     </owl:Class>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Humitat -->
 
-    <owl:Class rdf:about="&Viatge;Humitat">
-        <rdfs:subClassOf rdf:resource="&Viatge;Meteorologia"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Humitat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Meteorologia"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&Viatge;Percentatge"/>
-                <owl:someValuesFrom rdf:resource="&xsd;integer"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Percentatge"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Lloc_pintoresc -->
 
-    <owl:Class rdf:about="&Viatge;Lloc_pintoresc">
-        <rdfs:subClassOf rdf:resource="&Viatge;Festiva"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Lloc_pintoresc">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Festiva"/>
     </owl:Class>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Localitzacio -->
 
-    <owl:Class rdf:about="&Viatge;Localitzacio">
-        <rdfs:subClassOf rdf:resource="&Viatge;Viatge"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Localitzacio">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Viatge"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&Viatge;Nom"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Nom"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Fa referència a un lloc.</rdfs:comment>
     </owl:Class>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Ludica -->
 
-    <owl:Class rdf:about="&Viatge;Ludica">
-        <rdfs:subClassOf rdf:resource="&Viatge;Activitat"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Ludica">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Activitat"/>
     </owl:Class>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Meteorologia -->
 
-    <owl:Class rdf:about="&Viatge;Meteorologia">
-        <rdfs:subClassOf rdf:resource="&Viatge;Viatge"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Meteorologia">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Viatge"/>
     </owl:Class>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Municipi -->
 
-    <owl:Class rdf:about="&Viatge;Municipi">
-        <rdfs:subClassOf rdf:resource="&Viatge;Localitzacio"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Municipi">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Localitzacio"/>
     </owl:Class>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Opera -->
 
-    <owl:Class rdf:about="&Viatge;Opera">
-        <rdfs:subClassOf rdf:resource="&Viatge;Ludica"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Opera">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Ludica"/>
     </owl:Class>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Popularitat -->
 
-    <owl:Class rdf:about="&Viatge;Popularitat">
-        <rdfs:subClassOf rdf:resource="&Viatge;Viatge"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Popularitat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Viatge"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&Viatge;Nom"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Nom"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Preu -->
 
-    <owl:Class rdf:about="&Viatge;Preu">
-        <rdfs:subClassOf rdf:resource="&Viatge;Viatge"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Preu">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Viatge"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&Viatge;Import"/>
-                <owl:someValuesFrom rdf:resource="&xsd;integer"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Import"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Es pot considerar el preu per dia d&apos;un allotjament o el preu total d&apos;un trajecte d&apos;un transport determinat</rdfs:comment>
     </owl:Class>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Recinte -->
 
-    <owl:Class rdf:about="&Viatge;Recinte">
-        <rdfs:subClassOf rdf:resource="&Viatge;Viatge"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Recinte">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Viatge"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&Viatge;Nom"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Nom"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Situacio -->
 
-    <owl:Class rdf:about="&Viatge;Situacio">
-        <rdfs:subClassOf rdf:resource="&Viatge;Viatge"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Situacio">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Viatge"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&Viatge;Nom"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Nom"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Lloc del municipi on es troba un allotjament.</rdfs:comment>
     </owl:Class>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Teatre -->
 
-    <owl:Class rdf:about="&Viatge;Teatre">
-        <rdfs:subClassOf rdf:resource="&Viatge;Ludica"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Teatre">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Ludica"/>
     </owl:Class>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Temperatura -->
 
-    <owl:Class rdf:about="&Viatge;Temperatura">
-        <rdfs:subClassOf rdf:resource="&Viatge;Meteorologia"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Temperatura">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Meteorologia"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&Viatge;Graus"/>
-                <owl:someValuesFrom rdf:resource="&xsd;integer"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Graus"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Temps -->
 
-    <owl:Class rdf:about="&Viatge;Temps">
-        <rdfs:subClassOf rdf:resource="&Viatge;Viatge"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Temps">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Viatge"/>
     </owl:Class>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Tipus_estada -->
 
-    <owl:Class rdf:about="&Viatge;Tipus_estada">
-        <rdfs:subClassOf rdf:resource="&Viatge;Viatge"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Tipus_estada">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Viatge"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&Viatge;Nom"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Nom"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Tipus d&apos;estada que pot oferir un allotjament(Pensió completa, mitja pensió, només pernoctació...)</rdfs:comment>
     </owl:Class>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Tipus_habitacio -->
 
-    <owl:Class rdf:about="&Viatge;Tipus_habitacio">
-        <rdfs:subClassOf rdf:resource="&Viatge;Viatge"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Tipus_habitacio">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Viatge"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&Viatge;Nom"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Nom"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Tipus d&apos;habitació que ofereix(suite, individual, doble, adaptada).</rdfs:comment>
     </owl:Class>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Tipus_seient -->
 
-    <owl:Class rdf:about="&Viatge;Tipus_seient">
-        <rdfs:subClassOf rdf:resource="&Viatge;Viatge"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Tipus_seient">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Viatge"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&Viatge;Nom"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Nom"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Tipus de seient que ofereix un transport(Primera classe, convencional).</rdfs:comment>
     </owl:Class>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Transport -->
 
-    <owl:Class rdf:about="&Viatge;Transport">
-        <rdfs:subClassOf rdf:resource="&Viatge;Viatge"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Transport">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Viatge"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&Viatge;Capacitat"/>
-                <owl:someValuesFrom rdf:resource="&xsd;integer"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Capacitat"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&Viatge;Nom"/>
-                <owl:someValuesFrom rdf:resource="&xsd;Name"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MitjaTransport"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&Viatge;MitjaTransport"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Nom"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#Name"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Nom de l&apos;empresa o servei determinat que s&apos;utilitza per a viatjar..</rdfs:comment>
     </owl:Class>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Viatge -->
 
-    <owl:Class rdf:about="&Viatge;Viatge"/>
-
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Viatge"/>
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Visisbilitat -->
 
-    <owl:Class rdf:about="&Viatge;Visisbilitat">
-        <rdfs:subClassOf rdf:resource="&Viatge;Meteorologia"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Visisbilitat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Meteorologia"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&Viatge;Percentatge"/>
-                <owl:someValuesFrom rdf:resource="&xsd;integer"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Percentatge"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Visita_museu -->
 
-    <owl:Class rdf:about="&Viatge;Visita_museu">
-        <rdfs:subClassOf rdf:resource="&Viatge;Cultural"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Visita_museu">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Cultural"/>
     </owl:Class>
+    
 
 
-
-    <!--
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Individuals
@@ -750,485 +740,340 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-
-
-
-    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#10 -->
-
-    <owl:NamedIndividual rdf:about="&Viatge;10">
-        <rdf:type rdf:resource="&Viatge;Preu"/>
-        <Viatge:Import rdf:datatype="&xsd;integer">10</Viatge:Import>
-    </owl:NamedIndividual>
-
-
-
-    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#100 -->
-
-    <owl:NamedIndividual rdf:about="&Viatge;100">
-        <rdf:type rdf:resource="&Viatge;Preu"/>
-        <Viatge:Import rdf:datatype="&xsd;integer">100</Viatge:Import>
-    </owl:NamedIndividual>
-
-
-
-    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#120 -->
-
-    <owl:NamedIndividual rdf:about="&Viatge;120">
-        <rdf:type rdf:resource="&Viatge;Preu"/>
-        <Viatge:Import rdf:datatype="&xsd;integer">120</Viatge:Import>
-    </owl:NamedIndividual>
-
-
-
-    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#15 -->
-
-    <owl:NamedIndividual rdf:about="&Viatge;15">
-        <rdf:type rdf:resource="&Viatge;Preu"/>
-        <Viatge:Import rdf:datatype="&xsd;integer">15</Viatge:Import>
-    </owl:NamedIndividual>
-
-
-
-    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#20 -->
-
-    <owl:NamedIndividual rdf:about="&Viatge;20">
-        <rdf:type rdf:resource="&Viatge;Preu"/>
-        <Viatge:Import rdf:datatype="&xsd;integer">20</Viatge:Import>
-    </owl:NamedIndividual>
-
-
-
-    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-05 -->
-
-    <owl:NamedIndividual rdf:about="&Viatge;2019-12-05">
-        <rdf:type rdf:resource="&Viatge;Data"/>
-        <Viatge:Data>2019-12-05</Viatge:Data>
-    </owl:NamedIndividual>
-
-
-
-    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-06 -->
-
-    <owl:NamedIndividual rdf:about="&Viatge;2019-12-06">
-        <rdf:type rdf:resource="&Viatge;Data"/>
-        <Viatge:Data>2019-12-06</Viatge:Data>
-        <Viatge:val rdf:resource="&Viatge;15"/>
-    </owl:NamedIndividual>
-
-
-
-    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-07 -->
-
-    <owl:NamedIndividual rdf:about="&Viatge;2019-12-07">
-        <rdf:type rdf:resource="&Viatge;Data"/>
-        <Viatge:Data>2019-12-07</Viatge:Data>
-    </owl:NamedIndividual>
-
-
-
-    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-08 -->
-
-    <owl:NamedIndividual rdf:about="&Viatge;2019-12-08">
-        <rdf:type rdf:resource="&Viatge;Data"/>
-        <Viatge:Data>2019-12-08</Viatge:Data>
-    </owl:NamedIndividual>
-
-
-
-    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-09 -->
-
-    <owl:NamedIndividual rdf:about="&Viatge;2019-12-09">
-        <rdf:type rdf:resource="&Viatge;Data"/>
-        <Viatge:Data>2019-12-09</Viatge:Data>
-    </owl:NamedIndividual>
-
-
-
-    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-10 -->
-
-    <owl:NamedIndividual rdf:about="&Viatge;2019-12-10">
-        <rdf:type rdf:resource="&Viatge;Data"/>
-        <Viatge:Data>2019-12-10</Viatge:Data>
-    </owl:NamedIndividual>
-
-
-
-    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#25 -->
-
-    <owl:NamedIndividual rdf:about="&Viatge;25">
-        <rdf:type rdf:resource="&Viatge;Preu"/>
-        <Viatge:Import rdf:datatype="&xsd;integer">25</Viatge:Import>
-    </owl:NamedIndividual>
-
-
-
-    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#5 -->
-
-    <owl:NamedIndividual rdf:about="&Viatge;5">
-        <rdf:type rdf:resource="&Viatge;Preu"/>
-        <Viatge:Import rdf:datatype="&xsd;integer">5</Viatge:Import>
-    </owl:NamedIndividual>
-
-
-
-    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#500 -->
-
-    <owl:NamedIndividual rdf:about="&Viatge;500">
-        <rdf:type rdf:resource="&Viatge;Preu"/>
-        <Viatge:Import rdf:datatype="&xsd;integer">500</Viatge:Import>
-    </owl:NamedIndividual>
-
-
-
-    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#600 -->
-
-    <owl:NamedIndividual rdf:about="&Viatge;600">
-        <rdf:type rdf:resource="&Viatge;Preu"/>
-        <Viatge:Import rdf:datatype="&xsd;integer">600</Viatge:Import>
-    </owl:NamedIndividual>
-
-
-
-    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#90 -->
-
-    <owl:NamedIndividual rdf:about="&Viatge;90">
-        <rdf:type rdf:resource="&Viatge;Preu"/>
-        <Viatge:Import rdf:datatype="&xsd;integer">90</Viatge:Import>
-    </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#ADAPTADA -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;ADAPTADA">
-        <rdf:type rdf:resource="&Viatge;Tipus_habitacio"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#ADAPTADA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Tipus_habitacio"/>
         <Viatge:Nom>ADAPTADA</Viatge:Nom>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#AFORES -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;AFORES">
-        <rdf:type rdf:resource="&Viatge;Situacio"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#AFORES">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Situacio"/>
         <Viatge:Nom>AFORES</Viatge:Nom>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#ALTA -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;ALTA">
-        <rdf:type rdf:resource="&Viatge;Popularitat"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#ALTA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Popularitat"/>
+        <Viatge:nivell_popularitat_de rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#HOTEL_SOL"/>
         <Viatge:Nom>ALTA</Viatge:Nom>
-        <Viatge:nivell_popularitat_de rdf:resource="&Viatge;HOTEL_SOL"/>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#AUDITORI_BUDAPEST -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;AUDITORI_BUDAPEST">
-        <rdf:type rdf:resource="&Viatge;Recinte"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#AUDITORI_BUDAPEST">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Recinte"/>
+        <Viatge:es_troba_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#BUDAPEST"/>
+        <Viatge:obre_el_dia rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-07"/>
+        <Viatge:obre_les_hores rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#NIT"/>
         <Viatge:Nom>AUDITORI_BUDAPEST</Viatge:Nom>
-        <Viatge:obre_el_dia rdf:resource="&Viatge;2019-12-07"/>
-        <Viatge:es_troba_a rdf:resource="&Viatge;BUDAPEST"/>
-        <Viatge:obre_les_hores rdf:resource="&Viatge;NIT"/>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#BAIXA -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;BAIXA">
-        <rdf:type rdf:resource="&Viatge;Popularitat"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#BAIXA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Popularitat"/>
         <Viatge:Nom>BAIXA</Viatge:Nom>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#BARCELONA -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;BARCELONA">
-        <rdf:type rdf:resource="&Viatge;Localitzacio"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#BARCELONA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Localitzacio"/>
         <Viatge:Nom>BARCELONA</Viatge:Nom>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#BARRI -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;BARRI">
-        <rdf:type rdf:resource="&Viatge;Situacio"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#BARRI">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Situacio"/>
         <Viatge:Nom>BARRI</Viatge:Nom>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#BUDA -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;BUDA">
-        <rdf:type rdf:resource="&Viatge;Recinte"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#BUDA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Recinte"/>
+        <Viatge:es_troba_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#BUDAPEST"/>
+        <Viatge:obre_el_dia rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-05"/>
+        <Viatge:obre_el_dia rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-08"/>
+        <Viatge:obre_les_hores rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#NIT"/>
         <Viatge:Nom>BUDA</Viatge:Nom>
-        <Viatge:obre_el_dia rdf:resource="&Viatge;2019-12-05"/>
-        <Viatge:obre_el_dia rdf:resource="&Viatge;2019-12-08"/>
-        <Viatge:es_troba_a rdf:resource="&Viatge;BUDAPEST"/>
-        <Viatge:obre_les_hores rdf:resource="&Viatge;NIT"/>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#BUDAPEST -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;BUDAPEST">
-        <rdf:type rdf:resource="&Viatge;Localitzacio"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#BUDAPEST">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Localitzacio"/>
+        <Viatge:hi_trobem rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#HOTEL_LLUNA"/>
+        <Viatge:hi_trobem rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#HOTEL_SOL"/>
         <Viatge:Nom>BUDAPEST</Viatge:Nom>
-        <Viatge:hi_trobem rdf:resource="&Viatge;HOTEL_LLUNA"/>
-        <Viatge:hi_trobem rdf:resource="&Viatge;HOTEL_SOL"/>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#CAFE_CENTRE -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;CAFE_CENTRE">
-        <rdf:type rdf:resource="&Viatge;Recinte"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#CAFE_CENTRE">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Recinte"/>
+        <Viatge:es_troba_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#BUDAPEST"/>
+        <Viatge:obre_el_dia rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-05"/>
+        <Viatge:obre_el_dia rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-06"/>
+        <Viatge:obre_el_dia rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-07"/>
+        <Viatge:obre_el_dia rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-08"/>
+        <Viatge:obre_les_hores rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MATI"/>
+        <Viatge:obre_les_hores rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#TARDA"/>
         <Viatge:Nom>CAFE_CENTRE</Viatge:Nom>
-        <Viatge:obre_el_dia rdf:resource="&Viatge;2019-12-05"/>
-        <Viatge:obre_el_dia rdf:resource="&Viatge;2019-12-06"/>
-        <Viatge:obre_el_dia rdf:resource="&Viatge;2019-12-07"/>
-        <Viatge:obre_el_dia rdf:resource="&Viatge;2019-12-08"/>
-        <Viatge:es_troba_a rdf:resource="&Viatge;BUDAPEST"/>
-        <Viatge:obre_les_hores rdf:resource="&Viatge;MATI"/>
-        <Viatge:obre_les_hores rdf:resource="&Viatge;TARDA"/>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#CENTRE -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;CENTRE">
-        <rdf:type rdf:resource="&Viatge;Situacio"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#CENTRE">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Situacio"/>
         <Viatge:Nom>CENTRE</Viatge:Nom>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#CONVENCIONAL -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;CONVENCIONAL">
-        <rdf:type rdf:resource="&Viatge;Tipus_seient"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#CONVENCIONAL">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Tipus_seient"/>
         <Viatge:Nom>CONVENCIONAL</Viatge:Nom>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#DINAR_AMERICA -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;DINAR_AMERICA">
-        <rdf:type rdf:resource="&Viatge;Ludica"/>
-        <Viatge:IDAct rdf:datatype="&xsd;int">5</Viatge:IDAct>
-        <Viatge:val rdf:resource="&Viatge;10"/>
-        <Viatge:se_celebra_el rdf:resource="&Viatge;2019-12-06"/>
-        <Viatge:se_celebra_a rdf:resource="&Viatge;HAMBURGUESES_JOHN"/>
-        <Viatge:se_celebra_de rdf:resource="&Viatge;TARDA"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#DINAR_AMERICA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Ludica"/>
+        <Viatge:se_celebra_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#HAMBURGUESES_JOHN"/>
+        <Viatge:se_celebra_de rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#TARDA"/>
+        <Viatge:se_celebra_el rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-06"/>
+        <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#10"/>
+        <Viatge:IDAct rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</Viatge:IDAct>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#DINAR_BARAT -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;DINAR_BARAT">
-        <rdf:type rdf:resource="&Viatge;Ludica"/>
-        <Viatge:IDAct rdf:datatype="&xsd;int">11</Viatge:IDAct>
-        <Viatge:val rdf:resource="&Viatge;10"/>
-        <Viatge:se_celebra_el rdf:resource="&Viatge;2019-12-08"/>
-        <Viatge:se_celebra_a rdf:resource="&Viatge;HAMBURGUESES_JOHN"/>
-        <Viatge:se_celebra_de rdf:resource="&Viatge;TARDA"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#DINAR_BARAT">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Ludica"/>
+        <Viatge:se_celebra_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#HAMBURGUESES_JOHN"/>
+        <Viatge:se_celebra_de rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#TARDA"/>
+        <Viatge:se_celebra_el rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-08"/>
+        <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#10"/>
+        <Viatge:IDAct rdf:datatype="http://www.w3.org/2001/XMLSchema#int">11</Viatge:IDAct>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#DINAR_ITALIA -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;DINAR_ITALIA">
-        <rdf:type rdf:resource="&Viatge;Ludica"/>
-        <Viatge:IDAct rdf:datatype="&xsd;int">2</Viatge:IDAct>
-        <Viatge:val rdf:resource="&Viatge;15"/>
-        <Viatge:se_celebra_el rdf:resource="&Viatge;2019-12-05"/>
-        <Viatge:se_celebra_a rdf:resource="&Viatge;RESTAURANT_TOSCANA"/>
-        <Viatge:se_celebra_de rdf:resource="&Viatge;TARDA"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#DINAR_ITALIA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Ludica"/>
+        <Viatge:se_celebra_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#RESTAURANT_TOSCANA"/>
+        <Viatge:se_celebra_de rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#TARDA"/>
+        <Viatge:se_celebra_el rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-05"/>
+        <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#15"/>
+        <Viatge:IDAct rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</Viatge:IDAct>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#DINAR_PIZZES -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;DINAR_PIZZES">
-        <rdf:type rdf:resource="&Viatge;Ludica"/>
-        <Viatge:IDAct rdf:datatype="&xsd;int">8</Viatge:IDAct>
-        <Viatge:val rdf:resource="&Viatge;10"/>
-        <Viatge:se_celebra_el rdf:resource="&Viatge;2019-12-07"/>
-        <Viatge:se_celebra_a rdf:resource="&Viatge;PIZZERIA_ITALIA"/>
-        <Viatge:se_celebra_de rdf:resource="&Viatge;TARDA"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#DINAR_PIZZES">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Ludica"/>
+        <Viatge:se_celebra_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#PIZZERIA_ITALIA"/>
+        <Viatge:se_celebra_de rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#TARDA"/>
+        <Viatge:se_celebra_el rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-07"/>
+        <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#10"/>
+        <Viatge:IDAct rdf:datatype="http://www.w3.org/2001/XMLSchema#int">8</Viatge:IDAct>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#DINAR_PIZZES2 -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;DINAR_PIZZES2">
-        <rdf:type rdf:resource="&Viatge;Ludica"/>
-        <Viatge:IDAct rdf:datatype="&xsd;int">14</Viatge:IDAct>
-        <Viatge:val rdf:resource="&Viatge;10"/>
-        <Viatge:se_celebra_el rdf:resource="&Viatge;2019-12-09"/>
-        <Viatge:se_celebra_a rdf:resource="&Viatge;PIZZERIA_ITALIA"/>
-        <Viatge:se_celebra_de rdf:resource="&Viatge;TARDA"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#DINAR_PIZZES2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Ludica"/>
+        <Viatge:se_celebra_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#PIZZERIA_ITALIA"/>
+        <Viatge:se_celebra_de rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#TARDA"/>
+        <Viatge:se_celebra_el rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-09"/>
+        <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#10"/>
+        <Viatge:IDAct rdf:datatype="http://www.w3.org/2001/XMLSchema#int">14</Viatge:IDAct>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#DOBLE -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;DOBLE">
-        <rdf:type rdf:resource="&Viatge;Tipus_habitacio"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#DOBLE">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Tipus_habitacio"/>
         <Viatge:Nom>DOBLE</Viatge:Nom>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#ESMORZAR1 -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;ESMORZAR1">
-        <rdf:type rdf:resource="&Viatge;Ludica"/>
-        <Viatge:IDAct rdf:datatype="&xsd;int">1</Viatge:IDAct>
-        <Viatge:se_celebra_el rdf:resource="&Viatge;2019-12-05"/>
-        <Viatge:val rdf:resource="&Viatge;5"/>
-        <Viatge:se_celebra_a rdf:resource="&Viatge;CAFE_CENTRE"/>
-        <Viatge:se_celebra_de rdf:resource="&Viatge;MATI"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#ESMORZAR1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Ludica"/>
+        <Viatge:se_celebra_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#CAFE_CENTRE"/>
+        <Viatge:se_celebra_de rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MATI"/>
+        <Viatge:se_celebra_el rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-05"/>
+        <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#5"/>
+        <Viatge:IDAct rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</Viatge:IDAct>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#ESMORZAR2 -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;ESMORZAR2">
-        <rdf:type rdf:resource="&Viatge;Ludica"/>
-        <Viatge:IDAct rdf:datatype="&xsd;int">7</Viatge:IDAct>
-        <Viatge:se_celebra_el rdf:resource="&Viatge;2019-12-07"/>
-        <Viatge:val rdf:resource="&Viatge;5"/>
-        <Viatge:se_celebra_a rdf:resource="&Viatge;CAFE_CENTRE"/>
-        <Viatge:se_celebra_de rdf:resource="&Viatge;MATI"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#ESMORZAR2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Ludica"/>
+        <Viatge:se_celebra_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#CAFE_CENTRE"/>
+        <Viatge:se_celebra_de rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MATI"/>
+        <Viatge:se_celebra_el rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-07"/>
+        <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#5"/>
+        <Viatge:IDAct rdf:datatype="http://www.w3.org/2001/XMLSchema#int">7</Viatge:IDAct>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#ESMORZAR3 -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;ESMORZAR3">
-        <rdf:type rdf:resource="&Viatge;Ludica"/>
-        <Viatge:IDAct rdf:datatype="&xsd;int">13</Viatge:IDAct>
-        <Viatge:se_celebra_el rdf:resource="&Viatge;2019-12-09"/>
-        <Viatge:val rdf:resource="&Viatge;5"/>
-        <Viatge:se_celebra_a rdf:resource="&Viatge;CAFE_CENTRE"/>
-        <Viatge:se_celebra_de rdf:resource="&Viatge;MATI"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#ESMORZAR3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Ludica"/>
+        <Viatge:se_celebra_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#CAFE_CENTRE"/>
+        <Viatge:se_celebra_de rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MATI"/>
+        <Viatge:se_celebra_el rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-09"/>
+        <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#5"/>
+        <Viatge:IDAct rdf:datatype="http://www.w3.org/2001/XMLSchema#int">13</Viatge:IDAct>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#ESTADI_BLAU -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;ESTADI_BLAU">
-        <rdf:type rdf:resource="&Viatge;Recinte"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#ESTADI_BLAU">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Recinte"/>
+        <Viatge:es_troba_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#BUDAPEST"/>
+        <Viatge:obre_el_dia rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-06"/>
+        <Viatge:obre_les_hores rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#NIT"/>
         <Viatge:Nom>ESTADI_BLAU</Viatge:Nom>
-        <Viatge:obre_el_dia rdf:resource="&Viatge;2019-12-06"/>
-        <Viatge:es_troba_a rdf:resource="&Viatge;BUDAPEST"/>
-        <Viatge:obre_les_hores rdf:resource="&Viatge;NIT"/>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#EUROMED -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;EUROMED">
-        <rdf:type rdf:resource="&Viatge;Transport"/>
-        <Viatge:Capacitat rdf:datatype="&xsd;integer">100</Viatge:Capacitat>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#EUROMED">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Transport"/>
+        <Viatge:data_anada rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-05"/>
+        <Viatge:data_tornada rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-10"/>
+        <Viatge:desti rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#BUDAPEST"/>
+        <Viatge:ofereix_seients rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#CONVENCIONAL"/>
+        <Viatge:origen rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#BARCELONA"/>
+        <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#120"/>
+        <Viatge:Capacitat rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</Viatge:Capacitat>
         <Viatge:MitjaTransport>TREN</Viatge:MitjaTransport>
         <Viatge:Nom>EUROMED</Viatge:Nom>
-        <Viatge:val rdf:resource="&Viatge;120"/>
-        <Viatge:data_anada rdf:resource="&Viatge;2019-12-05"/>
-        <Viatge:data_tornada rdf:resource="&Viatge;2019-12-10"/>
-        <Viatge:origen rdf:resource="&Viatge;BARCELONA"/>
-        <Viatge:desti rdf:resource="&Viatge;BUDAPEST"/>
-        <Viatge:ofereix_seients rdf:resource="&Viatge;CONVENCIONAL"/>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#EXPOSICIO_CONTEMPORANIA -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;EXPOSICIO_CONTEMPORANIA">
-        <rdf:type rdf:resource="&Viatge;Cultural"/>
-        <Viatge:IDAct rdf:datatype="&xsd;int">4</Viatge:IDAct>
-        <Viatge:val rdf:resource="&Viatge;20"/>
-        <Viatge:se_celebra_el rdf:resource="&Viatge;2019-12-06"/>
-        <Viatge:se_celebra_de rdf:resource="&Viatge;MATI"/>
-        <Viatge:se_celebra_a rdf:resource="&Viatge;MUSEU_BUDAPEST"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#EXPOSICIO_CONTEMPORANIA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Cultural"/>
+        <Viatge:se_celebra_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MUSEU_BUDAPEST"/>
+        <Viatge:se_celebra_de rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MATI"/>
+        <Viatge:se_celebra_el rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-06"/>
+        <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#20"/>
+        <Viatge:IDAct rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</Viatge:IDAct>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#EXPOSICIO_NEOCLASSICA -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;EXPOSICIO_NEOCLASSICA">
-        <rdf:type rdf:resource="&Viatge;Cultural"/>
-        <Viatge:IDAct rdf:datatype="&xsd;int">10</Viatge:IDAct>
-        <Viatge:val rdf:resource="&Viatge;20"/>
-        <Viatge:se_celebra_el rdf:resource="&Viatge;2019-12-08"/>
-        <Viatge:se_celebra_de rdf:resource="&Viatge;MATI"/>
-        <Viatge:se_celebra_a rdf:resource="&Viatge;MUSEU_BUDAPEST"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#EXPOSICIO_NEOCLASSICA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Cultural"/>
+        <Viatge:se_celebra_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MUSEU_BUDAPEST"/>
+        <Viatge:se_celebra_de rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MATI"/>
+        <Viatge:se_celebra_el rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-08"/>
+        <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#20"/>
+        <Viatge:IDAct rdf:datatype="http://www.w3.org/2001/XMLSchema#int">10</Viatge:IDAct>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#FESTA_DISCO -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;FESTA_DISCO">
-        <rdf:type rdf:resource="&Viatge;Festiva"/>
-        <Viatge:IDAct rdf:datatype="&xsd;int">3</Viatge:IDAct>
-        <Viatge:val rdf:resource="&Viatge;15"/>
-        <Viatge:se_celebra_el rdf:resource="&Viatge;2019-12-05"/>
-        <Viatge:se_celebra_a rdf:resource="&Viatge;BUDA"/>
-        <Viatge:se_celebra_de rdf:resource="&Viatge;NIT"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#FESTA_DISCO">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Festiva"/>
+        <Viatge:se_celebra_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#BUDA"/>
+        <Viatge:se_celebra_de rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#NIT"/>
+        <Viatge:se_celebra_el rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-05"/>
+        <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#15"/>
+        <Viatge:IDAct rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</Viatge:IDAct>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#FOLK_FEST -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;FOLK_FEST">
-        <rdf:type rdf:resource="&Viatge;Festiva"/>
-        <Viatge:IDAct rdf:datatype="&xsd;int">6</Viatge:IDAct>
-        <Viatge:val rdf:resource="&Viatge;15"/>
-        <Viatge:se_celebra_el rdf:resource="&Viatge;2019-12-06"/>
-        <Viatge:se_celebra_a rdf:resource="&Viatge;ESTADI_BLAU"/>
-        <Viatge:se_celebra_de rdf:resource="&Viatge;NIT"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#FOLK_FEST">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Festiva"/>
+        <Viatge:se_celebra_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#ESTADI_BLAU"/>
+        <Viatge:se_celebra_de rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#NIT"/>
+        <Viatge:se_celebra_el rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-06"/>
+        <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#15"/>
+        <Viatge:IDAct rdf:datatype="http://www.w3.org/2001/XMLSchema#int">6</Viatge:IDAct>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#HAMBURGUESES_JOHN -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;HAMBURGUESES_JOHN">
-        <rdf:type rdf:resource="&Viatge;Recinte"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#HAMBURGUESES_JOHN">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Recinte"/>
+        <Viatge:es_troba_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#BUDAPEST"/>
+        <Viatge:obre_el_dia rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-06"/>
+        <Viatge:obre_el_dia rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-07"/>
+        <Viatge:obre_el_dia rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-08"/>
+        <Viatge:obre_les_hores rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#TARDA"/>
         <Viatge:Nom>HAMBURGUESES_JOHN</Viatge:Nom>
-        <Viatge:obre_el_dia rdf:resource="&Viatge;2019-12-06"/>
-        <Viatge:obre_el_dia rdf:resource="&Viatge;2019-12-07"/>
-        <Viatge:obre_el_dia rdf:resource="&Viatge;2019-12-08"/>
-        <Viatge:es_troba_a rdf:resource="&Viatge;BUDAPEST"/>
-        <Viatge:obre_les_hores rdf:resource="&Viatge;TARDA"/>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#HOTEL_LLUNA -->
@@ -1248,18 +1093,8 @@
         <Viatge:Capacitat rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</Viatge:Capacitat>
         <Viatge:Nom>HOTEL_LLUNA</Viatge:Nom>
         <Viatge:TipusAllotjament>HOTEL</Viatge:TipusAllotjament>
-        <Viatge:val rdf:resource="&Viatge;100"/>
-        <Viatge:obre_les_dates rdf:resource="&Viatge;2019-12-05"/>
-        <Viatge:obre_les_dates rdf:resource="&Viatge;2019-12-10"/>
-        <Viatge:es_troba_a rdf:resource="&Viatge;BUDAPEST"/>
-        <Viatge:te_habitacions rdf:resource="&Viatge;DOBLE"/>
-        <Viatge:te_habitacions rdf:resource="&Viatge;INDIVIDUAL"/>
-        <Viatge:es_popular rdf:resource="&Viatge;MITJANA"/>
-        <Viatge:ofereix rdf:resource="&Viatge;MITJA_PENSIO"/>
-        <Viatge:ofereix rdf:resource="&Viatge;PERNOCTACIO"/>
-        <Viatge:es_troba_a rdf:resource="&Viatge;RODALIES"/>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#HOTEL_SOL -->
@@ -1285,237 +1120,366 @@
         <Viatge:Capacitat rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</Viatge:Capacitat>
         <Viatge:Nom>HOTEL_SOL</Viatge:Nom>
         <Viatge:TipusAllotjament>HOTEL</Viatge:TipusAllotjament>
-        <Viatge:Nom>HOTEL_SOL</Viatge:Nom>
-        <Viatge:obre_les_dates rdf:resource="&Viatge;2019-12-05"/>
-        <Viatge:obre_les_dates rdf:resource="&Viatge;2019-12-06"/>
-        <Viatge:obre_les_dates rdf:resource="&Viatge;2019-12-07"/>
-        <Viatge:obre_les_dates rdf:resource="&Viatge;2019-12-08"/>
-        <Viatge:obre_les_dates rdf:resource="&Viatge;2019-12-09"/>
-        <Viatge:obre_les_dates rdf:resource="&Viatge;2019-12-10"/>
-        <Viatge:val rdf:resource="&Viatge;90"/>
-        <Viatge:es_popular rdf:resource="&Viatge;ALTA"/>
-        <Viatge:es_troba_a rdf:resource="&Viatge;BUDAPEST"/>
-        <Viatge:es_troba_a rdf:resource="&Viatge;CENTRE"/>
-        <Viatge:te_habitacions rdf:resource="&Viatge;DOBLE"/>
-        <Viatge:te_habitacions rdf:resource="&Viatge;INDIVIDUAL"/>
-        <Viatge:ofereix rdf:resource="&Viatge;MITJA_PENSIO"/>
-        <Viatge:ofereix rdf:resource="&Viatge;PENSIO_COMPLETA"/>
-        <Viatge:ofereix rdf:resource="&Viatge;PERNOCTACIO"/>
-        <Viatge:te_habitacions rdf:resource="&Viatge;SUITE"/>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#IBERIA -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;IBERIA">
-        <rdf:type rdf:resource="&Viatge;Transport"/>
-        <Viatge:Capacitat rdf:datatype="&xsd;integer">20</Viatge:Capacitat>
-        <Viatge:Nom>IBERIA</Viatge:Nom>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#IBERIA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Transport"/>
+        <Viatge:data_anada rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-05"/>
+        <Viatge:data_tornada rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-10"/>
+        <Viatge:desti rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#BUDAPEST"/>
+        <Viatge:ofereix_seients rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#CONVENCIONAL"/>
+        <Viatge:ofereix_seients rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#PRIMERA_CLASSE"/>
+        <Viatge:origen rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#BARCELONA"/>
+        <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#100"/>
+        <Viatge:Capacitat rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</Viatge:Capacitat>
         <Viatge:MitjaTransport>AVIO</Viatge:MitjaTransport>
-        <Viatge:val rdf:resource="&Viatge;100"/>
-        <Viatge:data_anada rdf:resource="&Viatge;2019-12-05"/>
-        <Viatge:data_tornada rdf:resource="&Viatge;2019-12-10"/>
-        <Viatge:origen rdf:resource="&Viatge;BARCELONA"/>
-        <Viatge:desti rdf:resource="&Viatge;BUDAPEST"/>
-        <Viatge:ofereix_seients rdf:resource="&Viatge;CONVENCIONAL"/>
-        <Viatge:ofereix_seients rdf:resource="&Viatge;PRIMERA_CLASSE"/>
+        <Viatge:Nom>IBERIA</Viatge:Nom>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#INDIVIDUAL -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;INDIVIDUAL">
-        <rdf:type rdf:resource="&Viatge;Tipus_habitacio"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#INDIVIDUAL">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Tipus_habitacio"/>
         <Viatge:Nom>INDIVIDUAL</Viatge:Nom>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MATI -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;MATI">
-        <rdf:type rdf:resource="&Viatge;Horari"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MATI">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Horari"/>
         <Viatge:Nom>MATI</Viatge:Nom>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MITJANA -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;MITJANA">
-        <rdf:type rdf:resource="&Viatge;Popularitat"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MITJANA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Popularitat"/>
+        <Viatge:nivell_popularitat_de rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#HOTEL_LLUNA"/>
         <Viatge:Nom>MITJANA</Viatge:Nom>
-        <Viatge:nivell_popularitat_de rdf:resource="&Viatge;HOTEL_LLUNA"/>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MITJA_PENSIO -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;MITJA_PENSIO">
-        <rdf:type rdf:resource="&Viatge;Tipus_estada"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MITJA_PENSIO">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Tipus_estada"/>
+        <Viatge:es_oferta_per rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#HOTEL_LLUNA"/>
+        <Viatge:es_oferta_per rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#HOTEL_SOL"/>
+        <Viatge:ofereix rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MITJA_PENSIO"/>
         <Viatge:Nom>MITJA_PENSIO</Viatge:Nom>
-        <Viatge:es_oferta_per rdf:resource="&Viatge;HOTEL_LLUNA"/>
-        <Viatge:es_oferta_per rdf:resource="&Viatge;HOTEL_SOL"/>
-        <Viatge:ofereix rdf:resource="&Viatge;MITJA_PENSIO"/>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MUSEU_BUDAPEST -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;MUSEU_BUDAPEST">
-        <rdf:type rdf:resource="&Viatge;Recinte"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MUSEU_BUDAPEST">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Recinte"/>
+        <Viatge:es_troba_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#BUDAPEST"/>
+        <Viatge:obre_el_dia rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-06"/>
+        <Viatge:obre_les_hores rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MATI"/>
         <Viatge:Nom>MUSEU_BUDAPEST</Viatge:Nom>
-        <Viatge:obre_el_dia rdf:resource="&Viatge;2019-12-06"/>
-        <Viatge:es_troba_a rdf:resource="&Viatge;BUDAPEST"/>
-        <Viatge:obre_les_hores rdf:resource="&Viatge;MATI"/>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#NIT -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;NIT">
-        <rdf:type rdf:resource="&Viatge;Horari"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#NIT">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Horari"/>
         <Viatge:Nom>NIT</Viatge:Nom>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#OPERA -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;OPERA">
-        <rdf:type rdf:resource="&Viatge;Ludica"/>
-        <Viatge:IDAct rdf:datatype="&xsd;int">9</Viatge:IDAct>
-        <Viatge:se_celebra_el rdf:resource="&Viatge;2019-12-07"/>
-        <Viatge:val rdf:resource="&Viatge;25"/>
-        <Viatge:se_celebra_a rdf:resource="&Viatge;AUDITORI_BUDAPEST"/>
-        <Viatge:se_celebra_de rdf:resource="&Viatge;NIT"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#OPERA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Ludica"/>
+        <Viatge:se_celebra_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#AUDITORI_BUDAPEST"/>
+        <Viatge:se_celebra_de rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#NIT"/>
+        <Viatge:se_celebra_el rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-07"/>
+        <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#25"/>
+        <Viatge:IDAct rdf:datatype="http://www.w3.org/2001/XMLSchema#int">9</Viatge:IDAct>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#PENSIO_COMPLETA -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;PENSIO_COMPLETA">
-        <rdf:type rdf:resource="&Viatge;Tipus_estada"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#PENSIO_COMPLETA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Tipus_estada"/>
+        <Viatge:es_oferta_per rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#HOTEL_SOL"/>
         <Viatge:Nom>PENSIO_COMPLETA</Viatge:Nom>
-        <Viatge:es_oferta_per rdf:resource="&Viatge;HOTEL_SOL"/>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#PERNOCTACIO -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;PERNOCTACIO">
-        <rdf:type rdf:resource="&Viatge;Tipus_estada"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#PERNOCTACIO">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Tipus_estada"/>
+        <Viatge:es_oferta_per rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#HOTEL_LLUNA"/>
+        <Viatge:es_oferta_per rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#HOTEL_SOL"/>
         <Viatge:Nom>PERNOCTACIO</Viatge:Nom>
-        <Viatge:es_oferta_per rdf:resource="&Viatge;HOTEL_LLUNA"/>
-        <Viatge:es_oferta_per rdf:resource="&Viatge;HOTEL_SOL"/>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#PIZZERIA_ITALIA -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;PIZZERIA_ITALIA">
-        <rdf:type rdf:resource="&Viatge;Recinte"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#PIZZERIA_ITALIA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Recinte"/>
+        <Viatge:es_troba_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#BUDAPEST"/>
+        <Viatge:obre_el_dia rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-07"/>
+        <Viatge:obre_el_dia rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-09"/>
+        <Viatge:obre_les_hores rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#TARDA"/>
         <Viatge:Nom>PIZZERIA_ITALIA</Viatge:Nom>
-        <Viatge:obre_el_dia rdf:resource="&Viatge;2019-12-07"/>
-        <Viatge:obre_el_dia rdf:resource="&Viatge;2019-12-09"/>
-        <Viatge:es_troba_a rdf:resource="&Viatge;BUDAPEST"/>
-        <Viatge:obre_les_hores rdf:resource="&Viatge;TARDA"/>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#PRIMERA_CLASSE -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;PRIMERA_CLASSE">
-        <rdf:type rdf:resource="&Viatge;Tipus_seient"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#PRIMERA_CLASSE">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Tipus_seient"/>
         <Viatge:Nom>PRIMERA_CLASSE</Viatge:Nom>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#PUNXADA_POP -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;PUNXADA_POP">
-        <rdf:type rdf:resource="&Viatge;Festiva"/>
-        <Viatge:IDAct rdf:datatype="&xsd;int">12</Viatge:IDAct>
-        <Viatge:val rdf:resource="&Viatge;10"/>
-        <Viatge:se_celebra_el rdf:resource="&Viatge;2019-12-08"/>
-        <Viatge:se_celebra_a rdf:resource="&Viatge;BUDA"/>
-        <Viatge:se_celebra_de rdf:resource="&Viatge;NIT"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#PUNXADA_POP">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Festiva"/>
+        <Viatge:se_celebra_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#BUDA"/>
+        <Viatge:se_celebra_de rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#NIT"/>
+        <Viatge:se_celebra_el rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-08"/>
+        <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#10"/>
+        <Viatge:IDAct rdf:datatype="http://www.w3.org/2001/XMLSchema#int">12</Viatge:IDAct>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#RESTAURANT_TOSCANA -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;RESTAURANT_TOSCANA">
-        <rdf:type rdf:resource="&Viatge;Recinte"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#RESTAURANT_TOSCANA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Recinte"/>
+        <Viatge:es_troba_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#BUDAPEST"/>
+        <Viatge:obre_el_dia rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-05"/>
+        <Viatge:obre_el_dia rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-09"/>
+        <Viatge:obre_les_hores rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#NIT"/>
+        <Viatge:obre_les_hores rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#TARDA"/>
         <Viatge:Nom>RESTAURANT_TOSCANA</Viatge:Nom>
-        <Viatge:obre_el_dia rdf:resource="&Viatge;2019-12-05"/>
-        <Viatge:obre_el_dia rdf:resource="&Viatge;2019-12-09"/>
-        <Viatge:es_troba_a rdf:resource="&Viatge;BUDAPEST"/>
-        <Viatge:obre_les_hores rdf:resource="&Viatge;NIT"/>
-        <Viatge:obre_les_hores rdf:resource="&Viatge;TARDA"/>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#RODALIES -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;RODALIES">
-        <rdf:type rdf:resource="&Viatge;Situacio"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#RODALIES">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Situacio"/>
         <Viatge:Nom>RODALIES</Viatge:Nom>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#SOPAR_COMIAT -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;SOPAR_COMIAT">
-        <rdf:type rdf:resource="&Viatge;Ludica"/>
-        <Viatge:IDAct rdf:datatype="&xsd;int">15</Viatge:IDAct>
-        <Viatge:val rdf:resource="&Viatge;15"/>
-        <Viatge:se_celebra_el rdf:resource="&Viatge;2019-12-09"/>
-        <Viatge:se_celebra_de rdf:resource="&Viatge;NIT"/>
-        <Viatge:se_celebra_a rdf:resource="&Viatge;RESTAURANT_TOSCANA"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#SOPAR_COMIAT">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Ludica"/>
+        <Viatge:se_celebra_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#RESTAURANT_TOSCANA"/>
+        <Viatge:se_celebra_de rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#NIT"/>
+        <Viatge:se_celebra_el rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-09"/>
+        <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#15"/>
+        <Viatge:IDAct rdf:datatype="http://www.w3.org/2001/XMLSchema#int">15</Viatge:IDAct>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#SUITE -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;SUITE">
-        <rdf:type rdf:resource="&Viatge;Tipus_habitacio"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#SUITE">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Tipus_habitacio"/>
         <Viatge:Nom>SUITE</Viatge:Nom>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#TARDA -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;TARDA">
-        <rdf:type rdf:resource="&Viatge;Horari"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#TARDA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Horari"/>
         <Viatge:Nom>TARDA</Viatge:Nom>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#TEATRE_ROIG -->
 
-    <owl:NamedIndividual rdf:about="&Viatge;TEATRE_ROIG">
-        <rdf:type rdf:resource="&Viatge;Recinte"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#TEATRE_ROIG">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Recinte"/>
         <Viatge:Nom>TEATRE_ROIG</Viatge:Nom>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#10 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#10">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Preu"/>
+        <Viatge:Import rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</Viatge:Import>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#100 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#100">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Preu"/>
+        <Viatge:Import rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</Viatge:Import>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#120 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#120">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Preu"/>
+        <Viatge:Import rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120</Viatge:Import>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#15 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#15">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Preu"/>
+        <Viatge:Import rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</Viatge:Import>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#20 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#20">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Preu"/>
+        <Viatge:Import rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</Viatge:Import>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-05 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-05">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Data"/>
+        <Viatge:Data>2019-12-05</Viatge:Data>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-06 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-06">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Data"/>
+        <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#15"/>
+        <Viatge:Data>2019-12-06</Viatge:Data>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-07 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-07">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Data"/>
+        <Viatge:Data>2019-12-07</Viatge:Data>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-08 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-08">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Data"/>
+        <Viatge:Data>2019-12-08</Viatge:Data>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-09 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-09">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Data"/>
+        <Viatge:Data>2019-12-09</Viatge:Data>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-10 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-10">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Data"/>
+        <Viatge:Data>2019-12-10</Viatge:Data>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#25 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#25">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Preu"/>
+        <Viatge:Import rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</Viatge:Import>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#5">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Preu"/>
+        <Viatge:Import rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</Viatge:Import>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#500 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#500">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Preu"/>
+        <Viatge:Import rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500</Viatge:Import>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#600 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#600">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Preu"/>
+        <Viatge:Import rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">600</Viatge:Import>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#90 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#90">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Preu"/>
+        <Viatge:Import rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</Viatge:Import>
     </owl:NamedIndividual>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
