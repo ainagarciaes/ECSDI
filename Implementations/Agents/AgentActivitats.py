@@ -20,14 +20,17 @@ import sys
 import os
 
 sys.path.append(os.path.relpath("../AgentUtil"))
+sys.path.append(os.path.relpath("../Utils"))
 
-from rdflib import Namespace, Graph, Literal
+from rdflib import Namespace, Graph, Literal, URIRef
 from flask import Flask, request
 
 from FlaskServer import shutdown_server
-from Agent import Agent
 from ACLMessages import build_message, send_message, get_message_properties
 from OntoNamespaces import ACL, DSO, RDF, DEM, VIA, FOAF
+from StringDateConversions import stringToDate
+from datetime import datetime
+from Agent import Agent
 
 __author__ = 'javier'
 
@@ -71,43 +74,82 @@ def comunicacion():
 
 
     def buscaActivitats():
-        #----------- FILE VERSION -----------#
-
-        '''
-        # use sparql to read each param received from the planificador agent
-        graph_activitats = Graph()
-        # load file here to graph
-
-        activitats = graph_activitats.query("""
-            SELECT ...
-            WHERE {
-                ...
-                FILTER{ ... }
-            }
-        """, initNs = {'via', VIA})
-        '''
-
-        #----------- STUB VERSION -----------#
         activitats = Graph()
-        activitats.bind('foaf', FOAF)
         activitats.bind('via', VIA)
+        contingut = Graph()
+        ciutat = gm.value(subject=content, predicate=DEM.Ciutat)
+        cost_max = gm.value(subject=content, predicate=DEM.Cost)
+        data_act = gm.value(subject=content, predicate=DEM.Data_activitat)        
+        franja = gm.value(subject=content, predicate=DEM.Horari)
+        tipus_activitat = gm.value(subject=content, predicate=DEM.Tipus_activitat)
+        print(ciutat)
+        print(cost_max)
+        print(data_act)
+        print(franja)
+        print(tipus_activitat)
+        data = stringToDate(data_act)
+        contingut.parse('../../Ontologies/Viatge-RDF.owl', format='xml')
 
-        activitat = VIA.Activitat + '_activitat' + str(mss_cnt)
-        activitats.add((activitat, RDF.type, VIA.Activitat))
+        res = contingut.query(f"""
+                        SELECT ?nm ?id ?preu ?ta ?dat ?franja ?ciu ?rec
+                        WHERE {{
+                            ?a rdf:type via:Activitat .
+                            ?a rdf:type via:{tipus_activitat} .
+                            ?a via:val ?p .
+                            ?p via:Import ?preu .
+                            FILTER (?preu <= {cost_max}) .
+                            ?a via:se_celebra_de ?franja .
+                            ?franja via:Nom "{franja}" .
+                            ?a via:se_celebra_el ?dat .
+                            ?dat via:Data "{data}" .
+                            ?a via:se_celebra_a ?rec .
+                            ?rec via:es_troba_a ?ciu .
+                            ?ciu via:Nom "{ciutat}" .
+                            ?a via:Nom ?nm .
+                            ?a via:IDAct ?id .
+                            ?ta a ?class .                         
+                        }}
+                        LIMIT 1
+                        """, initNs={"via":VIA})
 
-        # recinte on es fa l'activitat
-        recinte = VIA.Recinte + '_recinte' + str(mss_cnt)                               # id del objecte recinte
-        activitats.add((recinte, RDF.type, VIA.Recinte))                                # assigno el tipus
-        activitats.add((recinte, FOAF.name, Literal('NOM RECINTE ' + str(mss_cnt))))     # informacio literal sobre recinte
-        activitats.add((activitat, VIA.se_celebra_a, recinte))                          # relacio del recinte creat amb l'activitat
+        if (len(res) == 0):
+        	contingut.query(f"""
+                        SELECT ?nm ?id ?preu ?ta ?dat ?franja ?ciu ?rec
+                        WHERE {{
+                            ?a rdf:type via:Activitat .
+                            ?a via:val ?p .
+                            ?p via:Import ?preu .
+                            FILTER (?preu <= {cost_max}) .
+                            ?a via:se_celebra_de ?franja .
+                            ?franja via:Nom "{franja}" .
+                            ?a via:se_celebra_el ?dat .
+                            ?dat via:Data "{data}" .
+                            ?a via:se_celebra_a ?rec .
+                            ?rec via:es_troba_a ?ciu .
+                            ?ciu via:Nom "{ciutat}" .
+                            ?a via:Nom ?nm .
+                            ?a via:IDAct ?id .
+                            ?ta a ?class .                          
+                        }}
+                        LIMIT 1
+                        """, initNs={"via":VIA})
+        if (len(res) == 0):
+        	print("BUIT------------------------------------------")
 
-        # activitat dummy de tipus ludica, concert
-        ludica = VIA.Ludica + 'ludica' + str(mss_cnt)
-        concert = VIA.Concert + 'concert' + str(mss_cnt)
-        activitats.add((activitat, VIA.Ludica, ludica))
-        activitats.add((ludica, VIA.Concert, concert))
-        activitats.add((concert, FOAF.name, Literal("NOM CONCERT " + str(mss_cnt))))
-        # TODO posar aqui les dates d'obertura?
+        for row in res:
+	        Activitat= VIA.Activitat + "_" + row[3]
+	        activitats.add((Activitat,RDF.type,VIA.Activitat))
+	        activitats.add((Activitat, RDF.type, VIA.Literal(row[3])))
+	        activitats.add((Activitat, VIA.Nom , Literal(row[0])))
+	        activitats.add((Activitat, VIA.IDAct, Literal(row[1])))
+	        activitats.add((Activitat, VIA.Import, Literal(int(row[2]))))
+	        activitats.add((Activitat, VIA.Data, Literal(row[4])))
+	        activitats.add((Activitat, VIA.Nom + "_Franja", Literal(row[5])))
+	        activitats.add((Activitat, VIA.Nom + "_Ciutat", Literal(row[6])))
+	        activitats.add((Activitat, VIA.Nom + "_Recinte", Literal(row[7])))
+        for s, p, o in activitats:
+        	print(s,p,o)
+       	
         return activitats
 
     # crear graf amb el missatge que rebem
@@ -139,7 +181,6 @@ def comunicacion():
             if 'content' in msgdic:
                 content = msgdic['content']
                 accion = gm.value(subject=content, predicate=RDF.type)
-                print(accion)
                 if accion == DEM.Demanar_activitat : #comparar que sigui del tipus d'accio que volem
                     graph_content = buscaActivitats()
                     gr = build_message(graph_content, ACL['inform'], sender=AgentActivitats.uri, msgcnt=mss_cnt, content = VIA.Activitat)
