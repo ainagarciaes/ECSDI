@@ -120,8 +120,6 @@ content_graph.add((pref_allotjament_obj, DEM.Tipus_estada, Literal(tipus_estada)
 
 content_graph.add((pref_obj, DEM.Tipus_activitat, Literal(tipus_activitats)))
 
-# TODO no posades: popularitat i tipus habitacio
-
 gr = Graph()
 # building an ACL message
 gr = build_message(content_graph, perf=ACL.request, sender=Client.uri, msgcnt=0, receiver=AgentePlanificador.uri, content=viatge_obj)

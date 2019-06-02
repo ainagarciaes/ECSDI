@@ -23,14 +23,14 @@ import datetime
 sys.path.append(os.path.relpath("../AgentUtil"))
 sys.path.append(os.path.relpath("../Utils"))
 
-from rdflib import Namespace, Graph, Literal
+from rdflib import Namespace, Graph, Literal, term
 from flask import Flask, request
 
 from FlaskServer import shutdown_server
 from Agent import Agent
 from ACLMessages import build_message, send_message, get_message_properties
 from OntoNamespaces import ACL, DSO, RDF, DEM, VIA, FOAF
-from StringDateConversions import stringToDate
+from StringDateConversions import stringToDate, dateToString
 
 __author__ = 'javier'
 
@@ -127,39 +127,80 @@ def comunicacion():
             # 3. get response
             res = send_message(gr, AgenteTransporte.address)
 
-            # 4. parse response and choose one
-            possibles = Graph()
+            row_transport = res.query(f"""
+                SELECT ?nt
+                WHERE {{
+                    ?t rdf:type via:Transport .
+                    ?t via:Nom ?nt .
+                    ?t via:MitjaTransport "{mitja_transport}" .
+                    ?t via:Tipus_seient "{tipus_seient}" .
+                }}
+                LIMIT 1
+                """, initNs={"via":VIA})
+
+            if (len(row_transport) == 0):
+                row_transport = res.query(f"""
+                    SELECT ?nt
+                    WHERE {{
+                        ?t rdf:type via:Transport .
+                        ?t via:Nom ?nt .
+                        ?t via:MitjaTransport "{mitja_transport}" .
+                    }}
+                    LIMIT 1
+                    """, initNs={"via":VIA})
+
+                if (len(row_transport) == 0):
+                    row_transport = res.query(f"""
+                        SELECT ?nt
+                        WHERE {{
+                            ?t rdf:type via:Transport .
+                            ?t via:Nom ?nt .
+                            ?t via:Tipus_seient "{tipus_seient}" .
+                        }}
+                        LIMIT 1
+                        """, initNs={"via":VIA})
+
+                    if (len(row_transport) == 0):
+                        row_transport = res.query(f"""
+                            SELECT ?nt
+                            WHERE {{
+                                ?t rdf:type via:Transport .
+                                ?t via:Nom ?nt .
+                            }}
+                            LIMIT 1
+                            """, initNs={"via":VIA})
+
             transport = Graph()
+            s = term.URIRef('')
 
-            # Agafo com a possibles els que tenen com a preferencia el tipus de transport indicat
-            possibles += res.triples((None, VIA.MitjaTransport, Literal(mitja_transport)))
-            
-            if not possibles: 
-                possibles = res
-
-                
-            # agafo la primera de les opcions que cumpleixi els filtres de ^
-            # s es l'objecte transport, que pot ser obtingut per triplets o si canvio a sparql enlloc d'iterar, busco un cop les triplets del objecte que m'ha tornat sparql
-            for s, p, o in possibles:
+            for row in row_transport:
+                nomTransport = row[0]
+                s = term.URIRef(VIA.Transport + "_" + nomTransport)
                 transport += res.triples((s, None, None))
-                nomTransport = s
-                break
-
-            # el graph te dos nivells, per tant dos loops
-            for s, p, o in transport:
-                aux = Graph()
-                aux += res.triples((o, None, None))
-                for s1, p1, o1 in aux:
-                    transport.add((o, p1, o1))            
+                # el graph te dos nivells, per tant dos loops
+                for s, p, o in transport:
+                    print("printing inside the for", len(transport))
+                    aux = Graph()
+                    aux += res.triples((o, None, None))
+                    for s1, p1, o1 in aux:
+                        print(s, p, o)
+                        transport.add((o, p1, o1))
+                break            
 
             # 5. return chosen transport
-            return transport, nomTransport
+            return transport, s
 
         def obtain_hotel():
             global mss_cnt
             # 0. extract parameters from the initial request
             obj_restriccions_allotjament = gm.value(subject=obj_restriccions, predicate=DEM.Restriccions_hotels)
             preu_allotjament = gm.value(subject=obj_restriccions_allotjament, predicate=DEM.Preu)
+
+            # preferencies
+            obj_preferencies_allotjament = gm.value(subject=obj_preferencies, predicate=DEM.Preferencies_hotels)
+            
+            localitzacio = gm.value(subject=obj_preferencies_allotjament, predicate=DEM.Localitzacio)
+            t_estada = gm.value(subject=obj_preferencies_allotjament, predicate=DEM.Tipus_estada)
 
             # 1. build graph
             content_allotjament = Graph()
@@ -184,13 +225,67 @@ def comunicacion():
             # 3. get response
             res = send_message(gr, AgenteAlojamiento.address)
             
-            hotel_test = res.value(predicate=RDF.type, object=VIA.Allotjament)
-            hotel_name = res.value(subject=hotel_test, predicate=VIA.Nom)
-            # 4. parse response and choose one
-            print(hotel_test)
+            row_allotjament = res.query(f"""
+                SELECT ?nt
+                WHERE {{
+                    ?t rdf:type via:Allotjament .
+                    ?t via:Nom ?nt .
+                    ?t via:Nom_TipusEstada "{t_estada}" .
+                    ?t via:Nom_Situacio "{localitzacio}" .
+                }}
+                LIMIT 1
+                """, initNs={"via":VIA})
+
+            if (len(row_allotjament) == 0):
+                row_allotjament = res.query(f"""
+                    SELECT ?nt
+                    WHERE {{
+                        ?t rdf:type via:Allotjament .
+                        ?t via:Nom ?nt .
+                        ?t via:Nom_TipusEstada "{t_estada}" .
+                    }}
+                    LIMIT 1
+                    """, initNs={"via":VIA})
+
+                if (len(row_allotjament) == 0):
+                    row_allotjament = res.query(f"""
+                        SELECT ?nt
+                        WHERE {{
+                            ?t rdf:type via:Allotjament .
+                            ?t via:Nom ?nt .
+                            ?t via:Nom_Situacio "{localitzacio}" .
+                        }}
+                        LIMIT 1
+                        """, initNs={"via":VIA})
+
+                    if (len(row_allotjament) == 0):
+                        row_allotjament = res.query(f"""
+                            SELECT ?nt
+                            WHERE {{
+                                ?t rdf:type via:Allotjament .
+                                ?t via:Nom ?nt .
+                            }}
+                            LIMIT 1
+                            """, initNs={"via":VIA})
+
+            allotjament = Graph()
+            s = term.URIRef('')
+
+            for row in row_allotjament:
+                nomAllotjament = row[0]
+                s = term.URIRef(VIA.Allotjament + "_" + nomAllotjament)
+                allotjament += res.triples((s, None, None))
+                # el graph te dos nivells, per tant dos loops
+                for s, p, o in allotjament:
+                    aux = Graph()
+                    aux += res.triples((o, None, None))
+                    for s1, p1, o1 in aux:
+                        print(s, p, o)
+                        allotjament.add((o, p1, o1))
+                break            
 
             # 5. return chosen transport
-            return res, VIA.Allotjament
+            return allotjament, s
 
         def obtain_activities():
             print('entering obtain activitites')
@@ -201,7 +296,7 @@ def comunicacion():
 
             # agafar d'aqui el preu de les activitats
             obj_pref = gm.value(subject=content, predicate = DEM.Preferencies)
-            tipusViatge = gm.value(subject=obj_pref, predicate=DEM.Tipus_estada)
+            tipusViatge = gm.value(subject=obj_pref, predicate=DEM.Tipus_activitat)
             budget_activitat = 0
 
             total_activitats = Graph()
@@ -226,7 +321,9 @@ def comunicacion():
                     demana_a.add((activitat, RDF.type, DEM.Demanar_activitat))
                     demana_a.add((activitat, DEM.Ciutat, Literal(desti)))
                     demana_a.add((activitat, DEM.Cost, Literal(budget_activitat)))
-                    demana_a.add((activitat, DEM.Data_activitat, Literal(data_inici)))
+                    
+                    dateString = dateToString(current_date)
+                    demana_a.add((activitat, DEM.Data_activitat, Literal(dateString)))
                     demana_a.add((activitat, DEM.Horari, Literal(franja)))
                     demana_a.add((activitat, DEM.Tipus_activitat, Literal(tipusViatge)))
 
@@ -259,6 +356,7 @@ def comunicacion():
 
         # Obtenim transport i hotel
         t, t_name = obtain_transport()
+        print(t_name)
         h, h_name = obtain_hotel()
         a = obtain_activities()
 
@@ -269,7 +367,6 @@ def comunicacion():
 
         content.add((viatge_obj, RDF.type, VIA.Viatge))
 
-        print(t is None)
         content.add((viatge_obj, VIA.Allotjament, h_name))
         content.add((viatge_obj, VIA.Transport, t_name))
 
