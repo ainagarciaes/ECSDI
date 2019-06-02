@@ -86,7 +86,6 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Allotjament"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Recinte"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Localitzacio"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Situacio"/>
     </owl:ObjectProperty>
     
 
@@ -192,6 +191,15 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Activitat"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Data"/>
         <rdfs:comment>Data en què se celebra una activitat</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#se_situa_a -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#se_situa_a">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Allotjament"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Situacio"/>
     </owl:ObjectProperty>
     
 
@@ -1074,11 +1082,11 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Allotjament"/>
         <Viatge:es_popular rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MITJANA"/>
         <Viatge:es_troba_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#BUDAPEST"/>
-        <Viatge:es_troba_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#RODALIES"/>
         <Viatge:obre_les_dates rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-05"/>
         <Viatge:obre_les_dates rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-10"/>
         <Viatge:ofereix rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MITJA_PENSIO"/>
         <Viatge:ofereix rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#PERNOCTACIO"/>
+        <Viatge:se_situa_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#RODALIES"/>
         <Viatge:te_habitacions rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#DOBLE"/>
         <Viatge:te_habitacions rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#INDIVIDUAL"/>
         <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#100"/>
@@ -1095,7 +1103,6 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Allotjament"/>
         <Viatge:es_popular rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#ALTA"/>
         <Viatge:es_troba_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#BUDAPEST"/>
-        <Viatge:es_troba_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#CENTRE"/>
         <Viatge:obre_les_dates rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-05"/>
         <Viatge:obre_les_dates rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-06"/>
         <Viatge:obre_les_dates rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-07"/>
@@ -1105,6 +1112,7 @@
         <Viatge:ofereix rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MITJA_PENSIO"/>
         <Viatge:ofereix rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#PENSIO_COMPLETA"/>
         <Viatge:ofereix rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#PERNOCTACIO"/>
+        <Viatge:se_situa_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#CENTRE"/>
         <Viatge:te_habitacions rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#DOBLE"/>
         <Viatge:te_habitacions rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#INDIVIDUAL"/>
         <Viatge:te_habitacions rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#SUITE"/>

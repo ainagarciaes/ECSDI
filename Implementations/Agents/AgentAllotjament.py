@@ -113,7 +113,7 @@ def comunicacion():
                             ?p via:Import ?preu .
                             ?a via:es_troba_a ?ciu .
                             ?ciu via:Nom "{ciutat}" .
-                            ?a via:es_troba_a ?s .
+                            ?a via:se_situa_a ?s .
                             ?s via:Nom ?sit .
                             ?a via:te_habitacions ?th .
                             ?th via:Nom ?t .
