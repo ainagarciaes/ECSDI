@@ -184,17 +184,20 @@ print("Popularitat allotjament: ", popularitat, "</br>")
 print("</br>", "---- ACTIVITATS ----", "</br>")
 
 activitats_noms = Graph()
-activitats_noms += res.triples(None, RDF.type, VIA.Activitat)
+activitats_noms += res.triples((None, RDF.type, VIA.Activitat))
 
 for s, p, o in activitats_noms:
-    #consultes sobre el subjecte S
-    '''
-    nom_activitat =
-    dia =
-    franja =
-    preu_activitat =
-    # altres parametres
-    '''
-    print('...')
-    print('</br>')
+    id_activitat = res.value(subject=s, predicate=VIA.IDAct)
+    nom_activitat = res.value(subject=s, predicate=VIA.Nom)
+    dia = res.value(subject=s, predicate=VIA.Data)
+    franja = res.value(subject=s, predicate=VIA.Nom_Franja)
+    nom_ciutat = res.value(subject=s, predicate=VIA.Nom_Ciutat)
+    nom_recinte = res.value(subject=s, predicate=VIA.Nom_Recinte)
+    preu_activitat = res.value(subject=s, predicate=VIA.Import)
+
+    print(dia, "-", franja, ":", nom_activitat, "(", id_activitat, ")", "</br>")
+    print(nom_ciutat, "-", nom_recinte)
+    print("Preu: ", preu_activitat)
+
+    print('</br></br>')
 # print activitats info
