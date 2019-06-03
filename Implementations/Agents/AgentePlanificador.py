@@ -297,8 +297,8 @@ def comunicacion():
             # agafar d'aqui el preu de les activitats
             obj_pref = gm.value(subject=content, predicate = DEM.Preferencies)
             tipusViatge = gm.value(subject=obj_pref, predicate=DEM.Tipus_activitat)
-            budget_activitat = 0
-
+            budget_activitat = gm.value(subject=obj_pref, predicate=DEM.Preu)
+            b = int(budget_activitat)/(n*3)
             total_activitats = Graph()
             total_activitats.bind('via', VIA)
             total_activitats.bind('foaf', FOAF)
@@ -315,12 +315,14 @@ def comunicacion():
                     else:
                         franja = 'nit'
 
+                    print(current_date, franja)
+
                     demana_a = Graph()
                     demana_a.bind('dem', DEM)
                     activitat = agn['activitat']
                     demana_a.add((activitat, RDF.type, DEM.Demanar_activitat))
                     demana_a.add((activitat, DEM.Ciutat, Literal(desti)))
-                    demana_a.add((activitat, DEM.Cost, Literal(budget_activitat)))
+                    demana_a.add((activitat, DEM.Cost, Literal(b)))
                     
                     dateString = dateToString(current_date)
                     demana_a.add((activitat, DEM.Data_activitat, Literal(dateString)))
@@ -339,8 +341,8 @@ def comunicacion():
                     # buscar les ids de totes les activitats, mantenir fora una llista de ids, mirar si esta o no esta, i posarla
                     total_activitats += a
 
-                    # calculate next date and continue iterating
-                    current_date += datetime.timedelta(days=1)
+                # calculate next date and continue iterating
+                current_date += datetime.timedelta(days=1)
             return total_activitats
 
         content = msgdic['content']
@@ -372,8 +374,8 @@ def comunicacion():
 
         content = content + h
         content = content + t
-        #content.add((viatge_obj, VIA.Activitats, a))
-        
+        content = content + a
+
         return content
 
 

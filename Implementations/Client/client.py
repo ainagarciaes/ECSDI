@@ -119,6 +119,7 @@ content_graph.add((pref_allotjament_obj, DEM.Localitzacio, Literal(localitzacio)
 content_graph.add((pref_allotjament_obj, DEM.Tipus_estada, Literal(tipus_estada)))
 
 content_graph.add((pref_obj, DEM.Tipus_activitat, Literal(tipus_activitats)))
+content_graph.add((pref_obj, DEM.Preu, Literal(activities_budget)))
 
 gr = Graph()
 # building an ACL message
@@ -180,4 +181,20 @@ print("Tipus habitacio: ", tipus_habitacio, "</br>")
 print("Tipus estada: ", tipus_estada, "</br>")
 print("Popularitat allotjament: ", popularitat, "</br>")
 
+print("</br>", "---- ACTIVITATS ----", "</br>")
+
+activitats_noms = Graph()
+activitats_noms += res.triples(None, RDF.type, VIA.Activitat)
+
+for s, p, o in activitats_noms:
+    #consultes sobre el subjecte S
+    '''
+    nom_activitat =
+    dia =
+    franja =
+    preu_activitat =
+    # altres parametres
+    '''
+    print('...')
+    print('</br>')
 # print activitats info
