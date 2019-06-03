@@ -130,7 +130,6 @@ def comunicacion():
 
         for row in res:
             Activitat= VIA.Activitat + "_" + tipus_activitat + str(i)
-            print(Activitat)
             i += 1
             activitats.add((Activitat, RDF.type, VIA.Activitat))
             activitats.add((Activitat, VIA.Nom , Literal(row[0])))

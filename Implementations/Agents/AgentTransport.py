@@ -92,12 +92,7 @@ def comunicacion():
         NPers = gm.value(subject=restriccions_transport, predicate=DEM.NumPersones)
         ciutat_origen = gm.value(subject=restriccions_transport, predicate=DEM.Origen)
         Preu = gm.value(subject=restriccions_transport, predicate=DEM.Preu)
-        print(DataF)
-        print(DataIni)
-        print(ciutat_desti)
-        print(NPers)
-        print(ciutat_origen)
-        print(Preu)
+
         contingut.parse('../../Ontologies/Viatge-RDF.owl', format='xml')
         res_Anada = contingut.query(f"""
                         SELECT ?nm ?mitja ?c ?preu ?se
@@ -134,14 +129,7 @@ def comunicacion():
                     resultat.add((Transports, VIA.Data + "_tornada", Literal(DataF)))
                     resultat.add((Transports, VIA.Nom + "_origen", Literal(ciutat_origen)))
                     resultat.add((Transports, VIA.Nom + "_desti", Literal(ciutat_desti)))
-        for s, p, o in resultat:
-            print(s,p,o)
-        #posar al content la busqueda del que ens demanen
-        #gr = build_message(resultat,
-        #    ACL['inform'],
-        #    sender=AgentTransport.uri,
-        #    msgcnt=mss_cnt,
-        #    receiver=msgdic['sender'], content = VIA)
+
         return resultat
 
     global dsgraph

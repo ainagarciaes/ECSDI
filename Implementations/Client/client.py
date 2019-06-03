@@ -193,11 +193,10 @@ for s, p, o in activitats_noms:
     franja = res.value(subject=s, predicate=VIA.Nom_Franja)
     nom_ciutat = res.value(subject=s, predicate=VIA.Nom_Ciutat)
     nom_recinte = res.value(subject=s, predicate=VIA.Nom_Recinte)
-    preu_activitat = res.value(subject=s, predicate=VIA.Import)
+    preu_activitat = res.value(subject=s, predicate=VIA.Preu)
 
-    print(dia, "-", franja, ":", nom_activitat, "(", id_activitat, ")", "</br>")
-    print(nom_ciutat, "-", nom_recinte)
-    print("Preu: ", preu_activitat)
+    print(dia.replace(VIA, ''), "-", franja.replace(VIA, ''), ":", nom_activitat.replace(VIA, ''), "(", id_activitat, ")", "</br>")
+    print(nom_ciutat.replace(VIA, ''), "-", nom_recinte.replace(VIA, ''))
+    print("</br>Preu: ", preu_activitat)
 
     print('</br></br>')
-# print activitats info

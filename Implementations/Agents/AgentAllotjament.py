@@ -91,17 +91,9 @@ def comunicacion():
         dataF = gm.value(subject=obj_restriccions, predicate=DEM.Data_final)
         NumPer = gm.value(subject=obj_restriccions, predicate=DEM.NumPersones)
         preuAllot = gm.value(subject=obj_restriccions, predicate=DEM.Preu)
-        print(ciutat)
-        print(dataI)
-        print(dataF)
         data_ini = stringToDate(dataI)
         data_fi = stringToDate(dataF)
-        print(NumPer)
-        print(preuAllot)
-        #q = prepareQuery()
         contingut.parse('../../Ontologies/Viatge-RDF.owl', format='xml')
-        print("HEM FET EL PARSE")
-        #via = URIRef("http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Allotjament")
         res = contingut.query(f"""
                         SELECT ?nm ?c ?ta ?preu ?sit ?t ?testn ?ppn
                         WHERE {{
@@ -144,14 +136,6 @@ def comunicacion():
                     resultat.add((Allotjaments, VIA.Data + "_anada", Literal(dataI)))
                     resultat.add((Allotjaments, VIA.Data + "_tornada", Literal(dataF)))
 
-
-        for s, p, o in resultat:
-            print(s,p,o)
-        #gr = build_message(resultat,
-        #    ACL['inform'],
-        #    sender=AgentAllotjament.uri,
-        #    msgcnt=mss_cnt,
-        #    receiver=msgdic['sender'], content = content)
         return resultat
 
     global dsgraph

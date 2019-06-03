@@ -179,11 +179,9 @@ def comunicacion():
                 transport += res.triples((s, None, None))
                 # el graph te dos nivells, per tant dos loops
                 for s, p, o in transport:
-                    print("printing inside the for", len(transport))
                     aux = Graph()
                     aux += res.triples((o, None, None))
                     for s1, p1, o1 in aux:
-                        print(s, p, o)
                         transport.add((o, p1, o1))
                 break            
 
@@ -280,7 +278,6 @@ def comunicacion():
                     aux = Graph()
                     aux += res.triples((o, None, None))
                     for s1, p1, o1 in aux:
-                        print(s, p, o)
                         allotjament.add((o, p1, o1))
                 break            
 
