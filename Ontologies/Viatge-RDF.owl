@@ -322,6 +322,12 @@
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Viatge"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Nom"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#IDAct"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
@@ -877,6 +883,7 @@
         <Viatge:se_celebra_el rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-06"/>
         <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#10"/>
         <Viatge:IDAct rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</Viatge:IDAct>
+        <Viatge:Nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DINAR_AMERICA</Viatge:Nom>
     </owl:NamedIndividual>
     
 
@@ -890,6 +897,7 @@
         <Viatge:se_celebra_el rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-08"/>
         <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#10"/>
         <Viatge:IDAct rdf:datatype="http://www.w3.org/2001/XMLSchema#int">11</Viatge:IDAct>
+        <Viatge:Nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DINAR_BARAT</Viatge:Nom>
     </owl:NamedIndividual>
     
 
@@ -903,6 +911,7 @@
         <Viatge:se_celebra_el rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-05"/>
         <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#15"/>
         <Viatge:IDAct rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</Viatge:IDAct>
+        <Viatge:Nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DINAR_ITALIA</Viatge:Nom>
     </owl:NamedIndividual>
     
 
@@ -916,6 +925,7 @@
         <Viatge:se_celebra_el rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-07"/>
         <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#10"/>
         <Viatge:IDAct rdf:datatype="http://www.w3.org/2001/XMLSchema#int">8</Viatge:IDAct>
+        <Viatge:Nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DINAR_PIZZES</Viatge:Nom>
     </owl:NamedIndividual>
     
 
@@ -929,6 +939,7 @@
         <Viatge:se_celebra_el rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-09"/>
         <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#10"/>
         <Viatge:IDAct rdf:datatype="http://www.w3.org/2001/XMLSchema#int">14</Viatge:IDAct>
+        <Viatge:Nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DINAR_PIZZES2</Viatge:Nom>
     </owl:NamedIndividual>
     
 
@@ -951,6 +962,7 @@
         <Viatge:se_celebra_el rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-05"/>
         <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#5"/>
         <Viatge:IDAct rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</Viatge:IDAct>
+        <Viatge:Nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ESMORZAR1</Viatge:Nom>
     </owl:NamedIndividual>
     
 
@@ -964,6 +976,7 @@
         <Viatge:se_celebra_el rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-07"/>
         <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#5"/>
         <Viatge:IDAct rdf:datatype="http://www.w3.org/2001/XMLSchema#int">7</Viatge:IDAct>
+        <Viatge:Nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ESMORZAR2</Viatge:Nom>
     </owl:NamedIndividual>
     
 
@@ -977,6 +990,7 @@
         <Viatge:se_celebra_el rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-09"/>
         <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#5"/>
         <Viatge:IDAct rdf:datatype="http://www.w3.org/2001/XMLSchema#int">13</Viatge:IDAct>
+        <Viatge:Nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ESMORZAR3</Viatge:Nom>
     </owl:NamedIndividual>
     
 
@@ -1019,6 +1033,7 @@
         <Viatge:se_celebra_el rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-06"/>
         <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#20"/>
         <Viatge:IDAct rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</Viatge:IDAct>
+        <Viatge:Nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EXPOSICIO_CONTEMPORANIA</Viatge:Nom>
     </owl:NamedIndividual>
     
 
@@ -1032,6 +1047,7 @@
         <Viatge:se_celebra_el rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-08"/>
         <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#20"/>
         <Viatge:IDAct rdf:datatype="http://www.w3.org/2001/XMLSchema#int">10</Viatge:IDAct>
+        <Viatge:Nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EXPOSICIO_NEOCLASSICA</Viatge:Nom>
     </owl:NamedIndividual>
     
 
@@ -1045,6 +1061,7 @@
         <Viatge:se_celebra_el rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-05"/>
         <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#15"/>
         <Viatge:IDAct rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</Viatge:IDAct>
+        <Viatge:Nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FESTA_DISCO</Viatge:Nom>
     </owl:NamedIndividual>
     
 
@@ -1058,6 +1075,7 @@
         <Viatge:se_celebra_el rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-06"/>
         <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#15"/>
         <Viatge:IDAct rdf:datatype="http://www.w3.org/2001/XMLSchema#int">6</Viatge:IDAct>
+        <Viatge:Nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FOLK_FEST</Viatge:Nom>
     </owl:NamedIndividual>
     
 
@@ -1212,6 +1230,7 @@
         <Viatge:se_celebra_el rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-07"/>
         <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#25"/>
         <Viatge:IDAct rdf:datatype="http://www.w3.org/2001/XMLSchema#int">9</Viatge:IDAct>
+        <Viatge:Nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OPERA</Viatge:Nom>
     </owl:NamedIndividual>
     
 
@@ -1268,6 +1287,7 @@
         <Viatge:se_celebra_el rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-08"/>
         <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#10"/>
         <Viatge:IDAct rdf:datatype="http://www.w3.org/2001/XMLSchema#int">12</Viatge:IDAct>
+        <Viatge:Nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PUNXADA_POP</Viatge:Nom>
     </owl:NamedIndividual>
     
 
@@ -1304,6 +1324,7 @@
         <Viatge:se_celebra_el rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-09"/>
         <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#15"/>
         <Viatge:IDAct rdf:datatype="http://www.w3.org/2001/XMLSchema#int">15</Viatge:IDAct>
+        <Viatge:Nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SOPAR_COMIAT</Viatge:Nom>
     </owl:NamedIndividual>
     
 
