@@ -65,6 +65,7 @@ app = Flask(__name__)
 def testing():
     return "testing connection"
 
+i = 0
 
 @app.route("/comm")
 def comunicacion():
@@ -73,9 +74,11 @@ def comunicacion():
     """
     global dsgraph
     global mss_cnt
-
+    global i
 
     def buscaActivitats():
+        global i
+        
         activitats = Graph()
         activitats.bind('via', VIA)
         contingut = Graph()
@@ -126,7 +129,10 @@ def comunicacion():
         	print("BUIT------------------------------------------")
 
         for row in res:
-            Activitat= VIA.Activitat + "_" + tipus_activitat
+            Activitat= VIA.Activitat + "_" + tipus_activitat + str(i)
+            print(Activitat)
+            i += 1
+            activitats.add((Activitat, RDF.type, VIA.Activitat))
             activitats.add((Activitat, VIA.Nom , Literal(row[0])))
             activitats.add((Activitat, VIA.IDAct, Literal(row[1])))
             activitats.add((Activitat, VIA.Preu, Literal(row[2])))
@@ -135,9 +141,6 @@ def comunicacion():
             activitats.add((Activitat, VIA.Nom + "_Ciutat", Literal(row[5])))
             activitats.add((Activitat, VIA.Nom + "_Recinte", Literal(row[6])))
 
-        for s, p, o in activitats:
-        	print(s,p,o)
-       	
         return activitats
 
     # crear graf amb el missatge que rebem

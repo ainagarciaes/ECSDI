@@ -315,8 +315,6 @@ def comunicacion():
                     else:
                         franja = 'NIT'
 
-                    print(current_date, franja)
-
                     demana_a = Graph()
                     demana_a.bind('dem', DEM)
                     activitat = agn['activitat']
@@ -335,11 +333,11 @@ def comunicacion():
 
                     # 3. get response
                     a = send_message(gr, AgentActivitats.address)
-
-                    # 4. triar una activitat
-                    # descripcio del algoritme pensat:
-                    # buscar les ids de totes les activitats, mantenir fora una llista de ids, mirar si esta o no esta, i posarla
+                    
                     total_activitats += a
+                    activitats_noms = Graph()
+                    activitats_noms += a.triples((None, RDF.type, VIA.Activitat))
+                    print(len(activitats_noms))
 
                 # calculate next date and continue iterating
                 current_date += datetime.timedelta(days=1)
@@ -358,9 +356,9 @@ def comunicacion():
 
         # Obtenim transport i hotel
         t, t_name = obtain_transport()
-        print(t_name)
         h, h_name = obtain_hotel()
         a = obtain_activities()
+        
 
         content = Graph() # posar el t i h al graf de resultats com toqui
         content.bind('via', VIA)
