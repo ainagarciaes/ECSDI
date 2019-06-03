@@ -309,11 +309,11 @@ def comunicacion():
                 for i in range(0, 3):
                     franja = ''
                     if i == 0:
-                        franja = 'mati'
-                    elif i == 2:
-                        franja = 'tarda'
+                        franja = 'MATI'
+                    elif i == 1:
+                        franja = 'TARDA'
                     else:
-                        franja = 'nit'
+                        franja = 'NIT'
 
                     print(current_date, franja)
 
