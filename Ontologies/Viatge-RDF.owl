@@ -170,6 +170,7 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#se_celebra_a">
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#s&apos;hi_celebra"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Activitat"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Allotjament"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Recinte"/>
     </owl:ObjectProperty>
     
@@ -995,6 +996,20 @@
     
 
 
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#ESMORZAR_HOTEL -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#ESMORZAR_HOTEL">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Festiva"/>
+        <Viatge:se_celebra_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MIAMI_HOTEL"/>
+        <Viatge:se_celebra_de rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MATI"/>
+        <Viatge:se_celebra_el rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-07-29"/>
+        <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#20"/>
+        <Viatge:IDAct rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">19</Viatge:IDAct>
+        <Viatge:Nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ESMORZAR_HOTEL</Viatge:Nom>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#ESTADI_BLAU -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#ESTADI_BLAU">
@@ -1062,6 +1077,46 @@
         <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#15"/>
         <Viatge:IDAct rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</Viatge:IDAct>
         <Viatge:Nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FESTA_DISCO</Viatge:Nom>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#FESTA_HOTEL -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#FESTA_HOTEL">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Festiva"/>
+        <Viatge:se_celebra_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MIAMI_HOTEL"/>
+        <Viatge:se_celebra_de rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#NIT"/>
+        <Viatge:se_celebra_el rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-07-28"/>
+        <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#70"/>
+        <Viatge:IDAct rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">21</Viatge:IDAct>
+        <Viatge:Nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FESTA_HOTEL</Viatge:Nom>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#FESTA_PARTICULAR -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#FESTA_PARTICULAR">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Festiva"/>
+        <Viatge:se_celebra_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#YOUTH_HOUSE_DISCO"/>
+        <Viatge:se_celebra_de rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#NIT"/>
+        <Viatge:se_celebra_el rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-07-29"/>
+        <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#30"/>
+        <Viatge:IDAct rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24</Viatge:IDAct>
+        <Viatge:Nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FESTA_PARTICULAR</Viatge:Nom>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#FIVE_GUYS -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#FIVE_GUYS">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Recinte"/>
+        <Viatge:es_troba_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MIAMI"/>
+        <Viatge:obre_el_dia rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-07-28"/>
+        <Viatge:obre_les_hores rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#TARDA"/>
+        <Viatge:Nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FIVE_GUYS</Viatge:Nom>
     </owl:NamedIndividual>
     
 
@@ -1169,11 +1224,69 @@
     
 
 
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#INTERNATIONALS -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#INTERNATIONALS">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Transport"/>
+        <Viatge:data_anada rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-07-28"/>
+        <Viatge:data_tornada rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-07-30"/>
+        <Viatge:desti rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MIAMI"/>
+        <Viatge:ofereix_seients rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#PRIMERA_CLASSE"/>
+        <Viatge:origen rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#BARCELONA"/>
+        <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#500"/>
+        <Viatge:Capacitat rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</Viatge:Capacitat>
+        <Viatge:MitjaTransport rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AVIO</Viatge:MitjaTransport>
+        <Viatge:Nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">INTERNATIONALS</Viatge:Nom>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MATI -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MATI">
         <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Horari"/>
         <Viatge:Nom>MATI</Viatge:Nom>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MIAMI -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MIAMI">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Localitzacio"/>
+        <Viatge:Nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MIAMI</Viatge:Nom>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MIAMI_BEACH -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MIAMI_BEACH">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Recinte"/>
+        <Viatge:es_troba_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MIAMI"/>
+        <Viatge:obre_el_dia rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-07-28"/>
+        <Viatge:obre_el_dia rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-07-29"/>
+        <Viatge:obre_les_hores rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MATI"/>
+        <Viatge:obre_les_hores rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#TARDA"/>
+        <Viatge:Nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MIAMI_BEACH</Viatge:Nom>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MIAMI_HOTEL -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MIAMI_HOTEL">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Allotjament"/>
+        <Viatge:es_popular rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#ALTA"/>
+        <Viatge:es_troba_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MIAMI"/>
+        <Viatge:obre_les_dates rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-07-28"/>
+        <Viatge:obre_les_dates rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-07-30"/>
+        <Viatge:ofereix rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#PENSIO_COMPLETA"/>
+        <Viatge:se_situa_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#RODALIES"/>
+        <Viatge:te_habitacions rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#DOBLE"/>
+        <Viatge:Capacitat rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</Viatge:Capacitat>
+        <Viatge:Nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MIAMI_HOTEL</Viatge:Nom>
+        <Viatge:TipusAllotjament rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HOTEL</Viatge:TipusAllotjament>
     </owl:NamedIndividual>
     
 
@@ -1269,6 +1382,20 @@
     
 
 
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#PLATJA_MIAMI -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#PLATJA_MIAMI">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Festiva"/>
+        <Viatge:se_celebra_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MIAMI_BEACH"/>
+        <Viatge:se_celebra_de rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MATI"/>
+        <Viatge:se_celebra_el rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-07-28"/>
+        <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#15"/>
+        <Viatge:IDAct rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</Viatge:IDAct>
+        <Viatge:Nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PLATJA_MIAMI</Viatge:Nom>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#PRIMERA_CLASSE -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#PRIMERA_CLASSE">
@@ -1329,6 +1456,20 @@
     
 
 
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#SOPAR_HAMBURGUESES -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#SOPAR_HAMBURGUESES">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Festiva"/>
+        <Viatge:se_celebra_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#FIVE_GUYS"/>
+        <Viatge:se_celebra_de rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#TARDA"/>
+        <Viatge:se_celebra_el rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-07-28"/>
+        <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#30"/>
+        <Viatge:IDAct rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">22</Viatge:IDAct>
+        <Viatge:Nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SOPAR_HAMBURGUESES</Viatge:Nom>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#SUITE -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#SUITE">
@@ -1352,6 +1493,32 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#TEATRE_ROIG">
         <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Recinte"/>
         <Viatge:Nom>TEATRE_ROIG</Viatge:Nom>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#WINDSURF -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#WINDSURF">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Ludica"/>
+        <Viatge:se_celebra_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MIAMI_BEACH"/>
+        <Viatge:se_celebra_de rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#TARDA"/>
+        <Viatge:se_celebra_el rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-07-29"/>
+        <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#40"/>
+        <Viatge:IDAct rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">23</Viatge:IDAct>
+        <Viatge:Nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WINDSURF</Viatge:Nom>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#YOUTH_HOUSE_DISCO -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#YOUTH_HOUSE_DISCO">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Recinte"/>
+        <Viatge:es_troba_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MIAMI"/>
+        <Viatge:obre_el_dia rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-07-29"/>
+        <Viatge:obre_les_hores rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#NIT"/>
+        <Viatge:Nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">YOUTH_HOUSE_DISCO</Viatge:Nom>
     </owl:NamedIndividual>
     
 
@@ -1397,6 +1564,33 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#20">
         <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Preu"/>
         <Viatge:Import rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</Viatge:Import>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-07-28 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-07-28">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Data"/>
+        <Viatge:Data rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2019-07-28</Viatge:Data>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-07-29 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-07-29">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Data"/>
+        <Viatge:Data rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2019-07-29</Viatge:Data>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-07-30 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-07-30">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Data"/>
+        <Viatge:Data rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2019-07-30</Viatge:Data>
     </owl:NamedIndividual>
     
 
@@ -1465,6 +1659,24 @@
     
 
 
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#30 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#30">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Preu"/>
+        <Viatge:Import rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</Viatge:Import>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#40 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#40">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Preu"/>
+        <Viatge:Import rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">40</Viatge:Import>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#5 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#5">
@@ -1488,6 +1700,24 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#600">
         <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Preu"/>
         <Viatge:Import rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">600</Viatge:Import>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#625 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#625">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Preu"/>
+        <Viatge:Import rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">625</Viatge:Import>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#70 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#70">
+        <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Preu"/>
+        <Viatge:Import rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">70</Viatge:Import>
     </owl:NamedIndividual>
     
 
