@@ -19,6 +19,8 @@ import socket
 import sys
 import os
 
+import math
+
 sys.path.append(os.path.relpath("../AgentUtil"))
 sys.path.append(os.path.relpath("../Utils"))
 
@@ -82,71 +84,57 @@ def comunicacion():
         data_act = gm.value(subject=content, predicate=DEM.Data_activitat)        
         franja = gm.value(subject=content, predicate=DEM.Horari)
         tipus_activitat = gm.value(subject=content, predicate=DEM.Tipus_activitat)
-        print(ciutat)
-        print(cost_max)
-        print(data_act)
-        print(franja)
-        print(tipus_activitat)
-        data = stringToDate(data_act)
+        if (Literal(tipus_activitat).eq('LUDICA')):
+            tipus_activitat = "Ludica"
+        elif (Literal(tipus_activitat).eq('CULTURAL')):
+            tipus_activitat = "Cultural"
+        else:
+            tipus_activitat = "Festiva"
+
         contingut.parse('../../Ontologies/Viatge-RDF.owl', format='xml')
 
-        res = contingut.query(f"""
-                        SELECT ?nm ?id ?preu ?ta ?dat ?franja ?ciu ?rec
-                        WHERE {{
-                            ?a rdf:type via:Activitat .
-                            ?a rdf:type via:{tipus_activitat} .
-                            ?a via:val ?p .
-                            ?p via:Import ?preu .
-                            FILTER (?preu <= {cost_max}) .
-                            ?a via:se_celebra_de ?franja .
-                            ?franja via:Nom "{franja}" .
-                            ?a via:se_celebra_el ?dat .
-                            ?dat via:Data "{data}" .
-                            ?a via:se_celebra_a ?rec .
-                            ?rec via:es_troba_a ?ciu .
-                            ?ciu via:Nom "{ciutat}" .
-                            ?a via:Nom ?nm .
-                            ?a via:IDAct ?id .
-                            ?ta a ?class .                         
-                        }}
-                        LIMIT 1
-                        """, initNs={"via":VIA})
+        for x in range (3):
+            res = contingut.query(f"""
+                            SELECT ?nm ?id ?preu ?dat ?franja ?ciu ?rec
+                            WHERE {{
+                                ?a rdf:type via:{tipus_activitat} .
+                                ?a via:val ?p .
+                                ?p via:Import ?preu .
+    			                FILTER (?preu <= {cost_max}) .
+                                ?a via:se_celebra_de ?franja .
+                                ?franja via:Nom "{franja}" .
+                                ?a via:se_celebra_el ?dat .
+                                ?dat via:Data "{data_act}" .
+                                ?a via:se_celebra_a ?rec .
+                                ?rec via:es_troba_a ?ciu .
+                                ?ciu via:Nom "{ciutat}" .
+    			    			?a via:Nom ?nm .
+    			    			?a via:IDAct ?id .
+                            }}
+                            LIMIT 1
+                            """, initNs={"via":VIA})
+            if (len(res) == 0):
+                if (Literal(tipus_activitat).eq('Ludica')):
+                    tipus_activitat = "Cultural"
+                elif (Literal(tipus_activitat).eq('Cultural')):
+                    tipus_activitat = "Festiva"
+                else:
+                    tipus_activitat = "Ludica"
+            else: break
 
-        if (len(res) == 0):
-        	contingut.query(f"""
-                        SELECT ?nm ?id ?preu ?ta ?dat ?franja ?ciu ?rec
-                        WHERE {{
-                            ?a rdf:type via:Activitat .
-                            ?a via:val ?p .
-                            ?p via:Import ?preu .
-                            FILTER (?preu <= {cost_max}) .
-                            ?a via:se_celebra_de ?franja .
-                            ?franja via:Nom "{franja}" .
-                            ?a via:se_celebra_el ?dat .
-                            ?dat via:Data "{data}" .
-                            ?a via:se_celebra_a ?rec .
-                            ?rec via:es_troba_a ?ciu .
-                            ?ciu via:Nom "{ciutat}" .
-                            ?a via:Nom ?nm .
-                            ?a via:IDAct ?id .
-                            ?ta a ?class .                          
-                        }}
-                        LIMIT 1
-                        """, initNs={"via":VIA})
         if (len(res) == 0):
         	print("BUIT------------------------------------------")
 
         for row in res:
-	        Activitat= VIA.Activitat + "_" + row[3]
-	        activitats.add((Activitat,RDF.type,VIA.Activitat))
-	        activitats.add((Activitat, RDF.type, VIA.Literal(row[3])))
-	        activitats.add((Activitat, VIA.Nom , Literal(row[0])))
-	        activitats.add((Activitat, VIA.IDAct, Literal(row[1])))
-	        activitats.add((Activitat, VIA.Import, Literal(int(row[2]))))
-	        activitats.add((Activitat, VIA.Data, Literal(row[4])))
-	        activitats.add((Activitat, VIA.Nom + "_Franja", Literal(row[5])))
-	        activitats.add((Activitat, VIA.Nom + "_Ciutat", Literal(row[6])))
-	        activitats.add((Activitat, VIA.Nom + "_Recinte", Literal(row[7])))
+            Activitat= VIA.Activitat + "_" + tipus_activitat
+            activitats.add((Activitat, VIA.Nom , Literal(row[0])))
+            activitats.add((Activitat, VIA.IDAct, Literal(row[1])))
+            activitats.add((Activitat, VIA.Preu, Literal(row[2])))
+            activitats.add((Activitat, VIA.Data, Literal(row[3])))
+            activitats.add((Activitat, VIA.Nom + "_Franja", Literal(row[4])))
+            activitats.add((Activitat, VIA.Nom + "_Ciutat", Literal(row[5])))
+            activitats.add((Activitat, VIA.Nom + "_Recinte", Literal(row[6])))
+
         for s, p, o in activitats:
         	print(s,p,o)
        	
