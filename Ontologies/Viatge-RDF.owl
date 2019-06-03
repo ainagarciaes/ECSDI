@@ -1284,6 +1284,7 @@
         <Viatge:ofereix rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#PENSIO_COMPLETA"/>
         <Viatge:se_situa_a rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#RODALIES"/>
         <Viatge:te_habitacions rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#DOBLE"/>
+        <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#625"/>
         <Viatge:Capacitat rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</Viatge:Capacitat>
         <Viatge:Nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MIAMI_HOTEL</Viatge:Nom>
         <Viatge:TipusAllotjament rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HOTEL</Viatge:TipusAllotjament>
