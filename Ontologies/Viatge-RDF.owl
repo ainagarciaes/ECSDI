@@ -1254,7 +1254,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#MIAMI">
         <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Localitzacio"/>
-        <Viatge:Nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MIAMI</Viatge:Nom>
+        <Viatge:Nom>MIAMI</Viatge:Nom>
     </owl:NamedIndividual>
     
 
@@ -1573,7 +1573,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-07-28">
         <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Data"/>
-        <Viatge:Data rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2019-07-28</Viatge:Data>
+        <Viatge:Data>2019-07-28</Viatge:Data>
     </owl:NamedIndividual>
     
 
@@ -1582,7 +1582,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-07-29">
         <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Data"/>
-        <Viatge:Data rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2019-07-29</Viatge:Data>
+        <Viatge:Data>2019-07-29</Viatge:Data>
     </owl:NamedIndividual>
     
 
@@ -1591,7 +1591,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-07-30">
         <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Data"/>
-        <Viatge:Data rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2019-07-30</Viatge:Data>
+        <Viatge:Data>2019-07-30</Viatge:Data>
     </owl:NamedIndividual>
     
 
@@ -1609,7 +1609,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#2019-12-06">
         <rdf:type rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#Data"/>
-        <Viatge:val rdf:resource="http://www.semanticweb.org/guille/ontologies/2019/3/Viatge#15"/>
         <Viatge:Data>2019-12-06</Viatge:Data>
     </owl:NamedIndividual>
     
